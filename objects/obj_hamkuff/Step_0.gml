@@ -30,7 +30,7 @@ switch (state)
         {
             with (playerid)
             {
-                if (state == UnknownEnum.Value_152)
+                if (state == states.policetaxi)
                 {
                     other.state = states.walk;
                 }
@@ -196,7 +196,7 @@ if (state != states.walk && state != states.blockstance)
 
 var _dis = 300;
 
-if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != UnknownEnum.Value_292 && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
+if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != states.spaceshuttle && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
 {
     state = states.blockstance;
     sprite_index = spr_hamkuff_chain1;

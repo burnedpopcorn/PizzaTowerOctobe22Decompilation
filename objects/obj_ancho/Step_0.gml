@@ -7,7 +7,7 @@ switch (state)
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
     
@@ -80,12 +80,12 @@ if (flash == true && alarm[2] <= 0)
 if (state != states.grabbed)
     depth = 0;
 
-if (state != UnknownEnum.Value_128)
+if (state != states.charge)
     scr_scareenemy();
 
 if (sprite_index == spr_ancho_chargestart && floor(image_index) == (image_number - 1))
 {
-    if (hitboxcreate == false && state == UnknownEnum.Value_128)
+    if (hitboxcreate == false && state == states.charge)
     {
         hitboxcreate = true;
         
@@ -104,7 +104,7 @@ if (ragebuffer > 0)
 
 if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)) && important == false)
 {
-    if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk || state == UnknownEnum.Value_128))
+    if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk || state == states.charge))
     {
         state = states.rage;
         sprite_index = spr_ancho_rage1;
@@ -127,13 +127,13 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
         
         create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
     }
-    else if (x != player.x && state != UnknownEnum.Value_128 && y == ystart && important == false)
+    else if (x != player.x && state != states.charge && y == ystart && important == false)
     {
         if (state == states.walk)
         {
             image_index = 0;
             image_xscale = -sign(x - obj_player.x);
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             sprite_index = spr_ancho_chargestart;
         }
     }

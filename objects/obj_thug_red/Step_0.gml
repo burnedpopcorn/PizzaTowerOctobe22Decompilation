@@ -18,7 +18,7 @@ if (state == states.walk)
         if ((targetplayer.x > (x - 150) && targetplayer.x < (x + 150)) && (y <= (targetplayer.y + 60) && y >= (targetplayer.y - 60)))
         {
             chasing = true;
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             attack_count = attack_max;
             
             if (x != targetplayer.x)
@@ -31,12 +31,12 @@ if (state == states.walk)
     }
     else
     {
-        state = UnknownEnum.Value_141;
+        state = states.chase;
         sprite_index = walkspr;
         image_index = 0;
     }
 }
-else if (state == UnknownEnum.Value_141)
+else if (state == states.chase)
 {
     if (sprite_index == spr_shrimp_throw)
         sprite_index = spr_shrimp_walk;
@@ -60,7 +60,7 @@ else if (state == UnknownEnum.Value_141)
     {
         if ((targetplayer.x > (x - attackthreshold_x) && targetplayer.x < (x + attackthreshold_x)) && (targetplayer.y > (y - attackthreshold_y) && targetplayer.y < (y + attackthreshold_y)))
         {
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             hsp = 0;
             attack_count = attack_max;
         }
@@ -91,7 +91,7 @@ else if (state == UnknownEnum.Value_141)
         image_index = 0;
     }
     
-    if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != UnknownEnum.Value_128)
+    if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
     {
         vsp = -11;
         sprite_index = spr_shrimp_jump;
@@ -100,7 +100,7 @@ else if (state == UnknownEnum.Value_141)
     }
 }
 
-if (state == UnknownEnum.Value_128)
+if (state == states.charge)
 {
     bombreset = attackreset;
     
@@ -224,7 +224,7 @@ if (elite && ragecooldown <= 0)
 {
     var player = instance_nearest(x, y, obj_player);
     
-    if (state == states.walk || state == UnknownEnum.Value_128)
+    if (state == states.walk || state == states.charge)
     {
         if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
         {

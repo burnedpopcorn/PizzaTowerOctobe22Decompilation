@@ -4,7 +4,7 @@ switch (state)
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
     
@@ -16,7 +16,7 @@ switch (state)
         scr_enemy_walk();
         
         if (totemID != -4)
-            state = UnknownEnum.Value_188;
+            state = states.totem;
         
         break;
     
@@ -51,7 +51,7 @@ switch (state)
 
 scr_scareenemy();
 
-if (state == UnknownEnum.Value_188 && totemID != -4)
+if (state == states.totem && totemID != -4)
 {
     image_speed = 0.35;
     
@@ -96,7 +96,7 @@ if (state == UnknownEnum.Value_188 && totemID != -4)
         }
     }
 }
-else if (state == UnknownEnum.Value_188 && totemID == -4)
+else if (state == states.totem && totemID == -4)
 {
     state = states.walk;
 }

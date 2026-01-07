@@ -2,7 +2,7 @@ var _used = false;
 
 with (obj_trapghost)
 {
-    if (state == UnknownEnum.Value_141 && trapid == other.id)
+    if (state == states.chase && trapid == other.id)
         _used = true;
 }
 

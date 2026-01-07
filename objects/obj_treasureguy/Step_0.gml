@@ -35,7 +35,7 @@ switch (state)
         scr_enemy_rage();
         break;
     
-    case UnknownEnum.Value_189:
+    case states.underground:
         var player = instance_nearest(x, y, obj_player);
         hsp = 0;
         
@@ -102,7 +102,7 @@ if (state == states.idle)
     if (sprite_index == scaredspr)
     {
         if (image_index > (image_number - 1))
-            state = UnknownEnum.Value_141;
+            state = states.chase;
     }
     else
     {
@@ -111,7 +111,7 @@ if (state == states.idle)
     }
 }
 
-if (state != states.idle && state != UnknownEnum.Value_189 && state != states.grabbed && state != states.hit && state != states.stun && state != UnknownEnum.Value_141 && !running)
+if (state != states.idle && state != states.underground && state != states.grabbed && state != states.hit && state != states.stun && state != states.chase && !running)
 {
     if ((x < (targetplayer.x + threshold_x) && x > (targetplayer.x - threshold_x)) && (y < (targetplayer.y + threshold_y) && y > (targetplayer.y - threshold_y)))
     {
@@ -125,7 +125,7 @@ if (state != states.idle && state != UnknownEnum.Value_189 && state != states.gr
     }
 }
 
-if (state == UnknownEnum.Value_141)
+if (state == states.chase)
 {
     image_speed = 0.5;
     
@@ -184,7 +184,7 @@ if (boundbox == false)
     }
 }
 
-if (state == UnknownEnum.Value_189)
+if (state == states.underground)
 {
     invincible = true;
     

@@ -197,7 +197,7 @@ if (state == states.taxi)
     y = obj_stopsign.y;
 }
 
-if (state == UnknownEnum.Value_292)
+if (state == states.spaceshuttle)
 {
     x = obj_spaceshuttlestop.x;
     y = obj_spaceshuttlestop.y;

@@ -26,12 +26,12 @@ switch (state)
             y = Approach(y, yto, abs(lengthdir_y(32, dir)));
             
             if (x == xto && y == yto)
-                state = UnknownEnum.Value_141;
+                state = states.chase;
         }
         
         break;
     
-    case UnknownEnum.Value_141:
+    case states.chase:
         if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap && (trapid.object_index != obj_pinballtrap || trapid.sprite_index != spr_kingghost_pinball3)))
         {
             state = states.normal;
@@ -106,7 +106,7 @@ switch (state)
         break;
 }
 
-visible = state != UnknownEnum.Value_141;
+visible = state != states.chase;
 
 if (distance_to_object(obj_player1) <= 200)
     alpha = true;

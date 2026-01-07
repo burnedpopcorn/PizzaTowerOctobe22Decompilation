@@ -93,7 +93,7 @@ function scr_robot_detect()
             image_yscale = 1;
         }
         
-        state = UnknownEnum.Value_141;
+        state = states.chase;
         sprite_index = chasespr;
         image_index = 0;
     }

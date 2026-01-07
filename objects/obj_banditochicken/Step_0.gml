@@ -35,7 +35,7 @@ switch (state)
         scr_enemy_grabbed();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
 }
@@ -77,20 +77,20 @@ if (sprite_index == spr_banditochicken_wake && floor(image_index) == (image_numb
 {
     image_xscale *= -1;
     sprite_index = spr_banditochicken_chase;
-    state = UnknownEnum.Value_128;
+    state = states.charge;
     movespeed = 8;
     
     with (instance_create(x, y, obj_jumpdust))
         image_xscale = other.image_xscale;
 }
 
-if (state == UnknownEnum.Value_128 && bonebuffer > 0)
+if (state == states.charge && bonebuffer > 0)
     bonebuffer--;
 
-if (grounded && jumping < 40 && state == UnknownEnum.Value_128)
+if (grounded && jumping < 40 && state == states.charge)
     jumping++;
 
-if (state == UnknownEnum.Value_128 && grounded && jumping >= 40)
+if (state == states.charge && grounded && jumping >= 40)
 {
     vsp = -11;
     jumping = 0;

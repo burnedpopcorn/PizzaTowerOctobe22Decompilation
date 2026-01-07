@@ -2,7 +2,7 @@ function scr_enemy_ratgrabbed()
 {
     var p = object_index == obj_junk || object_get_parent(object_index) == 526;
     
-    if ((!p && state == UnknownEnum.Value_205) || (p && ratgrabbed))
+    if ((!p && state == states.ratgrabbed) || (p && ratgrabbed))
     {
         visible = false;
         x = ratplayerid.x;
@@ -12,7 +12,7 @@ function scr_enemy_ratgrabbed()
             sprite_index = stunfallspr;
         
         if (!p && state != states.stun)
-            state = UnknownEnum.Value_205;
+            state = states.ratgrabbed;
         
         if (p && !ratgrabbed)
             ratgrabbed = true;

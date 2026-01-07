@@ -94,12 +94,12 @@ else if (state == states.jump)
 {
     if (grounded && vsp > 0)
     {
-        state = UnknownEnum.Value_128;
+        state = states.charge;
         sprite_index = ragespr;
         attackspeed = 6;
     }
 }
-else if (state == UnknownEnum.Value_128)
+else if (state == states.charge)
 {
     idle = false;
     
@@ -150,7 +150,7 @@ else if (state == UnknownEnum.Value_128)
         image_xscale *= -1;
 }
 
-if (state != UnknownEnum.Value_128 && hitboxID != -4 && instance_exists(hitboxID))
+if (state != states.charge && hitboxID != -4 && instance_exists(hitboxID))
 {
     instance_destroy(hitboxID);
     hitboxID = -4;

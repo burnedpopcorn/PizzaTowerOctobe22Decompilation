@@ -94,7 +94,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         hsp = Approach(hsp, 0, 0.5);
         
         if (sprite_index == spr_soldier_shootstart && floor(image_index) == (image_number - 1))
@@ -146,7 +146,7 @@ switch (state)
                 
                 sprite_index = spr_soldier_shootstart;
                 image_index = 0;
-                state = UnknownEnum.Value_128;
+                state = states.charge;
                 bullet_count = bullet_max;
                 can_fire = true;
             }

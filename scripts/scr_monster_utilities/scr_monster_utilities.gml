@@ -4,8 +4,8 @@ function scr_monster_activate()
     
     with (obj_monster)
     {
-        if (state == UnknownEnum.Value_217)
-            state = UnknownEnum.Value_218;
+        if (state == states.robotidle)
+            state = states.robotintro;
     }
     
     with (obj_monstergate)
@@ -84,7 +84,7 @@ function scr_puppet_appear(arg0)
     
     x = arg0.x + (abs(_xdir) * arg0.xscale);
     y = arg0.y;
-    state = UnknownEnum.Value_220;
+    state = states.robotchase;
     substate = states.fall;
     playerid = arg0;
     
@@ -148,7 +148,7 @@ function scr_monsterinvestigate(arg0, arg1, arg2)
             }
             else
             {
-                state = UnknownEnum.Value_219;
+                state = states.robotroaming;
                 image_xscale *= -1;
                 instance_create(x, y, obj_patroller);
             }
@@ -157,7 +157,7 @@ function scr_monsterinvestigate(arg0, arg1, arg2)
     }
     
     if (scr_monster_detect(300, room_height, targetplayer))
-        state = UnknownEnum.Value_220;
+        state = states.robotchase;
 }
 
 function scr_monster_detect_audio()
@@ -166,7 +166,7 @@ function scr_monster_detect_audio()
     {
         if (!point_in_camera(x, y, view_camera[0]))
         {
-            state = UnknownEnum.Value_221;
+            state = states.robotinvestigate;
             investigatestate = 0;
         }
         else
@@ -181,7 +181,7 @@ function scr_monster_detect_audio()
             }
             else
             {
-                state = UnknownEnum.Value_220;
+                state = states.robotchase;
             }
         }
     }

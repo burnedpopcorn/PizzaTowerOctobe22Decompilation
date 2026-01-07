@@ -1,2 +1,2 @@
-if (state == UnknownEnum.Value_220)
+if (state == states.robotchase)
     event_inherited();

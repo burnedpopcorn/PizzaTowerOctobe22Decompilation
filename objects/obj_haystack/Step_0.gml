@@ -4,7 +4,7 @@ if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup
 {
     with (obj_peasanto)
     {
-        if (state == UnknownEnum.Value_128 && place_meeting(x + hsp, y, other))
+        if (state == states.charge && place_meeting(x + hsp, y, other))
             other.sprite_index = spr_haystackburningup;
     }
     

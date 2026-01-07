@@ -30,7 +30,7 @@ if (b)
             important = true;
             x_to = other.disx2;
             y_to = irandom_range(other.disy1, other.disy2);
-            state = UnknownEnum.Value_149;
+            state = states.float;
         }
     }
 }

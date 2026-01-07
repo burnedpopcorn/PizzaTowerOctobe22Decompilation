@@ -6,7 +6,7 @@ switch (state)
         state_turret_normal();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         state_turret_charge();
         break;
 }

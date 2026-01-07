@@ -33,14 +33,14 @@ if (inv_timer > 0)
 else
     invincible = false;
 
-if (state == UnknownEnum.Value_128)
+if (state == states.charge)
 {
     if (image_index > (image_number - 1))
     {
         ram_spd = 0;
         sprite_index = spr_tank_charge;
         image_index = 0;
-        state = UnknownEnum.Value_141;
+        state = states.chase;
     }
 }
 
@@ -62,7 +62,7 @@ if (state == states.idle)
         }
     }
 }
-else if (state == UnknownEnum.Value_141)
+else if (state == states.chase)
 {
     invincible = true;
     
@@ -132,7 +132,7 @@ if (state != states.stun)
 if (bombreset > 0)
     bombreset--;
 
-if (state == UnknownEnum.Value_142)
+if (state == states.spawnenemy)
 {
     if (floor(image_index) == 5 && bombreset == 0)
     {
@@ -183,7 +183,7 @@ if (state == states.walk && bombreset == 0 && forcespawn == false)
             sprite_index = spr_tank_chargestart;
             image_index = 0;
             ram_count = ram_max;
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             forcespawn = true;
             
             if (slide_buffer <= 0)
@@ -206,7 +206,7 @@ if (state == states.walk && bombreset == 0 && forcespawn == true)
     if (x != targetplayer.x)
         image_xscale = -sign(x - targetplayer.x);
     
-    state = UnknownEnum.Value_142;
+    state = states.spawnenemy;
     forcespawn = false;
 }
 

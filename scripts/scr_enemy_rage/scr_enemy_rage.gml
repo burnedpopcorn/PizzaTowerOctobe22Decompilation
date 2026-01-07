@@ -151,7 +151,7 @@ function scr_enemy_rage()
                 
                 movespeed = 4;
                 image_xscale = -sign(x - targetplayer.x);
-                state = UnknownEnum.Value_141;
+                state = states.chase;
                 sprite_index = spr_minijohn_charge;
             }
             
@@ -171,7 +171,7 @@ function scr_enemy_rage()
                     ID = other.id;
                 
                 charging = true;
-                state = UnknownEnum.Value_128;
+                state = states.charge;
                 movespeed = 5;
                 vsp = -7;
                 sprite_index = spr_fencer_chargestart;

@@ -52,15 +52,15 @@ if (phase == 0 && attacking)
                         
                         switch (choseattack)
                         {
-                            case UnknownEnum.Value_227:
+                            case states.pizzaface_mouth:
                                 sprite_index = spr_pizzafaceword;
                                 break;
                             
-                            case UnknownEnum.Value_228:
+                            case states.pizzaface_eyes:
                                 sprite_index = spr_sausageman_idle;
                                 break;
                             
-                            case UnknownEnum.Value_229:
+                            case states.pizzaface_nose:
                                 sprite_index = spr_shroomcollect;
                                 break;
                         }

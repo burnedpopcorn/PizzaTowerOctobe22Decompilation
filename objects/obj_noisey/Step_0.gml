@@ -7,7 +7,7 @@ switch (state)
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
     
@@ -51,7 +51,7 @@ switch (state)
         scr_enemy_rage();
         break;
     
-    case UnknownEnum.Value_149:
+    case states.float:
         scr_noisey_float();
         break;
     
@@ -71,7 +71,7 @@ if (state == states.stun && stunned > 100 && birdcreated == false)
 if (state != states.stun)
     birdcreated = false;
 
-if (state != UnknownEnum.Value_149)
+if (state != states.float)
     scr_scareenemy();
 
 if (flash == true && alarm[2] <= 0)

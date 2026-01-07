@@ -4,7 +4,7 @@ switch (state)
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
     
@@ -48,7 +48,7 @@ if (state == states.stun && stunned > 40 && birdcreated == false)
 if (state != states.stun)
     birdcreated = false;
 
-if (place_meeting(x + hsp, y, obj_iceblock) && state == UnknownEnum.Value_128)
+if (place_meeting(x + hsp, y, obj_iceblock) && state == states.charge)
 {
     with (instance_place(x + hsp, y, obj_iceblock))
         instance_destroy();
@@ -61,7 +61,7 @@ if (state == states.walk && attack_cooldown <= 0)
     if (x != targetplayer.x && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y < (y + 50) && targetplayer.y > (y - 50))
     {
         flame_buffer = flame_max;
-        state = UnknownEnum.Value_128;
+        state = states.charge;
         image_xscale = sign(targetplayer.x - x);
         sprite_index = spr_peasanto_flameattack;
         image_index = 0;
@@ -70,7 +70,7 @@ if (state == states.walk && attack_cooldown <= 0)
     }
 }
 
-if (state == UnknownEnum.Value_128)
+if (state == states.charge)
 {
     if (!hitboxcreate)
     {

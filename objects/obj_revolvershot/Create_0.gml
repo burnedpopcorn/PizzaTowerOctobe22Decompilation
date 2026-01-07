@@ -12,11 +12,11 @@ function player_hurt(arg0, arg1)
         arg1.xscale = -image_xscale;
         arg1.hitxscale = -image_xscale;
         
-        if (prevstate == UnknownEnum.Value_160)
+        if (prevstate == states.superattack)
         {
             arg1.hithsp = 0;
             arg1.hitvsp = 0;
-            arg1.hitstate = UnknownEnum.Value_160;
+            arg1.hitstate = states.superattack;
             
             with (obj_vigilanteboss)
                 duel_buffer = duel_max + irandom(duel_random);

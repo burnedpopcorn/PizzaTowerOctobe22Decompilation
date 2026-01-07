@@ -23,7 +23,7 @@ with (ID)
     switch (object_index)
     {
         case obj_golfdemon:
-            if (state != UnknownEnum.Value_128)
+            if (state != states.charge)
                 instance_destroy(other);
             
             break;
@@ -60,7 +60,7 @@ with (ID)
         case obj_farmerbaddie3:
             other.x = x + (image_xscale * 16);
             
-            if (state != UnknownEnum.Value_128)
+            if (state != states.charge)
                 instance_destroy(other);
             
             break;
@@ -141,7 +141,7 @@ with (ID)
             break;
         
         case obj_ninja:
-            if (state != UnknownEnum.Value_128 && state != states.punch)
+            if (state != states.charge && state != states.punch)
                 instance_destroy(other);
             
             if (state == states.punch)
@@ -179,7 +179,7 @@ with (ID)
         case obj_fencer:
         case obj_snowman:
         case obj_ancho:
-            if (state != UnknownEnum.Value_128 && state != states.rage)
+            if (state != states.charge && state != states.rage)
             {
                 hitboxcreate = false;
                 instance_destroy(other);

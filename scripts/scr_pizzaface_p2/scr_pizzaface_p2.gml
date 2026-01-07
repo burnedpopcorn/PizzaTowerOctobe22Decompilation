@@ -156,7 +156,7 @@ function scr_pizzaface_p2_fishing()
     if (instance_exists(obj_pizzaheadswordstone) && abs(x - obj_pizzaheadswordstone.x) <= 120)
     {
         leveldown = false;
-        state = UnknownEnum.Value_240;
+        state = states.pizzahead_pullinglevel;
         sprite_index = spr_pizzahead_pullinglevel2;
         image_index = 0;
     }
@@ -213,7 +213,7 @@ function scr_pizzaface_p2_fishing()
             switch (t)
             {
                 case UnknownEnum.Value_0:
-                    state = UnknownEnum.Value_240;
+                    state = states.pizzahead_pullinglevel;
                     substate = 0;
                     sprite_index = spr_pizzahead_pullinglevel1;
                     image_index = 0;
@@ -236,7 +236,7 @@ function scr_pizzaface_p2_fishing()
                     break;
                 
                 case UnknownEnum.Value_1:
-                    state = UnknownEnum.Value_237;
+                    state = states.pizzahead_portraitthrow;
                     shot = false;
                     sprite_index = spr_pizzahead_grabTV;
                     image_index = 0;
@@ -341,7 +341,7 @@ function boss_pizzahead_pullinglevel()
             
             if (!instance_exists(obj_forknight_pizzahead) && !instance_exists(obj_medievalprojectile))
             {
-                state = UnknownEnum.Value_240;
+                state = states.pizzahead_pullinglevel;
                 sprite_index = spr_pizzahead_pullinglevel2;
                 image_index = 0;
             }

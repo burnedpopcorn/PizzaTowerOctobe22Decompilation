@@ -3,7 +3,7 @@ targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (obj_bosscontroller.state == states.arenaintro)
     exit;
 
-if (hp <= 0 && state != UnknownEnum.Value_145 && state != UnknownEnum.Value_162)
+if (hp <= 0 && state != states.arenaround && state != states.fistmatch)
 {
     if (!thrown && !destroyable)
         boss_destroy(lastplayerid);
@@ -29,7 +29,7 @@ switch (phase)
 
 switch (state)
 {
-    case UnknownEnum.Value_145:
+    case states.arenaround:
         grav = 0.5;
         state_boss_arenaround();
         break;
@@ -66,17 +66,17 @@ switch (state)
         boss_pepperman_shoulderbash();
         break;
     
-    case UnknownEnum.Value_157:
+    case states.supershoulderbash:
         grav = 0.5;
         boss_pepperman_supershoulderbash();
         break;
     
-    case UnknownEnum.Value_158:
+    case states.superattackstart:
         grav = 0.5;
         boss_pepperman_superattackstart();
         break;
     
-    case UnknownEnum.Value_159:
+    case states.superattackcharge:
         grav = 0.5;
         boss_pepperman_superattackcharge();
         break;
@@ -86,12 +86,12 @@ switch (state)
         boss_pepperman_superslam();
         break;
     
-    case UnknownEnum.Value_162:
+    case states.fistmatch:
         grav = 0.5;
         boss_pepperman_fistmatch();
         break;
     
-    case UnknownEnum.Value_163:
+    case states.fistmatchend:
         grav = 0.5;
         boss_pepperman_fistmatchend();
         break;
@@ -113,7 +113,7 @@ switch (state)
         inv_timer = 2;
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         grav = 0.5;
         boss_pepperman_charge();
         invincible = true;
@@ -152,5 +152,5 @@ switch (state)
 }
 
 xscale = image_xscale;
-colliding = !(state == states.superslam || state == UnknownEnum.Value_162 || state == UnknownEnum.Value_158 || state == UnknownEnum.Value_159);
-attacking = state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == UnknownEnum.Value_157 || state == states.shoulder || state == states.superslam || state == UnknownEnum.Value_162 || state == UnknownEnum.Value_158 || state == UnknownEnum.Value_159 || state == states.walk;
+colliding = !(state == states.superslam || state == states.fistmatch || state == states.superattackstart || state == states.superattackcharge);
+attacking = state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == states.supershoulderbash || state == states.shoulder || state == states.superslam || state == states.fistmatch || state == states.superattackstart || state == states.superattackcharge || state == states.walk;

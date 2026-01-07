@@ -9,7 +9,7 @@ if (playerid != -4)
 {
     with (playerid)
     {
-        if (state != UnknownEnum.Value_285)
+        if (state != states.skateboardnoise)
         {
             other.playerid = -4;
         }

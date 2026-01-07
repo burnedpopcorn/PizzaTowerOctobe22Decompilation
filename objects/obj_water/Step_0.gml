@@ -2,7 +2,7 @@ if (place_meeting(x, y - 1, obj_player))
 {
     with (obj_player)
     {
-        if (state != states.gotoplayer && state != states.trashjump && state != UnknownEnum.Value_209 && state != states.mach3 && state != states.Parry && sprite_index != spr_mach3boost)
+        if (state != states.gotoplayer && state != states.trashjump && state != states.trashjumpprep && state != states.mach3 && state != states.Parry && sprite_index != spr_mach3boost)
         {
             if (place_meeting(x, y + 1, other))
             {

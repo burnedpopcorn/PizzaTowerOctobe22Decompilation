@@ -7,7 +7,7 @@ switch (state)
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
     
@@ -71,7 +71,7 @@ if (ragebuffer > 0)
 
 if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 {
-    if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk || state == UnknownEnum.Value_128))
+    if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk || state == states.charge))
     {
         state = states.rage;
         sprite_index = spr_fencer_rage;
@@ -94,7 +94,7 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
                 ID = other.id;
             
             charging = true;
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             movespeed = 5;
             vsp = -7;
             sprite_index = spr_fencer_chargestart;
@@ -114,7 +114,7 @@ if (sprite_index == spr_fencer_chargestart && floor(image_index) == (image_numbe
 if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (hitboxcreate == false && (state == states.walk || state == states.rage || state == UnknownEnum.Value_128))
+if (hitboxcreate == false && (state == states.walk || state == states.rage || state == states.charge))
 {
     hitboxcreate = true;
     

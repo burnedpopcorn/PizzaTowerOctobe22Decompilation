@@ -6,7 +6,7 @@ team = 1;
 
 function SUPER_player_hurt(arg0, arg1)
 {
-    if (!collisioned && arg1.state != UnknownEnum.Value_145)
+    if (!collisioned && arg1.state != states.arenaround)
     {
         if (instance_exists(obj_bosscontroller))
             obj_bosscontroller.player_hp -= arg0;

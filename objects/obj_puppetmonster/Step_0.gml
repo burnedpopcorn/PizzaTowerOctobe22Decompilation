@@ -2,12 +2,12 @@ image_speed = 0.35;
 
 switch (state)
 {
-    case UnknownEnum.Value_217:
+    case states.robotidle:
         sprite_index = spr_introidle;
         image_speed = 0.35;
         break;
     
-    case UnknownEnum.Value_218:
+    case states.robotintro:
         if (sprite_index != spr_intro)
         {
             sprite_index = spr_intro;
@@ -15,11 +15,11 @@ switch (state)
         }
         
         if (floor(image_index) == (image_number - 1))
-            state = UnknownEnum.Value_220;
+            state = states.robotchase;
         
         break;
     
-    case UnknownEnum.Value_219:
+    case states.robotroaming:
         sprite_index = spr_monstertomato_idle;
         x = camera_get_view_x(view_camera[0]) + (obj_screensizer.actual_width / 2);
         y = camera_get_view_y(view_camera[0]) + yy;
@@ -37,7 +37,7 @@ switch (state)
                     if (pid != -4)
                     {
                         playerid = pid;
-                        substate = UnknownEnum.Value_141;
+                        substate = states.chase;
                     }
                     else
                     {
@@ -61,12 +61,12 @@ switch (state)
                         monster_pos[other.monsterid].y = last_puppet_pos.y;
                     }
                     
-                    state = UnknownEnum.Value_217;
+                    state = states.robotidle;
                 }
                 
                 break;
             
-            case UnknownEnum.Value_141:
+            case states.chase:
                 yy -= 10;
                 
                 if (yy < -100)
@@ -77,7 +77,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_220:
+    case states.robotchase:
         playerid = instance_nearest(x, y, obj_player);
         sprite_index = spr_monstertomato_chase;
         var dir = point_direction(x, y, playerid.x, playerid.y);
@@ -94,10 +94,10 @@ switch (state)
         break;
 }
 
-if (state != UnknownEnum.Value_217)
+if (state != states.robotidle)
     inactivebuffer = 900;
 
 depth = -10;
 
-if (state == UnknownEnum.Value_220)
+if (state == states.robotchase)
     depth = -100;

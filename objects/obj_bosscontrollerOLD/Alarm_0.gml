@@ -21,7 +21,7 @@ if (obj_player.state != states.playersuperattack)
             round_count++;
             minutes = maxminutes;
             seconds = maxseconds;
-            state = UnknownEnum.Value_145;
+            state = states.arenaround;
             timer_buffer = timer_max;
             bell_sprite = spr_bosstimer_hitbell;
             bell_index = 0;
@@ -32,8 +32,8 @@ if (obj_player.state != states.playersuperattack)
                 phase++;
                 phase = clamp(phase, 0, max_phase);
                 
-                if (colliding && state != UnknownEnum.Value_180 && state != UnknownEnum.Value_181)
-                    state = UnknownEnum.Value_145;
+                if (colliding && state != states.cardboard && state != states.cardboardend)
+                    state = states.arenaround;
             }
         }
         else if (instance_exists(bossID))
@@ -78,5 +78,5 @@ if (obj_player.state != states.playersuperattack)
     }
 }
 
-if (state != UnknownEnum.Value_145 && state != states.victory && state != states.transitioncutscene)
+if (state != states.arenaround && state != states.victory && state != states.transitioncutscene)
     alarm[0] = 1;

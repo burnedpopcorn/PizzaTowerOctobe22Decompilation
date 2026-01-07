@@ -2,7 +2,7 @@ if (state == states.grabbed && (object_index != obj_pepperman && object_index !=
     scr_enemy_grabbed();
 else if (state == states.lungeattack)
     scr_enemy_lungeattack();
-else if (state == UnknownEnum.Value_266)
+else if (state == states.secret)
     scr_enemy_secret();
 
 scr_squash();
@@ -33,10 +33,10 @@ if (stompbuffer > 0)
 if (!thrown && killbyenemybuffer > 0)
     killbyenemybuffer--;
 
-if (sprite_index == walkspr && state != UnknownEnum.Value_141 && floor(image_index) != (image_number - 1))
+if (sprite_index == walkspr && state != states.chase && floor(image_index) != (image_number - 1))
     steppy = false;
 
-if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && !steppy && object_index != obj_ghoul && state != UnknownEnum.Value_141)
+if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && !steppy && object_index != obj_ghoul && state != states.chase)
 {
     steppy = true;
     create_particle(x - (image_xscale * 20), y + 43, particle.cloudeffect, 0);
@@ -46,7 +46,7 @@ if (object_index != obj_pizzice || state != states.Throw)
 {
     if (state == states.walk)
         image_speed = 0.35;
-    else if (state != UnknownEnum.Value_128)
+    else if (state != states.charge)
         image_speed = 0.35;
 }
 

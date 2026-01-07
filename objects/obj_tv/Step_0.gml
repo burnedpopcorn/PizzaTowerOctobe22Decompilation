@@ -434,12 +434,12 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_250:
+    case states.tv_whitenoise:
         if (tv_trans >= sprite_get_number(spr_tv_whitenoise))
         {
             if (expressionsprite != -4)
             {
-                state = UnknownEnum.Value_251;
+                state = states.tv_expression;
                 sprite_index = expressionsprite;
             }
             else
@@ -452,7 +452,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_251:
+    case states.tv_expression:
         var s = state;
         var es = expressionsprite;
         
@@ -467,7 +467,7 @@ switch (state)
                     }
                     else
                     {
-                        state = UnknownEnum.Value_250;
+                        state = states.tv_whitenoise;
                         expressionsprite = -4;
                     }
                 }
@@ -483,7 +483,7 @@ switch (state)
                     }
                     else
                     {
-                        state = UnknownEnum.Value_250;
+                        state = states.tv_whitenoise;
                         expressionsprite = -4;
                     }
                 }
@@ -493,7 +493,7 @@ switch (state)
             case spr_tv_exprcombo:
                 if (global.combo < 3 || obj_player1.isgustavo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost || global.stylethreshold >= 3)
                 {
-                    state = UnknownEnum.Value_250;
+                    state = states.tv_whitenoise;
                     expressionsprite = -4;
                     
                     if (obj_player1.state == states.hurt)
@@ -510,7 +510,7 @@ switch (state)
                 }
                 else
                 {
-                    state = UnknownEnum.Value_250;
+                    state = states.tv_whitenoise;
                     expressionsprite = -4;
                 }
                 
@@ -521,7 +521,7 @@ switch (state)
                 {
                     if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == false)
                     {
-                        other.state = UnknownEnum.Value_250;
+                        other.state = states.tv_whitenoise;
                         other.expressionsprite = -4;
                     }
                     
@@ -536,7 +536,7 @@ switch (state)
                 {
                     if (mach4mode == false)
                     {
-                        other.state = UnknownEnum.Value_250;
+                        other.state = states.tv_whitenoise;
                         other.expressionsprite = -4;
                     }
                 }
@@ -557,7 +557,7 @@ switch (state)
                 
                 if (global.stylethreshold < 3 || _transfo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost)
                 {
-                    state = UnknownEnum.Value_250;
+                    state = states.tv_whitenoise;
                     expressionsprite = -4;
                 }
                 
@@ -577,7 +577,7 @@ switch (state)
                 
                 if (!global.panic || _transfo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost)
                 {
-                    state = UnknownEnum.Value_250;
+                    state = states.tv_whitenoise;
                     expressionsprite = -4;
                 }
                 
@@ -586,7 +586,7 @@ switch (state)
         
         if (!ds_list_empty(tvprompts_list))
         {
-            state = UnknownEnum.Value_250;
+            state = states.tv_whitenoise;
             tv_trans = 0;
             expressionsprite = -4;
         }
@@ -594,7 +594,7 @@ switch (state)
         break;
 }
 
-if (state != UnknownEnum.Value_250)
+if (state != states.tv_whitenoise)
     tv_trans = 0;
 else
     tv_trans += 0.35;

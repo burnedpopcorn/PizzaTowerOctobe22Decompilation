@@ -27,7 +27,7 @@ if (room_place(hillbilly_pos.x, hillbilly_pos.y) != room_get_name(room))
         with (obj_hillbillymonster)
         {
             investigatestate = 0;
-            state = UnknownEnum.Value_221;
+            state = states.robotinvestigate;
         }
     }
 }

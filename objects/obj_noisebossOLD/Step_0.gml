@@ -1,6 +1,6 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 
-if (hp <= 0 && state != UnknownEnum.Value_145)
+if (hp <= 0 && state != states.arenaround)
 {
     if (!destroyed && !thrown && !destroyable)
         boss_destroy(lastplayerid);
@@ -9,12 +9,12 @@ if (hp <= 0 && state != UnknownEnum.Value_145)
 if (chooseparry_buffer > 0)
     chooseparry_buffer--;
 
-if ((state == states.handstandjump || state == states.crouchslide || state == UnknownEnum.Value_167 || state == states.jetpack || state == UnknownEnum.Value_173 || (state == states.pogo && pogochargeactive) || state == states.skateboard) && alarm[0] <= 0)
+if ((state == states.handstandjump || state == states.crouchslide || state == states.skateboardturn || state == states.jetpack || state == states.jetpackspin || (state == states.pogo && pogochargeactive) || state == states.skateboard) && alarm[0] <= 0)
     alarm[0] = 6;
 
 switch (state)
 {
-    case UnknownEnum.Value_145:
+    case states.arenaround:
         grav = 0.5;
         state_boss_arenaround();
         movespeed = 0;
@@ -47,7 +47,7 @@ switch (state)
         boss_noise_skateboard();
         break;
     
-    case UnknownEnum.Value_167:
+    case states.skateboardturn:
         grav = 0.5;
         boss_noise_skateboardturn();
         break;
@@ -77,7 +77,7 @@ switch (state)
         boss_noise_jetpack();
         break;
     
-    case UnknownEnum.Value_173:
+    case states.jetpackspin:
         grav = 0.5;
         boss_noise_jetpackspin();
         break;
@@ -121,4 +121,4 @@ switch (state)
 }
 
 angry = phase > 6;
-attacking = state == states.handstandjump || state == states.crouchslide || state == states.skateboard || state == UnknownEnum.Value_167 || state == states.pogo || state == states.jetpackstart || state == states.jetpack || state == UnknownEnum.Value_173 || state == states.throwing;
+attacking = state == states.handstandjump || state == states.crouchslide || state == states.skateboard || state == states.skateboardturn || state == states.pogo || state == states.jetpackstart || state == states.jetpack || state == states.jetpackspin || state == states.throwing;

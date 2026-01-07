@@ -33,7 +33,7 @@ switch (state)
         scr_enemy_grabbed();
         break;
     
-    case UnknownEnum.Value_141:
+    case states.chase:
         scr_enemy_chase();
         break;
     
@@ -73,7 +73,7 @@ if (state != states.stun)
 if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != UnknownEnum.Value_141)
+if (state != states.chase)
     momentum = 0;
 
 if (state == states.walk || state == states.idle)
@@ -94,7 +94,7 @@ if (state == states.walk || state == states.idle)
             image_xscale = -sign(x - targetplayer.x);
         
         alarm[5] = 30;
-        state = UnknownEnum.Value_141;
+        state = states.chase;
         sprite_index = spr_golfdemon_charge;
     }
 }
@@ -116,8 +116,8 @@ if (boundbox == false)
     }
 }
 
-if (state != UnknownEnum.Value_141 && state != states.hit)
+if (state != states.chase && state != states.hit)
     invincible = false;
 
-if (state == UnknownEnum.Value_141)
+if (state == states.chase)
     invincible = true;

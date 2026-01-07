@@ -45,7 +45,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
     

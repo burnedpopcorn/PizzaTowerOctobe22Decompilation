@@ -14,7 +14,7 @@ else
         {
             secretjumped = false;
             savedsecretinvincible = invincible;
-            state = UnknownEnum.Value_266;
+            state = states.secret;
         }
     }
     

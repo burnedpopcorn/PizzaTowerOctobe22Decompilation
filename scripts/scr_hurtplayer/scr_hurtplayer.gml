@@ -9,7 +9,7 @@ function scr_hurtplayer(arg0)
         if (global.failcutscene)
         {
         }
-        else if (state == states.supergrab || state == UnknownEnum.Value_231 || state == states.Parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == UnknownEnum.Value_292 || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan)
+        else if (state == states.supergrab || state == states.pizzaface_phase2transition || state == states.Parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == states.spaceshuttle || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan)
         {
         }
         else if (holycross > 0 || invtime > 0)

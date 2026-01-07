@@ -3,7 +3,7 @@ targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (obj_bosscontroller.state == states.arenaintro)
     exit;
 
-if (hp <= 0 && state != UnknownEnum.Value_145 && state != UnknownEnum.Value_162)
+if (hp <= 0 && state != states.arenaround && state != states.fistmatch)
 {
     if (!thrown && !destroyable)
         boss_destroy(lastplayerid);
@@ -31,7 +31,7 @@ switch (phase)
 
 switch (state)
 {
-    case UnknownEnum.Value_145:
+    case states.arenaround:
         grav = 0.5;
         break;
     
@@ -45,27 +45,27 @@ switch (state)
         boss_pizzaface_ram();
         break;
     
-    case UnknownEnum.Value_226:
+    case states.pizzaface_moustache:
         grav = 0.5;
         boss_pizzaface_moustache();
         break;
     
-    case UnknownEnum.Value_228:
+    case states.pizzaface_eyes:
         grav = 0.5;
         boss_pizzaface_eyes();
         break;
     
-    case UnknownEnum.Value_227:
+    case states.pizzaface_mouth:
         grav = 0.5;
         boss_pizzaface_mouth();
         break;
     
-    case UnknownEnum.Value_229:
+    case states.pizzaface_nose:
         grav = 0.5;
         boss_pizzaface_nose();
         break;
     
-    case UnknownEnum.Value_231:
+    case states.pizzaface_phase2transition:
         boss_pizzaface_phase2transition();
         break;
     
@@ -77,39 +77,39 @@ switch (state)
         boss_pizzahead_fishing();
         break;
     
-    case UnknownEnum.Value_235:
+    case states.pizzahead_bombrun:
         boss_pizzahead_bombrun();
         break;
     
-    case UnknownEnum.Value_236:
+    case states.pizzahead_npcthrow:
         boss_pizzahead_npcthrow();
         break;
     
-    case UnknownEnum.Value_237:
+    case states.pizzahead_portraitthrow:
         boss_pizzahead_portraitthrow();
         break;
     
-    case UnknownEnum.Value_238:
+    case states.pizzahead_enguarde:
         boss_pizzahead_enguarde();
         break;
     
-    case UnknownEnum.Value_239:
+    case states.pizzahead_sexypicture:
         boss_pizzahead_sexypicture();
         break;
     
-    case UnknownEnum.Value_240:
+    case states.pizzahead_pullinglevel:
         boss_pizzahead_pullinglevel();
         break;
     
-    case UnknownEnum.Value_241:
+    case states.pizzahead_eat:
         boss_pizzahead_eat();
         break;
     
-    case UnknownEnum.Value_242:
+    case states.pizzahead_surprisebox:
         boss_pizzahead_surprisebox();
         break;
     
-    case UnknownEnum.Value_243:
+    case states.pizzahead_spinningrun:
         boss_pizzahead_spinningrun();
         break;
     
@@ -117,23 +117,23 @@ switch (state)
         boss_pizzahead_spinningkick();
         break;
     
-    case UnknownEnum.Value_245:
+    case states.pizzahead_spinningpunch:
         boss_pizzahead_spinningpunch();
         break;
     
-    case UnknownEnum.Value_246:
+    case states.pizzahead_groundpunch:
         boss_pizzahead_groundpunch();
         break;
     
-    case UnknownEnum.Value_247:
+    case states.pizzahead_bigkick:
         boss_pizzahead_bigkick();
         break;
     
-    case UnknownEnum.Value_248:
+    case states.pizzahead_slamhead:
         boss_pizzahead_slamhead();
         break;
     
-    case UnknownEnum.Value_249:
+    case states.pizzahead_slamhead2:
         boss_pizzahead_slamhead2();
         break;
     
@@ -183,7 +183,7 @@ if (phase == 0 && state != states.pizzaface_ram)
 else
     invincible = false;
 
-attacking = state == states.pizzaface_ram || state == UnknownEnum.Value_229 || state == states.pizzahead_spinningkick || state == UnknownEnum.Value_245 || state == UnknownEnum.Value_246 || state == UnknownEnum.Value_248 || state == UnknownEnum.Value_249;
+attacking = state == states.pizzaface_ram || state == states.pizzaface_nose || state == states.pizzahead_spinningkick || state == states.pizzahead_spinningpunch || state == states.pizzahead_groundpunch || state == states.pizzahead_slamhead || state == states.pizzahead_slamhead2;
 colliding = state != states.pizzaface_ram;
 
 if (phase > 0)

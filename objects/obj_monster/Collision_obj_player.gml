@@ -1,4 +1,4 @@
-if (state != UnknownEnum.Value_217 && other.state != states.actor && other.state != states.chainsaw && other.state != states.hit && !other.cutscene && other.state != states.door && !instance_exists(obj_jumpscare))
+if (state != states.robotidle && other.state != states.actor && other.state != states.chainsaw && other.state != states.hit && !other.cutscene && other.state != states.door && !instance_exists(obj_jumpscare))
 {
     if (!global.panic)
     {
@@ -13,7 +13,7 @@ if (state != UnknownEnum.Value_217 && other.state != states.actor && other.state
     {
         with (obj_monster)
         {
-            state = UnknownEnum.Value_217;
+            state = states.robotidle;
             x = xstart;
             y = ystart;
         }

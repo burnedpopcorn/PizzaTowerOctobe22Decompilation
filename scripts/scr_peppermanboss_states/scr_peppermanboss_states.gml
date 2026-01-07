@@ -21,9 +21,9 @@ function pepperman_decide_attack_phase6()
         readjusting = false;
         
         if (hp <= superattack_hpthreshold)
-            state = UnknownEnum.Value_158;
+            state = states.superattackstart;
         
-        if (state != UnknownEnum.Value_158)
+        if (state != states.superattackstart)
         {
             var fakephase = irandom(100);
             
@@ -59,9 +59,9 @@ function pepperman_decide_attack_phase5()
         attack_cooldown = attack_max[phase - 1];
         groundpound_fakeout = true;
         readjusting = false;
-        state = (irandom(100) > 50) ? choose(UnknownEnum.Value_128, UnknownEnum.Value_128, states.shoulder) : states.jump;
+        state = (irandom(100) > 50) ? choose(states.charge, states.charge, states.shoulder) : states.jump;
         
-        if (state == UnknownEnum.Value_128)
+        if (state == states.charge)
         {
             sprite_index = spr_pepperman_shoulderstart;
             image_index = 0;
@@ -463,7 +463,7 @@ function boss_pepperman_charge()
     
     if (image_index > (image_number - 1))
     {
-        state = UnknownEnum.Value_157;
+        state = states.supershoulderbash;
         sprite_index = spr_pepperman_shoulderloop;
         image_index = 0;
         hsp = image_xscale * (shoulder_spd * 2);
@@ -567,7 +567,7 @@ function boss_pepperman_superattackstart()
     
     if (x == tx)
     {
-        state = UnknownEnum.Value_159;
+        state = states.superattackcharge;
         sprite_index = spr_pepperman_shoulderloop;
         image_xscale = (x > (room_width / 2)) ? -1 : 1;
     }
@@ -693,7 +693,7 @@ function boss_pepperman_fistmatch()
         with (lastplayerid)
         {
             sprite_index = spr_idle;
-            state = UnknownEnum.Value_163;
+            state = states.fistmatchend;
             x = hitX;
             y = hitY;
             hithsp = other.image_xscale * 8;
@@ -702,7 +702,7 @@ function boss_pepperman_fistmatch()
         }
         
         sprite_index = idlespr;
-        state = UnknownEnum.Value_163;
+        state = states.fistmatchend;
         x = hitX;
         y = hitY;
         hithsp = -image_xscale * 8;

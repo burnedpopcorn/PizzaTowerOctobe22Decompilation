@@ -8,15 +8,15 @@ switch (state)
     case states.normal:
         with (obj_player)
         {
-            if (other.state == states.normal && state != UnknownEnum.Value_209 && other.trashbuffer <= 0 && place_meeting(x, y, other))
+            if (other.state == states.normal && state != states.trashjumpprep && other.trashbuffer <= 0 && place_meeting(x, y, other))
             {
-                state = UnknownEnum.Value_209;
+                state = states.trashjumpprep;
                 sprite_index = spr_player_trashstart;
                 image_index = 0;
                 xscale = other.image_xscale;
                 other.shot = false;
                 other.playerid = id;
-                other.state = UnknownEnum.Value_209;
+                other.state = states.trashjumpprep;
                 other.sprite_index = spr_trash_flingstart;
                 other.image_index = 0;
             }
@@ -24,7 +24,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_209:
+    case states.trashjumpprep:
         with (playerid)
         {
             if (floor(image_index) == (image_number - 1))

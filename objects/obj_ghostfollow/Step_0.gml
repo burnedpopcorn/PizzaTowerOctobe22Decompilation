@@ -34,7 +34,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_291:
+    case states.johnghost:
         var acc = 0.05;
         
         if (!fadein)

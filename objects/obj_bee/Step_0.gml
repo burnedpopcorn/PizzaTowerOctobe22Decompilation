@@ -4,7 +4,7 @@ switch (state)
         scr_bee_idle();
         break;
     
-    case UnknownEnum.Value_141:
+    case states.chase:
         scr_bee_chase();
         break;
     

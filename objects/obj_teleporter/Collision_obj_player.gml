@@ -2,7 +2,7 @@ if (player < obj_bossdoor)
 {
     if (start == 1)
     {
-        if (other.state != UnknownEnum.Value_297 && other.state != states.backbreaker && other.state != states.chainsaw && other.state != states.hit && other.state != states.gotoplayer)
+        if (other.state != states.teleport && other.state != states.backbreaker && other.state != states.chainsaw && other.state != states.hit && other.state != states.gotoplayer)
         {
             fmod_event_one_shot_3d("event:/sfx/misc/teleporterstart", x, y);
             player = other.id;
@@ -27,7 +27,7 @@ if (player < obj_bossdoor)
             player.alarm[7] = 50;
             player.alarm[5] = 2;
             player.hurted = true;
-            player.state = UnknownEnum.Value_297;
+            player.state = states.teleport;
             
             with (instance_create(player.x, player.y, obj_parryeffect))
                 sprite_index = spr_peppinoteleporteffect;

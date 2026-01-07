@@ -30,12 +30,12 @@ if (state == states.walk)
     }
     else
     {
-        state = UnknownEnum.Value_141;
+        state = states.chase;
         sprite_index = walkspr;
         image_index = 0;
     }
 }
-else if (state == UnknownEnum.Value_141)
+else if (state == states.chase)
 {
     if (sprite_index == spr_shrimp_throw)
         sprite_index = spr_shrimp_walk;
@@ -74,7 +74,7 @@ else if (state == UnknownEnum.Value_141)
     {
         if ((targetplayer.x > (x - attackthreshold_x) && targetplayer.x < (x + attackthreshold_x)) && (targetplayer.y > (y - attackthreshold_y) && targetplayer.y < (y + attackthreshold_y)) && (inst_front == -4 || (inst_front != -4 && x > inst_front.x && targetplayer.x > inst_front.x) || (inst_front != -4 && x < inst_front.x && targetplayer.x < inst_front.x)))
         {
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             hsp = 0;
             attack_count = attack_max;
         }
@@ -104,7 +104,7 @@ else if (state == UnknownEnum.Value_141)
         image_index = 0;
     }
     
-    if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != UnknownEnum.Value_128)
+    if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
     {
         vsp = -11;
         sprite_index = spr_shrimp_jump;
@@ -113,7 +113,7 @@ else if (state == UnknownEnum.Value_141)
     }
 }
 
-if (state == UnknownEnum.Value_128)
+if (state == states.charge)
 {
     if (attack_count > 0)
     {

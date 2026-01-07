@@ -17,7 +17,7 @@ if (state == 1)
         if (grav < 0)
             grav *= -1;
         
-        state = UnknownEnum.Value_217;
+        state = states.robotidle;
         event_perform(ev_other, ev_room_start);
     }
     

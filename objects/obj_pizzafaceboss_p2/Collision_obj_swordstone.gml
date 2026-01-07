@@ -1,2 +1,2 @@
-if (!throwsword && state != UnknownEnum.Value_240)
+if (!throwsword && state != states.pizzahead_pullinglevel)
     instance_destroy(other);

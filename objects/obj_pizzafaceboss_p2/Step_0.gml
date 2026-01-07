@@ -20,7 +20,7 @@ switch (state)
         scr_pizzaface_p2_look();
         break;
     
-    case UnknownEnum.Value_240:
+    case states.pizzahead_pullinglevel:
         boss_pizzahead_pullinglevel();
         break;
     
@@ -28,7 +28,7 @@ switch (state)
         boss_pizzahead_throwing();
         break;
     
-    case UnknownEnum.Value_237:
+    case states.pizzahead_portraitthrow:
         boss_pizzahead_portraitthrow();
         break;
     

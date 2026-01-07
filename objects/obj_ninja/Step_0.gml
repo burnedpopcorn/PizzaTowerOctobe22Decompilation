@@ -4,7 +4,7 @@ switch (state)
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
     
@@ -40,7 +40,7 @@ switch (state)
 if (sprite_index != spr_pizzaboy)
     usepalette = true;
 
-if (state != UnknownEnum.Value_128 && sprite_index != spr_pizzaboy)
+if (state != states.charge && sprite_index != spr_pizzaboy)
     scr_scareenemy();
 
 if (state == states.stun && stunned > 100 && birdcreated == false)
@@ -150,7 +150,7 @@ if (sprite_index == spr_pizzaboy)
             image_xscale = -sign(x - targetplayer.x);
             sprite_index = spr_ninja_uppercut;
             image_index = 0;
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             roaming = true;
             vsp = -14;
             hsp = image_xscale * 4;

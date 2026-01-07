@@ -76,7 +76,7 @@ switch (state)
         }
         else if (use_countdown)
         {
-            state = UnknownEnum.Value_145;
+            state = states.arenaround;
         }
         else
         {
@@ -94,7 +94,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_145:
+    case states.arenaround:
         var round_yto = 437;
         round_y = Approach(round_y, round_yto, 7);
         
@@ -155,9 +155,9 @@ switch (state)
                     y = hitY;
                 }
                 
-                if (colliding && state != UnknownEnum.Value_180 && state != UnknownEnum.Value_181)
+                if (colliding && state != states.cardboard && state != states.cardboardend)
                 {
-                    state = UnknownEnum.Value_145;
+                    state = states.arenaround;
                     attack_cooldown = attack_max[phase - 1];
                 }
             }

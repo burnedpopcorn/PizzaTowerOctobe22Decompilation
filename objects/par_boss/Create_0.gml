@@ -60,7 +60,7 @@ function SUPER_player_destroy(arg0)
         other.x = other.hitX;
         other.y = other.hitY;
         other.state = states.chainsaw;
-        other.hitstate = UnknownEnum.Value_145;
+        other.hitstate = states.arenaround;
         other.hitvsp = -4;
         other.hithsp = -other.image_xscale * 8;
         hitLag = lag;
@@ -96,7 +96,7 @@ function SUPER_boss_destroy(arg0)
     {
         camera_zoom(1, 0.1);
         
-        if (state == UnknownEnum.Value_162 || state == UnknownEnum.Value_160 || state == states.Parry || state == states.backbreaker)
+        if (state == states.fistmatch || state == states.superattack || state == states.Parry || state == states.backbreaker)
         {
             sprite_index = spr_player_attackdash;
             image_index = 6;

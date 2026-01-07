@@ -4,7 +4,7 @@ switch (state)
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         scr_enemy_charge();
         break;
     
@@ -46,9 +46,9 @@ if (state == states.stun && stunned > 40 && birdcreated == false)
 }
 
 if (state == states.walk)
-    state = UnknownEnum.Value_128;
+    state = states.charge;
 
-if (hitboxcreate == false && state == UnknownEnum.Value_128 && obj_player.state != states.mach3)
+if (hitboxcreate == false && state == states.charge && obj_player.state != states.mach3)
 {
     hitboxcreate = true;
     

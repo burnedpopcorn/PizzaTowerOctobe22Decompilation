@@ -69,7 +69,7 @@ function noise_do_attack_normal()
             image_index = 0;
             break;
         
-        case UnknownEnum.Value_167:
+        case states.skateboardturn:
             state = states.skateboard;
             skateboard_turns = 1;
             movespeed = 0;
@@ -77,7 +77,7 @@ function noise_do_attack_normal()
             image_index = 0;
             break;
         
-        case UnknownEnum.Value_168:
+        case states.bombkick:
             state = states.throwing;
             sprite_index = spr_playerN_noisebombkick;
             image_index = 0;
@@ -95,7 +95,7 @@ function noise_do_attack_normal()
             
             break;
         
-        case UnknownEnum.Value_169:
+        case states.bombpogo:
             state = states.pogo;
             bombpogo = true;
             pogospeed = 0;
@@ -112,7 +112,7 @@ function noise_do_attack_normal()
             pogo_buffer = pogo_max + (room_speed * irandom(pogo_random));
             break;
         
-        case UnknownEnum.Value_172:
+        case states.jetpackcancel:
             state = states.jetpackstart;
             jetpackcancel = true;
             sprite_index = spr_playerN_jetpackstart;
@@ -127,9 +127,9 @@ function noise_do_attack_normal()
             movespeed = 0;
             break;
         
-        case UnknownEnum.Value_173:
+        case states.jetpackspin:
             movespeed = 10;
-            state = UnknownEnum.Value_173;
+            state = states.jetpackspin;
             scr_soundeffect(sfx_jump);
             scr_soundeffect(sfx_woosh);
             vsp = -15;
@@ -166,7 +166,7 @@ function noise_do_attack_angry()
             image_index = 0;
             break;
         
-        case UnknownEnum.Value_167:
+        case states.skateboardturn:
             state = states.handstandjump;
             slide = false;
             skateboard_turns = 1;
@@ -190,7 +190,7 @@ function noise_do_attack_angry()
             image_index = 0;
             break;
         
-        case UnknownEnum.Value_168:
+        case states.bombkick:
             bombcount = 1;
             state = states.throwing;
             sprite_index = spr_playerN_noisebombkick;
@@ -210,7 +210,7 @@ function noise_do_attack_angry()
             
             break;
         
-        case UnknownEnum.Value_169:
+        case states.bombpogo:
             state = states.pogo;
             bombpogo = true;
             pogospeed = 0;
@@ -227,7 +227,7 @@ function noise_do_attack_angry()
             pogo_buffer = pogo_max + (room_speed * irandom(pogo_random));
             break;
         
-        case UnknownEnum.Value_172:
+        case states.jetpackcancel:
             jumpcount = 1;
             state = states.jetpackstart;
             jetpackcancel = true;
@@ -243,10 +243,10 @@ function noise_do_attack_angry()
             movespeed = 0;
             break;
         
-        case UnknownEnum.Value_173:
+        case states.jetpackspin:
             jumpcount = 1;
             movespeed = 10;
-            state = UnknownEnum.Value_173;
+            state = states.jetpackspin;
             scr_soundeffect(sfx_jump);
             scr_soundeffect(sfx_woosh);
             vsp = -15;
@@ -485,7 +485,7 @@ function boss_noise_crouchslide()
     
     if (slideskateboard && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
     {
-        state = UnknownEnum.Value_167;
+        state = states.skateboardturn;
         skateboard_turns = 1;
         movespeed = 12;
         sprite_index = spr_playerN_machslideboost;
@@ -547,7 +547,7 @@ function boss_noise_skateboard()
     
     if (skateboard_turns > 0 && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
     {
-        state = UnknownEnum.Value_167;
+        state = states.skateboardturn;
         movespeed = 12;
         sprite_index = spr_playerN_machslideboost;
         image_index = 0;
@@ -769,7 +769,7 @@ function boss_noise_jetpack()
         
         if (dx < 200)
         {
-            state = UnknownEnum.Value_173;
+            state = states.jetpackspin;
             scr_soundeffect(sfx_jump);
             scr_soundeffect(sfx_woosh);
             vsp = -15;
@@ -814,7 +814,7 @@ function boss_noise_jetpackspin()
         {
             jumpcount--;
             movespeed = 10;
-            state = UnknownEnum.Value_173;
+            state = states.jetpackspin;
             scr_soundeffect(sfx_jump);
             scr_soundeffect(sfx_woosh);
             vsp = -15;

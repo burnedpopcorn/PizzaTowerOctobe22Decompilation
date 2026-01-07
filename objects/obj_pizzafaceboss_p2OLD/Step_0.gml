@@ -20,35 +20,35 @@ switch (state)
         scr_pizzaface_p2_fishing();
         break;
     
-    case UnknownEnum.Value_235:
+    case states.pizzahead_bombrun:
         boss_pizzahead_bombrun();
         break;
     
-    case UnknownEnum.Value_236:
+    case states.pizzahead_npcthrow:
         boss_pizzahead_npcthrow();
         break;
     
-    case UnknownEnum.Value_237:
+    case states.pizzahead_portraitthrow:
         boss_pizzahead_portraitthrow();
         break;
     
-    case UnknownEnum.Value_238:
+    case states.pizzahead_enguarde:
         boss_pizzahead_enguarde();
         break;
     
-    case UnknownEnum.Value_239:
+    case states.pizzahead_sexypicture:
         boss_pizzahead_sexypicture();
         break;
     
-    case UnknownEnum.Value_240:
+    case states.pizzahead_pullinglevel:
         boss_pizzahead_pullinglevel();
         break;
     
-    case UnknownEnum.Value_241:
+    case states.pizzahead_eat:
         boss_pizzahead_eat();
         break;
     
-    case UnknownEnum.Value_242:
+    case states.pizzahead_surprisebox:
         boss_pizzahead_surprisebox();
         break;
 }

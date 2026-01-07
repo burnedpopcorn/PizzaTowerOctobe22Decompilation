@@ -14,7 +14,7 @@ function scr_enemy_idle()
         sprite_index = walkspr;
         
         if (object_index == obj_treasureguy)
-            state = UnknownEnum.Value_141;
+            state = states.chase;
         
         if (object_index == obj_pickle && attacking)
         {
@@ -48,7 +48,7 @@ function scr_enemy_idle()
     {
         image_xscale *= -1;
         sprite_index = walkspr;
-        state = UnknownEnum.Value_128;
+        state = states.charge;
     }
     
     if (sprite_index == spr_ghostknight_turn && floor(image_index) == (image_number - 1))

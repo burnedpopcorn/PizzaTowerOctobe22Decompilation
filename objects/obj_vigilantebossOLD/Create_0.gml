@@ -1,5 +1,5 @@
 event_inherited();
-state = UnknownEnum.Value_145;
+state = states.arenaround;
 ds_map_set(player_hurtstates, UnknownEnum.Value_42, 30);
 ds_map_set(player_hurtstates, UnknownEnum.Value_41, 50);
 ds_map_set(player_hurtstates, UnknownEnum.Value_104, 20);
@@ -9,7 +9,7 @@ ds_map_set(boss_hurtstates, UnknownEnum.Value_102, 30);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_82, 30);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_42, 30);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_80, 60);
-ds_map_set(boss_hurtstates, UnknownEnum.Value_166, 20);
+ds_map_set(boss_hurtstates, states.millionpunch, 20);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_108, 60);
 phase = 1;
 max_phase = 6;
@@ -40,8 +40,8 @@ normalattack_max[5] = 60;
 cancel_buffer = 0;
 cancel_max = ds_map_create();
 cancel_maxdefault = 60;
-ds_map_set(cancel_max, UnknownEnum.Value_166, millionpunch_max / 2);
-ds_map_set(cancel_max, UnknownEnum.Value_164, 10);
+ds_map_set(cancel_max, states.millionpunch, millionpunch_max / 2);
+ds_map_set(cancel_max, states.groundpunchstart, 10);
 ds_map_set(cancel_max, UnknownEnum.Value_1, 30);
 ds_map_set(cancel_max, UnknownEnum.Value_103, 120);
 combo_count = 0;
@@ -152,7 +152,7 @@ function player_hurt(arg0, arg1)
                 alarm[1] = 15;
             }
             
-            if (hitstate == UnknownEnum.Value_160)
+            if (hitstate == states.superattack)
             {
                 hithsp = 0;
                 hitvsp = 0;

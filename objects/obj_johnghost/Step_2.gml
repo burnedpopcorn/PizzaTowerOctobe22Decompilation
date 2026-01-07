@@ -11,14 +11,14 @@ switch (state)
         
         if (currentx == targetx)
         {
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             attack_buffer = attack_max;
         }
         
         y = Approach(y, playerid.y, 8);
         break;
     
-    case UnknownEnum.Value_128:
+    case states.charge:
         if (playerid.x != x)
             image_xscale = sign(playerid.x - x);
         

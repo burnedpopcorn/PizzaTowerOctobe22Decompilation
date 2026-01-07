@@ -1,6 +1,6 @@
 var baddie = id;
 
-if (state != UnknownEnum.Value_141)
+if (state != states.chase)
 {
     with (other)
     {
@@ -29,7 +29,7 @@ if (state != UnknownEnum.Value_141)
             }
         }
         
-        if (y >= other.y && other.thrown == false && other.stuntouchbuffer == 0 && other.vsp > 0 && state != states.bump && other.state != UnknownEnum.Value_141)
+        if (y >= other.y && other.thrown == false && other.stuntouchbuffer == 0 && other.vsp > 0 && state != states.bump && other.state != states.chase)
         {
             scr_soundeffect(sfx_bumpwall);
             

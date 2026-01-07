@@ -118,7 +118,7 @@ function tv_do_expression(arg0)
     {
         if (expressionsprite != arg0 && bubblespr == noone)
         {
-            state = UnknownEnum.Value_250;
+            state = states.tv_whitenoise;
             expressionsprite = arg0;
             
             switch (expressionsprite)

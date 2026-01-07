@@ -1,13 +1,13 @@
 event_inherited();
 
-if (state == UnknownEnum.Value_160)
+if (state == states.superattack)
 {
     boss_hurt_noplayer(350);
     targetstunned = 100;
     hithsp = 0;
     hitvsp = 0;
     hitLag = 20;
-    hitstate = UnknownEnum.Value_160;
+    hitstate = states.superattack;
     
     if (hp <= 0)
     {

@@ -1,6 +1,6 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 
-if (hp <= 0 && state != UnknownEnum.Value_145)
+if (hp <= 0 && state != states.arenaround)
 {
     if (!destroyed && !thrown && !destroyable)
         boss_destroy(lastplayerid);
@@ -8,7 +8,7 @@ if (hp <= 0 && state != UnknownEnum.Value_145)
 
 switch (state)
 {
-    case UnknownEnum.Value_145:
+    case states.arenaround:
         grav = 0.5;
         state_boss_arenaround();
         break;
@@ -18,17 +18,17 @@ switch (state)
         boss_mrstick_normal();
         break;
     
-    case UnknownEnum.Value_174:
+    case states.shield:
         grav = 0.5;
         boss_mrstick_shield();
         break;
     
-    case UnknownEnum.Value_175:
+    case states.helicopterhat:
         grav = 0.5;
         boss_mrstick_helicopterhat();
         break;
     
-    case UnknownEnum.Value_176:
+    case states.panicjump:
         grav = 0.5;
         boss_mrstick_panicjump();
         break;
@@ -38,32 +38,32 @@ switch (state)
         boss_mrstick_jump();
         break;
     
-    case UnknownEnum.Value_177:
+    case states.smokebombstart:
         grav = 0.5;
         boss_mrstick_smokebombstart();
         break;
     
-    case UnknownEnum.Value_178:
+    case states.smokebombcrawl:
         grav = 0.5;
         boss_mrstick_smokebombcrawl();
         break;
     
-    case UnknownEnum.Value_179:
+    case states.springshoes:
         grav = 0.5;
         boss_mrstick_springshoes();
         break;
     
-    case UnknownEnum.Value_180:
+    case states.cardboard:
         grav = 0.5;
         boss_mrstick_cardboard();
         break;
     
-    case UnknownEnum.Value_181:
+    case states.cardboardend:
         grav = 0.5;
         boss_mrstick_cardboardend();
         break;
     
-    case UnknownEnum.Value_182:
+    case states.mockery:
         grav = 0.5;
         boss_mrstick_mockery();
         break;
@@ -106,5 +106,5 @@ switch (state)
         break;
 }
 
-colliding = !(state == states.jump || state == UnknownEnum.Value_180 || state == UnknownEnum.Value_181);
-attacking = state == UnknownEnum.Value_174 || state == states.jump || state == UnknownEnum.Value_180 || state == UnknownEnum.Value_181 || state == UnknownEnum.Value_177;
+colliding = !(state == states.jump || state == states.cardboard || state == states.cardboardend);
+attacking = state == states.shield || state == states.jump || state == states.cardboard || state == states.cardboardend || state == states.smokebombstart;

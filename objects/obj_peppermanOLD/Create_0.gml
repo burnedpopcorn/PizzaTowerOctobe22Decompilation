@@ -1,5 +1,5 @@
 event_inherited();
-state = UnknownEnum.Value_145;
+state = states.arenaround;
 ds_map_set(player_hurtstates, UnknownEnum.Value_42, 30);
 ds_map_set(player_hurtstates, UnknownEnum.Value_41, 50);
 ds_map_set(player_hurtstates, UnknownEnum.Value_104, 20);
@@ -10,7 +10,7 @@ ds_map_set(player_hurtstates, UnknownEnum.Value_5, 20);
 ds_map_set(player_hurtstates, UnknownEnum.Value_97, 20);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_83, 60);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_153, 60);
-ds_map_set(boss_hurtstates, UnknownEnum.Value_157, 90);
+ds_map_set(boss_hurtstates, states.supershoulderbash, 90);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_76, 200);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_80, 30);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_108, 70);
@@ -139,7 +139,7 @@ function player_hurt(arg0, arg1)
         var _prevstate = state;
         SUPER_player_hurt(arg0, arg1);
         
-        if (_prevstate == states.shoulderbash || _prevstate == UnknownEnum.Value_157 || _prevstate == states.shoulder || _prevstate == states.superslam)
+        if (_prevstate == states.shoulderbash || _prevstate == states.supershoulderbash || _prevstate == states.shoulder || _prevstate == states.superslam)
         {
             with (obj_camera)
             {
@@ -191,14 +191,14 @@ function player_hurt(arg0, arg1)
             }
             
             sprite_index = spr_idle;
-            state = UnknownEnum.Value_162;
+            state = states.fistmatch;
             hitX = x;
             hitY = y;
             hsp = 0;
             vsp = 0;
             movespeed = 0;
             other.sprite_index = other.idlespr;
-            other.state = UnknownEnum.Value_162;
+            other.state = states.fistmatch;
             other.image_xscale = -xscale;
             other.hitX = x + (xscale * 16);
             other.hitY = y;

@@ -27,12 +27,12 @@ if (state == states.walk)
     }
     else
     {
-        state = UnknownEnum.Value_141;
+        state = states.chase;
         sprite_index = walkspr;
         image_index = 0;
     }
 }
-else if (state == UnknownEnum.Value_141)
+else if (state == states.chase)
 {
     if (abs(x - targetplayer.x) < 78)
     {
@@ -55,7 +55,7 @@ else if (state == UnknownEnum.Value_141)
     {
         if ((targetplayer.x > (x - attackthreshold_x) && targetplayer.x < (x + attackthreshold_x)) && (targetplayer.y > (y - attackthreshold_y) && targetplayer.y < (y + attackthreshold_y)) && (inst_front == -4 || (inst_front != -4 && x > inst_front.x && targetplayer.x > inst_front.x) || (inst_front != -4 && x < inst_front.x && targetplayer.x < inst_front.x)))
         {
-            state = UnknownEnum.Value_128;
+            state = states.charge;
             hsp = 0;
             attack_count = attack_max;
         }
@@ -65,11 +65,11 @@ else if (state == UnknownEnum.Value_141)
     var inst_down2 = collision_line(x + (sign(hsp) * 16), y, x + (sign(hsp) * 16), y + 64, obj_platform, false, true);
     var inst_up = collision_line(x + (sign(hsp) * 96), y + 25, x + (sign(hsp) * 96), (y - 78) + 50, obj_platform, false, true);
     
-    if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != UnknownEnum.Value_128)
+    if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
         vsp = -11;
 }
 
-if (state == UnknownEnum.Value_128)
+if (state == states.charge)
 {
     if (attack_count > 0)
     {

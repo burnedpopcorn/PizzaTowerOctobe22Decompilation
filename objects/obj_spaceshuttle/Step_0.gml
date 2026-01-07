@@ -11,11 +11,11 @@ if (state == states.hit)
     {
         x = hitX;
         y = hitY;
-        state = UnknownEnum.Value_292;
+        state = states.spaceshuttle;
         movespeed = 1;
     }
 }
-else if (state == UnknownEnum.Value_292)
+else if (state == states.spaceshuttle)
 {
     x = hitX + irandom_range(-2, 2);
     depth = -100;

@@ -1,6 +1,6 @@
 with (other)
 {
-    if (other.state == states.normal && state != UnknownEnum.Value_292 && key_up && grounded && ((state == states.ratmount && brick) || state == states.normal || state == states.mach1 || state == states.mach3 || state == states.pogo || state == states.mach3 || state == states.Sjumpprep))
+    if (other.state == states.normal && state != states.spaceshuttle && key_up && grounded && ((state == states.ratmount && brick) || state == states.normal || state == states.mach1 || state == states.mach3 || state == states.pogo || state == states.mach3 || state == states.Sjumpprep))
     {
         instance_create(x, y, obj_genericpoofeffect);
         other.state = states.hit;
@@ -16,7 +16,7 @@ with (other)
                 hsp = 0;
                 movespeed = 0;
                 vsp = 0;
-                state = UnknownEnum.Value_292;
+                state = states.spaceshuttle;
                 visible = false;
                 sprite_index = spr_idle;
             }

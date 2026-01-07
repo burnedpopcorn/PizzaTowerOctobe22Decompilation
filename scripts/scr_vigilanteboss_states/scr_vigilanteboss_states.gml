@@ -48,13 +48,13 @@ function vigilante_cancel_attack()
                 
                 break;
             
-            case UnknownEnum.Value_128:
+            case states.charge:
                 sprite_index = spr_playerV_divekickstart;
                 image_index = 0;
                 movespeed = 0;
                 break;
             
-            case UnknownEnum.Value_164:
+            case states.groundpunchstart:
                 vsp = -14;
                 image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : ((x < (room_width / 2)) ? 1 : -1);
                 sprite_index = spr_playerV_jump;
@@ -63,7 +63,7 @@ function vigilante_cancel_attack()
                 instance_create(x, y, obj_highjumpcloud2);
                 break;
             
-            case UnknownEnum.Value_166:
+            case states.millionpunch:
                 sprite_index = spr_playerV_crazyrun;
                 image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : ((x < (room_width / 2)) ? 1 : -1);
                 image_index = 0;
@@ -137,9 +137,9 @@ function boss_vigilante_decide_attack()
         
         if (important && (hp < duelhp_threshold || obj_bosscontroller.seconds < duelseconds_threshold))
         {
-            if (hitstate != UnknownEnum.Value_160)
+            if (hitstate != states.superattack)
             {
-                state = UnknownEnum.Value_158;
+                state = states.superattackstart;
                 duelintro_buffer = duelintro_max;
                 movespeed = 0;
                 
@@ -150,7 +150,7 @@ function boss_vigilante_decide_attack()
                 {
                     if (object_index == obj_player1 || global.coop)
                     {
-                        state = UnknownEnum.Value_158;
+                        state = states.superattackstart;
                         movespeed = 0;
                     }
                 }
@@ -165,7 +165,7 @@ function boss_vigilante_decide_attack()
             else if (grounded)
             {
                 sprite_index = idlespr;
-                state = UnknownEnum.Value_158;
+                state = states.superattackstart;
             }
         }
     }
@@ -240,15 +240,15 @@ function vigilante_decide_attack_phase4()
         var att_max = attack_max[phase - 1];
         attack_cooldown = att_max + irandom_range(-att_max, att_max + 20);
         attack_cooldown = (phase > 4) ? attack_max[phase - 1] : attack_cooldown;
-        state = choose(UnknownEnum.Value_164, UnknownEnum.Value_128, UnknownEnum.Value_166);
+        state = choose(states.groundpunchstart, states.charge, states.millionpunch);
         
-        if (state == UnknownEnum.Value_128)
+        if (state == states.charge)
         {
             sprite_index = spr_playerV_divekickstart;
             image_index = 0;
             movespeed = 0;
         }
-        else if (state == UnknownEnum.Value_164)
+        else if (state == states.groundpunchstart)
         {
             vsp = -14;
             image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : ((x < (room_width / 2)) ? 1 : -1);
@@ -257,7 +257,7 @@ function vigilante_decide_attack_phase4()
             movespeed = 0;
             instance_create(x, y, obj_highjumpcloud2);
         }
-        else if (state == UnknownEnum.Value_166)
+        else if (state == states.millionpunch)
         {
             sprite_index = spr_playerV_crazyrun;
             image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : ((x < (room_width / 2)) ? 1 : -1);
@@ -509,7 +509,7 @@ function boss_vigilante_normal()
     {
         if ((x < (room_width / 8) || x > (room_width - (room_width / 8))) && distance_to_object(targetplayer) < 172)
         {
-            state = UnknownEnum.Value_149;
+            state = states.float;
             
             if (phase == 3)
                 changeside_skid = true;
@@ -601,7 +601,7 @@ function boss_vigilante_revolver()
     }
     
     if (phase > 4)
-        vigilante_cancel_attack(states.dynamite, UnknownEnum.Value_128);
+        vigilante_cancel_attack(states.dynamite, states.charge);
 }
 
 function boss_vigilante_mach1()
@@ -662,7 +662,7 @@ function boss_vigilante_mach1()
     }
     
     if (phase > 4)
-        vigilante_cancel_attack(!honor ? states.revolver : states.handstandjump, UnknownEnum.Value_128);
+        vigilante_cancel_attack(!honor ? states.revolver : states.handstandjump, states.charge);
 }
 
 function boss_vigilante_crouchslide()
@@ -697,7 +697,7 @@ function boss_vigilante_crouchslide()
     }
     
     if (phase > 4)
-        vigilante_cancel_attack(UnknownEnum.Value_164, UnknownEnum.Value_128, UnknownEnum.Value_82);
+        vigilante_cancel_attack(states.groundpunchstart, states.charge, UnknownEnum.Value_82);
 }
 
 function boss_vigilante_machslide()
@@ -827,7 +827,7 @@ function boss_vigilante_punch()
     }
     
     if (phase > 4)
-        vigilante_cancel_attack(UnknownEnum.Value_164, UnknownEnum.Value_82);
+        vigilante_cancel_attack(states.groundpunchstart, UnknownEnum.Value_82);
 }
 
 function boss_vigilante_groundpunchstart()
@@ -964,7 +964,7 @@ function boss_vigilante_millionpunch()
         state = states.normal;
     
     if (phase > 4)
-        vigilante_cancel_attack(UnknownEnum.Value_164, UnknownEnum.Value_82);
+        vigilante_cancel_attack(states.groundpunchstart, UnknownEnum.Value_82);
 }
 
 function boss_vigilante_uppunch()
@@ -1062,12 +1062,12 @@ function boss_vigilante_superattackstart()
     
     if (x == tx && obj_player1.x == tx2)
     {
-        state = UnknownEnum.Value_160;
+        state = states.superattack;
         
         with (lastplayerid)
         {
             if (object_index == obj_player1 || global.coop)
-                state = UnknownEnum.Value_160;
+                state = states.superattack;
         }
         
         duel_buffer = duel_max + irandom(duel_random);
@@ -1125,9 +1125,9 @@ function boss_vigilante_superattack()
     
     with (lastplayerid)
     {
-        if (state != UnknownEnum.Value_160 && state != states.hit && state != states.thrown && state != states.chainsaw)
+        if (state != states.superattack && state != states.hit && state != states.thrown && state != states.chainsaw)
         {
-            state = UnknownEnum.Value_160;
+            state = states.superattack;
             x = room_width / 3;
         }
         

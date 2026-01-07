@@ -4,7 +4,7 @@ function scr_hillbilly_idle()
     
     if ((global.monsterspeed >= 1 && point_in_camera(x, y, view_camera[0])) || distance_to_pos(x, y, playerinst.x, playerinst.y, 480, 270))
     {
-        state = UnknownEnum.Value_141;
+        state = states.chase;
         image_xscale = (playerinst.x > x) ? 1 : -1;
     }
 }
@@ -49,7 +49,7 @@ function scr_hillbilly_machslide()
     else
     {
         image_xscale = (playerinst.x > x) ? 1 : -1;
-        state = UnknownEnum.Value_141;
+        state = states.chase;
     }
 }
 
@@ -64,7 +64,7 @@ function scr_hillbilly_detect()
     if (_col == -4 && _player_colX && _player_colY)
     {
         image_xscale = (playerinst.x > x) ? 1 : -1;
-        state = UnknownEnum.Value_141;
+        state = states.chase;
         sprite_index = chasespr;
         image_index = 0;
     }

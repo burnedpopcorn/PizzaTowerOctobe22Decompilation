@@ -1,4 +1,4 @@
-if (other.state == states.knightpep && state == UnknownEnum.Value_238 && vsp > 0)
+if (other.state == states.knightpep && state == states.pizzahead_enguarde && vsp > 0)
 {
     scr_soundeffect(sfx_punch);
     hp--;
