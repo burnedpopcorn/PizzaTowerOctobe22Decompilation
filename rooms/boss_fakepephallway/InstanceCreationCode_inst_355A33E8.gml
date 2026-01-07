@@ -1,0 +1,1 @@
+targetRoom = boss_fakepepkey;
