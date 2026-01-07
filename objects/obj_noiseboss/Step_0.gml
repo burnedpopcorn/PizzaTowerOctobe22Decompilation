@@ -69,7 +69,7 @@ switch (state)
         scr_noise_noisecrusher();
         break;
     
-    case states.spin:
+    case states.pizzahead_spinningkick:
         scr_noise_spin();
         break;
     

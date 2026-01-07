@@ -40,7 +40,7 @@ switch (state)
         normal_func();
         break;
     
-    case states.ram:
+    case states.pizzaface_ram:
         grav = 0.5;
         boss_pizzaface_ram();
         break;
@@ -69,11 +69,11 @@ switch (state)
         boss_pizzaface_phase2transition();
         break;
     
-    case states.look:
+    case states.pizzahead_look:
         boss_pizzahead_look();
         break;
     
-    case states.fishing:
+    case states.pizzahead_fishing:
         boss_pizzahead_fishing();
         break;
     
@@ -113,7 +113,7 @@ switch (state)
         boss_pizzahead_spinningrun();
         break;
     
-    case states.spin:
+    case states.pizzahead_spinningkick:
         boss_pizzahead_spinningkick();
         break;
     
@@ -178,13 +178,13 @@ switch (state)
         break;
 }
 
-if (phase == 0 && state != states.ram)
+if (phase == 0 && state != states.pizzaface_ram)
     invincible = true;
 else
     invincible = false;
 
-attacking = state == states.ram || state == UnknownEnum.Value_229 || state == states.spin || state == UnknownEnum.Value_245 || state == UnknownEnum.Value_246 || state == UnknownEnum.Value_248 || state == UnknownEnum.Value_249;
-colliding = state != states.ram;
+attacking = state == states.pizzaface_ram || state == UnknownEnum.Value_229 || state == states.pizzahead_spinningkick || state == UnknownEnum.Value_245 || state == UnknownEnum.Value_246 || state == UnknownEnum.Value_248 || state == UnknownEnum.Value_249;
+colliding = state != states.pizzaface_ram;
 
 if (phase > 0)
 {

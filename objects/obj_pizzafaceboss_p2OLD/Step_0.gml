@@ -12,11 +12,11 @@ switch (state)
         scr_pizzaface_p2_normal();
         break;
     
-    case states.look:
+    case states.pizzahead_look:
         scr_pizzaface_p2_look();
         break;
     
-    case states.fishing:
+    case states.pizzahead_fishing:
         scr_pizzaface_p2_fishing();
         break;
     

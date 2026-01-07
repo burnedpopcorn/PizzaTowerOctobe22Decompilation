@@ -41,9 +41,7 @@ function scr_collide()
             repeat (abs(target_y - y))
             {
                 if (!scr_solid(x, y + sv))
-                {
                     y += sv;
-                }
                 else
                 {
                     vsp = 0;
@@ -89,9 +87,7 @@ function scr_collide()
                 }
                 
                 if (!scr_solid(x + sh, y))
-                {
                     x += sh;
-                }
                 else
                 {
                     hsp = 0;

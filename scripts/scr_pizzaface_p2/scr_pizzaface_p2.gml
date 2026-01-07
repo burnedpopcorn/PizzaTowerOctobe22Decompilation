@@ -102,7 +102,7 @@ function scr_pizzaface_p2_normal()
             
             if (grounded && vsp > 0 && place_meeting(x + (sign(hsp) * 64), y, obj_solid))
             {
-                state = states.fishing;
+                state = states.pizzahead_fishing;
                 hsp = 0;
                 sprite_index = spr_pizzahead_grabitem;
                 image_index = 0;
@@ -143,7 +143,7 @@ function scr_pizzaface_p2_look()
     }
     else
     {
-        state = states.fishing;
+        state = states.pizzahead_fishing;
         fishingbuffer = 80;
         fishcount = irandom_range(1, 3);
     }

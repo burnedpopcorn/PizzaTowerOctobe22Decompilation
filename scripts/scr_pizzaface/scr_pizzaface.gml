@@ -115,7 +115,7 @@ function scr_pizzaface_normal()
                     else
                     {
                         nosespit = true;
-                        state = states.ram;
+                        state = states.pizzaface_ram;
                         sprite_index = spr_pizzaface_attackstart;
                         image_index = 0;
                         substate = states.arenaintro;
@@ -198,7 +198,7 @@ function scr_pizzaface_ram()
             
             if (floor(image_index) == (image_number - 1))
             {
-                substate = states.ram;
+                substate = states.pizzaface_ram;
                 var s = wastedhits;
                 ramhsp = lengthdir_x(18 + s, ramdir);
                 ramvsp = lengthdir_y(18 + s, ramdir);
@@ -207,7 +207,7 @@ function scr_pizzaface_ram()
             
             break;
         
-        case states.ram:
+        case states.pizzaface_ram:
             hsp = ramhsp;
             vsp = ramvsp;
             

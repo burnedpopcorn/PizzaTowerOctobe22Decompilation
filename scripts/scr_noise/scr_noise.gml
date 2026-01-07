@@ -174,7 +174,7 @@ function scr_noise_walk()
             {
                 image_index = 0;
                 sprite_index = spr_playerN_spin;
-                state = states.spin;
+                state = states.pizzahead_spinningkick;
             }
         }
         else if (flickertime <= 0)

@@ -1,6 +1,6 @@
 if (phase == 0 && attacking)
 {
-    if (state == states.ram)
+    if (state == states.pizzaface_ram)
     {
         if (other.state == states.backbreaker && other.parry_inst != -4)
         {

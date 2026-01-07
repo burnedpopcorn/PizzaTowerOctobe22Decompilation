@@ -1,4 +1,4 @@
-if (state == states.ram && substate == states.ram)
+if (state == states.pizzaface_ram && substate == states.pizzaface_ram)
 {
     if (other.flash)
         other.flash = false;

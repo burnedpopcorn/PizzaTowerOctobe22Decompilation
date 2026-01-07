@@ -1,4 +1,4 @@
-if ((state == states.mach2 && hsp != 0) || (state == states.spin && image_index > 3) || (state == states.freefall && !grounded) || state == states.machslide || state == states.pogo || state == states.jetpack || state == states.bounce)
+if ((state == states.mach2 && hsp != 0) || (state == states.pizzahead_spinningkick && image_index > 3) || (state == states.freefall && !grounded) || state == states.machslide || state == states.pogo || state == states.jetpack || state == states.bounce)
 {
     if (other.flash)
         other.flash = false;

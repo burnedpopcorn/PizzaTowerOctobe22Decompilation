@@ -12,7 +12,7 @@ switch (state)
         scr_pizzaface_normal();
         break;
     
-    case states.ram:
+    case states.pizzaface_ram:
         scr_pizzaface_ram();
         break;
     
@@ -117,7 +117,7 @@ if (!invincible && !flash && alarm[5] < 0)
 else if (invincible)
     flash = false;
 
-if (state == states.ram && alarm[4] < 0)
+if (state == states.pizzaface_ram && alarm[4] < 0)
     alarm[4] = 6;
 
 if (state == states.stun && thrown)

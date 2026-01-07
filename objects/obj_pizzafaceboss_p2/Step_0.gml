@@ -12,11 +12,11 @@ switch (state)
         scr_pizzaface_p2_normal();
         break;
     
-    case states.fishing:
+    case states.pizzahead_fishing:
         scr_pizzaface_p2_fishing();
         break;
     
-    case states.look:
+    case states.pizzahead_look:
         scr_pizzaface_p2_look();
         break;
     
@@ -119,7 +119,7 @@ if (state == states.stun && savedthrown == thrown && !savedthrown)
 else
     invincible = true;
 
-if (state == states.ram && alarm[4] < 0)
+if (state == states.pizzaface_ram && alarm[4] < 0)
     alarm[4] = 6;
 
 mask_index = spr_pizzahead_idle;
