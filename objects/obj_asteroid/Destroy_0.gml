@@ -1,0 +1,25 @@
+if (ds_list_find_index(global.saveroom, id) == -1)
+{
+    ds_list_add(global.saveroom, id);
+    scr_fmod_soundeffect(global.snd_collect, x, y);
+    global.heattime += 10;
+    global.heattime = clamp(global.heattime, 0, 60);
+    global.combotime = 60;
+    
+    with (obj_camera)
+        healthshaketime = 30;
+    
+    global.collect += 100;
+    
+    with (instance_create(x, y, obj_smallnumber))
+        number = string(100);
+    
+    notification_push(notifications.baddie_killed_projectile, [object_index]);
+    var sep = 100;
+    
+    repeat (10)
+    {
+        with (create_debris(irandom_range((x + (sprite_width / 2)) - sep, x + (sprite_width / 2) + sep), irandom_range((y + (sprite_height / 2)) - sep, y + (sprite_height / 2) + sep), spr_meteordebris))
+            vsp = irandom_range(-6, -14);
+    }
+}

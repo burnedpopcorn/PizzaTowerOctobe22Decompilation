@@ -1,0 +1,86 @@
+{
+  "spriteId": {
+    "name": "spr_horsey",
+    "path": "sprites/spr_horsey/spr_horsey.yy"
+  },
+  "solid": false,
+  "visible": true,
+  "managed": false,
+  "spriteMaskId": null,
+  "persistent": false,
+  "parentObjectId": null,
+  "physicsObject": false,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsGroup": 1,
+  "physicsDensity": 0.5,
+  "physicsRestitution": 0.1,
+  "physicsLinearDamping": 0.1,
+  "physicsAngularDamping": 0.1,
+  "physicsFriction": 0.2,
+  "physicsStartAwake": true,
+  "physicsKinematic": false,
+  "physicsShapePoints": [],
+  "eventList": [
+    {
+      "isDnD": false,
+      "eventNum": 0,
+      "eventType": 0,
+      "collisionObjectId": null,
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": ""
+    },
+    {
+      "isDnD": false,
+      "eventNum": 0,
+      "eventType": 3,
+      "collisionObjectId": null,
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": ""
+    },
+    {
+      "isDnD": false,
+      "eventNum": 0,
+      "eventType": 4,
+      "collisionObjectId": {
+        "name": "obj_raceend",
+        "path": "objects/obj_raceend/obj_raceend.yy"
+      },
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": ""
+    },
+    {
+      "isDnD": false,
+      "eventNum": 0,
+      "eventType": 4,
+      "collisionObjectId": {
+        "name": "obj_horseyright",
+        "path": "objects/obj_horseyright/obj_horseyright.yy"
+      },
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": ""
+    },
+    {
+      "isDnD": false,
+      "eventNum": 4,
+      "eventType": 7,
+      "collisionObjectId": null,
+      "resourceType": "GMEvent",
+      "resourceVersion": "1.0",
+      "name": ""
+    }
+  ],
+  "properties": [],
+  "overriddenProperties": [],
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_horsey",
+  "parent": {
+    "name": "World 2",
+    "path": "folders/Objects/Level Specific/World 2.yy",
+  }
+}

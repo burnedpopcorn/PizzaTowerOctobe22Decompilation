@@ -1,0 +1,33 @@
+var lay_id = layer_get_id("Backgrounds_1");
+var back_id = layer_background_get_id(lay_id);
+var lay_id2 = layer_get_id("Backgrounds_2");
+var back_id2 = layer_background_get_id(lay_id2);
+var lay_id3 = layer_get_id("Backgrounds_3");
+var back_id3 = layer_background_get_id(lay_id3);
+
+if (global.panic == true && layer_background_get_sprite(back_id) == 2109)
+    layer_background_sprite(back_id, bg_castle3escape);
+
+if (global.panic == true && layer_background_get_sprite(back_id) == 2105)
+    layer_background_sprite(back_id, bg_castle4escape);
+
+if (global.panic == true && layer_background_get_sprite(back_id3) == 2113)
+    layer_background_sprite(back_id3, bg_castle1escape);
+
+if (global.panic == true && layer_background_get_sprite(back_id) == 2051)
+    layer_background_sprite(back_id, bg_factory3escape);
+
+if (global.panic == true && layer_background_get_sprite(back_id) == 2055)
+    layer_background_sprite(back_id, bg_factory1escape);
+
+if (global.panic == true && layer_background_get_sprite(back_id2) == 2060)
+    layer_background_sprite(back_id2, bg_factory2escape);
+
+if (global.panic == true && layer_background_get_sprite(back_id) == 2174)
+    layer_background_sprite(back_id, bg_sewer1escape);
+
+if (global.panic == true && layer_background_get_sprite(back_id2) == 2172)
+    layer_background_sprite(back_id2, bg_sewer2escape);
+
+if (global.panic == true && layer_background_get_sprite(back_id3) == 2166)
+    layer_background_sprite(back_id3, bg_sewer3escape);

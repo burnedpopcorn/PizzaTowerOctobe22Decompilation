@@ -1,0 +1,143 @@
+# -----------
+# PROPERTIES
+# -----------
+lang = "en"
+display_name = "ENGLISH"
+custom_fonts = false
+
+# --------------------
+# CUSTOM FONT EXAMPLE
+# --------------------
+# tutorialfont_dir = "fonts/tutorial_en.png"
+# tutorialfont_map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!,.:"
+# tutorialfont_sep = "2"
+# creditsfont_dir = "fonts/credits_en.png"
+# creditsfont_map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!,.:"
+# creditsfont_sep = "2"
+# bigfont_dir = "fonts/bigfont_en.png"
+# bigfont_map = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:"
+# bigfont_sep = "0"
+# smallfont_dir = "fonts/smallfont_en.png"
+# smallfont_map "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890"
+# smallfont_sep = "0"
+
+tutorialfont = "tutorialfont_en"
+creditsfont = "creditsfont_en"
+bigfont = "bigfont_en"
+smallfont = "smallfont_en"
+
+# -------------
+# GAMEPAD ICONS
+# -------------
+# [U] Up
+# [L] Left
+# [R] Right
+# [D] Down
+# [F] Forward
+# [B] Backwards
+# [G] Grab
+# [M] Mach
+# [J] Jump
+# [S] Shoot
+# --------
+# EFFECTS
+# --------
+# / end effect
+# {s} shake
+
+# ---------
+# TUTORIAL
+# ---------
+tutorial1 = "Hold [D] and a direction to crawl!"
+tutorial2 = "You can break marble and metal blocks underneath you with a bodyslam! Press [D] while in the air!"
+tutorial3 = "Start the bodyslam from higher to destroy metal blocks!"
+tutorial4 = "Some blocks may be hidden, keep an eye out for them!"
+tutorial5 = "Press [G] to do the Grab Dash! It can destroy marble blocks!"
+tutorial6 = "Hold [M] to start Mach Run! If you hold [M] then jump on a wall, you will start wall running!"
+tutorial7 = "Press [J] while wall running to jump off the wall! Keep [M] held to stick on the other walls!"
+tutorial8 = "Press [G] then hold [M] for a quick start with the Mach Run! Try it out!"
+tutorial9 = "You can also jump after pressing [G] in order to do a long jump!"
+tutorial10 = "You can also simply run up a slope next to a wall automatically start wall running!"
+tutorial11 = "While doing Mach Run, hold [D] to destroy blocks in a small gap!"
+tutorial12 = "Release [D] and keep holding [M] to continue the Mach Run!"
+tutorial13 = "Hold [D] during a Mach Run while in the air to do a dive!"
+tutorial14 = "In order to destroy metal blocks, you need to gain speed by doing the Mach Run. You can hold [F] to go even faster too!"
+tutorial15 = "Running down a slope will make you go faster!"
+tutorial16 = "To turn while retaining Mach Run, press the opposite direction."
+tutorial17 = "Try turning before falling down a hole, you will retain your speed once on the ground"
+tutorial18 = "While at high speed, hold [U] then release it to perform the Super Jump! You can also adjust your position with [L][R] while you are holding [U]!"
+tutorial19 = "After starting a Super Jump, you can also dash forward in the air by pressing [G]! Give it a try!"
+tutorial20 = "Another trick: Press [G] then [D] immediatly to go through gaps faster!"
+tutorial21 = "You can grab things with the Grab Dash and throw them by pressing [G] again!"
+tutorial22 = "If you hold [U] before throwing, you will send the things up!"
+tutorial23 = "Collect these in order to get a better rank! Some can only be acquired during the escape..."
+tutorial24 = "These are much more important! You need to save most of these in order to progress!"
+tutorial25 = "Destroy John the pillar in order to open the exit gate. This will reverse the solid pillar blocks!"
+tutorial_lap = "Har, har! Enter this portal when the pillar has been taken down... If you dare! You will have to do another loop around the level, so be sure to have the time for it!"
+
+# -----------------
+# GUSTAVO TUTORIAL
+# -----------------
+forest1 = "Hold [M] to move faster and destroy metal blocks!"
+forest2 = "Press [U][G] to kick the rat!"
+forest3 = "Press [J] in the air to do a double jump! You can cancel out of it with another move too!"
+forest4 = "Press [D] middair to quickly go down!"
+forest5 = "The double jump can also destroy metal blocks underneath!"
+forest6 = "While doing the double jump, hold [J] while holding in the direction of a wall to climb it!"
+
+# -------------------
+# TRANSFORMATION TIPS
+# -------------------
+knighttip = "{s}[J][J] Double Jump [J][D] Down Thrust/"
+firemouthtip = "{s}[J][G] Air Dash/"
+shotguntip = "{s}[G] Shoot [J][D] Shoot down/"
+boxxedtip = "{s}[J] Flap [G] Spin/"
+morttip = "{s}[J][J] Double Jump [G] Attack/"
+ghosttip = "{s}[U][D][L][R] Move/"
+rockettip = "{s}[B] Change Direction [J] Jump/"
+barreltip = "{s}[M] Slide/"
+balloontip = "{s}[J] Jump/"
+gravesurftip = "{s}[J] Jump/"
+jetpack1tip = "{s}[G] Dash/"
+jetpack2tip = "{s}[J][J] or [U][J] Double Jump/"
+trashrolltip = "{s}[J] Jump/"
+antigravtip = "{s}[J] Pop/"
+cheesedtip = "{s}[F][J] Stick to wall [J] Walljump/"
+golftip = "{s}[U][D][L][R] Aim [G] Shoot/"
+weenietip = "{s}[J] Jump/"
+crosspriesttip = "{s}Kill the ghosts!!/"
+
+# ---------------
+# OPTIONS TEXT
+# ---------------
+pause_resume = "RESUME"
+pause_options = "OPTIONS"
+pause_restart = "RESTART LEVEL"
+pause_exit = "EXIT LEVEL"
+
+option_audio = "AUDIO"
+option_video = "VIDEO"
+option_controls = "CONTROLS"
+option_game = "GAME"
+
+option_back = "BACK"
+option_on = "ON"
+option_off = "OFF"
+
+option_master = "MASTER"
+option_music = "MUSIC"
+option_sfx = "SFX"
+
+option_fullscreen = "FULLSCREEN"
+option_resolution = "RESOLUTION"
+option_scaling = "SCALING"
+option_scaling_fit = "FIT"
+option_scaling_pp = "PIXEL PERFECT"
+option_scaling_expand = "EXPAND"
+option_hud = "SHOW HUD"
+
+option_lang = "LANGUAGE"
+option_timer = "TIMER"
+option_timer_type = "TIMER TYPE"
+option_timer_level = "PER LEVEL"
+option_timer_save = "PER SAVE"

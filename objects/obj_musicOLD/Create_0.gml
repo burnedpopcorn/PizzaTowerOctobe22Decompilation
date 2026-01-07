@@ -1,0 +1,16 @@
+pausedmusic = 0;
+fadeoff = 0;
+global.music = 0;
+roomname = 671;
+arena = false;
+global.mu = -4;
+music = -4;
+secretmusic = -4;
+musicID = -4;
+secretmusicID = -4;
+pillarmusicID = -4;
+secret = false;
+secretend = false;
+pillar_on_camera = false;
+prevpillar_on_camera = false;
+room_arr = [[60, mu_title, mu_medievalsecret, false], [418, mu_entrance, mu_medievalsecret, false], [470, mu_dungeon, mu_dungeonsecret, false], [484, mu_dungeon, mu_dungeonsecret, true], [486, mu_dungeondepth, mu_dungeonsecret, true], [688, mu_chateau, mu_medievalsecret, false], [690, mu_strongcold, mu_medievalsecret, false], [703, mu_dungeondepth, mu_medievalsecret, false], [434, mu_medievalentrance, mu_medievalsecret, false], [435, mu_medievalentrance, mu_medievalsecret, true], [436, mu_medievalremix, mu_medievalsecret, true], [440, mu_medievalremix, mu_medievalsecret, true], [442, mu_medieval, mu_medievalsecret, true], [451, mu_ruin, mu_ruinsecret, false], [458, mu_ruin, mu_ruinsecret, true], [460, mu_ruinremix, mu_ruinsecret, true], [190, mu_desert, mu_desertsecret, false], [330, mu_desert, mu_desertsecret, true], [273, mu_ufo, mu_desertsecret, true], [186, mu_ufo, mu_desertsecret, true], [128, mu_desert, mu_desertsecret, true], [610, mu_forest, mu_medievalsecret, false], [5, mu_forest, mu_medievalsecret, true], [12, mu_gustavo, mu_medievalsecret, false], [615, mu_forest, mu_medievalsecret, true], [666, mu_chateau, mu_medievalsecret, false], [90, mu_sewer, mu_medievalsecret, false], [94, mu_freezer, mu_medievalsecret, false], [216, mu_kidsparty, mu_medievalsecret, false], [650, mu_minigolf, mu_medievalsecret, false], [578, mu_industrial, mu_medievalsecret, false], [140, mu_street, mu_medievalsecret, false], [545, mu_farm, mu_farmsecret, false], [663, mu_pinball, mu_pinballsecret, false], [529, mu_graveyard, mu_medievalsecret, false], [34, mu_saloon, mu_saloonsecret, false], [567, mu_ufo, mu_pinballsecret, false], [114, mu_beach, mu_medievalsecret, false], [139, mu_war, mu_medievalsecret, false], [258, mu_finalescape, mu_dungeonsecret, false], [88, mu_title, mu_dungeonsecret, false], [312, mu_hub, mu_dungeonsecret, false], [248, mu_hub, mu_dungeonsecret, true], [292, mu_hub, mu_dungeonsecret, true], [267, mu_hub3, mu_dungeonsecret, true], [335, mu_hub4, mu_dungeonsecret, true], [339, mu_hub, mu_dungeonsecret, true]];

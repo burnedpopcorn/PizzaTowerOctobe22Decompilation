@@ -1,0 +1,97 @@
+function menu_goto(arg0)
+{
+    menu = 0;
+    
+    for (var i = 0; i < array_length(menus); i++)
+    {
+        var b = menus[i];
+        
+        if (b.menu_id == arg0)
+        {
+            menu = i;
+            break;
+        }
+    }
+    
+    optionselected = 0;
+}
+
+function create_menu_fixed(arg0, arg1, arg2, arg3)
+{
+    return 
+    {
+        menu_id: arg0,
+        type: UnknownEnum.Value_0,
+        anchor: arg1,
+        xpad: arg2,
+        ypad: arg3,
+        options: []
+    };
+}
+
+function add_option_press(arg0, arg1, arg2, arg3)
+{
+    var b = 
+    {
+        option_id: arg1,
+        type: UnknownEnum.Value_2,
+        func: arg3,
+        name: arg2
+    };
+    array_push(arg0.options, b);
+    return b;
+}
+
+function add_option_toggle(arg0, arg1, arg2, arg3 = -4)
+{
+    var b = 
+    {
+        option_id: arg1,
+        type: UnknownEnum.Value_0,
+        value: false,
+        name: arg2,
+        on_changed: arg3
+    };
+    array_push(arg0.options, b);
+    return b;
+}
+
+function add_option_multiple(arg0, arg1, arg2, arg3, arg4 = -4)
+{
+    var b = 
+    {
+        option_id: arg1,
+        type: UnknownEnum.Value_1,
+        values: arg3,
+        value: 0,
+        name: arg2,
+        on_changed: arg4
+    };
+    array_push(arg0.options, b);
+    return b;
+}
+
+function create_option_value(arg0, arg1, arg2 = true)
+{
+    return 
+    {
+        name: arg0,
+        value: arg1,
+        localization: arg2
+    };
+}
+
+function add_option_slide(arg0, arg1, arg2, arg3 = noone)
+{
+    var b = 
+    {
+        option_id: arg1,
+        type: UnknownEnum.Value_3,
+        value: 100,
+        moved: false,
+        name: arg2,
+        on_changed: arg3
+    };
+    array_push(arg0.options, b);
+    return b;
+}

@@ -1,0 +1,1 @@
+baddieid = obj_bossdoor;
