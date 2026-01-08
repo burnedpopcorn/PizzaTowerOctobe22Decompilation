@@ -1,3 +1,42 @@
+// TODO because i like pain
+// shift all entries values down two
+// also fix all notification_push() uses
+
+// also maybe change the names of these
+// idk yet tho
+enum notifications
+{
+	//bodyslam_start = 0,
+	//bodyslam_end = 1,
+	generic_killed = 2,
+	room_enemiesdead = 3,
+	enemy_parried = 4,
+	level_finished = 5,
+	mortcube_destroyed = 6,
+	hurt = 7,
+	fell_into_pit = 8,
+	beer_knocked = 9,
+	touched_timedgate = 10,
+	flush_done = 11,
+	baddie_killed_projectile = 12,
+	treasureguy_uncovered = 13,
+	special_destroyable_destroyed = 14,
+	custom_destructibles_destroyed = 15,
+	pizzaball_shot = 16,
+	pizzaball_kill = 17,
+	pizzaball_goal = 18,
+	brickball_start = 19,
+	john_destroyed = 20,
+	brickball_kill = 21,
+	pigcitizen_taunt = 22,
+	pizzaboy_killed = 23,
+	touched_mrpinch = 24,
+	priest_touched = 25,
+	secret_entered = 26,
+	secret_exited = 27,
+	iceblock_bird_freed = 28
+};
+
 function add_achievement_update(arg0, arg1, arg2, arg3)
 {
     var q = 
