@@ -1,4 +1,4 @@
-notification_push(UnknownEnum.Value_17, [room]);
+notification_push(notifs.brickball_start, [room]);
 image_speed = 0.5;
 hsp = 0;
 vsp = 0;

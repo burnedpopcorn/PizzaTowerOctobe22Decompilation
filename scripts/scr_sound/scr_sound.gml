@@ -5,21 +5,21 @@ function scr_sound()
     audio_sound_gain(global.music, 0.6 * global.option_music_volume, 0);
 }
 
-function scr_music(arg0, arg1 = true, arg2 = 0.8)
+function scr_music(_snd, _loop = true, _gain = 0.8)
 {
-    var m = audio_play_sound(arg0, 10, arg1);
-    audio_sound_gain(m, audio_sound_get_gain(arg0) * arg2 * global.option_music_volume, 0);
+    var m = audio_play_sound(_snd, 10, _loop);
+    audio_sound_gain(m, audio_sound_get_gain(_snd) * _gain * global.option_music_volume, 0);
     return m;
 }
 
-function set_master_gain(arg0)
+function set_master_gain(_gain)
 {
     var num = audio_get_listener_count();
     
     for (var i = 0; i < num; i++)
     {
         var info = audio_get_listener_info(i);
-        audio_set_master_gain(ds_map_find_value(info, "index"), arg0);
+        audio_set_master_gain(ds_map_find_value(info, "index"), _gain);
         ds_map_destroy(info);
     }
 }

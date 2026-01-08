@@ -64,7 +64,7 @@ switch (state)
             if (ds_list_find_index(global.saveroom, id) == -1)
             {
                 ds_list_add(global.saveroom, id);
-                notification_push(UnknownEnum.Value_19, [room, id]);
+                notification_push(notifs.pigcitizen_taunt, [room, id]);
             }
         }
         

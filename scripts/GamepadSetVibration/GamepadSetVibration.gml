@@ -1,5 +1,5 @@
-function GamepadSetVibration(arg0, arg1, arg2, arg3)
+function GamepadSetVibration(_player, _left_motor, _right_motor, _force)
 {
     with (obj_inputAssigner)
-        setVibration(arg0, arg1, arg2, arg3);
+        setVibration(_player, _left_motor, _right_motor, _force);
 }

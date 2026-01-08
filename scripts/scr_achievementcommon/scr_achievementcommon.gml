@@ -1,11 +1,11 @@
-function add_secrets_achievement(arg0, arg1)
+function add_secrets_achievement(_secret, _levelarray)
 {
-    var b = add_achievement_notify(concat("secrets", arg0), -4, function(arg0)
+    var b = add_achievement_notify(concat("secrets", _secret), noone, function(_data)
     {
-        var type = arg0[0];
-        var arr = arg0[1];
+        var type = _data[0];
+        var arr = _data[1];
         
-        if (type == UnknownEnum.Value_3)
+        if (type == notifs.level_finished)
         {
             var n = levelarray;
             var _unfinished = false;
@@ -23,13 +23,14 @@ function add_secrets_achievement(arg0, arg1)
             ini_close();
             
             if (!_unfinished)
-                achievement_unlock(name, -4, spr_achievement_farm, 0);
+                achievement_unlock(name, noone, spr_achievement_farm, 0);
         }
     });
-    b.levelarray = arg1;
+    b.levelarray = _levelarray;
     
+	// seems to be useless code...
     with (b)
-        var n = arg1;
+        var n = _levelarray;
 }
 
 function scr_custom_notification_destructibles()
@@ -43,7 +44,7 @@ function scr_custom_notification_destructibles()
             if (!place_meeting(x, y, obj_destructibles))
             {
                 active = true;
-                notification_push(UnknownEnum.Value_13, [room]);
+                notification_push(notifs.custom_destructibles_destroyed, [room]);
             }
         }
     };

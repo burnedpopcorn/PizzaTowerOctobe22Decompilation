@@ -62,7 +62,7 @@ if (state == states.flushidle)
                     break;
             }
             
-            notification_push(UnknownEnum.Value_9, [room, other.type, count, val]);
+            notification_push(notifs.flush_done, [room, other.type, count, val]);
         }
     }
 }

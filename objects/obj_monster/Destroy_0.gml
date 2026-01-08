@@ -12,7 +12,7 @@ if (destroy)
     if (ds_list_find_index(global.saveroom, id) == -1)
     {
         ds_list_add(global.saveroom, id);
-        notification_push(UnknownEnum.Value_26, [object_index]);
+        notification_push(notifs.monster_dead, [object_index]);
     }
     
     fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);

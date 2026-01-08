@@ -32,23 +32,23 @@ enum notifs
 	monster_jumpscare = 28,
 };
 
-function add_achievement_update(arg0, arg1, arg2, arg3)
+function add_achievement_update(_name, _update_rate, _cc_func, _update_func)
 {
     var q = 
     {
-        name: arg0,
-        update_rate: arg1,
+        name: _name,
+        update_rate: _update_rate,
         frames: 0,
         update_func: noone,
         creation_code: noone,
         variables: ds_map_create(),
         unlocked: false
     };
-    q.update_func = method(q, arg3);
+    q.update_func = method(q, _update_func);
     
     if (arg2 != noone)
     {
-        q.creation_code = method(q, arg2);
+        q.creation_code = method(q, _cc_func);
         q.creation_code();
     }
     
@@ -56,21 +56,21 @@ function add_achievement_update(arg0, arg1, arg2, arg3)
     return q;
 }
 
-function add_achievement_notify(arg0, arg1, arg2)
+function add_achievement_notify(_name, _cc_func, _func)
 {
     var q = 
     {
-        name: arg0,
+        name: _name,
         creation_code: noone,
         func: noone,
         unlocked: false,
         variables: ds_map_create()
     };
-    q.func = method(q, arg2);
+    q.func = method(q, _func);
     
-    if (arg1 != noone)
+    if (_cc_func != noone)
     {
-        q.creation_code = method(q, arg1);
+        q.creation_code = method(q, _cc_func);
         q.creation_code();
     }
     
@@ -78,47 +78,47 @@ function add_achievement_notify(arg0, arg1, arg2)
     return q;
 }
 
-function notification_push(arg0, arg1)
+function notification_push(_notif, _array)
 {
-    trace("Pushing notification: ", arg0, " ", arg1);
+    trace("Pushing notification: ", _notif, " ", _array);
     
     with (obj_achievementtracker)
-        ds_queue_enqueue(notify_queue, [arg0, arg1]);
+        ds_queue_enqueue(notify_queue, [_notif, _array]);
 }
 
-function achievement_add_variable(arg0, arg1, arg2 = false, arg3 = false)
+function achievement_add_variable(_name, _value, _save = false, _resettable = false)
 {
     var q = 
     {
-        init_value: arg1,
-        value: arg1,
-        save: arg2,
-        resettable: arg3
+        init_value: _value,
+        value: _value,
+        save: _save,
+        resettable: _resettable
     };
-    ds_map_add(variables, arg0, q);
+    ds_map_add(variables, _name, q);
     return q;
 }
 
-function achievement_get_variable(arg0)
+function achievement_get_variable(_name)
 {
-    return ds_map_find_value(variables, arg0);
+    return ds_map_find_value(variables, _name);
 }
 
-function achievement_unlock(arg0, arg1, arg2, arg3 = 0)
+function achievement_unlock(_name, _disp_name, _sprite, _index = 0)
 {
-    var b = achievement_get_struct(arg0);
+    var b = achievement_get_struct(_name);
     
     with (b)
     {
         if (!unlocked)
         {
-            trace("Achievement unlocked! ", arg0, " ", arg1);
+            trace("Achievement unlocked! ", _name, " ", _disp_name);
             unlocked = true;
             
             with (instance_create(0, 0, obj_cheftask))
             {
-                achievement_spr = arg2;
-                achievement_index = arg3;
+                achievement_spr = _sprite;
+                achievement_index = _index;
             }
             
             ini_open_from_string(obj_savesystem.ini_str);
@@ -138,11 +138,11 @@ function achievement_unlock(arg0, arg1, arg2, arg3 = 0)
         event_perform(ev_other, ev_room_start);
 }
 
-function achievement_reset_variables(arg0)
+function achievement_reset_variables(_array)
 {
-    for (var i = 0; i < array_length(arg0); i++)
+    for (var i = 0; i < array_length(_array); i++)
     {
-        var b = arg0[i];
+        var b = _array[i];
         
         with (b)
         {
@@ -162,11 +162,11 @@ function achievement_reset_variables(arg0)
     }
 }
 
-function achievement_save_variables(arg0)
+function achievement_save_variables(_array)
 {
-    for (var i = 0; i < array_length(arg0); i++)
+    for (var i = 0; i < array_length(_array); i++)
     {
-        var b = arg0[i];
+        var b = _array[i];
         ini_open_from_string(obj_savesystem.ini_str);
         
         with (b)
@@ -189,11 +189,11 @@ function achievement_save_variables(arg0)
     }
 }
 
-function achievements_load(arg0)
+function achievements_load(_array)
 {
-    for (var i = 0; i < array_length(arg0); i++)
+    for (var i = 0; i < array_length(_array); i++)
     {
-        var b = arg0[i];
+        var b = _array[i];
         
         with (b)
         {
@@ -214,7 +214,7 @@ function achievements_load(arg0)
     }
 }
 
-function achievement_get_struct(arg0)
+function achievement_get_struct(_name)
 {
     var l = obj_achievementtracker.achievements_update;
     var b = noone;
@@ -223,7 +223,7 @@ function achievement_get_struct(arg0)
     {
         var q = l[i];
         
-        if (q.name == arg0)
+        if (q.name == _name)
         {
             b = q;
             break;
@@ -238,7 +238,7 @@ function achievement_get_struct(arg0)
         {
             var q = l[i];
             
-            if (q.name == arg0)
+            if (q.name == _name)
             {
                 b = q;
                 break;

@@ -38,7 +38,7 @@ if (_transfo)
     
     if (collect && ds_list_find_index(global.saveroom, id) == -1)
     {
-        notification_push(UnknownEnum.Value_22, [room, id, _state]);
+        notification_push(notifs.priest_touched, [room, id, _state]);
         ds_list_add(global.saveroom, id);
         var val = 500;
         global.collect += val;

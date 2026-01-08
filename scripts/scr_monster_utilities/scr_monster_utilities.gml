@@ -1,6 +1,6 @@
 function scr_monster_activate()
 {
-    notification_push(UnknownEnum.Value_27, [room, object_index]);
+    notification_push(notifs.monster_activate, [room, object_index]);
     
     with (obj_monster)
     {

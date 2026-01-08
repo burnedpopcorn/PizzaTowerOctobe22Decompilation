@@ -49,7 +49,7 @@ switch (state)
             
             if (player.x > (x - 80) && player.x < (x + 80) && y <= (player.y + 60) && y >= (player.y - 60) && player.state == states.freefallland)
             {
-                notification_push(UnknownEnum.Value_11, [room, object_index, id]);
+                notification_push(notifs.treasureguy_uncovered, [room, object_index, id]);
                 underground = false;
                 visible = true;
                 

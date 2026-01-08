@@ -9,9 +9,7 @@ function string_split(arg0, arg1)
         var _char = string_char_at(arg0, i);
         
         if (_char != arg1)
-        {
             _current_str += _char;
-        }
         else
         {
             array_push(_list, _current_str);

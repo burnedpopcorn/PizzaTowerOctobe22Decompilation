@@ -11,7 +11,7 @@ step = function()
     
     if (piledriver && !active && !place_meeting(x, y, obj_secretbigblock))
     {
-        notification_push(UnknownEnum.Value_13, [room]);
+        notification_push(notifs.custom_destructibles_destroyed, [room]);
         active = true;
     }
 };

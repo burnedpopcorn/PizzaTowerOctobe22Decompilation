@@ -5,5 +5,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
     repeat (4)
         create_debris(x, y, spr_mortcubedebris);
     
-    notification_push(UnknownEnum.Value_4, [room]);
+    notification_push(notifs.mortcube_destroyed, [room]);
 }

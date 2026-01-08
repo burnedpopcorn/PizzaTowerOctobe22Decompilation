@@ -12,7 +12,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
     }
     
     scr_fmod_soundeffect(global.snd_collect, x, y);
-    notification_push(UnknownEnum.Value_7, [room, id, object_index]);
+    notification_push(notifs.beer_knocked, [room, id, object_index]);
     
     if (obj_player1.character == "V")
         global.playerhealth = clamp(global.playerhealth + 1, 0, 100);

@@ -1,18 +1,16 @@
-function scr_anybutton_pressed(arg0)
+function scr_anybutton_pressed(_gamepad)
 {
-    var _index = arg0;
+    var _index = _gamepad;
     
     if (keyboard_check_pressed(vk_anykey))
-    {
         return -1;
-    }
     else if (gamepad_is_connected(_index))
     {
-        for (var i = 32769; i < 32788; i++)
+        for (var i = gp_face1; i < gp_axisrv; i++)
         {
             if (gamepad_button_check_pressed(_index, i))
             {
-                if (i == 32769 && instance_exists(obj_player1))
+                if (i == gp_face1 && instance_exists(obj_player1))
                 {
                     obj_player1.key_jump = true;
                     obj_player1.key_jump2 = true;

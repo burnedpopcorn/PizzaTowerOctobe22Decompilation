@@ -1,6 +1,6 @@
 if (ds_list_find_index(global.baddieroom, id) == -1 && important == false)
 {
-    notification_push(UnknownEnum.Value_20, [room]);
+    notification_push(notifs.pizzaboy_killed, [room]);
     fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
     instance_create(x, y, obj_slapstar);
     instance_create(x, y, obj_slapstar);

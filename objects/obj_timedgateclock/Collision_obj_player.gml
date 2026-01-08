@@ -1,7 +1,7 @@
 if (sprite_index != spr_button_pressed && sprite_index != spr_button_goingpressed)
 {
     timedgate_trigger();
-    notification_push(UnknownEnum.Value_8, [room, id, time]);
+    notification_push(notifs.touched_timedgate, [room, id, time]);
 }
 
 with (obj_timedgateclock)

@@ -252,7 +252,7 @@ function scr_hurtplayer(arg0)
         
         if (_hurt)
         {
-            notification_push(UnknownEnum.Value_5, [arg0.id, _savedstate, _obj]);
+            notification_push(notifs.hurt_player, [arg0.id, _savedstate, _obj]);
             global.combotime -= 25;
             global.style -= 25;
             global.hurtcounter += 1;

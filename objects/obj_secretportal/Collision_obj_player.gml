@@ -13,9 +13,9 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
             lock = true;
         
         if (secret)
-            notification_push(UnknownEnum.Value_24, [room]);
+            notification_push(notifs.secret_exited, [room]);
         else
-            notification_push(UnknownEnum.Value_23, [room, targetRoom]);
+            notification_push(notifs.secret_entered, [room, targetRoom]);
         
         if (!obj_music.secret)
         {

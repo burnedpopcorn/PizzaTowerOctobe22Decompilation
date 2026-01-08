@@ -6,9 +6,9 @@ function scr_soundeffect()
     return snd_id;
 }
 
-function sfx_gain(arg0)
+function sfx_gain(_snd)
 {
-    audio_sound_gain(arg0, audio_sound_get_gain(arg0) * global.option_sfx_volume, 0);
+    audio_sound_gain(_snd, audio_sound_get_gain(_snd) * global.option_sfx_volume, 0);
 }
 
 function set_audio_config()

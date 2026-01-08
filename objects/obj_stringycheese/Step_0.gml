@@ -178,7 +178,7 @@ switch (state)
                     shootbuffer = 80;
                 }
                 
-                notification_push(UnknownEnum.Value_21, [room, other.id, id]);
+                notification_push(notifs.touched_mrpinch, [room, other.id, id]);
             }
         }
         

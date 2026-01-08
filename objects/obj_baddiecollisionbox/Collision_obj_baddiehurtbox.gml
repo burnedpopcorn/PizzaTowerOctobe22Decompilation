@@ -15,7 +15,7 @@ if (other.team == 1 && instance_exists(baddieID) && baddieID.invtime == 0 && bad
         {
             instance_destroy();
             instance_destroy(baddieID);
-            notification_push(UnknownEnum.Value_10, [room, baddieID.object_index, baddieID, other.object_index]);
+            notification_push(notifs.baddie_killed_projectile, [room, baddieID.object_index, baddieID, other.object_index]);
         }
         
         if (other.object_index == obj_playernoisearrow)
