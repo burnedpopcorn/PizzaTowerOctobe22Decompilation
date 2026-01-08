@@ -13,9 +13,9 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
             lock = true;
         
         if (secret)
-            notification_push(notifications.touched_mrpinch, [room]);
+            notification_push(UnknownEnum.Value_24, [room]);
         else
-            notification_push(notifications.pizzaboy_killed, [room, targetRoom]);
+            notification_push(UnknownEnum.Value_23, [room, targetRoom]);
         
         if (!obj_music.secret)
         {

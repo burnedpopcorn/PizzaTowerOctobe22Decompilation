@@ -18,7 +18,7 @@ function scr_do_rank()
     if (!global.tutorial_room)
     {
         scr_savescore(global.leveltosave);
-        notification_push(notifications.room_enemiesdead, [global.leveltosave, global.secretfound]);
+        notification_push(UnknownEnum.Value_3, [global.leveltosave, global.secretfound]);
         
         with (obj_achievementtracker)
             event_perform(ev_step, ev_step_normal);

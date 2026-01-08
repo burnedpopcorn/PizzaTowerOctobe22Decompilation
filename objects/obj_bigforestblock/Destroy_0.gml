@@ -11,7 +11,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
         }
     }
     
-    notification_push(notifications.baddie_killed_projectile, [object_index]);
+    notification_push(UnknownEnum.Value_12, [object_index]);
     scr_sleep(5);
     scr_fmod_soundeffect(global.snd_breakblock, x, y);
     ds_list_add(global.saveroom, id);

@@ -43,7 +43,7 @@ function scr_custom_notification_destructibles()
             if (!place_meeting(x, y, obj_destructibles))
             {
                 active = true;
-                notification_push(notifications.treasureguy_uncovered, [room]);
+                notification_push(UnknownEnum.Value_13, [room]);
             }
         }
     };

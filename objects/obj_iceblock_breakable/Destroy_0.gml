@@ -3,7 +3,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
     if (bird)
     {
         instance_create(x + 32, y + 32, obj_burd);
-        notification_push(notifications.priest_touched, [room]);
+        notification_push(UnknownEnum.Value_25, [room]);
     }
     
     repeat (6)

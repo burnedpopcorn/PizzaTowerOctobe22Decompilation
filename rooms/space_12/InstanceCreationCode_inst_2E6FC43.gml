@@ -11,7 +11,7 @@ step = function()
     
     if (piledriver && !active && !place_meeting(x, y, obj_secretbigblock))
     {
-        notification_push(notifications.treasureguy_uncovered, [room]);
+        notification_push(UnknownEnum.Value_13, [room]);
         active = true;
     }
 };

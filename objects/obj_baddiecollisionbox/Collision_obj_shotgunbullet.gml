@@ -14,7 +14,7 @@ if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != stat
         if (baddieID.destroyable)
         {
             if (other.brick)
-                notification_push(notifications.pizzaball_goal, [room, baddieID.object_index]);
+                notification_push(UnknownEnum.Value_18, [room, baddieID.object_index]);
             
             instance_destroy();
             instance_destroy(baddieID);
@@ -26,7 +26,7 @@ if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != stat
     else
     {
         if (!baddieID.elite && other.brick)
-            notification_push(notifications.pizzaball_goal, [room, baddieID.object_index]);
+            notification_push(UnknownEnum.Value_18, [room, baddieID.object_index]);
         
         var lag = 2;
         baddieID.hitLag = lag;

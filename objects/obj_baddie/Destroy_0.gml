@@ -73,7 +73,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
         }
     }
     
-    notification_push(notifications.bodyslam_start, [room, id, object_index]);
+    notification_push(UnknownEnum.Value_0, [room, id, object_index]);
 }
 
 if (ds_list_find_index(global.baddieroom, id) == -1 && important == false)

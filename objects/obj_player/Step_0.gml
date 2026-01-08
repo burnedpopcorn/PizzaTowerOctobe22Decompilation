@@ -1683,7 +1683,7 @@ if ((y > (room_height + 300) || y < -800) && !place_meeting(x, y, obj_verticalha
     if (room != Mainmenu && room != Realtitlescreen)
     {
         var s = state;
-        notification_push(notifications.mortcube_destroyed, [id, s]);
+        notification_push(UnknownEnum.Value_6, [id, s]);
         state = states.actor;
         visible = false;
         hsp = 0;

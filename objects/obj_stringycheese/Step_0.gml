@@ -178,7 +178,7 @@ switch (state)
                     shootbuffer = 80;
                 }
                 
-                notification_push(notifications.brickball_kill, [room, other.id, id]);
+                notification_push(UnknownEnum.Value_21, [room, other.id, id]);
             }
         }
         

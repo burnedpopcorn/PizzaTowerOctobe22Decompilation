@@ -22,7 +22,7 @@ function scr_pizzaball_golf()
         x = player.x;
         y = player.y;
         global.golfhit++;
-        notification_push(notifications.special_destroyable_destroyed, [player.object_index]);
+        notification_push(UnknownEnum.Value_14, [player.object_index]);
         fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
         
         if (player.key_up || shootup)

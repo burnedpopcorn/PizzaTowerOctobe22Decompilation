@@ -25,7 +25,7 @@ with (instance_create(0, 0, obj_pizzaball_rank))
     }
     
     collectminus = round(collect / 10);
-    notification_push(notifications.pizzaball_shot, [sprite_index]);
+    notification_push(UnknownEnum.Value_16, [sprite_index]);
 }
 
 global.golfhit = 0;

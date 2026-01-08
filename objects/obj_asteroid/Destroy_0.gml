@@ -14,7 +14,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
     with (instance_create(x, y, obj_smallnumber))
         number = string(100);
     
-    notification_push(notifications.baddie_killed_projectile, [object_index]);
+    notification_push(UnknownEnum.Value_12, [object_index]);
     var sep = 100;
     
     repeat (10)

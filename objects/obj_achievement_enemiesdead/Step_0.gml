@@ -6,8 +6,8 @@ for (var i = 0; i < array_length(baddie_arr); i++)
     {
         if (!instance_exists(b[0]))
         {
-            notification_push(notifications.bodyslam_end, [b[1], room]);
-            baddie_arr[i][0] = -4;
+            notification_push(UnknownEnum.Value_1, [b[1], room]);
+            baddie_arr[i][0] = noone;
         }
     }
 }

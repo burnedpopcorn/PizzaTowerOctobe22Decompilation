@@ -1,4 +1,4 @@
-notification_push(notifications.pizzaball_kill, [room]);
+notification_push(UnknownEnum.Value_17, [room]);
 image_speed = 0.5;
 hsp = 0;
 vsp = 0;

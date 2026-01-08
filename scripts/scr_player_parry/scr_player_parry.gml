@@ -31,7 +31,7 @@ function scr_player_parry()
         {
             if (distance_to_object(other) <= parry_threshold && state != states.hit && state != states.grabbed && state != states.stun && parryable && !(state == states.stun && thrown == true))
             {
-                notification_push(notifications.generic_killed, [id, object_index, room]);
+                notification_push(UnknownEnum.Value_2, [id, object_index, room]);
                 obj_player1.xscale = -image_xscale;
                 grabbedby = _grabbedby;
                 var lag = 5;

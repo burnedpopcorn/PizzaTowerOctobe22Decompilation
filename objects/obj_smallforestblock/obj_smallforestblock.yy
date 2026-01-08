@@ -1,7 +1,10 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_smallforestblock",
   "spriteId": {
     "name": "spr_smallforestblock",
-    "path": "sprites/spr_smallforestblock/spr_smallforestblock.yy"
+    "path": "sprites/spr_smallforestblock/spr_smallforestblock.yy",
   },
   "solid": false,
   "visible": true,
@@ -10,7 +13,7 @@
   "persistent": false,
   "parentObjectId": {
     "name": "obj_destroyable",
-    "path": "objects/obj_destroyable/obj_destroyable.yy"
+    "path": "objects/obj_destroyable/obj_destroyable.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,23 +28,12 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 1,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    }
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "obj_smallforestblock",
   "parent": {
     "name": "World 3",
     "path": "folders/Objects/Level Specific/World 3.yy",
-  }
+  },
 }

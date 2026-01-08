@@ -93,7 +93,7 @@ if (state == states.throwing)
     if (floor(image_index) >= 6 && !shot)
     {
         shot = true;
-        notification_push(notifications.special_destroyable_destroyed, [object_index]);
+        notification_push(UnknownEnum.Value_14, [object_index]);
         
         with (golfid)
         {
