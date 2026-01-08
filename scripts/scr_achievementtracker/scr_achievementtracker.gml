@@ -1,10 +1,5 @@
-// TODO because i like pain
-// shift all entries values down two
-// also fix all notification_push() uses
-
-// also maybe change the names of these
-// idk yet tho
-enum notifications
+// notifications
+enum notifs
 {
 	generic_killed = 0,
 	room_enemiesdead = 1,
@@ -24,17 +19,17 @@ enum notifications
 	pizzaball_kill = 15,
 	pizzaball_goal = 16,
 	brickball_start = 17,
-	john_destroyed = 18,
-	brickball_kill = 19,
-	pigcitizen_taunt = 20,
-	pizzaboy_killed = 21,
-	touched_mrpinch = 22,
-	priest_touched = 23,
-	secret_entered = 24,
-	secret_exited = 25,
-	destroy_iceblock = 26,
-	monster_dead = 27,
-	monster_activate = 28,
+	brickball_kill = 18,
+	pigcitizen_taunt = 19,
+	pizzaboy_killed = 20,
+	touched_mrpinch = 21,
+	priest_touched = 22,
+	secret_entered = 23,
+	secret_exited = 24,
+	destroy_iceblock = 25,
+	monster_dead = 26,
+	monster_activate = 27,
+	monster_jumpscare = 28,
 };
 
 function add_achievement_update(arg0, arg1, arg2, arg3)
