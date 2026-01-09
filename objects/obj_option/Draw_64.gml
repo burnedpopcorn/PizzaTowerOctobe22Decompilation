@@ -16,10 +16,10 @@ var yy = (obj_screensizer.actual_height / 2) - (size / 4);
 
 switch (m.anchor)
 {
-    case UnknownEnum.Value_0:
+    case menuanchors.center:
         draw_set_halign(fa_center);
         draw_set_valign(fa_top);
-        var c = 16777215;
+        var c = c_white;
         
         for (var i = 0; i < len; i++)
         {
@@ -34,11 +34,11 @@ switch (m.anchor)
         
         break;
     
-    case UnknownEnum.Value_1:
+    case menuanchors.left:
         draw_set_halign(fa_left);
         draw_set_valign(fa_top);
         xx = m.xpad;
-        var c = 16777215;
+        var c = c_white;
         
         for (var i = 0; i < len; i++)
         {
@@ -54,15 +54,15 @@ switch (m.anchor)
             
             switch (o.type)
             {
-                case UnknownEnum.Value_0:
+                case menutype.toggle:
                     draw_text_color(obj_screensizer.actual_width - m.xpad, yy + (m.ypad * i), o.value ? lang_get_value("option_on") : lang_get_value("option_off"), c, c, c, c, a);
                     break;
                 
-                case UnknownEnum.Value_3:
+                case menutype.slide:
                     draw_text_color(obj_screensizer.actual_width - m.xpad, yy + (m.ypad * i), o.value, c, c, c, c, a);
                     break;
                 
-                case UnknownEnum.Value_1:
+                case menutype.multiple:
                     var select = o.values[o.value];
                     var n = select.name;
                     

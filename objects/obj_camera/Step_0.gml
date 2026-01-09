@@ -181,7 +181,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
         if (target.state == states.backtohub)
             ty = target.backtohubstarty;
         
-        if (player.cutscene || (player.collision_flags & UnknownEnum.Value_1) > 0)
+        if (player.cutscene || (player.collision_flags & colflag.secret) > 0)
         {
             chargecamera = Approach(chargecamera, 0, 10);
         }

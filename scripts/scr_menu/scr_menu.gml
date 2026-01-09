@@ -1,3 +1,11 @@
+enum menutype
+{
+	toggle = 0,
+	multiple = 1,
+	press = 2,
+	slide = 3,
+}
+
 function menu_goto(arg0)
 {
     menu = 0;
@@ -21,7 +29,7 @@ function create_menu_fixed(arg0, arg1, arg2, arg3)
     return 
     {
         menu_id: arg0,
-        type: UnknownEnum.Value_0,
+        type: menutype.toggle,
         anchor: arg1,
         xpad: arg2,
         ypad: arg3,
@@ -34,7 +42,7 @@ function add_option_press(arg0, arg1, arg2, arg3)
     var b = 
     {
         option_id: arg1,
-        type: UnknownEnum.Value_2,
+        type: menutype.press,
         func: arg3,
         name: arg2
     };
@@ -47,7 +55,7 @@ function add_option_toggle(arg0, arg1, arg2, arg3 = -4)
     var b = 
     {
         option_id: arg1,
-        type: UnknownEnum.Value_0,
+        type: menutype.toggle,
         value: false,
         name: arg2,
         on_changed: arg3
@@ -56,12 +64,12 @@ function add_option_toggle(arg0, arg1, arg2, arg3 = -4)
     return b;
 }
 
-function add_option_multiple(arg0, arg1, arg2, arg3, arg4 = -4)
+function add_option_multiple(arg0, arg1, arg2, arg3, arg4 = noone)
 {
     var b = 
     {
         option_id: arg1,
-        type: UnknownEnum.Value_1,
+        type: menutype.multiple,
         values: arg3,
         value: 0,
         name: arg2,
@@ -86,7 +94,7 @@ function add_option_slide(arg0, arg1, arg2, arg3 = noone)
     var b = 
     {
         option_id: arg1,
-        type: UnknownEnum.Value_3,
+        type: menutype.slide,
         value: 100,
         moved: false,
         name: arg2,

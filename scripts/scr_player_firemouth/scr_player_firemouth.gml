@@ -166,7 +166,7 @@ function scr_player_firemouth()
         {
             firemouth_afterimage--;
         }
-        else if ((collision_flags & UnknownEnum.Value_1) == 0)
+        else if ((collision_flags & colflag.secret) == 0)
         {
             firemouth_afterimage = 8;
             

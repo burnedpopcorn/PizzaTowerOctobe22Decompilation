@@ -31,19 +31,19 @@ function tv_push_prompt(arg0, arg1, arg2, arg3)
         
         switch (arg1)
         {
-            case UnknownEnum.Value_0:
+            case tvprompt.normal:
                 play = true;
                 ds_list_insert(tvprompts_list, 0, b);
                 break;
             
-            case UnknownEnum.Value_1:
+            case tvprompt.trigger:
                 var placed = false;
                 
                 for (var i = 0; i < ds_list_size(tvprompts_list); i++)
                 {
                     var b2 = ds_list_find_value(tvprompts_list, i);
                     
-                    if (b2[1] == UnknownEnum.Value_2)
+                    if (b2[1] == tvprompt.transfo)
                     {
                         if (i == 0)
                             play = true;
@@ -59,7 +59,7 @@ function tv_push_prompt(arg0, arg1, arg2, arg3)
                 
                 break;
             
-            case UnknownEnum.Value_2:
+            case tvprompt.transfo:
                 ds_list_add(tvprompts_list, b);
                 break;
         }

@@ -1,3 +1,10 @@
+enum tvprompt
+{
+	normal = 0,
+	trigger = 1,
+	transfo = 2,
+}
+
 image_speed = 0.1;
 chose = false;
 message = "";
@@ -16,8 +23,8 @@ tv_trans = 0;
 tv_cooldown = 0;
 tv_x = obj_screensizer.actual_width - 115;
 tv_y = 80;
-targetgolf = -4;
-special_prompts = -4;
+targetgolf = noone;
+special_prompts = noone;
 hud_posx = 0;
 hud_posY = 0;
 combo_state = 0;
@@ -29,13 +36,13 @@ combofill_y = 0;
 combofill_index = 0;
 noisemax = 6;
 noisebuffer = noisemax;
-expressionsprite = -4;
+expressionsprite = noone;
 expressionbuffer = 0;
-golfsurf = -4;
+golfsurf = noone;
 tvsprite = spr_tv_idle;
 sprite_index = spr_tv_off;
 bubbleindex = 0;
-bubblespr = -4;
+bubblespr = noone;
 idleanim = 180;
 noisesprite = spr_noiseHUD_idle;
 xi = 500;
@@ -67,6 +74,6 @@ johnface_sprite = spr_timer_johnface;
 johnface_index = 0;
 hand_sprite = spr_timer_hand1;
 hand_index = 0;
-bar_surface = -4;
+bar_surface = noone;
 barfill_x = 0;
 showtime_buffer = 0;

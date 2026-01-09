@@ -1,3 +1,28 @@
+enum textkey
+{
+	up = 0,
+	left = 1,
+	right = 2,
+	down = 3,
+	forwards = 4,
+	backwards = 5,
+	grab = 6,
+	mach = 7,
+	jump = 8,
+	shoot = 9,
+}
+enum texteffects
+{
+	normal = 0,
+	shake = 1,
+}
+enum texttype
+{
+	normal = 0,		// draw text
+	icon = 1,		// draw icons
+	array = 2,		// does scr_draw_text_arr within itself
+}
+
 function create_transformation_tip(arg0, arg1 = noone)
 {
     ini_open_from_string(obj_savesystem.ini_str);
@@ -35,75 +60,75 @@ function scr_compile_icon_text(arg0, arg1 = 1, arg2 = false)
         
         switch (char)
         {
-            case 10:
+            case ord("\n"):
                 char_y += newline;
                 char_x = 0;
                 break;
             
-            case 123:
+            case ord("{"):
                 var effect = string_copy(arg0, arg1, 3);
-                var te = UnknownEnum.Value_1;
+                var te = texteffects.shake;
                 arg1 += 3;
                 var n = scr_compile_icon_text(arg0, arg1, true);
                 
                 switch (effect)
                 {
                     case "{s}":
-                        te = UnknownEnum.Value_1;
+                        te = texteffects.shake;
                         break;
                 }
                 
-                array_push(arr, [char_x, char_y, UnknownEnum.Value_2, te, n[0]]);
+                array_push(arr, [char_x, char_y, texttype.array, te, n[0]]);
                 arg1 = n[1];
                 char_x = n[2];
                 char_y = n[3];
                 break;
             
-            case 91:
+            case ord("["):
                 var button = string_copy(arg0, arg1, 3);
-                var t = UnknownEnum.Value_1;
-                var b = UnknownEnum.Value_0;
+                var t = texttype.icon;
+                var b = textkey.up;
                 
                 switch (button)
                 {
                     case "[D]":
-                        b = UnknownEnum.Value_3;
+                        b = textkey.down;
                         break;
                     
                     case "[U]":
-                        b = UnknownEnum.Value_0;
+                        b = textkey.up;
                         break;
                     
                     case "[M]":
-                        b = UnknownEnum.Value_7;
+                        b = textkey.mach;
                         break;
                     
                     case "[J]":
-                        b = UnknownEnum.Value_8;
+                        b = textkey.jump;
                         break;
                     
                     case "[G]":
-                        b = UnknownEnum.Value_6;
+                        b = textkey.grab;
                         break;
                     
                     case "[F]":
-                        b = UnknownEnum.Value_4;
+                        b = textkey.forwards;
                         break;
                     
                     case "[B]":
-                        b = UnknownEnum.Value_5;
+                        b = textkey.backwards;
                         break;
                     
                     case "[L]":
-                        b = UnknownEnum.Value_1;
+                        b = textkey.left;
                         break;
                     
                     case "[R]":
-                        b = UnknownEnum.Value_2;
+                        b = textkey.right;
                         break;
                     
                     case "[S]":
-                        b = UnknownEnum.Value_9;
+                        b = textkey.shoot;
                         break;
                 }
                 
@@ -112,7 +137,7 @@ function scr_compile_icon_text(arg0, arg1 = 1, arg2 = false)
                 arg1 += 2;
                 break;
             
-            case 47:
+            case ord("/"):
                 if (arg2)
                 {
                     saved_pos = arg1;
@@ -126,14 +151,14 @@ function scr_compile_icon_text(arg0, arg1 = 1, arg2 = false)
                 {
                     char = string_ord_at(arg0, arg1 + 1);
                     
-                    if (char != 91 && char != 10 && char != 123 && char != 47)
+                    if (char != ord("[") && char != ord("\n") && char != ord("{") && char != ord("/"))
                         arg1 += 1;
                     else
                         break;
                 }
                 
                 var n = string_copy(arg0, start, (arg1 - start) + 1);
-                array_push(arr, [char_x, char_y, UnknownEnum.Value_0, n]);
+                array_push(arr, [char_x, char_y, texttype.normal, n]);
                 char_x += string_width(n);
                 break;
         }
@@ -163,13 +188,13 @@ function scr_text_arr_size(arg0)
         
         switch (t)
         {
-            case UnknownEnum.Value_1:
+            case texttype.icon:
                 if ((cx + 32) > w)
                     w += 32;
                 
                 break;
             
-            case UnknownEnum.Value_2:
+            case texttype.array:
                 var val2 = b[4];
                 var q = scr_text_arr_size(val2);
                 
@@ -180,11 +205,9 @@ function scr_text_arr_size(arg0)
                 
                 break;
             
-            case UnknownEnum.Value_0:
+            case texttype.normal:
                 if (cy > h)
-                {
                     h += newline;
-                }
                 else
                 {
                     var sw = string_width(val);
@@ -200,7 +223,7 @@ function scr_text_arr_size(arg0)
     return [w, h];
 }
 
-function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = UnknownEnum.Value_0)
+function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = texteffects.normal)
 {
     if (arg2 == noone)
         exit;
@@ -215,7 +238,7 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
         
         switch (t)
         {
-            case UnknownEnum.Value_1:
+            case texttype.icon:
                 var spr = noone;
                 var ix = 0;
                 var txt = noone;
@@ -226,27 +249,27 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
                     
                     switch (val)
                     {
-                        case UnknownEnum.Value_3:
+                        case textkey.down:
                             ix = 5;
                             break;
                         
-                        case UnknownEnum.Value_0:
+                        case textkey.up:
                             ix = 4;
                             break;
                         
-                        case UnknownEnum.Value_7:
+                        case textkey.mach:
                             ix = 9;
                             break;
                         
-                        case UnknownEnum.Value_8:
+                        case textkey.jump:
                             ix = 1;
                             break;
                         
-                        case UnknownEnum.Value_6:
+                        case textkey.grab:
                             ix = 0;
                             break;
                         
-                        case UnknownEnum.Value_4:
+                        case textkey.forwards:
                             if (obj_player1.xscale > 0)
                                 ix = 17;
                             else
@@ -254,7 +277,7 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
                             
                             break;
                         
-                        case UnknownEnum.Value_5:
+                        case textkey.backwards:
                             if (obj_player1.xscale > 0)
                                 ix = 16;
                             else
@@ -262,15 +285,15 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
                             
                             break;
                         
-                        case UnknownEnum.Value_1:
+                        case textkey.left:
                             ix = 16;
                             break;
                         
-                        case UnknownEnum.Value_2:
+                        case textkey.right:
                             ix = 17;
                             break;
                         
-                        case UnknownEnum.Value_9:
+                        case textkey.shoot:
                             ix = 2;
                             break;
                     }
@@ -283,27 +306,27 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
                     
                     switch (val)
                     {
-                        case UnknownEnum.Value_3:
+                        case textkey.down:
                             arr = scr_get_tutorial_key(global.key_down);
                             break;
                         
-                        case UnknownEnum.Value_0:
+                        case textkey.up:
                             arr = scr_get_tutorial_key(global.key_up);
                             break;
                         
-                        case UnknownEnum.Value_7:
+                        case textkey.mach:
                             arr = scr_get_tutorial_key(global.key_attack);
                             break;
                         
-                        case UnknownEnum.Value_8:
+                        case textkey.jump:
                             arr = scr_get_tutorial_key(global.key_jump);
                             break;
                         
-                        case UnknownEnum.Value_6:
+                        case textkey.grab:
                             arr = scr_get_tutorial_key(global.key_slap);
                             break;
                         
-                        case UnknownEnum.Value_4:
+                        case textkey.forwards:
                             if (obj_player1.xscale > 0)
                                 arr = scr_get_tutorial_key(global.key_right);
                             else
@@ -311,7 +334,7 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
                             
                             break;
                         
-                        case UnknownEnum.Value_5:
+                        case textkey.backwards:
                             if (obj_player1.xscale > 0)
                                 arr = scr_get_tutorial_key(global.key_left);
                             else
@@ -319,15 +342,15 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
                             
                             break;
                         
-                        case UnknownEnum.Value_1:
+                        case textkey.left:
                             arr = scr_get_tutorial_key(global.key_left);
                             break;
                         
-                        case UnknownEnum.Value_2:
+                        case textkey.right:
                             arr = scr_get_tutorial_key(global.key_right);
                             break;
                         
-                        case UnknownEnum.Value_9:
+                        case textkey.shoot:
                             arr = scr_get_tutorial_key(global.key_shoot);
                             break;
                     }
@@ -340,11 +363,11 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
                     }
                 }
                 
-                if (arg5 != UnknownEnum.Value_0)
+                if (arg5 != texteffects.normal)
                 {
                     switch (arg5)
                     {
-                        case UnknownEnum.Value_1:
+                        case texteffects.shake:
                             cx += irandom_range(-2, 2);
                             cy += irandom_range(-2, 2);
                             break;
@@ -370,23 +393,21 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = Un
                 
                 break;
             
-            case UnknownEnum.Value_2:
+            case texttype.array:
                 var val2 = b[4];
                 scr_draw_text_arr(cx, cy, val2, arg3, arg4, val);
                 break;
             
-            case UnknownEnum.Value_0:
-                if (arg5 == UnknownEnum.Value_0)
-                {
+            case texttype.normal:
+                if (arg5 == texteffects.normal)
                     draw_text_color(cx, cy, val, arg3, arg3, arg3, arg3, arg4);
-                }
                 else
                 {
                     var x2 = 0;
                     
                     switch (arg5)
                     {
-                        case UnknownEnum.Value_1:
+                        case texteffects.shake:
                             for (var j = 1; j <= string_length(val); j++)
                             {
                                 var q = string_char_at(val, j);

@@ -1,104 +1,104 @@
-function scr_keyname(arg0)
+function scr_keyname(_key)
 {
-    switch (arg0)
+    switch (_key)
     {
-        case 38:
+        case vk_up:
             return "UP";
             break;
         
-        case 39:
+        case vk_right:
             return "RIGHT";
             break;
         
-        case 37:
+        case vk_left:
             return "LEFT";
             break;
         
-        case 40:
+        case vk_down:
             return "DOWN";
             break;
         
-        case 13:
+        case vk_enter:
             return "ENTER";
             break;
         
-        case 27:
+        case vk_escape:
             return "ESCAPE";
             break;
         
-        case 32:
+        case vk_space:
             return "SPACE";
             break;
         
-        case 161:
+        case vk_rshift:
             return "SHIFT";
             break;
         
-        case 160:
+        case vk_lshift:
             return "SHIFT";
             break;
         
-        case 16:
+        case vk_shift:
             return "SHIFT";
             break;
         
-        case 17:
+        case vk_control:
             return "CONTROL";
             break;
         
-        case 162:
+        case vk_lcontrol:
             return "CONTROL";
             break;
         
-        case 163:
+        case vk_rcontrol:
             return "CONTROL";
             break;
         
-        case 18:
+        case vk_alt:
             return "ALT";
             break;
         
-        case 164:
+        case vk_lalt:
             return "ALT";
             break;
         
-        case 8:
+        case vk_backspace:
             return "BACKSPACE";
             break;
         
-        case 9:
+        case vk_tab:
             return "TAB";
             break;
         
-        case 36:
+        case vk_home:
             return "HOME";
             break;
         
-        case 35:
+        case vk_end:
             return "END";
             break;
         
-        case 46:
+        case vk_delete:
             return "DELETE";
             break;
         
-        case 45:
+        case vk_insert:
             return "INSERT";
             break;
         
-        case 33:
+        case vk_pageup:
             return "PAGE UP";
             break;
         
-        case 34:
+        case vk_pagedown:
             return "PAGE DOWN";
             break;
         
-        case 19:
+        case vk_pause:
             return "PAUSE";
             break;
         
-        case 44:
+        case vk_printscreen:
             return "PRINTSCREEN";
             break;
         
@@ -215,5 +215,5 @@ function scr_keyname(arg0)
             break;
     }
     
-    return chr(arg0);
+    return chr(_key);
 }

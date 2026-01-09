@@ -18,24 +18,24 @@ var move2 = key_left2 + key_right2;
 
 switch (option.type)
 {
-    case UnknownEnum.Value_2:
-        if (key_jump && option.func != -4)
+    case menutype.press:
+        if (key_jump && option.func != noone)
             option.func();
         
         break;
     
-    case UnknownEnum.Value_0:
+    case menutype.toggle:
         if (key_jump || -key_left2 || key_right2)
         {
             option.value = !option.value;
             
-            if (option.on_changed != -4)
+            if (option.on_changed != noone)
                 option.on_changed(option.value);
         }
         
         break;
     
-    case UnknownEnum.Value_1:
+    case menutype.multiple:
         if (move2 != 0)
         {
             option.value += move2;
@@ -46,13 +46,13 @@ switch (option.type)
             if (option.value < 0)
                 option.value = array_length(option.values) - 1;
             
-            if (option.on_changed != -4)
+            if (option.on_changed != noone)
                 option.on_changed(option.values[option.value].value);
         }
         
         break;
     
-    case UnknownEnum.Value_3:
+    case menutype.slide:
         move2 = key_left + key_right;
         
         if (move2 != 0 && slidebuffer <= 0)
@@ -79,13 +79,13 @@ for (var i = 0; i < array_length(m.options); i++)
 {
     var b = m.options[i];
     
-    if (b.type == UnknownEnum.Value_3)
+    if (b.type == menutype.slide)
     {
         if (b.moved && move2 == 0)
         {
             b.moved = false;
             
-            if (b.on_changed != -4)
+            if (b.on_changed != noone)
                 b.on_changed(b.value);
         }
     }
@@ -98,7 +98,7 @@ if ((key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_exists(obj_key
 {
     fmod_event_one_shot("event:/sfx/enemies/projectile");
     
-    if (menu == UnknownEnum.Value_0)
+    if (menu == menuids.options)
     {
         if (instance_exists(obj_mainmenuselect))
             obj_mainmenuselect.selected = false;
@@ -106,7 +106,5 @@ if ((key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_exists(obj_key
         instance_destroy();
     }
     else
-    {
-        menu_goto(menuids.categories);
-    }
+        menu_goto(menuids.options);
 }

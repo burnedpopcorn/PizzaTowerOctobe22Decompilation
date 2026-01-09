@@ -311,16 +311,24 @@ if (key_slap2)
     input_buffer_shoot = 10;
 
 var prevmask = mask_index;
+
+enum colflag
+{
+	secret = 1,
+	sloped = 2,
+	grounded = 4,
+}
+
 collision_flags = 0;
 
 if (place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretportalstart))
-    collision_flags |= UnknownEnum.Value_1;
+    collision_flags |= colflag.secret;
 
 if (scr_solid(x, y + 1))
-    collision_flags |= UnknownEnum.Value_4;
+    collision_flags |= colflag.grounded;
 
 if (place_meeting(x, y + 1, obj_slope))
-    collision_flags |= UnknownEnum.Value_2;
+    collision_flags |= colflag.sloped;
 
 switch (state)
 {
@@ -1212,7 +1220,7 @@ if (blur_effect > 0)
 }
 else if (breakdance_speed >= 0.6 || (state == states.slipbanan && sprite_index == spr_rockethitwall) || mach4mode == true || boxxeddash == true || state == states.ghost || state == states.tumble || state == states.ratmountbounce || state == states.ratmountattack || state == states.handstandjump || (state == states.barrelslide || (state == states.grab && sprite_index == spr_swingding && swingdingdash <= 0) || (state == states.punch && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend)) || state == states.freefall || state == states.lungeattack || state == states.ratmounttrickjump || state == states.trickjump))
 {
-    if (visible && (collision_flags & UnknownEnum.Value_1) == 0)
+    if (visible && (collision_flags & colflag.secret) == 0)
     {
         blur_effect = 2;
         
@@ -1277,7 +1285,7 @@ if (room == Realtitlescreen && instance_exists(obj_mainmenuselect))
 if (wallclingcooldown < 10)
     wallclingcooldown++;
 
-if (supercharged && (collision_flags & UnknownEnum.Value_1) == 0)
+if (supercharged && (collision_flags & colflag.secret) == 0)
 {
     if (superchargebuffer > 0)
     {
@@ -1496,7 +1504,7 @@ if (object_index == obj_player1)
         }
     }
     
-    if (!(state == states.door || state == states.tube || state == states.spaceshuttle || state == states.taxi || state == states.gottreasure || state == states.victory || state == states.gottreasure || state == states.actor || state == states.comingoutdoor || (state == states.knightpep && (sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder)) || instance_exists(obj_fadeout) || (collision_flags & UnknownEnum.Value_1) > 0))
+    if (!(state == states.door || state == states.tube || state == states.spaceshuttle || state == states.taxi || state == states.gottreasure || state == states.victory || state == states.gottreasure || state == states.actor || state == states.comingoutdoor || (state == states.knightpep && (sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder)) || instance_exists(obj_fadeout) || (collision_flags & colflag.secret) > 0))
     {
         if (global.combotime > 0)
             global.combotime -= 0.15;
@@ -1735,12 +1743,12 @@ else
     mask_index = spr_pepperman_mask;
 }
 
-if (state == states.gottreasure || sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder || state == states.keyget || state == states.chainsaw || state == states.door || state == states.ejected || state == states.victory || state == states.comingoutdoor || state == states.gameover || state == states.gotoplayer || state == states.policetaxi || state == states.actor || (collision_flags & UnknownEnum.Value_1) > 0)
+if (state == states.gottreasure || sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder || state == states.keyget || state == states.chainsaw || state == states.door || state == states.ejected || state == states.victory || state == states.comingoutdoor || state == states.gameover || state == states.gotoplayer || state == states.policetaxi || state == states.actor || (collision_flags & colflag.secret) > 0)
     cutscene = true;
 else
     cutscene = false;
 
-if ((state == states.normal || state == states.ratmount) && obj_player1.spotlight == true && !instance_exists(obj_uparrow) && (collision_flags & UnknownEnum.Value_4) > 0)
+if ((state == states.normal || state == states.ratmount) && obj_player1.spotlight == true && !instance_exists(obj_uparrow) && (collision_flags & colflag.grounded) > 0)
 {
     if (place_meeting(x, y, obj_uparrowhitbox))
     {
@@ -1749,7 +1757,7 @@ if ((state == states.normal || state == states.ratmount) && obj_player1.spotligh
     }
 }
 
-if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.slipbanan && !instance_exists(speedlineseffectid) && !cutscene && (collision_flags & UnknownEnum.Value_1) <= 0)
+if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.slipbanan && !instance_exists(speedlineseffectid) && !cutscene && (collision_flags & colflag.secret) <= 0)
 {
     with (instance_create(x, y, obj_speedlines))
     {

@@ -45,7 +45,7 @@ if (room != strongcold_endscreen)
         draw_sprite(spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 }
 
-if (bubblespr != -4)
+if (bubblespr != noone)
     draw_sprite_ext(bubblespr, bubbleindex, obj_screensizer.actual_width - 448, 53, 1, 1, 1, c_white, alpha);
 
 if (!surface_exists(promptsurface))
