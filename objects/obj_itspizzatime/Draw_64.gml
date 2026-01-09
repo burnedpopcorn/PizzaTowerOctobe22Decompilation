@@ -1,1 +1,1 @@
-draw_sprite(spr_itspizzatime, -1, obj_screensizer.actual_width / 2, up);
+draw_sprite(spr_itspizzatime, -1, SCREEN_WIDTH / 2, up);

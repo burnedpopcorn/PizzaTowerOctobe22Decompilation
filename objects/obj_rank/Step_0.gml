@@ -95,7 +95,7 @@ if (image_speed == 0)
     {
         case states.jump:
             var spd = 20;
-            var yy = obj_screensizer.actual_height - 62;
+            var yy = SCREEN_HEIGHT - 62;
             toppin_y[toppin_index] -= spd;
             toppin_yscale[toppin_index] = 1.2;
             

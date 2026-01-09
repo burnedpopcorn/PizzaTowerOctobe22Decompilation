@@ -8,4 +8,4 @@ else
     image_index = 0;
 }
 
-x = (obj_screensizer.actual_width / 2) - (480 - xstart);
+x = (SCREEN_WIDTH / 2) - (480 - xstart);

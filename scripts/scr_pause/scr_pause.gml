@@ -34,7 +34,7 @@ function pause_spawn_priests()
     var p = 
     {
         x: 0,
-        y: obj_screensizer.actual_height + 200,
+        y: SCREEN_HEIGHT + 200,
         speed: random_range(0.8, 1.4),
         image_index: 0,
         image_speed: 0.35,
@@ -43,9 +43,9 @@ function pause_spawn_priests()
     var q = irandom(100);
     
     if (q >= 50)
-        p.x = irandom_range(obj_screensizer.actual_width * 0.78, obj_screensizer.actual_width * 0.65);
+        p.x = irandom_range(SCREEN_WIDTH * 0.78, SCREEN_WIDTH * 0.65);
     else
-        p.x = irandom_range(obj_screensizer.actual_width * 0.2, 0.42);
+        p.x = irandom_range(SCREEN_WIDTH * 0.2, 0.42);
     
     ds_list_add(priest_list, p);
 }
@@ -63,7 +63,7 @@ function pause_update_priests()
             image_index += image_speed;
             
             if (!other.pause)
-                x += ((x > (obj_screensizer.actual_width / 2)) ? 10 : -10);
+                x += ((x > (SCREEN_WIDTH / 2)) ? 10 : -10);
             
             if (y < -200)
                 destroy = true;

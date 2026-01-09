@@ -206,7 +206,7 @@ function scr_boss_phase1hurt(arg0 = noone)
     if (buildup > 0)
     {
         camzoom = lerp(camzoom, 0.5, 0.1);
-        camera_set_view_size(view_camera[0], obj_screensizer.actual_width * camzoom, obj_screensizer.actual_height * camzoom);
+        camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
         x = px;
         y = py;
         buildup--;
@@ -234,7 +234,7 @@ function scr_boss_phase1hurt(arg0 = noone)
     else
     {
         camzoom = lerp(camzoom, 1, 0.5);
-        camera_set_view_size(view_camera[0], obj_screensizer.actual_width * camzoom, obj_screensizer.actual_height * camzoom);
+        camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
         
         with (player)
         {
@@ -282,7 +282,7 @@ function scr_boss_phase1hurt(arg0 = noone)
                 }
             }
             
-            camera_set_view_size(view_camera[0], obj_screensizer.actual_width, obj_screensizer.actual_height);
+            camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
             create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
             
             with (obj_camera)

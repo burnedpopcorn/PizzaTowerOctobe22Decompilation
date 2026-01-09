@@ -6,7 +6,7 @@ if (!pizza && highscore > 0 && bbox_in_camera(view_camera[0], 0) && distance_to_
 {
     pizza = true;
     
-    with (instance_create(x, y - obj_screensizer.actual_height, obj_startgate_pizza))
+    with (instance_create(x, y - SCREEN_HEIGHT, obj_startgate_pizza))
     {
         y_to = other.y - 125;
         highscore = [];

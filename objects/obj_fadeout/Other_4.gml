@@ -13,7 +13,7 @@ if (obj_player.state == states.taxi)
 {
     if (!global.pizzadelivery)
     {
-        with (instance_create(obj_stopsign.x - (obj_screensizer.actual_width / 2), obj_stopsign.y, obj_taxidud))
+        with (instance_create(obj_stopsign.x - (SCREEN_WIDTH / 2), obj_stopsign.y, obj_taxidud))
         {
             playerid = obj_player1;
             
@@ -26,7 +26,7 @@ if (obj_player.state == states.taxi)
     }
     else
     {
-        with (instance_create(obj_checkpoint.x - (obj_screensizer.actual_width / 2), obj_checkpoint.y - 50, obj_taxidud))
+        with (instance_create(obj_checkpoint.x - (SCREEN_WIDTH / 2), obj_checkpoint.y - 50, obj_taxidud))
             playerid = obj_player1;
         
         with (obj_player)

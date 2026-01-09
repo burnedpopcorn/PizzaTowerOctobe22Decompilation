@@ -1,4 +1,4 @@
-text_xscale = (obj_screensizer.actual_width - 64) / sprite_get_width(spr_tutorialbubble);
+text_xscale = (SCREEN_WIDTH - 64) / sprite_get_width(spr_tutorialbubble);
 
 if (text_xscale != text_oldxscale)
     event_perform(ev_other, ev_room_start);

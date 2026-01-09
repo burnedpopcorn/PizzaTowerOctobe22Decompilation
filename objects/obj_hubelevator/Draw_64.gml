@@ -17,8 +17,8 @@ if (state == states.titlescreen)
     
     w += pad;
     h += pad;
-    yy = (obj_screensizer.actual_height / 2) + (h / 2);
-    draw_rectangle_color((obj_screensizer.actual_width / 2) - (w / 2), (obj_screensizer.actual_height / 2) - (h / 2), (obj_screensizer.actual_width / 2) + (w / 2), yy, c_black, c_black, c_black, c_black, false);
+    yy = (SCREEN_HEIGHT / 2) + (h / 2);
+    draw_rectangle_color((SCREEN_WIDTH / 2) - (w / 2), (SCREEN_HEIGHT / 2) - (h / 2), (SCREEN_WIDTH / 2) + (w / 2), yy, c_black, c_black, c_black, c_black, false);
     yy -= (pad / 2);
     draw_set_valign(fa_bottom);
     draw_set_halign(fa_center);

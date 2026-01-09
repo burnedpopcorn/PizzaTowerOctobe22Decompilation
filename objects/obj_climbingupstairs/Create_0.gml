@@ -6,6 +6,6 @@ depth = 0;
 with (obj_player)
 {
     state = states.titlescreen;
-    x = -obj_screensizer.actual_width - 100;
-    y = -obj_screensizer.actual_height - 100;
+    x = -SCREEN_WIDTH - 100;
+    y = -SCREEN_HEIGHT - 100;
 }

@@ -1,5 +1,5 @@
-x = obj_screensizer.actual_width - 120;
-y = obj_screensizer.actual_height + 200;
+x = SCREEN_WIDTH - 120;
+y = SCREEN_HEIGHT + 200;
 achievement_spr = spr_achievement_farm;
 achievement_index = 0;
 finish = false;

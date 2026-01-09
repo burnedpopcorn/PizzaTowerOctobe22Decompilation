@@ -1,3 +1,8 @@
+#macro SCREEN_WIDTH obj_screensizer.actual_width
+#macro SCREEN_HEIGHT obj_screensizer.actual_height
+#macro CAMERA_WIDTH obj_screensizer.ideal_width
+#macro CAMERA_HEIGHT obj_screensizer.ideal_height
+
 function screen_apply_size()
 {
     with (obj_screensizer)
@@ -76,7 +81,7 @@ function window_to_gui_yscale(arg0)
     return (arg0 * display_get_gui_height()) / window_get_height();
 }
 
-function get_resolution_width(arg0, arg1 = UnknownEnum.Value_0)
+function get_resolution_width(arg0, arg1 = aspectratio.normal)
 {
     if (arg0 < 0 || arg0 >= array_length(global.resolutions[arg1]))
         return get_resolution_width(1, arg1);
@@ -84,7 +89,7 @@ function get_resolution_width(arg0, arg1 = UnknownEnum.Value_0)
     return global.resolutions[arg1][arg0][0];
 }
 
-function get_resolution_height(arg0, arg1 = UnknownEnum.Value_0)
+function get_resolution_height(arg0, arg1 = aspectratio.normal)
 {
     if (arg0 < 0 || arg0 >= array_length(global.resolutions[arg1]))
         return get_resolution_height(1, arg1);
@@ -92,7 +97,7 @@ function get_resolution_height(arg0, arg1 = UnknownEnum.Value_0)
     return global.resolutions[arg1][arg0][1];
 }
 
-function get_resolution(arg0, arg1 = UnknownEnum.Value_0)
+function get_resolution(arg0, arg1 = aspectratio.normal)
 {
     if (arg0 < 0 || arg0 >= array_length(global.resolutions[arg1]))
         return noone;
@@ -102,7 +107,7 @@ function get_resolution(arg0, arg1 = UnknownEnum.Value_0)
 
 function screen_clear(arg0 = 0)
 {
-    draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, arg0, arg0, arg0, arg0, false);
+    draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, arg0, arg0, arg0, arg0, false);
 }
 
 function get_options()

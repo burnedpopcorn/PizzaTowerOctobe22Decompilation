@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_screensizer",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -19,113 +22,22 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 0,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 2,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 1,
-      "eventType": 2,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 2,
-      "eventType": 3,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 4,
-      "eventType": 7,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 5,
-      "eventType": 7,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 77,
-      "eventType": 8,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 74,
-      "eventType": 8,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 75,
-      "eventType": 8,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 73,
-      "eventType": 8,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 76,
-      "eventType": 8,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    }
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":1,"eventType":2,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":4,"eventType":7,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":5,"eventType":7,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":77,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":74,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":75,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":73,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":76,"eventType":8,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "obj_screensizer",
   "parent": {
     "name": "Game Settings",
     "path": "folders/Objects/Game Settings.yy",
-  }
+  },
 }

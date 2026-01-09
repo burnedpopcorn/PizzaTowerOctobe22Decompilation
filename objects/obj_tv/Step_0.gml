@@ -1,8 +1,8 @@
-tv_x = obj_screensizer.actual_width - 115;
+tv_x = SCREEN_WIDTH - 115;
 tv_y = 80;
-timer_xstart = (obj_screensizer.actual_width / 2) + timer_xplus;
+timer_xstart = (SCREEN_WIDTH / 2) + timer_xplus;
 timer_x = timer_xstart;
-timer_ystart = obj_screensizer.actual_height + timer_yplus;
+timer_ystart = SCREEN_HEIGHT + timer_yplus;
 
 if (room == Realtitlescreen || room == Mainmenu || room == rank_room || room == rm_levelselect || room == timesuproom || room == boss_room1 || room == characterselect || room == hub_loadingscreen)
 {

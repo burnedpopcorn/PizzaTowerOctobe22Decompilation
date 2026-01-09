@@ -9,9 +9,7 @@ if (!surface_exists(gui_surf))
 }
 
 if (global.option_scale_mode == 0)
-{
     draw_surface(gui_surf, 0, 0);
-}
 else
 {
     var _w = display_get_gui_width() * app_scale;

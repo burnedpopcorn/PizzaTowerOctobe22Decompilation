@@ -11,42 +11,42 @@ if (window_width_current != window_get_width() || window_height_current != windo
     
     if (global.option_scale_mode == 0)
     {
-        camera_set_view_size(view_camera[0], obj_screensizer.ideal_width, obj_screensizer.ideal_height);
-        app_scale = min(ww / obj_screensizer.ideal_width, wh / obj_screensizer.ideal_height);
+        camera_set_view_size(view_camera[0], CAMERA_WIDTH, CAMERA_HEIGHT);
+        app_scale = min(ww / CAMERA_WIDTH, wh / CAMERA_HEIGHT);
         trace(app_scale);
-        obj_screensizer.actual_width = obj_screensizer.ideal_width;
-        obj_screensizer.actual_height = obj_screensizer.ideal_height;
+        SCREEN_WIDTH = CAMERA_WIDTH;
+        SCREEN_HEIGHT = CAMERA_HEIGHT;
         
         if (app_scale > 0)
         {
-            surface_resize(application_surface, obj_screensizer.ideal_width * app_scale, obj_screensizer.ideal_height * app_scale);
-            display_set_gui_size(obj_screensizer.ideal_width, obj_screensizer.ideal_height);
+            surface_resize(application_surface, CAMERA_WIDTH * app_scale, CAMERA_HEIGHT * app_scale);
+            display_set_gui_size(CAMERA_WIDTH, CAMERA_HEIGHT);
         }
     }
     else if (global.option_scale_mode == 1)
     {
-        camera_set_view_size(view_camera[0], obj_screensizer.ideal_width, obj_screensizer.ideal_height);
-        app_scale = min(ww div obj_screensizer.ideal_width, wh div obj_screensizer.ideal_height);
-        obj_screensizer.actual_width = obj_screensizer.ideal_width;
-        obj_screensizer.actual_height = obj_screensizer.ideal_height;
+        camera_set_view_size(view_camera[0], CAMERA_WIDTH, CAMERA_HEIGHT);
+        app_scale = min(ww div CAMERA_WIDTH, wh div CAMERA_HEIGHT);
+        SCREEN_WIDTH = CAMERA_WIDTH;
+        SCREEN_HEIGHT = CAMERA_HEIGHT;
         
         if (app_scale > 0)
         {
-            surface_resize(application_surface, obj_screensizer.ideal_width * app_scale, obj_screensizer.ideal_height * app_scale);
-            display_set_gui_size(obj_screensizer.ideal_width, obj_screensizer.ideal_height);
+            surface_resize(application_surface, CAMERA_WIDTH * app_scale, CAMERA_HEIGHT * app_scale);
+            display_set_gui_size(CAMERA_WIDTH, CAMERA_HEIGHT);
         }
     }
     else if (global.option_scale_mode == 2)
     {
         app_scale = 1;
         camera_set_view_size(view_camera[0], ww, wh);
-        obj_screensizer.actual_width = ww;
-        obj_screensizer.actual_height = wh;
+        SCREEN_WIDTH = ww;
+        SCREEN_HEIGHT = wh;
         
         if (ww > 0 && wh > 0)
         {
-            surface_resize(application_surface, obj_screensizer.actual_width, obj_screensizer.actual_height);
-            display_set_gui_size(obj_screensizer.actual_width, obj_screensizer.actual_height);
+            surface_resize(application_surface, SCREEN_WIDTH, SCREEN_HEIGHT);
+            display_set_gui_size(SCREEN_WIDTH, SCREEN_HEIGHT);
         }
     }
     
@@ -54,6 +54,6 @@ if (window_width_current != window_get_width() || window_height_current != windo
     last_fullscreen = window_get_fullscreen();
     window_width_current = window_get_width();
     window_height_current = window_get_height();
-    normal_size_fix_x = (obj_screensizer.actual_width - 960) / 2;
-    normal_size_fix_y = (obj_screensizer.actual_height - 540) / 2;
+    normal_size_fix_x = (SCREEN_WIDTH - 960) / 2;
+    normal_size_fix_y = (SCREEN_HEIGHT - 540) / 2;
 }

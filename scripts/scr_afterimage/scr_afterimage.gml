@@ -11,7 +11,7 @@ function create_afterimage(arg0, arg1, arg2, arg3)
         image_blend: choose(global.afterimage_color1, global.afterimage_color2),
         image_xscale: 1,
         image_yscale: 1,
-        identifier: UnknownEnum.Value_0,
+        identifier: afterimagetype.normal,
         visible: true,
         alpha: 1
     };
@@ -33,7 +33,7 @@ function create_mach3effect(arg0, arg1, arg2, arg3)
         image_xscale: 1,
         image_yscale: 1,
         visible: true,
-        identifier: UnknownEnum.Value_1,
+        identifier: afterimagetype.mach3effect,
         playerid: obj_player1,
         alpha: 1
     };

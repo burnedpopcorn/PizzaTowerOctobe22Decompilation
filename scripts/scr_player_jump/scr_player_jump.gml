@@ -355,7 +355,7 @@ function state_player_jump()
         if (shotgunAnim)
             scr_shotgunshoot();
         else if (global.pistol)
-            scr_pistolshoot(UnknownEnum.Value_92);
+            scr_pistolshoot(states.jump);
     }
     
     if (key_slap2 && shoot)

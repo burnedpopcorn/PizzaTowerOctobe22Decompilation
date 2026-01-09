@@ -33,7 +33,7 @@ function create_debris(arg0, arg1, arg2, arg3 = false)
         vsp: random_range(-5, -2),
         alpha: 1,
         grav: 0.4,
-        type: UnknownEnum.Value_0,
+        type: particle_type.normal,
         animated: arg3,
         destroyonanimation: false
     };

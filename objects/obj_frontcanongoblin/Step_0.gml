@@ -1,7 +1,7 @@
 if (state != states.gameover)
 {
-    captain_y = obj_screensizer.actual_height;
-    canon_y = obj_screensizer.actual_height;
+    captain_y = SCREEN_HEIGHT;
+    canon_y = SCREEN_HEIGHT;
 }
 
 switch (state)
@@ -32,7 +32,7 @@ switch (state)
         }
         else
         {
-            var cy = obj_screensizer.actual_height + sprite_get_height(captain_sprite);
+            var cy = SCREEN_HEIGHT + sprite_get_height(captain_sprite);
             captain_y = Approach(captain_y, cy, 2);
             canon_y = Approach(canon_y, cy, 1.8);
             

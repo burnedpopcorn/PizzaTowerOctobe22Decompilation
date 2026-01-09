@@ -1,5 +1,5 @@
-x = obj_screensizer.actual_width / 2;
-y = obj_screensizer.actual_height + sprite_get_height(spr_gustavo_intro);
+x = SCREEN_WIDTH / 2;
+y = SCREEN_HEIGHT + sprite_get_height(spr_gustavo_intro);
 movespeed = 8;
 state = states.transitioncutscene;
 depth = -100;

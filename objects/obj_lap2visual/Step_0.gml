@@ -15,4 +15,4 @@ else
         instance_destroy();
 }
 
-x = obj_screensizer.actual_width / 2;
+x = SCREEN_WIDTH / 2;

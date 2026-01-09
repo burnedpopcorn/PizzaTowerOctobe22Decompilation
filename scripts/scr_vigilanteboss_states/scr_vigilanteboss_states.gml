@@ -697,7 +697,7 @@ function boss_vigilante_crouchslide()
     }
     
     if (phase > 4)
-        vigilante_cancel_attack(states.groundpunchstart, states.charge, UnknownEnum.Value_82);
+        vigilante_cancel_attack(states.groundpunchstart, states.charge, states.uppunch);
 }
 
 function boss_vigilante_machslide()
@@ -827,7 +827,7 @@ function boss_vigilante_punch()
     }
     
     if (phase > 4)
-        vigilante_cancel_attack(states.groundpunchstart, UnknownEnum.Value_82);
+        vigilante_cancel_attack(states.groundpunchstart, states.uppunch);
 }
 
 function boss_vigilante_groundpunchstart()
@@ -939,7 +939,7 @@ function boss_vigilante_freefallland()
         state = states.normal;
     
     if (phase > 4)
-        vigilante_cancel_attack(!honor ? states.revolver : states.handstandjump, UnknownEnum.Value_82);
+        vigilante_cancel_attack(!honor ? states.revolver : states.handstandjump, states.uppunch);
 }
 
 function boss_vigilante_millionpunch()
@@ -964,7 +964,7 @@ function boss_vigilante_millionpunch()
         state = states.normal;
     
     if (phase > 4)
-        vigilante_cancel_attack(states.groundpunchstart, UnknownEnum.Value_82);
+        vigilante_cancel_attack(states.groundpunchstart, states.uppunch);
 }
 
 function boss_vigilante_uppunch()
@@ -978,7 +978,7 @@ function boss_vigilante_uppunch()
         state = states.normal;
     
     if (phase > 4)
-        vigilante_cancel_attack(states.handstandjump, UnknownEnum.Value_82);
+        vigilante_cancel_attack(states.handstandjump, states.uppunch);
 }
 
 function boss_vigilante_handstandjump()
@@ -995,7 +995,7 @@ function boss_vigilante_handstandjump()
         state = states.normal;
     
     if (phase > 4)
-        vigilante_cancel_attack(UnknownEnum.Value_92);
+        vigilante_cancel_attack(states.jump);
 }
 
 function boss_vigilante_superattackstart()

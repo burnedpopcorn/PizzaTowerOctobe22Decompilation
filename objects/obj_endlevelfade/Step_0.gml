@@ -6,12 +6,12 @@ with (obj_player)
     {
         var cx = camera_get_view_x(view_camera[0]);
         var cy = camera_get_view_y(view_camera[0]);
-        var tx = cx + (obj_screensizer.actual_width / 2);
+        var tx = cx + (SCREEN_WIDTH / 2);
         
         if (object_index == obj_player2)
             tx += 100;
         
-        var ty = cy + (obj_screensizer.actual_height / 2);
+        var ty = cy + (SCREEN_HEIGHT / 2);
         var dir = point_direction(x, y, tx, ty);
         var lx = lengthdir_x(accel, dir);
         var ly = lengthdir_y(accel, dir);

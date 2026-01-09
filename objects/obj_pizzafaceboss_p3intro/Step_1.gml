@@ -311,7 +311,7 @@ switch (introstate)
                 image_index = image_number - 6;
         }
         
-        camera_set_view_size(view_camera[0], obj_screensizer.actual_width * camzoom, obj_screensizer.actual_height * camzoom);
+        camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
         camzoom = lerp(camzoom, 0.5, 0.07);
         obj_player1.hsp = 1;
         obj_player1.image_speed = Approach(obj_player1.image_speed, 0.1, 0.1);

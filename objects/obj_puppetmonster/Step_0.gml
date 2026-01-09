@@ -21,7 +21,7 @@ switch (state)
     
     case states.robotroaming:
         sprite_index = spr_monstertomato_idle;
-        x = camera_get_view_x(view_camera[0]) + (obj_screensizer.actual_width / 2);
+        x = camera_get_view_x(view_camera[0]) + (SCREEN_WIDTH / 2);
         y = camera_get_view_y(view_camera[0]) + yy;
         
         switch (substate)

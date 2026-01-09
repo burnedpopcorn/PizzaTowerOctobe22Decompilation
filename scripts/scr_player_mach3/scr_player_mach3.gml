@@ -230,7 +230,7 @@ function scr_player_mach3()
                 if (shotgunAnim)
                     scr_shotgunshoot();
                 else if (global.pistol)
-                    scr_pistolshoot(UnknownEnum.Value_121);
+                    scr_pistolshoot(states.mach3);
             }
             
             if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)

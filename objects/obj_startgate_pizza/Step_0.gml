@@ -18,7 +18,7 @@ switch (state)
         break;
     
     case 1:
-        var cy = camera_get_view_y(view_camera[0]) - (obj_screensizer.actual_height / 3);
+        var cy = camera_get_view_y(view_camera[0]) - (SCREEN_HEIGHT / 3);
         var _found = false;
         
         for (var i = 0; i < array_length(highscore); i++)

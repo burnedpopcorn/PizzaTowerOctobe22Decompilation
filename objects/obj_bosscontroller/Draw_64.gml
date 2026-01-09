@@ -7,11 +7,11 @@ switch (state)
         if (arenastate < 3)
         {
             draw_set_alpha(1);
-            draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, c_white, c_white, c_white, c_white, false);
-            draw_sprite_ext(playerspr, -1, playerx, obj_screensizer.actual_height, 1, 1, 0, c_black, 1);
-            draw_sprite_ext(bossspr, -1, bossx, obj_screensizer.actual_height, 1, 1, 0, c_black, 1);
+            draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
+            draw_sprite_ext(playerspr, -1, playerx, SCREEN_HEIGHT, 1, 1, 0, c_black, 1);
+            draw_sprite_ext(bossspr, -1, bossx, SCREEN_HEIGHT, 1, 1, 0, c_black, 1);
             draw_set_alpha(whitefade);
-            draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, c_white, c_white, c_white, c_white, false);
+            draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
             draw_set_alpha(1);
         }
         else
@@ -40,21 +40,21 @@ switch (state)
             }
             
             var px = playerx + sx;
-            var py = obj_screensizer.actual_height + sy;
+            var py = SCREEN_HEIGHT + sy;
             var bx = bossx + sy;
-            var by = obj_screensizer.actual_height + sy;
+            var by = SCREEN_HEIGHT + sy;
             
             if (px > 0)
                 px = 0;
             
-            if (py < obj_screensizer.actual_height)
-                py = obj_screensizer.actual_height;
+            if (py < SCREEN_HEIGHT)
+                py = SCREEN_HEIGHT;
             
-            if (bx < obj_screensizer.actual_width)
-                bx = obj_screensizer.actual_width;
+            if (bx < SCREEN_WIDTH)
+                bx = SCREEN_WIDTH;
             
-            if (by < obj_screensizer.actual_height)
-                by = obj_screensizer.actual_height;
+            if (by < SCREEN_HEIGHT)
+                by = SCREEN_HEIGHT;
             
             draw_sprite_ext(playerspr, -1, px, py, 1, 1, 0, c_player, 1);
             draw_sprite_ext(bossspr, _index, bx, by, _xs, _ys, 0, c_player, 1);

@@ -3,7 +3,7 @@ if (addseconds <= 0)
 else
     draw_set_font(global.wartimerfont2);
 
-var xx = obj_screensizer.actual_width / 2;
+var xx = SCREEN_WIDTH / 2;
 var yy = timer_y;
 
 if (obj_player.y > (room_height - 139))

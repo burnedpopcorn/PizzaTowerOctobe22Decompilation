@@ -1,1 +1,1 @@
-draw_sprite(signspr, 0, obj_screensizer.actual_width / 2, signy);
+draw_sprite(signspr, 0, SCREEN_WIDTH / 2, signy);

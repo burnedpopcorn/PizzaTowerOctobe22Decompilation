@@ -583,9 +583,9 @@ function boss_pizzahead_p2_phase1hurt()
     {
         obj_camera.lock = true;
         camzoom = lerp(camzoom, 0.5, 0.2);
-        camera_set_view_size(view_camera[0], obj_screensizer.actual_width * camzoom, obj_screensizer.actual_height * camzoom);
-        var _x = clamp(x - ((obj_screensizer.actual_width * camzoom) / 2), 0, room_width - (obj_screensizer.actual_width * camzoom));
-        var _y = clamp(y - ((obj_screensizer.actual_height * camzoom) / 2), 0, room_height - (obj_screensizer.actual_height * camzoom));
+        camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
+        var _x = clamp(x - ((SCREEN_WIDTH * camzoom) / 2), 0, room_width - (SCREEN_WIDTH * camzoom));
+        var _y = clamp(y - ((SCREEN_HEIGHT * camzoom) / 2), 0, room_height - (SCREEN_HEIGHT * camzoom));
         camera_set_view_pos(view_camera[0], _x, _y);
         buildup--;
     }
@@ -595,7 +595,7 @@ function boss_pizzahead_p2_phase1hurt()
         instance_create(0, 0, obj_pizzahead_whitefade);
         obj_camera.lock = false;
         camzoom = 1;
-        camera_set_view_size(view_camera[0], obj_screensizer.actual_width, obj_screensizer.actual_height);
+        camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
         elitehit--;
         
         with (obj_player)

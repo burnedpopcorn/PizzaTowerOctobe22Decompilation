@@ -16,7 +16,7 @@ function scr_pizzaball_hit()
         
         notification_push(notifs.pizzaball_shot, [obj_player1]);
         
-        if (s != UnknownEnum.Value_104)
+        if (s != states.mach2)
             scr_pizzaball_go_to_thrown(hithsp * 1.5, -12);
         else
             scr_pizzaball_go_to_thrown(hithsp * 0.5, hitvsp * 0.5);

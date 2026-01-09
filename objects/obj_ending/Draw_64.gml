@@ -8,7 +8,7 @@ var yy = credits_y;
 for (var i = 0; i < array_length(credits_str); i++)
 {
     var b = credits_str[i];
-    draw_text(obj_screensizer.actual_width / 2, yy, b);
+    draw_text(SCREEN_WIDTH / 2, yy, b);
     yy += string_height(b);
 }
 

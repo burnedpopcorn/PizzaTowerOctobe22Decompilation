@@ -1,9 +1,9 @@
 event_inherited();
-ds_map_set(player_hurtstates, UnknownEnum.Value_42, 30);
-ds_map_set(player_hurtstates, UnknownEnum.Value_41, 50);
-ds_map_set(player_hurtstates, UnknownEnum.Value_104, 20);
-ds_map_set(player_hurtstates, UnknownEnum.Value_121, 30);
-ds_map_set(player_hurtstates, UnknownEnum.Value_47, 60);
+ds_map_set(player_hurtstates, states.handstandjump, 30);
+ds_map_set(player_hurtstates, states.chainsawbump, 50);
+ds_map_set(player_hurtstates, states.mach2, 20);
+ds_map_set(player_hurtstates, states.mach3, 30);
+ds_map_set(player_hurtstates, states.knightpep, 60);
 ds_map_set(boss_hurtstates, states.pizzahead_spinningkick, 60);
 ds_map_set(boss_hurtstates, states.pizzahead_spinningpunch, 50);
 ds_map_set(boss_hurtstates, states.pizzahead_groundpunch, 50);

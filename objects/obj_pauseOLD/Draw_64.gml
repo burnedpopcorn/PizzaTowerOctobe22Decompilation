@@ -5,10 +5,10 @@ if (pause)
 {
     var pad = 48;
     draw_set_alpha(1);
-    draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, c_black, c_black, c_black, c_black, false);
+    draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_black, c_black, c_black, c_black, false);
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
-    var xx = (obj_screensizer.actual_width / 2) + 10;
+    var xx = (SCREEN_WIDTH / 2) + 10;
     var yy = 48;
     
     for (var i = 0; i < array_length(pause_menu); i++)
@@ -25,7 +25,7 @@ if (pause)
         draw_text_color(xx, yy, lang_get_value(pause_menu[i]), c, c, c, c, 1);
     }
     
-    xx = (obj_screensizer.actual_width / 2) - 224;
+    xx = (SCREEN_WIDTH / 2) - 224;
     yy = 192;
     shader_set(global.Pal_Shader);
     pal_swap_set(spr_palette, paletteselect, false);
@@ -33,8 +33,8 @@ if (pause)
     reset_shader_fix();
     draw_set_font(global.collectfont);
     draw_set_halign(fa_center);
-    xx = (obj_screensizer.actual_width / 2) + 209;
-    yy = (obj_screensizer.actual_height / 2) + 146;
+    xx = (SCREEN_WIDTH / 2) + 209;
+    yy = (SCREEN_HEIGHT / 2) + 146;
     draw_sprite(spr_pizzascore, 0, xx, yy);
     
     if (global.collect >= global.crank)
@@ -64,8 +64,8 @@ if (pause)
     if (global.collect >= global.srank)
         rank = "S";
     
-    xx = (obj_screensizer.actual_width / 2) - 308;
-    yy = (obj_screensizer.actual_height / 2) + 134;
+    xx = (SCREEN_WIDTH / 2) - 308;
+    yy = (SCREEN_HEIGHT / 2) + 134;
     pad = 40;
     
     for (var i = 0; i < array_length(toppin_sprite); i++)

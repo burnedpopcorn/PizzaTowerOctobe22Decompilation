@@ -8,7 +8,7 @@ if (DEBUG)
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
     draw_set_alpha(0.7);
-    draw_rectangle_color(0, 0, obj_screensizer.actual_width, 152, c_black, c_black, c_black, c_black, false);
+    draw_rectangle_color(0, 0, SCREEN_WIDTH, 152, c_black, c_black, c_black, c_black, false);
     var search_y = 152;
     
     if (input_text != "" && !ds_list_empty(search_commands))
@@ -25,7 +25,7 @@ if (DEBUG)
         var t = array_get(ds_list_find_value(text_list, i), 0);
         var txt = array_get(ds_list_find_value(text_list, i), 1);
         var str = txt;
-        var c = 16777215;
+        var c = c_white;
         
         switch (t)
         {

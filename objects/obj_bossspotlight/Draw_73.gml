@@ -1,5 +1,5 @@
 if (!surface_exists(surface))
-    surface = surface_create(obj_screensizer.actual_width, obj_screensizer.actual_height);
+    surface = surface_create(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 surface_set_target(surface);
 draw_clear_alpha(c_black, 0);
@@ -7,7 +7,7 @@ var cx = camera_get_view_x(view_camera[0]);
 var cy = camera_get_view_y(view_camera[0]);
 draw_set_color(c_black);
 draw_set_alpha(0.8);
-draw_rectangle(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, false);
+draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 gpu_set_blendmode(bm_subtract);
 draw_set_color(c_white);
 draw_set_alpha(1);

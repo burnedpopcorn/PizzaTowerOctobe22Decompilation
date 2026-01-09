@@ -11,7 +11,7 @@ if (!ds_list_empty(global.debris_list))
                 if (vsp < 20)
                     vsp += grav;
                 
-                if (type == UnknownEnum.Value_1)
+                if (type == particle_type.fadeout)
                 {
                     vsp = 0;
                     alpha -= 0.05;
@@ -37,7 +37,7 @@ if (!ds_list_empty(global.debris_list))
                 var outofx = x > (room_width + sprw) || x < -sprw;
                 var outofy = y > (room_height + sprh) || y < -sprh;
                 
-                if (outofx || outofy || (type == UnknownEnum.Value_1 && alpha <= 0))
+                if (outofx || outofy || (type == particle_type.fadeout && alpha <= 0))
                     _destroy = true;
                 
                 if (_destroy)
@@ -46,9 +46,7 @@ if (!ds_list_empty(global.debris_list))
                     i--;
                     q = undefined;
                 }
-                else
-                {
-                }
+                else { }
             }
         }
     }
@@ -86,9 +84,7 @@ if (!ds_list_empty(global.collect_list))
                     i--;
                     b = undefined;
                 }
-                else
-                {
-                }
+                else { }
             }
         }
     }

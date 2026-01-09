@@ -1,6 +1,6 @@
 if (!finish)
 {
-    var ty = obj_screensizer.actual_height - 140;
+    var ty = SCREEN_HEIGHT - 140;
     y = Approach(y, ty, movespeed);
     
     if (abs(ty - y) <= 100)
@@ -16,7 +16,7 @@ if (!finish)
 }
 else
 {
-    var ty = obj_screensizer.actual_height + 200;
+    var ty = SCREEN_HEIGHT + 200;
     y = Approach(y, ty, movespeed);
     movespeed = Approach(movespeed, 8, 0.1);
     

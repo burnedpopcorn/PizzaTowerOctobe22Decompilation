@@ -5,7 +5,7 @@ else
 
 if (state > 0 && state > 0 && state < 5)
 {
-    camera_set_view_size(view_camera[0], obj_screensizer.actual_width * camzoom, obj_screensizer.actual_height * camzoom);
+    camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
     var cx = camx;
     var cy = obj_player1.y;
     cx -= (camera_get_view_width(view_camera[0]) / 2);
@@ -15,5 +15,5 @@ if (state > 0 && state > 0 && state < 5)
 }
 else
 {
-    camera_set_view_size(view_camera[0], obj_screensizer.actual_width, obj_screensizer.actual_height);
+    camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
 }

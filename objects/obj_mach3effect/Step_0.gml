@@ -1,4 +1,4 @@
-if (!playerid.state == UnknownEnum.Value_121 && !playerid.state == UnknownEnum.Value_104 && playerid.ghostdash == false && playerid.ratmount_movespeed < 12)
+if (!playerid.state == states.mach3 && !playerid.state == states.mach2 && playerid.ghostdash == false && playerid.ratmount_movespeed < 12)
     instance_destroy();
 
 visible = playerid.visible;

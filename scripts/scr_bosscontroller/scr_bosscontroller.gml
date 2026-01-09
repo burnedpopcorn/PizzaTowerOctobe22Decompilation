@@ -42,7 +42,7 @@ function scr_bosscontroller_intro()
                 break;
             
             case 1:
-                var btx = obj_screensizer.actual_width;
+                var btx = SCREEN_WIDTH;
                 bossx = lerp(bossx, btx, a);
                 
                 if (abs(bossx - btx) <= 10)

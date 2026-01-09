@@ -35,6 +35,12 @@ enum particle
 	enum_length = 16,//invalid particle
 }
 
+enum particle_type
+{
+	normal = 0,
+	fadeout = 1
+}
+
 var p = declare_particle(particle.cloudeffect, spr_cloudeffect, 0.5, 99);
 part_type_speed(p, 0, 0, 0, 0);
 p = declare_particle(particle.crazyrunothereffect, spr_crazyrunothereffect, 0.5, -99);

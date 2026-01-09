@@ -9,7 +9,7 @@ blur_effect = 0;
 golfhit = [4, 6, 8];
 arrowindex = 0;
 shootup = false;
-instance_create_unique(156, obj_screensizer.actual_height + 400, obj_pizzaball_golfhit);
+instance_create_unique(156, SCREEN_HEIGHT + 400, obj_pizzaball_golfhit);
 grav = 0.5;
 hsp = 0;
 vsp = 0;

@@ -3,8 +3,8 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_alpha(fade);
 draw_set_color(c_white);
-var xx = obj_screensizer.actual_width / 2;
-var yy = obj_screensizer.actual_height - 50;
+var xx = SCREEN_WIDTH / 2;
+var yy = SCREEN_HEIGHT - 50;
 
 if (global.panic)
     yy -= 60;

@@ -46,7 +46,7 @@ if (room != strongcold_endscreen)
 }
 
 if (bubblespr != noone)
-    draw_sprite_ext(bubblespr, bubbleindex, obj_screensizer.actual_width - 448, 53, 1, 1, 1, c_white, alpha);
+    draw_sprite_ext(bubblespr, bubbleindex, SCREEN_WIDTH - 448, 53, 1, 1, 1, c_white, alpha);
 
 if (!surface_exists(promptsurface))
     promptsurface = surface_create(290, 102);
@@ -72,7 +72,7 @@ if (bubblespr == spr_tv_bubble)
 
 draw_set_halign(fa_left);
 surface_reset_target();
-draw_surface(promptsurface, obj_screensizer.actual_width - 610, 0);
+draw_surface(promptsurface, SCREEN_WIDTH - 610, 0);
 draw_set_font(global.smallnumber_fnt);
 draw_set_halign(fa_center);
 

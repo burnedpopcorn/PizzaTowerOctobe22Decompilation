@@ -263,23 +263,23 @@ if (DEBUG)
                     
                     switch (arg0)
                     {
-                        case UnknownEnum.Value_0:
+                        case states.normal:
                             _spr = spr_idle;
                             break;
                         
-                        case UnknownEnum.Value_24:
+                        case states.cheesepep:
                             _spr = spr_cheesepep_idle;
                             break;
                         
-                        case UnknownEnum.Value_47:
+                        case states.knightpep:
                             _spr = spr_knightpepidle;
                             break;
                         
-                        case UnknownEnum.Value_10:
+                        case states.firemouth:
                             _spr = spr_firemouth;
                             break;
                         
-                        case UnknownEnum.Value_191:
+                        case states.ratmount:
                             _spr = spr_player_ratmountidle;
                             break;
                     }
@@ -294,11 +294,11 @@ if (DEBUG)
     showcollisions = false;
     showhud = true;
     state_map = ds_map_create();
-    ds_map_set(state_map, "states.normal", UnknownEnum.Value_0);
-    ds_map_set(state_map, "states.cheesepep", UnknownEnum.Value_24);
-    ds_map_set(state_map, "states.knightpep", UnknownEnum.Value_47);
-    ds_map_set(state_map, "states.firemouth", UnknownEnum.Value_10);
-    ds_map_set(state_map, "states.ratmount", UnknownEnum.Value_191);
+    ds_map_set(state_map, "states.normal", states.normal);
+    ds_map_set(state_map, "states.cheesepep", states.cheesepep);
+    ds_map_set(state_map, "states.knightpep", states.knightpep);
+    ds_map_set(state_map, "states.firemouth", states.firemouth);
+    ds_map_set(state_map, "states.ratmount", states.ratmount);
     command_list = ds_list_create();
     ds_list_add(command_list, DESTROYICE, SHOW_HUD, SHOW_COLLISIONS, PLAYER_ROOM, CAMERA_ZOOM, HARDMODE, PLAYER_SET_STATE, PANIC, ALLTOPPINS, GIVEHEAT);
     ds_list_add(command_list, SETCOMBO, GIVEKEY, LOADTEST, NOCLIP, THROWARC, HIDETILES, LOCKCAMERA);

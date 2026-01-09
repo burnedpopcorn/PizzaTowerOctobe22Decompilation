@@ -24,7 +24,7 @@ function scr_playerreset()
     
     fmod_set_parameter("musicmuffle", 0, true);
     fmod_set_parameter("pillarfade", 0, true);
-    camera_set_view_size(view_camera[0], obj_screensizer.actual_width, obj_screensizer.actual_height);
+    camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
     instance_destroy(obj_frontcanongoblin);
     instance_destroy(obj_confettieffect);
     instance_destroy(obj_pizzaball_rank);

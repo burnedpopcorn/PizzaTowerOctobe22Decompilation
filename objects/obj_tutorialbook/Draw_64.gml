@@ -2,7 +2,7 @@ if (text_state == states.titlescreen && text_y <= -(text_sprite_height * text_ys
     exit;
 
 draw_sprite(spr_tutorialbubble_rope, 0, 64 + text_wave_x, text_y + text_wave_y);
-draw_sprite(spr_tutorialbubble_rope, 0, (obj_screensizer.actual_width - 64) + text_wave_x, text_y + text_wave_y);
+draw_sprite(spr_tutorialbubble_rope, 0, (SCREEN_WIDTH - 64) + text_wave_x, text_y + text_wave_y);
 var xx = text_borderpad + text_wave_x;
 var yy = text_y + text_wave_y;
 draw_sprite_ext(spr_tutorialbubble, 0, xx, yy, text_xscale, text_yscale, 0, c_white, 1);

@@ -79,8 +79,8 @@ for (var i = 0; i < array_length(lay_arr); i++)
             per = 0.25;
             xof = bg_still2xoffset;
             yof = bg_still2yoffset;
-            var per_x = _cam_x / (room_width - obj_screensizer.actual_width);
-            var per_y = _cam_y / (room_height - obj_screensizer.actual_height);
+            var per_x = _cam_x / (room_width - SCREEN_WIDTH);
+            var per_y = _cam_y / (room_height - SCREEN_HEIGHT);
             var bg_x = calculate_parrallax_still_x(lay, per);
             var bg_y = calculate_parrallax_still_y(lay, per);
             layer_x(lay, (xof + _cam_x) - bg_x);

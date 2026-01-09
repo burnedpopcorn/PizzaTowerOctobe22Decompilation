@@ -20,7 +20,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
                 {
                     var p = 4;
                     var m = playerid.movespeed - p;
-                    var t = sprite10293 - p;
+                    var t = 12 - p;
                     alpha = m / t;
                     alpha = clamp(alpha, 0, 1);
                 }
@@ -58,7 +58,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
                 if (alpha <= 0 && alarm[0] != 0)
                     alarm[0] = 0;
                 
-                if (playerid != -4 && instance_exists(playerid))
+                if (playerid != noone && instance_exists(playerid))
                     visible = playerid.visible;
                 else
                     visible = true;

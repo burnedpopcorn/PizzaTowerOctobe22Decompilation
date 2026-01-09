@@ -27,7 +27,7 @@ function scr_hub_bg_reinit(arg0, arg1)
         if (bg_useparallax)
         {
             var p = bgparallax2[i];
-            bgspriteposstart[i] = [arg0 - (arg0 * p) - ((obj_screensizer.actual_width / 4) * p), arg1 - (arg1 * p) - ((obj_screensizer.actual_height / 4) * p)];
+            bgspriteposstart[i] = [arg0 - (arg0 * p) - ((SCREEN_WIDTH / 4) * p), arg1 - (arg1 * p) - ((SCREEN_HEIGHT / 4) * p)];
             bgspritepos[i] = [bgspriteposstart[i][0], bgspriteposstart[i][1]];
         }
     }

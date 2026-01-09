@@ -51,13 +51,13 @@ with (obj_player1)
 }
 
 border1_xstart = 0;
-border1_ystart = obj_screensizer.actual_height;
+border1_ystart = SCREEN_HEIGHT;
 border1_xend = -96;
-border1_yend = obj_screensizer.actual_height + 100;
-border2_xstart = obj_screensizer.actual_width;
-border2_ystart = obj_screensizer.actual_height;
-border2_xend = obj_screensizer.actual_width + 96;
-border2_yend = obj_screensizer.actual_height + 100;
+border1_yend = SCREEN_HEIGHT + 100;
+border2_xstart = SCREEN_WIDTH;
+border2_ystart = SCREEN_HEIGHT;
+border2_xend = SCREEN_WIDTH + 96;
+border2_yend = SCREEN_HEIGHT + 100;
 vine_ystart = 0;
 vine_yend = -117;
 

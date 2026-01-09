@@ -13,7 +13,7 @@ function scr_pistolshoot(arg0)
         crouchAnim = false;
         stompAnim = false;
         
-        if (arg0 == UnknownEnum.Value_121 || arg0 == UnknownEnum.Value_104)
+        if (arg0 == states.mach3 || arg0 == states.mach2)
             state = states.normal;
         
         windingAnim = 0;

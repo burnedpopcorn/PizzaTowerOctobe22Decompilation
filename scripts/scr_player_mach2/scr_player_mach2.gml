@@ -325,7 +325,7 @@ function scr_player_mach2()
         if (shotgunAnim)
             scr_shotgunshoot();
         else if (global.pistol)
-            scr_pistolshoot(UnknownEnum.Value_104);
+            scr_pistolshoot(states.mach2);
     }
     
     if (global.attackstyle == 2 && key_slap2)
