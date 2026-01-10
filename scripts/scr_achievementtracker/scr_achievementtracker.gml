@@ -46,7 +46,7 @@ function add_achievement_update(_name, _update_rate, _cc_func, _update_func)
     };
     q.update_func = method(q, _update_func);
     
-    if (arg2 != noone)
+    if (_cc_func != noone)
     {
         q.creation_code = method(q, _cc_func);
         q.creation_code();
