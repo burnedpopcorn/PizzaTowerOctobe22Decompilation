@@ -40,16 +40,16 @@ function scr_player_grabbing()
         create_particle(x, y, particle.crazyrunothereffect, 0);
     }
     
-    if (sprite_index == airattackdash && floor(image_index) == (image_number - 1))
+    if (sprite_index == airattackdash && ANIMATION_END)
     {
         sprite_index = spr_fall;
         state = states.jump;
     }
     
-    if (floor(image_index) == (image_number - 1) && (sprite_index == attackdash || sprite_index == spr_player_Sjump))
+    if (ANIMATION_END && (sprite_index == attackdash || sprite_index == spr_player_Sjump))
         state = states.normal;
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == airattackdashstart)
+    if (ANIMATION_END && sprite_index == airattackdashstart)
         sprite_index = airattackdash;
     
     grav = 0;

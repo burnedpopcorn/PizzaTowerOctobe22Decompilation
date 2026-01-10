@@ -73,7 +73,7 @@ function scr_player_boxxedpepjump()
         vsp = -boxxedpepjump;
     }
     
-    if (sprite_index == spr_boxxedpep_flap && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_boxxedpep_flap && ANIMATION_END)
         sprite_index = spr_boxxedpepair;
     
     if (key_slap2)

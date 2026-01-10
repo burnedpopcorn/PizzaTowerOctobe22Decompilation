@@ -27,7 +27,7 @@ function scr_player_golf()
         }
     }
     
-    if (sprite_index == spr_golfswing && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_golfswing && ANIMATION_END)
         state = states.normal;
     
     if (instance_exists(golfid) && golfid.state != states.golf && golfid.state != states.thrown)

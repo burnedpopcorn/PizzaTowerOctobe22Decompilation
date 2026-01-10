@@ -5,13 +5,13 @@ function scr_player_bossintro()
     hurted = false;
     inv_frames = false;
     
-    if (sprite_index == spr_player_bossintro && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_player_bossintro && ANIMATION_END)
     {
         state = states.normal;
         image_index = 0;
     }
     
-    if (sprite_index == spr_player_levelcomplete && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_player_levelcomplete && ANIMATION_END)
         image_speed = 0;
     else
         image_speed = 0.35;

@@ -6,14 +6,14 @@ function scr_player_trickjump()
     {
         image_speed = 0.35;
         
-        if (sprite_index == spr_player_rampjump && floor(image_index) == (image_number - 1))
+        if (sprite_index == spr_player_rampjump && ANIMATION_END)
             image_index = image_number - 1;
     }
     else
     {
         image_speed = 0.5;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
             sprite_index = spr_player_rampjump;
     }
     

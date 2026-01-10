@@ -19,7 +19,7 @@ function scr_player_tackle()
             if (grounded && vsp > 0.5)
                 state = states.normal;
         }
-        else if (floor(image_index) == (image_number - 1) && grounded)
+        else if (ANIMATION_END && grounded)
         {
             state = states.normal;
         }
@@ -28,7 +28,7 @@ function scr_player_tackle()
     {
         movespeed = Approach(movespeed, 0, 0.1);
         
-        if (floor(image_index) == (image_number - 1) && grounded && vsp > 0)
+        if (ANIMATION_END && grounded && vsp > 0)
             state = states.normal;
     }
     

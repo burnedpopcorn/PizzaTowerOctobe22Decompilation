@@ -122,7 +122,7 @@ function scr_player_shoulder()
     crouchslideAnim = true;
     crouchAnim = true;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
         state = states.normal;
     
     image_speed = 0.35;

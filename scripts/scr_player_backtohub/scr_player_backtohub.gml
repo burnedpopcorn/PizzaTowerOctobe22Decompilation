@@ -47,7 +47,7 @@ function scr_player_backtohub()
             backtohubbuffer = 40;
         }
     }
-    else if (sprite_index == spr_slipbanan2 && floor(image_index) == (image_number - 1))
+    else if (sprite_index == spr_slipbanan2 && ANIMATION_END)
     {
         image_index = image_number - 1;
         

@@ -52,7 +52,7 @@ switch (state)
                 {
                     sprite_index = spr_player_fall;
                 }
-                else if (sprite_index == spr_player_jump && floor(image_index) == (image_number - 1))
+                else if (sprite_index == spr_player_jump && ANIMATION_END)
                 {
                     sprite_index = spr_player_fall;
                 }
@@ -91,7 +91,7 @@ switch (state)
         if (floor(image_index) > 23)
             instance_destroy(hitboxID);
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             state = states.walk;
             instance_destroy(hitboxID);

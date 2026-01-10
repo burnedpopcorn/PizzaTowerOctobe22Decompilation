@@ -58,7 +58,7 @@ function scr_player_playersuperattack()
                 image_xscale = -other.xscale;
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 if (punchcount > 0)
                 {
@@ -112,7 +112,7 @@ function scr_player_playersuperattack()
                 hsp = -xscale * 4;
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 state = states.normal;
             
             break;

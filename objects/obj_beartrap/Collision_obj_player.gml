@@ -32,7 +32,7 @@ with (obj_player)
 if (floor(image_index) == 0)
     image_speed = 0.35;
 
-if (floor(image_index) == (image_number - 1))
+if (ANIMATION_END)
     image_speed = 0;
 
 if (press < 8)

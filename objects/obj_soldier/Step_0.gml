@@ -86,7 +86,7 @@ switch (state)
                 image_index = 0;
             }
         }
-        else if (sprite_index == spr_soldier_idleend && floor(image_index) == (image_number - 1))
+        else if (sprite_index == spr_soldier_idleend && ANIMATION_END)
         {
             state = states.walk;
             sprite_index = spr_soldier_walk;
@@ -97,7 +97,7 @@ switch (state)
     case states.charge:
         hsp = Approach(hsp, 0, 0.5);
         
-        if (sprite_index == spr_soldier_shootstart && floor(image_index) == (image_number - 1))
+        if (sprite_index == spr_soldier_shootstart && ANIMATION_END)
             sprite_index = spr_soldier_shoot;
         
         if (sprite_index != spr_soldier_shootstart)
@@ -117,7 +117,7 @@ switch (state)
                         image_xscale = other.image_xscale;
                 }
             }
-            else if (floor(image_index) == (image_number - 1))
+            else if (ANIMATION_END)
             {
                 sprite_index = walkspr;
                 attack_cooldown = attack_max;

@@ -20,7 +20,7 @@ function scr_player_ratmountattack()
         sprite_index = spr_player_ratmountwalljump;
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
         state = states.ratmount;
     
     if (scr_solid(x + xscale, y) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + xscale, y, obj_destructibles))

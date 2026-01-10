@@ -63,7 +63,7 @@ function scr_player_crouch()
             else
                 sprite_index = spr_shotgungoduck;
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 crouchAnim = false;
         }
     }

@@ -3,7 +3,7 @@ switch (state)
     case states.walk:
         scr_enemy_walk();
         
-        if ((sprite_index == spr_clownmato_land || sprite_index == spr_clownmato_bounce) && floor(image_index) == (image_number - 1))
+        if ((sprite_index == spr_clownmato_land || sprite_index == spr_clownmato_bounce) && ANIMATION_END)
         {
             sprite_index = spr_clownmato_fall;
             image_index = 0;

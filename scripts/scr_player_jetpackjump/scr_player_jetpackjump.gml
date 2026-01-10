@@ -132,7 +132,7 @@ function scr_player_jetpackjump()
             sprite_index = spr_player_jetpackmid;
             image_index = 0;
         }
-        else if (sprite_index == spr_player_jetpackmid && floor(image_index) == (image_number - 1))
+        else if (sprite_index == spr_player_jetpackmid && ANIMATION_END)
         {
             sprite_index = spr_player_jetpackend;
         }
@@ -165,7 +165,7 @@ function scr_player_jetpackjump()
         hsp = xscale * movespeed;
         vsp = 0;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
             jetpackdash = false;
     }
     

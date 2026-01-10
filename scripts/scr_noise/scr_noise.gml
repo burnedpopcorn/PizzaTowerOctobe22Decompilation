@@ -20,7 +20,7 @@ function scr_noise_arenaintro()
     }
     else
     {
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             if (sprite_index == spr_noise_intro1)
                 image_index = 16;
@@ -35,7 +35,7 @@ function scr_noise_arenaintro()
         
         with (obj_player1)
         {
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 if (sprite_index == spr_player_gnomecutscene2)
                     image_index = image_number - 1;
@@ -128,13 +128,13 @@ function scr_noise_walk()
     if (cooldown > 0 && flickertime <= 0 && !ballooncrash)
         cooldown--;
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_facehurtup)
+    if (ANIMATION_END && sprite_index == spr_playerN_facehurtup)
     {
         sprite_index = spr_playerN_facehurt;
         image_index = 0;
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_playerN_bombend)
             sprite_index = spr_noise_vulnerablesmile;
@@ -265,10 +265,10 @@ function scr_noise_mach2()
         create_particle(x, y, particle.jumpdust);
     }
     
-    if (sprite_index == spr_playerN_walljumpstart && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_playerN_walljumpstart && ANIMATION_END)
         sprite_index = spr_playerN_walljumpend;
     
-    if (sprite_index == spr_playerN_secondjump1 && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_playerN_secondjump1 && ANIMATION_END)
         sprite_index = spr_playerN_secondjump2;
     
     if (grounded && vsp > 0 && (sprite_index == spr_playerN_secondjump1 || sprite_index == spr_playerN_secondjump2 || sprite_index == spr_playerN_walljumpend))
@@ -322,7 +322,7 @@ function scr_noise_machslide()
     if (machbuffer > 0)
         machbuffer--;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_playerN_machslideboost)
             image_index = image_number - 1;
@@ -447,7 +447,7 @@ function scr_noise_spin()
 
 function scr_noise_jump()
 {
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_jump)
+    if (ANIMATION_END && sprite_index == spr_playerN_jump)
         sprite_index = spr_playerN_fall;
     
     hsp = 0;
@@ -465,7 +465,7 @@ function scr_noise_jetpackstart()
     hsp = 0;
     vsp = 0;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         state = states.jetpack;
         sprite_index = spr_playerN_jetpackboost;
@@ -590,7 +590,7 @@ function scr_noise_pogo()
         pogobomb = false;
     }
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_pogobounce)
+    if (ANIMATION_END && sprite_index == spr_playerN_pogobounce)
         sprite_index = spr_playerN_pogofall;
     
     if (grounded && vsp > 0 && bounced)
@@ -640,7 +640,7 @@ function scr_noise_dropstart()
     if ((floor(image_index) div 10) == 0)
         create_particle(x + irandom_range(-12, 12), y + 43, particle.cloudeffect);
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_jump)
+    if (ANIMATION_END && sprite_index == spr_playerN_jump)
         sprite_index = spr_playerN_fall;
     
     if (y < -50)
@@ -656,10 +656,10 @@ function scr_noise_drop()
 {
     image_speed = 0.35;
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_doublejump)
+    if (ANIMATION_END && sprite_index == spr_playerN_doublejump)
         sprite_index = spr_playerN_doublejumpfall;
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_noisehotairdrop)
+    if (ANIMATION_END && sprite_index == spr_noisehotairdrop)
         sprite_index = spr_noisehotair;
     
     var ix = sign(targetplayer.x - x);
@@ -723,7 +723,7 @@ function scr_noise_droptrap()
     droptrap = false;
     hsp = 0;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         instance_create(x, y, obj_canonexplosion);
         did_droptrap = true;
@@ -743,7 +743,7 @@ function scr_noise_freefall()
     image_speed = 0.35;
     hsp = 0;
     
-    if (sprite_index == spr_playerN_bodyslamstart && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_playerN_bodyslamstart && ANIMATION_END)
     {
         sprite_index = spr_playerN_bodyslam;
         image_index = 0;
@@ -792,7 +792,7 @@ function scr_noise_golf()
 {
     hsp = 0;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_playerN_golfswing)
             sprite_index = spr_playerN_golfidle;
@@ -826,7 +826,7 @@ function scr_noise_noisecrusher()
     if (vsp > 0 && sprite_index == spr_noise_crusherjump)
         sprite_index = spr_noise_crusherfall;
     
-    if (sprite_index == spr_noise_crusherland && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_noise_crusherland && ANIMATION_END)
     {
         create_particle(x, y, particle.genericpoofeffect);
         state = states.walk;
@@ -866,7 +866,7 @@ function scr_noise_noiseballooncrash()
     
     image_speed = 0.35;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         state = states.walk;
         

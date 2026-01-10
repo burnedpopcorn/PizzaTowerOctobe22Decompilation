@@ -62,7 +62,7 @@ function scr_player_pogo()
         pogospeedprev = true;
     }
     
-    if (floor(image_index) == (image_number - 1) && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogofallmach || sprite_index == spr_playerN_pogobouncemach || sprite_index == spr_playerN_pogostart))
+    if (ANIMATION_END && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogofallmach || sprite_index == spr_playerN_pogobouncemach || sprite_index == spr_playerN_pogostart))
     {
         if (pogochargeactive == true)
             sprite_index = spr_playerN_pogofallmach;

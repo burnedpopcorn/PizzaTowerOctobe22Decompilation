@@ -6,7 +6,7 @@ function scr_player_estampede()
     if (hsp != 0)
         image_xscale = sign(hsp);
     
-    if (floor(image_index) == (image_number - 1) && sprite_index != spr_rockethitwall)
+    if (ANIMATION_END && sprite_index != spr_rockethitwall)
     {
         image_speed = 0;
         

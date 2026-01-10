@@ -25,7 +25,7 @@ function scr_player_ratmountbounce()
         hsp = movespeed;
         movespeed = Approach(movespeed, 0, 1);
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             if (hsp != 0)
                 xscale = sign(hsp);

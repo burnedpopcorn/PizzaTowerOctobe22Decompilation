@@ -9,7 +9,7 @@ function scr_player_chainsawbump()
     if (sprite_index == spr_player_chainsawidle && move != 0)
         xscale = move;
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_chainsawrev)
+    if (ANIMATION_END && sprite_index == spr_player_chainsawrev)
         sprite_index = spr_player_chainsawidle;
     
     if (!key_chainsaw && sprite_index == spr_player_chainsawidle)
@@ -18,7 +18,7 @@ function scr_player_chainsawbump()
         sprite_index = spr_player_chainsawdashstart;
     }
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_chainsawdashstart)
+    if (ANIMATION_END && sprite_index == spr_player_chainsawdashstart)
     {
         with (instance_create(x, y, obj_superdashcloud))
             image_xscale = other.xscale;
@@ -63,7 +63,7 @@ function scr_player_chainsawbump()
     if (!instance_exists(obj_chainsawpuff))
         instance_create(x, y, obj_chainsawpuff);
     
-    if (floor(image_index) == (image_number - 1) && (sprite_index == spr_player_chainsawhit || sprite_index == spr_player_chainsawdash))
+    if (ANIMATION_END && (sprite_index == spr_player_chainsawhit || sprite_index == spr_player_chainsawdash))
     {
         if (key_attack)
             state = states.mach2;
@@ -71,7 +71,7 @@ function scr_player_chainsawbump()
             state = states.normal;
     }
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_chainsawhitwall)
+    if (ANIMATION_END && sprite_index == spr_player_chainsawhitwall)
         state = states.normal;
     
     if (sprite_index == spr_player_chainsawdash)

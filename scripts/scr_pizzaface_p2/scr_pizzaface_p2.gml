@@ -66,7 +66,7 @@ function scr_pizzaface_p2_fall()
             if (x != targetplayer.x && floor(image_index) >= 31)
                 image_xscale = sign(targetplayer.x - x);
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 state = states.walk;
                 image_xscale = 1;
@@ -166,7 +166,7 @@ function scr_pizzaface_p2_fishing()
     }
     else if (!global.pistol)
     {
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             saveddir = -image_xscale;
             hsp = 0;
@@ -177,7 +177,7 @@ function scr_pizzaface_p2_fishing()
             image_index = 0;
         }
     }
-    else if (floor(image_index) == (image_number - 1))
+    else if (ANIMATION_END)
     {
         saveddir = -image_xscale;
         
@@ -288,7 +288,7 @@ function boss_pizzahead_portraitthrow()
         }
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         image_xscale *= -1;
         state = states.walk;
@@ -334,7 +334,7 @@ function boss_pizzahead_pullinglevel()
         }
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_pizzahead_pullinglevel1)
         {
@@ -368,14 +368,14 @@ function boss_pizzahead_throwing()
     
     if (!brick)
     {
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
             state = states.walk;
     }
     else
     {
         if (sprite_index == spr_pizzahead_ratballstart)
         {
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 sprite_index = spr_pizzahead_ratballidle;
                 image_xscale *= -1;
@@ -405,17 +405,17 @@ function boss_pizzahead_throwing()
                 }
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 sprite_index = spr_pizzahead_ratballidle;
         }
         else if (sprite_index == spr_pizzahead_ratballcatch)
         {
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 sprite_index = spr_pizzahead_ratballidle;
         }
         else if (sprite_index == spr_pizzahead_ratballend)
         {
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 state = states.walk;
         }
         
@@ -447,7 +447,7 @@ function boss_pizzahead_shotgun()
         case states.mini:
             if (sprite_index == spr_pizzahead_grabgun)
             {
-                if (floor(image_index) == (image_number - 1))
+                if (ANIMATION_END)
                     sprite_index = spr_pizzahead_machinegun;
             }
             else if (attackbuffer > 0)
@@ -502,7 +502,7 @@ function boss_pizzahead_shotgun()
             break;
         
         case states.throwing:
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 if (sprite_index == spr_pizzahead_grabbox)
                 {

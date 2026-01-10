@@ -27,5 +27,5 @@ if (cooldown <= 0 && (escape == false || global.panic == true))
 if (cooldown > 0)
     cooldown--;
 
-if (floor(image_index) == (image_number - 1) && sprite_index == spr_canonbot_shoot)
+if (ANIMATION_END && sprite_index == spr_canonbot_shoot)
     sprite_index = spr_canonbot;

@@ -83,7 +83,7 @@ if (activated == true)
                         }
                     }
                     
-                    if (floor(image_index) == (image_number - 1))
+                    if (ANIMATION_END)
                     {
                         sprite_index = spr_fakesanta_idle;
                         random_buffer = random_max;

@@ -36,7 +36,7 @@ function scr_player_rideweenie()
         movespeed = Approach(movespeed, 0, 0.7);
     }
     
-    if (sprite_index == spr_player_weenieturn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_player_weenieturn && ANIMATION_END)
         sprite_index = spr_rideweenie;
     
     if (key_jump)

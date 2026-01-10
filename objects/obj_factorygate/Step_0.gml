@@ -19,13 +19,13 @@ switch (state)
         break;
     
     case states.transitioncutscene:
-        if (sprite_index == spr_arenagate_open && floor(image_index) == (image_number - 1))
+        if (sprite_index == spr_arenagate_open && ANIMATION_END)
         {
             state = states.normal;
             sprite_index = spr_arenagate_opened;
             instance_destroy(blockinst);
         }
-        else if (sprite_index == spr_arenagate_close && floor(image_index) == (image_number - 1))
+        else if (sprite_index == spr_arenagate_close && ANIMATION_END)
         {
             image_index = image_number - 1;
             state = states.normal;

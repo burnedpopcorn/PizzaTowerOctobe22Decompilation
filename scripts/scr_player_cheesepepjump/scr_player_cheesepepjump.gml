@@ -2,7 +2,7 @@ function scr_player_cheesepepjump()
 {
     image_speed = 0.35;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_cheesepepjumpstart || sprite_index == spr_cheesepep_walljump)
             sprite_index = spr_cheesepepjump;

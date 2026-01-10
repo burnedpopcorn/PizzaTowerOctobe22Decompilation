@@ -166,7 +166,7 @@ function scr_enemy_staggered()
         hsp = stagger_dir * stagger_movespeed;
         stagger_buffer = -1;
     }
-    else if (floor(image_index) == (image_number - 1) && grounded)
+    else if (ANIMATION_END && grounded)
     {
         image_index = 0;
         sprite_index = walkspr;

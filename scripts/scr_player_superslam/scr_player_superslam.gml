@@ -122,7 +122,7 @@ function scr_player_superslam()
     crouchslideAnim = true;
     crouchAnim = true;
     
-    if (sprite_index == spr_piledriverland && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_piledriverland && ANIMATION_END)
     {
         vsp = -6;
         state = states.jump;

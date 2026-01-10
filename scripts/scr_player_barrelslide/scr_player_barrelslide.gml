@@ -24,7 +24,7 @@ function scr_player_barrelslide()
     if (dashcloudtimer > 0)
         dashcloudtimer--;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_player_barrelslipnslide)
             sprite_index = spr_player_barrelroll;

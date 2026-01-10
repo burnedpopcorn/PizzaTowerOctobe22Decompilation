@@ -1,3 +1,6 @@
+// its used a lot, so it makes sense that it would be a macro
+#macro ANIMATION_END floor(image_index) == (image_number - 1)
+
 function Approach(arg0, arg1, arg2)
 {
     if (arg0 < arg1)

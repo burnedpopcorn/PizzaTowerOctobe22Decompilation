@@ -144,7 +144,7 @@ function scr_player_ratmount()
                         }
                     }
                 }
-                else if (floor(image_index) == (image_number - 1))
+                else if (ANIMATION_END)
                 {
                     idle = 0;
                     sprite_index = spr_player_ratmountidle;
@@ -152,7 +152,7 @@ function scr_player_ratmount()
             }
         }
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             landAnim = false;
             

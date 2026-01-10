@@ -14,7 +14,7 @@ if (object_index != obj_pizzakinpineapple || (sprite_index != spr_monsterpineapp
     switch (roomname)
     {
         case "strongcold":
-            if (sprite_index == spr_intro_strongcold && floor(image_index) == (image_number - 1))
+            if (sprite_index == spr_intro_strongcold && ANIMATION_END)
                 sprite_index = spr_idle_strongcold;
             
             if (sprite_index != spr_intro_strongcold)
@@ -27,7 +27,7 @@ if (object_index != obj_pizzakinpineapple || (sprite_index != spr_monsterpineapp
             break;
         
         default:
-            if (sprite_index == spr_intro && floor(image_index) == (image_number - 1))
+            if (sprite_index == spr_intro && ANIMATION_END)
                 sprite_index = spr_idle;
             
             if (sprite_index != spr_intro)

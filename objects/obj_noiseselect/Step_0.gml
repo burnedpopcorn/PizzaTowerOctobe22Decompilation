@@ -1,2 +1,2 @@
-if (sprite_index == spr_noiseselected && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_noiseselected && ANIMATION_END)
     image_speed = 0;

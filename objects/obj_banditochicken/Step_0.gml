@@ -73,7 +73,7 @@ if ((state == states.walk || state == states.idle) && activated == true && sprit
     sprite_index = spr_banditochicken_wake;
 }
 
-if (sprite_index == spr_banditochicken_wake && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_banditochicken_wake && ANIMATION_END)
 {
     image_xscale *= -1;
     sprite_index = spr_banditochicken_chase;

@@ -16,7 +16,7 @@ function scr_player_freefallland()
     vsp = 0;
     hsp = 0;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         facehurt = true;
         sprite_index = spr_facehurtup;

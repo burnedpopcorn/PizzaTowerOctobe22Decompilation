@@ -55,7 +55,7 @@ switch (state)
         break;
     
     case 3:
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
             visible = false;
         
         break;

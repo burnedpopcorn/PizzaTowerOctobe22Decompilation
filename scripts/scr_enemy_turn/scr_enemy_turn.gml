@@ -3,7 +3,7 @@ function scr_enemy_turn()
     sprite_index = turnspr;
     image_speed = 0.35;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (object_index != obj_tank)
         {

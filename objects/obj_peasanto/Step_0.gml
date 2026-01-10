@@ -87,7 +87,7 @@ if (state == states.charge)
         attack_cooldown = attack_max;
     }
     
-    if (hsp != 0 && floor(image_index) == (image_number - 1))
+    if (hsp != 0 && ANIMATION_END)
         create_particle(x - (image_xscale * 20), y + 43, particle.cloudeffect, 0);
 }
 

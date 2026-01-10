@@ -22,7 +22,7 @@ function scr_pizzaface_p3_arenaintro()
 {
     with (obj_player1)
     {
-        if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_levelcomplete)
+        if (ANIMATION_END && sprite_index == spr_player_levelcomplete)
             sprite_index = spr_idle;
     }
     
@@ -33,7 +33,7 @@ function scr_pizzaface_p3_arenaintro()
             vsp = 0;
             obj_player1.hsp = 0;
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 image_index = image_number - 1;
                 introstate = states.idle;
@@ -83,7 +83,7 @@ function scr_pizzaface_p3_arenaintro()
                     image_xscale = sign(obj_player1.x - x);
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 if (sprite_index == spr_pizzahead_phase3_intro2)
                     image_index = image_number - 1;
@@ -98,7 +98,7 @@ function scr_pizzaface_p3_arenaintro()
                         image_index = 0;
                     }
                     
-                    if (sprite_index == spr_gustavo_poweringup && floor(image_index) == (image_number - 1))
+                    if (sprite_index == spr_gustavo_poweringup && ANIMATION_END)
                     {
                         sprite_index = spr_gustavo_grab;
                         other.sprite_index = spr_pizzahead_phase3_intro3;
@@ -213,7 +213,7 @@ function scr_pizzaface_p3_stomp()
             image_xscale = -1;
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
         state = states.walk;
 }
 
@@ -231,7 +231,7 @@ function scr_pizzaface_p3_punch()
         }
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
         state = states.walk;
     
     hsp = 0;
@@ -243,7 +243,7 @@ function scr_pizzaface_p3_swinging()
     {
         hsp = 0;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             hitboxID = instance_create(x, y, obj_forkhitbox);
             hitboxID.ID = id;
@@ -326,7 +326,7 @@ function scr_pizzaface_p3_supergrab()
                     x = other.x + (other.image_xscale * 12);
                     y = other.y;
                     
-                    if (floor(image_index) == (image_number - 1))
+                    if (ANIMATION_END)
                     {
                         if (punchcount > 0)
                         {

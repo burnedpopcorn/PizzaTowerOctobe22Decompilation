@@ -16,7 +16,7 @@ function scr_player_comingoutdoor()
     
     image_blend = make_colour_hsv(0, 0, c);
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         movespeed = 0;
         

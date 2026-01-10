@@ -21,7 +21,7 @@ switch (state)
                 image_index = 0;
             }
         }
-        else if (floor(image_index) == (image_number - 1))
+        else if (ANIMATION_END)
         {
             state = states.normal;
         }
@@ -34,7 +34,7 @@ switch (state)
         
         if (sprite_index != spr_stick_idleanim1 && sprite_index != spr_stick_idleanim2 && sprite_index != spr_stick_idleanim3)
             sprite_index = spr_stick_idle;
-        else if (floor(image_index) == (image_number - 1))
+        else if (ANIMATION_END)
             sprite_index = spr_stick_idle;
         
         if (sprite_index == spr_stick_idle)
@@ -102,7 +102,7 @@ switch (state)
                 }
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 image_xscale *= -1;
                 sprite_index = spr_stick_takemoney2;
@@ -127,7 +127,7 @@ switch (state)
             if (floor(image_index) >= 10)
                 y -= 4;
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 sprite_index = spr_stick_helicopter;
         }
         else

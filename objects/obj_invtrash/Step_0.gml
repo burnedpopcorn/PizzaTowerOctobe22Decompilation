@@ -19,5 +19,5 @@ if (floor(image_index) == 2 && sprite_index == spr_invtrash_throw && bombreset <
     bombreset = 100;
 }
 
-if (sprite_index == spr_invtrash_throw && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_invtrash_throw && ANIMATION_END)
     sprite_index = spr_invtrash_idle;

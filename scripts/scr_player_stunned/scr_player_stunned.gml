@@ -26,7 +26,7 @@ function scr_player_stunned()
     alarm[7] = 60;
     image_speed = 0.35;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         mask_index = spr_player_mask;
         state = states.normal;

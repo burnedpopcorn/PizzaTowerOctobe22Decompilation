@@ -34,7 +34,7 @@ function scr_player_crouchjump()
         else
             sprite_index = spr_crouchjump;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
             jumpAnim = false;
     }
     

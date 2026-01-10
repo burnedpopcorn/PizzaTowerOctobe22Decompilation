@@ -9,7 +9,7 @@ function scr_player_shotguncrouchjump()
     if (move != 0)
         xscale = move;
     
-    if (sprite_index == spr_crouchjump && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_crouchjump && ANIMATION_END)
         sprite_index = spr_crouchfall;
     
     if (!key_jump2 && !jumpstop && vsp < 0.5)

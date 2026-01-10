@@ -15,7 +15,7 @@ switch (state)
     case states.normal:
         hsp = image_xscale * 6;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             if (sprite_index == spr_playerN_noisebombland)
                 sprite_index = spr_playerN_noisebomb;

@@ -43,7 +43,7 @@ function scr_player_crouchslide()
         jumpstop = false;
     }
     
-    if (sprite_index == spr_player_jumpdive1 && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_player_jumpdive1 && ANIMATION_END)
         sprite_index = spr_player_jumpdive2;
     
     mask_index = spr_crouchmask;

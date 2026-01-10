@@ -12,7 +12,7 @@ function scr_player_fireass()
     
     if (sprite_index == spr_fireass || sprite_index == spr_scaredjump1 || sprite_index == spr_scaredjump2)
     {
-        if (floor(image_index) == (image_number - 1) && sprite_index == spr_fireass)
+        if (ANIMATION_END && sprite_index == spr_fireass)
             create_particle(x, y + 25, particle.shotgunimpact, 0);
         
         if (sprite_index == spr_fireass)
@@ -80,7 +80,7 @@ function scr_player_fireass()
         }
     }
     
-    if (floor(image_index) == (image_number - 1) && sprite_index == spr_scaredjump1)
+    if (ANIMATION_END && sprite_index == spr_scaredjump1)
         sprite_index = spr_scaredjump2;
     
     if (sprite_index == spr_fireassground)
@@ -90,7 +90,7 @@ function scr_player_fireass()
         if (movespeed > 0)
             movespeed -= 0.25;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             movespeed = 0;
             landAnim = false;
@@ -105,7 +105,7 @@ function scr_player_fireass()
     
     if (sprite_index == spr_fireassend)
     {
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             movespeed = 0;
             landAnim = false;

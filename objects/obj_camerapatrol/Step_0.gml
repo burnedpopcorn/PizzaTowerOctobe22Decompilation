@@ -129,7 +129,7 @@ if (state == states.punch)
 {
     hsp = 0;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         state = states.walk;
         sprite_index = walkspr;

@@ -4,7 +4,7 @@ function scr_player_graffiti()
     vsp = -grav;
     image_speed = 0.5;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         state = states.normal;
         

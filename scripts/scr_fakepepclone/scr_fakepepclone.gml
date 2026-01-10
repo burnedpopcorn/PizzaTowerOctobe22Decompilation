@@ -11,7 +11,7 @@ function scr_fakepepclone_transitioncutscene()
             create_debris(x + irandom_range(-20, 20), y, spr_fakepepdebris);
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_fakepeppino_reform)
         {
@@ -153,7 +153,7 @@ function scr_fakepepclone_Sjumpprep()
     hsp = 0;
     vsp = 0;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         steppybuffer = 0;
         piledrivereffect = 0;
@@ -221,7 +221,7 @@ function scr_fakepepclone_throwing()
         if (x != targetplayer.x)
             image_xscale = sign(targetplayer.x - x);
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             state = states.walk;
             attacked = true;

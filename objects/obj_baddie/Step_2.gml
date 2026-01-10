@@ -36,7 +36,7 @@ if (!thrown && killbyenemybuffer > 0)
 if (sprite_index == walkspr && state != states.chase && floor(image_index) != (image_number - 1))
     steppy = false;
 
-if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && !steppy && object_index != obj_ghoul && state != states.chase)
+if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && ANIMATION_END && !steppy && object_index != obj_ghoul && state != states.chase)
 {
     steppy = true;
     create_particle(x - (image_xscale * 20), y + 43, particle.cloudeffect, 0);

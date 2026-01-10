@@ -19,7 +19,7 @@ function scr_player_shotgunshoot()
         movespeed = Approach(movespeed, 0, 0.1);
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (grounded)
             state = states.normal;

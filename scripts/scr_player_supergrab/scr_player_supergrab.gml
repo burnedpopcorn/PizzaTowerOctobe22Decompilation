@@ -27,7 +27,7 @@ function scr_player_supergrab()
             if (baddiegrabbedID.sprite_index == baddiegrabbedID.stunfallspr)
                 baddiegrabbedID.y += 25;
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 if (punchcount > 0)
                 {
@@ -213,7 +213,7 @@ function scr_player_supergrab()
                 }
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 image_index = image_number - 3;
             
             hsp = movespeed;

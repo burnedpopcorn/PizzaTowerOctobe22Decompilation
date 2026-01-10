@@ -35,7 +35,7 @@ function scr_player_rocket()
         rocketvsp = 0;
         vsp = 0;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             sprite_index = spr_rocket;
             image_index = 0;

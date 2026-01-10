@@ -101,13 +101,13 @@ function scr_player_mach3()
             
             if (fightball == false)
             {
-                if (sprite_index == spr_mach3jump && floor(image_index) == (image_number - 1))
+                if (sprite_index == spr_mach3jump && ANIMATION_END)
                     sprite_index = spr_mach4;
                 
                 if (sprite_index == spr_player_Sjumpcancel && grounded)
                     sprite_index = spr_mach4;
                 
-                if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
+                if (ANIMATION_END && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
                     sprite_index = spr_mach4;
                 
                 if (sprite_index == spr_mach2jump && grounded && vsp > 0)
@@ -373,10 +373,10 @@ function scr_player_mach3()
             
             if (fightball == false)
             {
-                if (sprite_index == spr_mach3jump && floor(image_index) == (image_number - 1))
+                if (sprite_index == spr_mach3jump && ANIMATION_END)
                     sprite_index = spr_mach4;
                 
-                if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
+                if (ANIMATION_END && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
                     sprite_index = spr_mach4;
                 
                 if (sprite_index == spr_mach2jump && grounded && vsp > 0)

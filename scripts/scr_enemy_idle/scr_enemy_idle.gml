@@ -26,51 +26,51 @@ function scr_enemy_idle()
     if (scaredbuffer > 0)
         scaredbuffer--;
     
-    if (sprite_index == spr_tank_spawnenemy && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_tank_spawnenemy && ANIMATION_END)
     {
         sprite_index = walkspr;
         state = states.walk;
     }
     
-    if (sprite_index == spr_forknight_turn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_forknight_turn && ANIMATION_END)
     {
         sprite_index = walkspr;
         state = states.walk;
     }
     
-    if (sprite_index == spr_patroller_turn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_patroller_turn && ANIMATION_END)
     {
         sprite_index = walkspr;
         state = states.walk;
     }
     
-    if (sprite_index == spr_newpizzice_turn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_newpizzice_turn && ANIMATION_END)
     {
         image_xscale *= -1;
         sprite_index = walkspr;
         state = states.charge;
     }
     
-    if (sprite_index == spr_ghostknight_turn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_ghostknight_turn && ANIMATION_END)
     {
         sprite_index = walkspr;
         state = states.walk;
     }
     
-    if (sprite_index == spr_pizzaslug_turn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_pizzaslug_turn && ANIMATION_END)
     {
         sprite_index = walkspr;
         image_xscale *= -1;
         state = states.walk;
     }
     
-    if (sprite_index == spr_indiancheese_turn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_indiancheese_turn && ANIMATION_END)
     {
         sprite_index = walkspr;
         state = states.walk;
     }
     
-    if (sprite_index == spr_tank_turn && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_tank_turn && ANIMATION_END)
     {
         sprite_index = walkspr;
         state = states.walk;

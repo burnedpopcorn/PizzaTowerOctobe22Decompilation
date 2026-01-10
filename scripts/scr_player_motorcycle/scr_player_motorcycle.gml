@@ -55,7 +55,7 @@ function scr_player_motorcycle()
     switch (sprite_index)
     {
         case spr_player_pizzacarjump:
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 sprite_index = spr_player_pizzacarfall;
             
             break;
@@ -70,7 +70,7 @@ function scr_player_motorcycle()
             break;
         
         case spr_player_pizzacarland:
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 sprite_index = spr_player_pizzacar;
             
             break;

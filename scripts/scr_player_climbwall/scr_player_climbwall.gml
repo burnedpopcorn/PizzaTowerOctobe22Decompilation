@@ -198,7 +198,7 @@ function scr_player_climbwall()
         case "N":
             hsp = 0;
             
-            if (sprite_index == spr_playerN_wallclingstart && floor(image_index) == (image_number - 1))
+            if (sprite_index == spr_playerN_wallclingstart && ANIMATION_END)
                 sprite_index = spr_playerN_wallcling;
             
             if (sprite_index == spr_playerN_wallcling)
@@ -208,7 +208,7 @@ function scr_player_climbwall()
             
             wallclingcooldown = 0;
             
-            if (floor(image_index) == (image_number - 1) || !key_jump2)
+            if (ANIMATION_END || !key_jump2)
             {
                 vsp = -15;
                 state = states.jump;

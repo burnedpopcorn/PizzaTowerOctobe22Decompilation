@@ -86,7 +86,7 @@ if (global.levelcomplete && !global.freezercutscene)
     {
         with (dragonactor)
         {
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 sprite_index = spr_cheesedragon_idle;
                 

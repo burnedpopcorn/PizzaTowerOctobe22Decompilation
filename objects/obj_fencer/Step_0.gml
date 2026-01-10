@@ -108,7 +108,7 @@ if (state == states.stun || state == states.walk)
     movespeed = 0;
 }
 
-if (sprite_index == spr_fencer_chargestart && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_fencer_chargestart && ANIMATION_END)
     sprite_index = spr_fencer_charge;
 
 if (flash == true && alarm[2] <= 0)

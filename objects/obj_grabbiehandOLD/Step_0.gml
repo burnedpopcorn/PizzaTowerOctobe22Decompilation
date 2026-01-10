@@ -1,4 +1,4 @@
-if (sprite_index == spr_grabbiehand_hifive && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_grabbiehand_hifive && ANIMATION_END)
 {
     sprite_index = spr_grabbiehand_idle;
     thumbingup = false;
@@ -66,7 +66,7 @@ if (grabbing)
         released = true;
     }
     
-    if (sprite_index == spr_grabbiehand_release && floor(image_index) == (image_number - 1) && released)
+    if (sprite_index == spr_grabbiehand_release && ANIMATION_END && released)
         sprite_index = spr_grabbiehand_idle;
     
     if (sprite_index == spr_grabbiehand_idle)

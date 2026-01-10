@@ -14,7 +14,7 @@ switch (state)
             image_index = 0;
         }
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
             state = states.robotchase;
         
         break;

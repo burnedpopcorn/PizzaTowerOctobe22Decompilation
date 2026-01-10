@@ -54,7 +54,7 @@ function scr_player_cheesepep()
         movespeed = xscale * movespeed;
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_cheesepepland || sprite_index == spr_cheesepepintro)
         {
@@ -71,7 +71,7 @@ function scr_player_cheesepep()
         sprite_index = spr_cheesepepjumpstart;
     }
     
-    if (sprite_index == spr_cheesepepjumpstart && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_cheesepepjumpstart && ANIMATION_END)
     {
         vsp = -11;
         image_index = 0;

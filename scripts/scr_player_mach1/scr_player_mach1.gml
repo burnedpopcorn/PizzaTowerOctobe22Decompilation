@@ -80,7 +80,7 @@ function scr_player_mach1()
         sprite_index = spr_airdash2;
     }
     
-    if (sprite_index == spr_airdash1 && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_airdash1 && ANIMATION_END)
         sprite_index = spr_airdash2;
     
     if (!key_attack)

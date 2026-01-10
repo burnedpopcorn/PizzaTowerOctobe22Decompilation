@@ -83,7 +83,7 @@ if (state != states.grabbed)
 if (state != states.charge)
     scr_scareenemy();
 
-if (sprite_index == spr_ancho_chargestart && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_ancho_chargestart && ANIMATION_END)
 {
     if (hitboxcreate == false && state == states.charge)
     {

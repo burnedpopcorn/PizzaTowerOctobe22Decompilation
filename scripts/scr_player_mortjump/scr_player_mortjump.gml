@@ -36,7 +36,7 @@ function scr_player_mortjump()
             sprite_index = spr_player_barrelidle;
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_player_mortjumpstart)
             sprite_index = spr_player_mortjump;

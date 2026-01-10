@@ -47,7 +47,7 @@ function scr_enemy_rage()
                 }
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 ragebuffer = 100;
                 state = states.walk;
@@ -65,7 +65,7 @@ function scr_enemy_rage()
                     image_xscale = other.image_xscale;
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 shot = false;
                 sprite_index = spr_pizzaslug_walk;
@@ -107,7 +107,7 @@ function scr_enemy_rage()
                 instance_create(x, y, obj_warplaserhoming);
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 state = states.walk;
             
             break;
@@ -128,7 +128,7 @@ function scr_enemy_rage()
                 hsp = 0;
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 state = states.walk;
                 sprite_index = walkspr;
@@ -139,7 +139,7 @@ function scr_enemy_rage()
         case obj_minijohn:
             hsp = movespeed * image_xscale;
             
-            if (sprite_index == spr_minijohn_rage1 && floor(image_index) == (image_number - 1))
+            if (sprite_index == spr_minijohn_rage1 && ANIMATION_END)
                 sprite_index = spr_minijohn_rage2;
             
             if (grounded && vsp > 0)
@@ -165,7 +165,7 @@ function scr_enemy_rage()
             
             hsp = image_xscale * thespeed;
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 with (instance_create(x, y, obj_forkhitbox))
                     ID = other.id;
@@ -188,7 +188,7 @@ function scr_enemy_rage()
             if (sprite_index == spr_ancho_rage2)
                 vsp = 10;
             
-            if (floor(image_index) == (image_number - 1) && sprite_index == spr_ancho_rage1)
+            if (ANIMATION_END && sprite_index == spr_ancho_rage1)
                 sprite_index = spr_ancho_rage2;
             
             if (grounded && sprite_index == spr_ancho_rage2)
@@ -203,7 +203,7 @@ function scr_enemy_rage()
                 sprite_index = spr_ancho_rage3;
             }
             
-            if (floor(image_index) == (image_number - 1) && sprite_index == spr_ancho_rage3)
+            if (ANIMATION_END && sprite_index == spr_ancho_rage3)
             {
                 state = states.walk;
                 sprite_index = spr_ancho;
@@ -224,7 +224,7 @@ function scr_enemy_rage()
                 }
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 state = states.walk;
                 sprite_index = spr_spitcheese_idle;
@@ -247,7 +247,7 @@ function scr_enemy_rage()
             if (sprite_index == spr_tank_charge)
                 hsp = image_xscale * 8;
             
-            if (floor(image_index) == (image_number - 1) && sprite_index == spr_tank_chargestart)
+            if (ANIMATION_END && sprite_index == spr_tank_chargestart)
                 sprite_index = spr_tank_charge;
             
             with (instance_place(x + hsp, y, obj_destructibles))
@@ -280,7 +280,7 @@ function scr_enemy_rage()
                 }
             }
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 ragecooldown = 100;
                 state = states.walk;

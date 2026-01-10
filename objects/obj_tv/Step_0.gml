@@ -282,7 +282,7 @@ switch (state)
                 break;
             
             case spr_tv_open:
-                if (floor(image_index) == (image_number - 1))
+                if (ANIMATION_END)
                     sprite_index = idlespr;
                 
                 break;
@@ -295,7 +295,7 @@ switch (state)
                 if (sprite_index != idlespr)
                     sprite_index = idlespr;
                 
-                if (idleanim <= 0 && floor(image_index) == (image_number - 1))
+                if (idleanim <= 0 && ANIMATION_END)
                 {
                     sprite_index = choose(spr_tv_idleanim1, spr_tv_idleanim2);
                     
@@ -317,7 +317,7 @@ switch (state)
             case spr_tv_idleanim2:
             case spr_tv_idleanim1N:
             case spr_tv_idleanim2N:
-                if (floor(image_index) == (image_number - 1))
+                if (ANIMATION_END)
                 {
                     sprite_index = idlespr;
                     idleanim = 240 + (60 * irandom_range(-1, 2));
@@ -401,7 +401,7 @@ switch (state)
         break;
     
     case states.transitioncutscene:
-        if (sprite_index == spr_tv_open && floor(image_index) == (image_number - 1))
+        if (sprite_index == spr_tv_open && ANIMATION_END)
             sprite_index = tvsprite;
         
         if (sprite_index == tvsprite)

@@ -272,7 +272,7 @@ function state_player_jump()
             }
         }
     }
-    else if (sprite_index == spr_stompprep && floor(image_index) == (image_number - 1))
+    else if (sprite_index == spr_stompprep && ANIMATION_END)
     {
         sprite_index = spr_stomp;
     }
@@ -492,7 +492,7 @@ function state_player_jump()
                 }
             }
             
-            if (sprite_index == spr_playerV_superjump && floor(image_index) == (image_number - 1))
+            if (sprite_index == spr_playerV_superjump && ANIMATION_END)
                 create_particle(x, y + 25, particle.shotgunimpact, 0);
             
             if (key_slap2)
@@ -542,7 +542,7 @@ function state_player_jump()
     if (!key_attack || move != xscale)
         mach2 = 0;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
         jumpAnim = false;
     
     scr_dotaunt();
@@ -592,10 +592,10 @@ function state_pepperman_jump()
     
     hsp = xscale * movespeed;
     
-    if (sprite_index == spr_jump && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_jump && ANIMATION_END)
         sprite_index = spr_fall;
     
-    if (sprite_index == spr_player_pistoljump1 && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_player_pistoljump1 && ANIMATION_END)
         sprite_index = spr_player_pistoljump2;
     
     if (!key_jump2 && jumpstop == false && vsp < 0.5)
@@ -629,7 +629,7 @@ function state_pepperman_jump()
         scr_soundeffect(sfx_suplexdash);
     }
     
-    if (sprite_index == spr_pepperman_throw && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_pepperman_throw && ANIMATION_END)
         sprite_index = spr_pepperman_fall;
     
     if (key_jump)

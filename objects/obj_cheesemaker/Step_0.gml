@@ -4,5 +4,5 @@ if (floor(image_index) == 3 && madecheese == false)
     madecheese = true;
 }
 
-if (floor(image_index) == (image_number - 1))
+if (ANIMATION_END)
     madecheese = false;

@@ -14,7 +14,7 @@ function scr_player_punch()
             movespeed = Approach(movespeed, move * 4, 0.5);
         }
         
-        if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_breakdanceuppercut)
+        if (ANIMATION_END && sprite_index == spr_player_breakdanceuppercut)
             sprite_index = spr_player_breakdanceuppercutend;
         
         if (grounded && vsp > 0 && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))
@@ -80,7 +80,7 @@ function scr_player_punch()
                 if (_kungfuground && image_index > 7 && !key_attack && movespeed > 0)
                     movespeed -= 0.5;
                 
-                if (floor(image_index) == (image_number - 1))
+                if (ANIMATION_END)
                 {
                     switch (sprite_index)
                     {

@@ -65,7 +65,7 @@ if (state == states.totem && totemID != -4)
         
         hsp = !on_place ? (image_xscale * 3) : 0;
         
-        if (sprite_index == spr_indiancheese_jump && floor(image_index) == (image_number - 1))
+        if (sprite_index == spr_indiancheese_jump && ANIMATION_END)
             image_index = image_number - 1;
         
         if (sprite_index != spr_indiancheese_jump)
@@ -87,7 +87,7 @@ if (state == states.totem && totemID != -4)
     {
         hsp = 0;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             totemdir = (x > totemID.x) ? -1 : 1;
             image_xscale = totemdir;
@@ -137,12 +137,12 @@ if (state == states.walk && state != states.stun && sprite_index == walkspr && s
     }
 }
 
-if (!grounded && sprite_index == spr_indiancheese_jump && floor(image_index) == (image_number - 1))
+if (!grounded && sprite_index == spr_indiancheese_jump && ANIMATION_END)
     image_speed = 0;
 else if (image_speed == 0)
     image_speed = 0.35;
 
-if (sprite_index == spr_indiancheese_land && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_indiancheese_land && ANIMATION_END)
     sprite_index = spr_indiancheese_walk;
 
 if (state != states.grabbed)

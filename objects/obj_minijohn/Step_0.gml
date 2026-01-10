@@ -56,7 +56,7 @@ switch (state)
             image_speed = 0.35;
             hsp = Approach(hsp, 0, 1);
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 punchspd = 8;
                 hsp = punchspd * image_xscale;
@@ -81,7 +81,7 @@ switch (state)
             with (instance_place(x + hsp, y, obj_destructibles))
                 instance_destroy();
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 state = states.chase;
                 ragecooldown = 100;
@@ -115,7 +115,7 @@ switch (state)
             if (vsp < 0)
                 vsp = 0;
             
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
             {
                 sprite_index = spr_minijohn_stun;
                 vsp = -4;

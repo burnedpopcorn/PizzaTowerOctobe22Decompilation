@@ -1,4 +1,4 @@
-if (floor(image_index) == (image_number - 1))
+if (ANIMATION_END)
     image_speed = 0;
 
 if (global.collect >= global.collectN)

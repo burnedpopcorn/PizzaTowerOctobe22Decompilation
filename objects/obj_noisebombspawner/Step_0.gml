@@ -10,7 +10,7 @@ if (floor(image_index) == 2 && canthrowbomb == true)
     canthrowbomb = false;
 }
 
-if (floor(image_index) == (image_number - 1) && canthrowbomb == false)
+if (ANIMATION_END && canthrowbomb == false)
     image_speed = 0;
 else
     image_speed = 0.35;

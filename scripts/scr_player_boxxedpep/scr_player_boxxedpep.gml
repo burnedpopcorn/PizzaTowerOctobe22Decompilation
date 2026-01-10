@@ -73,7 +73,7 @@ function scr_player_boxxedpep()
         image_index = 0;
     }
     
-    if (sprite_index == spr_boxxedpepdashend && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_boxxedpepdashend && ANIMATION_END)
         sprite_index = (move != 0) ? spr_boxxedpepwalk : spr_boxxedpepidle;
     
     if (sprite_index != spr_boxxedpepintro)
@@ -98,7 +98,7 @@ function scr_player_boxxedpep()
         }
     }
     
-    if (sprite_index == spr_boxxedpepintro && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_boxxedpepintro && ANIMATION_END)
         sprite_index = spr_boxxedpepidle;
     
     if (sprite_index != spr_boxxedpepintro)

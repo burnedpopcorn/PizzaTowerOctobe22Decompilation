@@ -2,7 +2,7 @@ function scr_player_cheesepeplaunch()
 {
     hsp = xscale * movespeed;
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         if (sprite_index == spr_cheesepepjumpstart)
             sprite_index = spr_cheesepepjump;

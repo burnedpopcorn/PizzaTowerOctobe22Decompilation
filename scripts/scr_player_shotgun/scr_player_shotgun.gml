@@ -7,7 +7,7 @@ function scr_player_shotgun()
         vsp = 0;
         movespeed = 0;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             sprite_index = spr_shotgunidle;
             image_index = 0;
@@ -63,7 +63,7 @@ function scr_player_shotgun()
         else if (grounded)
             sprite_index = spr_shotgunidle;
     }
-    else if (floor(image_index) == (image_number - 1))
+    else if (ANIMATION_END)
     {
         if (move != 0)
             sprite_index = spr_shotgunwalk;

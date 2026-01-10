@@ -58,7 +58,7 @@ function scr_player_lungeattack()
         }
     }
     
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
         state = states.normal;
         ds_list_clear(hitlist);

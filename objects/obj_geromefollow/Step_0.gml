@@ -1,4 +1,4 @@
-if (sprite_index == spr_gerome_collected && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_gerome_collected && ANIMATION_END)
     sprite_index = spr_gerome_keyidle;
 
 if (room == rank_room || room == timesuproom)

@@ -30,7 +30,7 @@ function scr_player_bombgrab()
     
     image_speed = 0.35;
     
-    if (sprite_index == spr_haulingstart && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_haulingstart && ANIMATION_END)
         sprite_index = spr_haulingidle;
     
     if (move != 0)
@@ -80,7 +80,7 @@ function scr_player_bombgrab()
             create_particle(x, y, particle.landcloud);
         }
         
-        if (sprite_index == spr_haulingjump && floor(image_index) == (image_number - 1))
+        if (sprite_index == spr_haulingjump && ANIMATION_END)
             sprite_index = spr_haulingfall;
         
         if (key_slap2)
@@ -139,7 +139,7 @@ function scr_player_bombgrab()
     }
     else if (sprite_index != spr_haulingstart)
     {
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
             state = states.normal;
     }
 }
@@ -300,7 +300,7 @@ function scr_player_bombpep()
     landAnim = false;
     alarm[5] = 2;
     
-    if (sprite_index == spr_bombpepintro && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_bombpepintro && ANIMATION_END)
         sprite_index = spr_bombpeprun;
     
     if (sprite_index == spr_bombpeprun || sprite_index == spr_bombpeprunabouttoexplode)
@@ -327,7 +327,7 @@ function scr_player_bombpep()
     if (bombpeptimer < 20 && bombpeptimer != 0)
         sprite_index = spr_bombpeprunabouttoexplode;
     
-    if (sprite_index == spr_bombpepend && floor(image_index) == (image_number - 1))
+    if (sprite_index == spr_bombpepend && ANIMATION_END)
     {
         alarm[5] = 2;
         alarm[7] = 60;

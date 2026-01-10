@@ -1,5 +1,5 @@
 if (use_collision)
     scr_collide();
 
-if (sprite_index == spr_antigrav_activate && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_antigrav_activate && ANIMATION_END)
     sprite_index = spr_antigrav;

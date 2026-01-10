@@ -19,7 +19,7 @@ if (sprite_index == spr_gustavo_war1)
 }
 else
 {
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
         image_index = image_number - 1;
     
     depth = -100;

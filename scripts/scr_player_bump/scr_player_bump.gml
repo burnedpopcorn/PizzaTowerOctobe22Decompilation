@@ -27,7 +27,7 @@ function scr_player_bump()
         if (sprite_index == spr_rockethitwall && grounded && vsp > 0)
             image_index = image_number - 1;
         
-        if (floor(image_index) == (image_number - 1) && sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && !_gus)
+        if (ANIMATION_END && sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && !_gus)
         {
             if (!skateboarding)
             {
@@ -40,7 +40,7 @@ function scr_player_bump()
             }
         }
         
-        if (grounded && vsp > 0 && _gus && floor(image_index) == (image_number - 1))
+        if (grounded && vsp > 0 && _gus && ANIMATION_END)
             state = states.ratmount;
         
         if (sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && sprite_index != spr_rockethitwall && sprite_index != spr_tumbleend && sprite_index != spr_hitwall && !_gus && sprite_index != spr_mach && sprite_index != spr_mach4)
@@ -52,7 +52,7 @@ function scr_player_bump()
         hsp = 0;
         vsp = 0;
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
             state = states.normal;
         
         image_speed = 0.35;

@@ -27,7 +27,7 @@ switch (state)
     case states.trashjumpprep:
         with (playerid)
         {
-            if (floor(image_index) == (image_number - 1))
+            if (ANIMATION_END)
                 image_index = image_number - 3;
         }
         
@@ -86,7 +86,7 @@ switch (state)
             }
         }
         
-        if (floor(image_index) == (image_number - 1))
+        if (ANIMATION_END)
         {
             sprite_index = spr_trash;
             state = states.normal;
