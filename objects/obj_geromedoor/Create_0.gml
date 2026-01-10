@@ -6,4 +6,4 @@ depth = 150;
 targetDoor = "A";
 visited = false;
 uparrow = false;
-uparrowID = -4;
+uparrowID = noone;

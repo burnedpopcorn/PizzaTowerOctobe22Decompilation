@@ -3,27 +3,27 @@ secretend = false;
 pillar_on_camera = false;
 prevpillar_on_camera = false;
 music_map = ds_map_create();
-music = -4;
+music = noone;
 pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
 panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
 panicstart = false;
-add_music(Mainmenu, "event:/music/title", -4, false);
-add_music(tower_tutorial1, "event:/music/tutorial", -4, false);
-add_music(tower_entrancehall, "event:/music/hub", -4, false, hub_state);
-add_music(tower_1, "event:/music/hub", -4, false, hub_state);
-add_music(tower_2, "event:/music/hub", -4, false, hub_state);
-add_music(tower_3, "event:/music/hub", -4, false, hub_state);
-add_music(tower_4, "event:/music/hub", -4, false, hub_state);
-add_music(tower_5, "event:/music/hub", -4, false, hub_state);
-add_music(tower_finalhallway, "event:/music/finalescape", -4, false);
-add_music(tower_pizzafacehall, "event:/music/finalescape", -4, false);
-add_music(boss_vigilante, "event:/music/boss/vigilante", -4, false);
-add_music(boss_fakepep, "event:/music/boss/fakepep", -4, false);
-add_music(boss_fakepephallway, "event:/music/pillarmusic", -4, false);
-add_music(boss_fakepepkey, "event:/music/boss/fakepep", -4, false);
-add_music(boss_noise, "event:/music/boss/noise", -4, false);
-add_music(boss_pepperman, "event:/music/boss/pepperman", -4, false);
-add_music(boss_pizzaface, "event:/music/boss/pizzaface", -4, false, function(arg0, arg1)
+add_music(Mainmenu, "event:/music/title", noone, false);
+add_music(tower_tutorial1, "event:/music/tutorial", noone, false);
+add_music(tower_entrancehall, "event:/music/hub", noone, false, hub_state);
+add_music(tower_1, "event:/music/hub", noone, false, hub_state);
+add_music(tower_2, "event:/music/hub", noone, false, hub_state);
+add_music(tower_3, "event:/music/hub", noone, false, hub_state);
+add_music(tower_4, "event:/music/hub", noone, false, hub_state);
+add_music(tower_5, "event:/music/hub", noone, false, hub_state);
+add_music(tower_finalhallway, "event:/music/finalescape", noone, false);
+add_music(tower_pizzafacehall, "event:/music/finalescape", noone, false);
+add_music(boss_vigilante, "event:/music/boss/vigilante", noone, false);
+add_music(boss_fakepep, "event:/music/boss/fakepep", noone, false);
+add_music(boss_fakepephallway, "event:/music/pillarmusic", noone, false);
+add_music(boss_fakepepkey, "event:/music/boss/fakepep", noone, false);
+add_music(boss_noise, "event:/music/boss/noise", noone, false);
+add_music(boss_pepperman, "event:/music/boss/pepperman", noone, false);
+add_music(boss_pizzaface, "event:/music/boss/pizzaface", noone, false, function(arg0, arg1)
 {
     if (arg0 == 25)
         fmod_event_instance_set_parameter(arg1, "state", 0, true);

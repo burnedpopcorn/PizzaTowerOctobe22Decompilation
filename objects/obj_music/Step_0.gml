@@ -38,7 +38,7 @@ if (global.panic)
             fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
         }
         
-        if (music != -4)
+        if (music != noone)
         {
             fmod_event_instance_stop(music.event, true);
             fmod_event_instance_stop(music.event_secret, true);

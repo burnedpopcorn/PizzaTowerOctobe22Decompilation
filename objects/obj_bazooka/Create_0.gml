@@ -7,4 +7,4 @@ image_angle = direction;
 alarm[1] = 2;
 depth = -200;
 destroy = true;
-baddieID = -4;
+baddieID = noone;

@@ -120,7 +120,7 @@ with (ID)
             if (state != states.punch)
             {
                 instance_destroy(other);
-                punchinst = -4;
+                punchinst = noone;
             }
             
             break;

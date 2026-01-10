@@ -1,19 +1,22 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_mrstickboss",
   "spriteId": {
     "name": "spr_mrstick_idle",
-    "path": "sprites/spr_mrstick_idle/spr_mrstick_idle.yy"
+    "path": "sprites/spr_mrstick_idle/spr_mrstick_idle.yy",
   },
   "solid": false,
   "visible": true,
   "managed": false,
   "spriteMaskId": {
     "name": "spr_mrstick_mask",
-    "path": "sprites/spr_mrstick_mask/spr_mrstick_mask.yy"
+    "path": "sprites/spr_mrstick_mask/spr_mrstick_mask.yy",
   },
   "persistent": false,
   "parentObjectId": {
     "name": "par_boss",
-    "path": "objects/par_boss/par_boss.yy"
+    "path": "objects/par_boss/par_boss.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -28,32 +31,13 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 0,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 3,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    }
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "obj_mrstickboss",
   "parent": {
     "name": "Unused",
     "path": "folders/Objects/Unused.yy",
-  }
+  },
 }

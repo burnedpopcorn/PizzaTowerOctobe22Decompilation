@@ -126,10 +126,10 @@ if (pause && !instance_exists(obj_option))
                     ds_list_clear(global.saveroom);
                     ds_list_clear(global.baddieroom);
                     
-                    if (rm != -4 && rm != -1)
+                    if (rm != noone && rm != -1)
                     {
                         stop_music();
-                        obj_music.music = -4;
+                        obj_music.music = noone;
                         instance_destroy(obj_fadeout);
                         scr_pause_activate_objects();
                         global.levelreset = false;
@@ -162,7 +162,7 @@ if (pause && !instance_exists(obj_option))
             
             case 3:
                 stop_music();
-                obj_music.music = -4;
+                obj_music.music = noone;
                 
                 if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || string_letters(room_get_name(room)) == "towertutorial" || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
                 {
@@ -176,7 +176,7 @@ if (pause && !instance_exists(obj_option))
                         scr_characterspr();
                     }
                     
-                    global.leveltosave = -4;
+                    global.leveltosave = noone;
                     scr_playerreset();
                     alarm[0] = 2;
                     obj_player1.state = states.titlescreen;
@@ -204,8 +204,8 @@ if (pause && !instance_exists(obj_option))
                     if (instance_exists(obj_player2))
                         obj_player2.targetDoor = "HUB";
                     
-                    global.leveltorestart = -4;
-                    global.leveltosave = -4;
+                    global.leveltorestart = noone;
+                    global.leveltosave = noone;
                 }
                 
                 break;

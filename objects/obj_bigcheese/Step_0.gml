@@ -49,8 +49,8 @@ else if (state == states.throwing)
     {
         state = states.walk;
         sprite_index = spr_bigcheese_idle;
-        golfid = -4;
-        playerid = -4;
+        golfid = noone;
+        playerid = noone;
     }
     
     var tx = x;
@@ -172,8 +172,8 @@ else if (state == states.throwing)
             }
         }
         
-        golfid = -4;
-        playerid = -4;
+        golfid = noone;
+        playerid = noone;
     }
 }
 

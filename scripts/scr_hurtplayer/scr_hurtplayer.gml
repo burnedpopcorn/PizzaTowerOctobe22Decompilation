@@ -186,7 +186,7 @@ function scr_hurtplayer(arg0)
                 global.heatmeter_count = (global.heatmeter_threshold - 1) * global.heatmeter_threshold_count;
             
             _hurt = true;
-            pistolanim = -4;
+            pistolanim = noone;
             
             if (character == "V")
                 global.playerhealth -= 25;
@@ -240,7 +240,7 @@ function scr_hurtplayer(arg0)
             movespeed = 8;
             vsp = -14;
             timeuntilhpback = 300;
-            pistolanim = -4;
+            pistolanim = noone;
             instance_create(x, y, obj_spikehurteffect);
             state = states.hurt;
             image_index = 0;

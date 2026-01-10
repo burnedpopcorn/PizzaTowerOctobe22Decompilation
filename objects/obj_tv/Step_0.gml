@@ -421,7 +421,7 @@ switch (state)
     case states.tv_whitenoise:
         if (tv_trans >= sprite_get_number(spr_tv_whitenoise))
         {
-            if (expressionsprite != -4)
+            if (expressionsprite != noone)
             {
                 state = states.tv_expression;
                 sprite_index = expressionsprite;

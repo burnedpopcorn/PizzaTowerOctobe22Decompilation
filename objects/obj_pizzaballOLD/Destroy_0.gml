@@ -1,6 +1,6 @@
 if (ds_list_find_index(global.baddieroom, id) == -1 && important == false)
 {
-    obj_camera.targetgolf = -4;
+    obj_camera.targetgolf = noone;
     var _repeat = 10;
     
     if (global.golfhit < 10)

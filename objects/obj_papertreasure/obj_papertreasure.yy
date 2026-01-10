@@ -1,7 +1,10 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_papertreasure",
   "spriteId": {
     "name": "spr_foodtreasure",
-    "path": "sprites/spr_foodtreasure/spr_foodtreasure.yy"
+    "path": "sprites/spr_foodtreasure/spr_foodtreasure.yy",
   },
   "solid": false,
   "visible": true,
@@ -10,7 +13,7 @@
   "persistent": false,
   "parentObjectId": {
     "name": "obj_hubtreasure",
-    "path": "objects/obj_hubtreasure/obj_hubtreasure.yy"
+    "path": "objects/obj_hubtreasure/obj_hubtreasure.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,23 +28,12 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 0,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    }
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "obj_papertreasure",
   "parent": {
     "name": "Unused",
     "path": "folders/Objects/Unused.yy",
-  }
+  },
 }

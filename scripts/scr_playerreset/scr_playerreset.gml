@@ -57,7 +57,7 @@ function scr_playerreset()
             shownrankc = false;
             ds_list_clear(tvprompts_list);
             prompt = "";
-            bubblespr = -4;
+            bubblespr = noone;
             promptx = promptxstart;
             tv_bg_index = 0;
             
@@ -74,7 +74,7 @@ function scr_playerreset()
         {
             ds_list_clear(secrettriggers);
             ds_list_clear(touchall);
-            touchrequirement = -4;
+            touchrequirement = noone;
             init = false;
         }
         
@@ -97,7 +97,7 @@ function scr_playerreset()
         global.fill = 500;
         global.chunk = 5;
         global.hasfarmer = array_create(3, false);
-        global.checkpoint_room = -4;
+        global.checkpoint_room = noone;
         global.checkpoint_door = "A";
         global.noisejetpack = false;
         global.hp = 0;
@@ -197,11 +197,11 @@ function scr_playerreset()
     with (obj_player)
     {
         image_alpha = 1;
-        ratpowerup = -4;
+        ratpowerup = noone;
         scale_xs = 1;
         scale_ys = 1;
         holycross = 0;
-        obj_camera.targetgolf = -4;
+        obj_camera.targetgolf = noone;
         ds_list_clear(global.baddietomb);
         obj_player.supercharge = 0;
         obj_player.supercharged = false;
@@ -242,7 +242,7 @@ function scr_playerreset()
         with (obj_player)
         {
             ds_list_clear(hitlist);
-            pistolanim = -4;
+            pistolanim = noone;
             image_blend = make_colour_hsv(0, 0, 255);
             boxxed = false;
             boxxeddash = false;
@@ -269,7 +269,7 @@ function scr_playerreset()
             xscale = 1;
             yscale = 1;
             parry = false;
-            parry_inst = -4;
+            parry_inst = noone;
             parry_count = 0;
             is_firing = false;
             pogospeed = 6;
@@ -385,7 +385,7 @@ function scr_playerreset()
         pogochargeactive = false;
         pogocharge = 100;
         parry = false;
-        parry_inst = -4;
+        parry_inst = noone;
         parry_count = 0;
         is_firing = false;
         x = backtohubstartx;

@@ -1,6 +1,6 @@
 scr_initenemy();
 underground = true;
-hitboxID = -4;
+hitboxID = noone;
 grav = 0.5;
 hsp = 0;
 vsp = 0;

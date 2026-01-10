@@ -2,7 +2,7 @@ scr_initenemy();
 patrolling = false;
 patrolmax = 100;
 spawnreset = 200;
-targetplayer = -4;
+targetplayer = noone;
 threshold_x = 400;
 threshold_y = 60;
 attackmode = 2;

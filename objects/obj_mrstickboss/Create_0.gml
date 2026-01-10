@@ -1,11 +1,11 @@
 event_inherited();
-boss_array[0] = -4;
-boss_array[1] = [73, 1];
-boss_array[2] = [412, 1];
-boss_array[3] = [418, 1];
-boss_array[4] = [73, 6];
-boss_array[5] = [412, 6];
-boss_array[6] = [418, 6];
+boss_array[0] = noone;
+boss_array[1] = [obj_pepperman, 1];
+boss_array[2] = [obj_vigilanteboss, 1];
+boss_array[3] = [obj_noiseboss, 1];
+boss_array[4] = [obj_pepperman, 6];
+boss_array[5] = [obj_vigilanteboss, 6];
+boss_array[6] = [obj_noiseboss, 6];
 state = states.arenaround;
 attack_pool = [states.shield, states.helicopterhat, states.panicjump, states.jump, states.smokebombstart, states.springshoes, states.cardboard];
 ds_map_set(player_hurtstates, states.handstandjump, 30);
@@ -49,7 +49,7 @@ attack_max[4] = 40;
 attack_max[5] = 40;
 attack_max[6] = 40;
 attack_cooldown = attack_max[0];
-dashcloudid = -4;
+dashcloudid = noone;
 targetstunned = 0;
 targetstunnedminus[0] = 30;
 targetstunnedminus[1] = 30;
@@ -107,7 +107,7 @@ function boss_hurt_noplayer(arg0)
 
 function player_hurt(arg0, arg1)
 {
-    if (!arg1.inv_frames && (arg1.state != states.backbreaker || arg1.parry_inst == -4))
+    if (!arg1.inv_frames && (arg1.state != states.backbreaker || arg1.parry_inst == noone))
     {
         hitstate = state;
         hithsp = hsp;

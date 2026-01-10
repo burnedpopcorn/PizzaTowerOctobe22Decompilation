@@ -14,6 +14,6 @@ with (obj_player)
     image_blend = c_white;
 }
 
-global.leveltosave = -4;
+global.leveltosave = noone;
 global.level_minutes = 0;
 global.level_seconds = 0;

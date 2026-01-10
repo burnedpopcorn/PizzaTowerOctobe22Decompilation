@@ -14,5 +14,5 @@ text_sprite_width = sprite_get_width(spr_tutorialbubble);
 text_sprite_height = sprite_get_height(spr_tutorialbubble);
 text_wave_x = 0;
 text_wave_y = 0;
-text_arr = -4;
+text_arr = noone;
 depth = 10;

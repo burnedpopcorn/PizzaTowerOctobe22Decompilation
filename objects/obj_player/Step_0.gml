@@ -1070,7 +1070,7 @@ if (global.pistol)
 if (pistolcharge == 100)
     flash = true;
 
-if (pistolanim != -4)
+if (pistolanim != noone)
 {
     pistolindex += 0.35;
     
@@ -1082,7 +1082,7 @@ if (pistolanim != -4)
     
     if (floor(pistolindex) == (sprite_get_number(pistolanim) - 1))
     {
-        pistolanim = -4;
+        pistolanim = noone;
         pistolindex = 0;
     }
 }
