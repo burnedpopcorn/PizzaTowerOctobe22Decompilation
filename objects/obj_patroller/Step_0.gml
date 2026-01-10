@@ -67,7 +67,7 @@ switch (state)
     case states.fall:
         image_speed = 0.35;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             state = states.walk;
             sprite_index = walkspr;
@@ -117,7 +117,7 @@ if (state == states.punch)
 {
     hsp = 0;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         state = states.walk;
         sprite_index = walkspr;

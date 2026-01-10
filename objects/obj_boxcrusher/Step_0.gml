@@ -19,7 +19,7 @@ if (sprite_index == spr_boxcrusher_fall && grounded)
     sprite_index = spr_boxcrusher_land;
 }
 
-if (sprite_index == spr_boxcrusher_land && ANIMATION_END)
+if (sprite_index == spr_boxcrusher_land && ANIMATION_ENDED)
 {
     sprite_index = spr_boxcrusher_idle;
     gobackup = true;

@@ -5,7 +5,7 @@ function scr_player_slipbanan()
     if (grounded)
         movespeed = Approach(movespeed, 0, 0.5);
     
-    if (ANIMATION_END && sprite_index != spr_rockethitwall)
+    if (ANIMATION_ENDED && sprite_index != spr_rockethitwall)
         image_speed = 0;
     else
         image_speed = 0.35;
@@ -43,7 +43,7 @@ function scr_player_slipbanan()
     
     if (sprite_index == spr_slipbanan2)
     {
-        if (ANIMATION_END && abs(hsp) <= 2)
+        if (ANIMATION_ENDED && abs(hsp) <= 2)
             state = states.normal;
     }
     

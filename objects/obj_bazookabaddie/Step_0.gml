@@ -72,7 +72,7 @@ if (x != player.x && grounded && player.x > (x - 500) && player.x < (x + 500) &&
 if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (ANIMATION_END && sprite_index == spr_spitcheese_spit)
+if (ANIMATION_ENDED && sprite_index == spr_spitcheese_spit)
     sprite_index = spr_spitcheese_idle;
 
 if (state != states.grabbed)

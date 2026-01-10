@@ -2,7 +2,7 @@ function scr_player_ratmountgroundpound()
 {
     if (sprite_index == spr_player_ratmountgroundpound)
     {
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             sprite_index = spr_player_ratmountgroundpoundfall;
     }
     
@@ -54,7 +54,7 @@ function scr_player_ratmountgroundpound()
         movespeed = Approach(movespeed, 0, 0.5);
     }
     
-    if (sprite_index == spr_lonegustavo_groundpoundstart && ANIMATION_END)
+    if (sprite_index == spr_lonegustavo_groundpoundstart && ANIMATION_ENDED)
     {
         image_index = 0;
         sprite_index = spr_lonegustavo_groundpound;
@@ -128,7 +128,7 @@ function scr_player_ratmountgroundpound()
         }
     }
     
-    if (sprite_index == spr_lonegustavo_groundpoundland && ANIMATION_END)
+    if (sprite_index == spr_lonegustavo_groundpoundland && ANIMATION_ENDED)
     {
         if (sign(hsp) != 0)
             xscale = sign(hsp);
@@ -137,7 +137,7 @@ function scr_player_ratmountgroundpound()
         state = states.ratmount;
     }
     
-    if ((sprite_index == spr_lonegustavo_kick || sprite_index == spr_lonegustavo_jumpstart) && ANIMATION_END)
+    if ((sprite_index == spr_lonegustavo_kick || sprite_index == spr_lonegustavo_jumpstart) && ANIMATION_ENDED)
     {
         if (sign(hsp) != 0)
             xscale = sign(hsp);

@@ -13,10 +13,10 @@ function scr_player_machslide()
     move = key_right + key_left;
     movespeed = Approach(movespeed, 0, 0.4);
     
-    if (sprite_index == spr_machslidestart && ANIMATION_END)
+    if (sprite_index == spr_machslidestart && ANIMATION_ENDED)
         sprite_index = spr_machslide;
     
-    if (ANIMATION_END && (sprite_index == spr_machslideboost || sprite_index == spr_mach3boost))
+    if (ANIMATION_ENDED && (sprite_index == spr_machslideboost || sprite_index == spr_mach3boost))
         image_speed = 0;
     else
         image_speed = 0.35;
@@ -41,7 +41,7 @@ function scr_player_machslide()
         image_index = 0;
     }
     
-    if (ANIMATION_END && sprite_index == spr_machslideboost && grounded)
+    if (ANIMATION_ENDED && sprite_index == spr_machslideboost && grounded)
     {
         hsp = 0;
         image_index = 0;
@@ -50,7 +50,7 @@ function scr_player_machslide()
         state = states.mach2;
     }
     
-    if (ANIMATION_END && sprite_index == spr_mach3boost && grounded)
+    if (ANIMATION_ENDED && sprite_index == spr_mach3boost && grounded)
     {
         if (!launch)
         {

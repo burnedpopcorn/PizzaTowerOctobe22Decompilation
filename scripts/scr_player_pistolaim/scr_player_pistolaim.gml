@@ -56,7 +56,7 @@ function scr_player_pistolaim()
     if (move != 0)
         xscale = move;
     
-    if (floor(image_index) != (image_number - 1))
+    if (ANIMATION_PLAYING)
         image_speed = 0.45;
     else
         image_speed = 0;

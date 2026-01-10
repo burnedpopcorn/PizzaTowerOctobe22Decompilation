@@ -64,7 +64,7 @@ function scr_player_mort()
             image_speed = 0.35;
         }
     }
-    else if (ANIMATION_END)
+    else if (ANIMATION_ENDED)
     {
         landAnim = false;
         

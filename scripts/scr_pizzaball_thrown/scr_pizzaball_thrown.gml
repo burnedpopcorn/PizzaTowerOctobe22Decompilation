@@ -10,7 +10,7 @@ function scr_pizzaball_thrown()
             
             if (sprite_index != spr_pizzaball_hitwall && sprite_index != spr_pizzaball_hitwall2)
                 sprite_index = spr_pizzaball_roll;
-            else if (ANIMATION_END)
+            else if (ANIMATION_ENDED)
                 sprite_index = spr_pizzaball_roll;
             
             hsp = image_xscale * hitspeed;

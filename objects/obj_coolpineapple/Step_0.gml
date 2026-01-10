@@ -181,7 +181,7 @@ switch (state)
             hsp = 0;
             inv_timer = 0;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 sprite_index = spr_coolpinea_rage;
                 breakdance_movespeed = 10;

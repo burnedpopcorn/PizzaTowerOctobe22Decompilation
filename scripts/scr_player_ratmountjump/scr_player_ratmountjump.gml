@@ -91,7 +91,7 @@ function scr_player_ratmountjump()
     if (gusdashpadbuffer > 0 && movespeed != 0)
         xscale = sign(movespeed);
     
-    if (jumpAnim && ANIMATION_END)
+    if (jumpAnim && ANIMATION_ENDED)
     {
         jumpAnim = false;
         

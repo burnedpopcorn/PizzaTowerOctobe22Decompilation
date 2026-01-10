@@ -2,13 +2,13 @@ function scr_player_hang()
 {
     hsp = 0;
     
-    if (sprite_index == spr_playerN_wallclingstart && ANIMATION_END)
+    if (sprite_index == spr_playerN_wallclingstart && ANIMATION_ENDED)
         sprite_index = spr_playerN_wallcling;
     
     vsp = 0;
     wallclingcooldown = 0;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         scr_soundeffect(sfx_jump);
         scr_soundeffect(sfx_woosh);

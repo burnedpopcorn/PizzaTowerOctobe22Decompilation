@@ -1,4 +1,4 @@
-if (ANIMATION_END && obj_player.state != states.door)
+if (ANIMATION_ENDED && obj_player.state != states.door)
 {
     with (obj_player)
     {
@@ -9,5 +9,5 @@ if (ANIMATION_END && obj_player.state != states.door)
     alarm[0] = 200;
 }
 
-if (ANIMATION_END)
+if (ANIMATION_ENDED)
     image_speed = 0;

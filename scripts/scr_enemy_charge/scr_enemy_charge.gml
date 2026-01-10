@@ -26,7 +26,7 @@ function scr_enemy_charge()
     
     if (object_index == obj_indiancheese)
     {
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             image_speed = 0;
         
         hsp = image_xscale * movespeed;

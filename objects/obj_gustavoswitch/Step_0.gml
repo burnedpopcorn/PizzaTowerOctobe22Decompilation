@@ -1,7 +1,7 @@
 if (sprite_index == spr_gustavoswitch2 && instance_exists(obj_charswitch_intro) && obj_charswitch_intro.state != states.fall)
     image_index = 0;
 
-if (sprite_index == spr_gustavoswitch2 && ANIMATION_END)
+if (sprite_index == spr_gustavoswitch2 && ANIMATION_ENDED)
 {
     with (obj_player1)
     {

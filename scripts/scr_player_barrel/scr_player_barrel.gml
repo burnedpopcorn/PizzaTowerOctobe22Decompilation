@@ -29,7 +29,7 @@ function scr_player_barrel()
         movespeed = Approach(movespeed, 0, 0.5);
     }
     
-    if (sprite_index == spr_player_barrelland && ANIMATION_END)
+    if (sprite_index == spr_player_barrelland && ANIMATION_ENDED)
         sprite_index = spr_player_barrelidle;
     
     if (grounded)

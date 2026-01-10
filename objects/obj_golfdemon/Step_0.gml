@@ -86,7 +86,7 @@ if (state == states.walk || state == states.idle)
         image_index = 0;
     }
     
-    if (sprite_index == spr_golfdemon_idle2 && ANIMATION_END)
+    if (sprite_index == spr_golfdemon_idle2 && ANIMATION_ENDED)
     {
         movespeed = 6;
         

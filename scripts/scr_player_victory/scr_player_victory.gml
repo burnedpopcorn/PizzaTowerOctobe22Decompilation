@@ -18,7 +18,7 @@ function scr_player_victory()
     if (place_meeting(x, y, obj_startgate))
         sprite_index = spr_entergate;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
         image_speed = 0;
     else
         image_speed = 0.35;

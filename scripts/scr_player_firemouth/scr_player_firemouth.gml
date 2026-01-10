@@ -66,7 +66,7 @@ function scr_player_firemouth()
     landAnim = false;
     alarm[5] = 2;
     
-    if (sprite_index == spr_firemouthintro && ANIMATION_END)
+    if (sprite_index == spr_firemouthintro && ANIMATION_ENDED)
     {
         scr_losepoints();
         sprite_index = spr_firemouth;
@@ -155,7 +155,7 @@ function scr_player_firemouth()
             hsp = xscale * movespeed;
             vsp = 0;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 sprite_index = spr_player_firemouthspin;
         }
         
@@ -180,7 +180,7 @@ function scr_player_firemouth()
         movespeed = 0;
     }
     
-    if (sprite_index == spr_firemouthend && ANIMATION_END)
+    if (sprite_index == spr_firemouthend && ANIMATION_ENDED)
     {
         alarm[5] = 2;
         alarm[7] = 60;

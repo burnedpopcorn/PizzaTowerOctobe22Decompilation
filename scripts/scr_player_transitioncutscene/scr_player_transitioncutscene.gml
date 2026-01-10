@@ -56,9 +56,9 @@ function scr_player_transitioncutscene()
         }
     }
     
-    if (sprite_index == spr_player_givepizza && ANIMATION_END)
+    if (sprite_index == spr_player_givepizza && ANIMATION_ENDED)
         image_speed = 0;
     
-    if (sprite_index == spr_player_levelcomplete && ANIMATION_END)
+    if (sprite_index == spr_player_levelcomplete && ANIMATION_ENDED)
         image_speed = 0;
 }

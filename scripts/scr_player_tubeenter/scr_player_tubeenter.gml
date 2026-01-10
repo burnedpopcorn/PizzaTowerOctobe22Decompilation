@@ -16,7 +16,7 @@ function scr_player_tubeenter()
                 case obj_tubeenter:
                     if (state != states.normal)
                     {
-                        if (ANIMATION_END)
+                        if (ANIMATION_ENDED)
                         {
                             other.state = states.tube;
                             other.hsp = hsp * other.stored_hsp;

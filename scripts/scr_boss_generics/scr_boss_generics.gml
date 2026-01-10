@@ -56,7 +56,7 @@ function scr_boss_pizzaheadjump()
     else
         use_collision = true;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         switch (sprite_index)
         {

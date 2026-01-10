@@ -13,7 +13,7 @@ function scr_player_dynamite()
     
     landAnim = false;
     
-    if (ANIMATION_END && sprite_index == spr_playerV_dynamitethrow)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_dynamitethrow)
     {
         if (key_attack && hsp != 0)
             state = states.mach2;

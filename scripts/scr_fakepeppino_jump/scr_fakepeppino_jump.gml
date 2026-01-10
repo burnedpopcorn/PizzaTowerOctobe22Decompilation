@@ -2,7 +2,7 @@ function scr_fakepeppino_jump()
 {
     hsp = image_xscale * movespeed;
     
-    if (sprite_index == spr_fakepeppino_jumpstart && ANIMATION_END)
+    if (sprite_index == spr_fakepeppino_jumpstart && ANIMATION_ENDED)
     {
         image_index = 0;
         vsp = -15;
@@ -10,7 +10,7 @@ function scr_fakepeppino_jump()
         movespeed = 8;
     }
     
-    if (sprite_index == spr_fakepeppino_jump && ANIMATION_END)
+    if (sprite_index == spr_fakepeppino_jump && ANIMATION_ENDED)
     {
         image_index = 0;
         sprite_index = spr_fakepeppino_fall;

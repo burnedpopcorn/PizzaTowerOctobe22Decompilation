@@ -18,6 +18,6 @@ function scr_player_lungegrab()
         }
     }
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
         state = states.normal;
 }

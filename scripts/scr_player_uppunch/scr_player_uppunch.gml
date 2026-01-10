@@ -122,7 +122,7 @@ function scr_player_uppunch()
     crouchslideAnim = true;
     crouchAnim = true;
     
-    if (ANIMATION_END || move == -xscale)
+    if (ANIMATION_ENDED || move == -xscale)
         state = states.normal;
     
     sprite_index = spr_uppunch;

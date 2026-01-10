@@ -131,7 +131,7 @@ function scr_player_ghost()
         }
     }
     
-    if (sprite_index == spr_ghostend && ANIMATION_END)
+    if (sprite_index == spr_ghostend && ANIMATION_ENDED)
         state = states.normal;
     
     if (place_meeting(x, y, obj_ghosttransparency))

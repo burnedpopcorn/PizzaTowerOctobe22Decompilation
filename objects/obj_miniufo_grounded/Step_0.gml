@@ -37,7 +37,7 @@ switch (state)
             if (image_index > 11)
                 hsp = sign(image_xscale);
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 sprite_index = spr_ufogrounded_walk;
                 invincible = false;

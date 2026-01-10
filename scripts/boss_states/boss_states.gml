@@ -57,7 +57,7 @@ function state_boss_bump()
     if (grounded && vsp > 0)
         hsp = 0;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
         state = states.normal;
 }
 

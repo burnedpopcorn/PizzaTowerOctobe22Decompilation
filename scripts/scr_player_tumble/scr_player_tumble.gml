@@ -58,13 +58,13 @@ function scr_player_tumble()
     if (sprite_index == spr_crouchslip && !grounded)
         sprite_index = spr_player_jumpdive2;
     
-    if (sprite_index == spr_player_Sjumpcancelland && ANIMATION_END)
+    if (sprite_index == spr_player_Sjumpcancelland && ANIMATION_ENDED)
         sprite_index = spr_player_Sjumpcancelslide;
     
     if (sprite_index == spr_player_jumpdive2 && grounded)
         sprite_index = spr_crouchslip;
     
-    if (ANIMATION_END && sprite_index == spr_player_machroll && movespeed > 12)
+    if (ANIMATION_ENDED && sprite_index == spr_player_machroll && movespeed > 12)
     {
         sprite_index = spr_player_backslideland;
         image_index = 0;
@@ -73,16 +73,16 @@ function scr_player_tumble()
     if (sprite_index == spr_player_machroll && !grounded)
         sprite_index = spr_player_mach2jump;
     
-    if (ANIMATION_END && sprite_index == spr_player_backslideland)
+    if (ANIMATION_ENDED && sprite_index == spr_player_backslideland)
         sprite_index = spr_player_backslide;
     
     if (sprite_index == spr_player_Sjumpcancel && grounded)
         sprite_index = spr_player_Sjumpcancelland;
     
-    if (ANIMATION_END && sprite_index == spr_player_Sjumpcancelland)
+    if (ANIMATION_ENDED && sprite_index == spr_player_Sjumpcancelland)
         sprite_index = spr_player_Sjumpcancelslide;
     
-    if (ANIMATION_END && sprite_index == spr_player_breakdance)
+    if (ANIMATION_ENDED && sprite_index == spr_player_breakdance)
     {
         particle_set_scale(particle.jumpdust, xscale, 1);
         create_particle(x, y, particle.jumpdust, 0);
@@ -90,7 +90,7 @@ function scr_player_tumble()
         sprite_index = spr_breakdancesuper;
     }
     
-    if (sprite_index == spr_tumblestart && ANIMATION_END)
+    if (sprite_index == spr_tumblestart && ANIMATION_ENDED)
     {
         sprite_index = spr_tumble;
         movespeed = 14;
@@ -177,9 +177,9 @@ function scr_player_tumble()
     
     if (sprite_index == spr_crouchslip || sprite_index == spr_breakdancesuper || sprite_index == spr_machroll || sprite_index == spr_tumble || sprite_index == spr_tumblestart || sprite_index == spr_player_machroll || sprite_index == spr_player_mach2jump)
         image_speed = abs(movespeed) / 15;
-    else if (ANIMATION_END && sprite_index == spr_mach2jump)
+    else if (ANIMATION_ENDED && sprite_index == spr_mach2jump)
         image_speed = 0;
-    else if (ANIMATION_END && sprite_index == spr_player_Sjumpcancel)
+    else if (ANIMATION_ENDED && sprite_index == spr_player_Sjumpcancel)
         image_speed = 0;
     else
         image_speed = 0.35;

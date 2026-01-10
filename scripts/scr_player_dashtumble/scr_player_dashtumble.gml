@@ -18,7 +18,7 @@ function scr_player_dashtumble()
         sprite_index = spr_mach2jump;
     }
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         if (!grounded)
             sprite_index = spr_mach2jump;

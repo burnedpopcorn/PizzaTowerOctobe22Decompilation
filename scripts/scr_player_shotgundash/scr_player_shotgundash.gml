@@ -3,7 +3,7 @@ function scr_player_shotgundash()
     image_speed = 0.35;
     hsp = xscale * movespeed;
     
-    if (ANIMATION_END || !key_attack)
+    if (ANIMATION_ENDED || !key_attack)
     {
         state = states.shotgun;
         sprite_index = spr_shotgunidle;

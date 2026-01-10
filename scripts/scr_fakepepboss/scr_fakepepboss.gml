@@ -258,7 +258,7 @@ function scr_fakepepboss_arenaintro()
         if (other.sprite_index == spr_fakepeppino_intro1)
             sprite_index = spr_player_gnomecutscene1;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             if (sprite_index == spr_player_gnomecutscene2)
                 image_index = image_number - 1;
@@ -267,7 +267,7 @@ function scr_fakepepboss_arenaintro()
         }
     }
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         if (sprite_index == spr_fakepeppino_intro1 || sprite_index == spr_fakepeppino_intro2)
             image_index = image_number - 1;
@@ -308,7 +308,7 @@ function scr_fakepepboss_arenaintro()
         image_index = 0;
         introbuffer = 0;
     }
-    else if (sprite_index == spr_fakepeppino_intro4 && ANIMATION_END)
+    else if (sprite_index == spr_fakepeppino_intro4 && ANIMATION_ENDED)
     {
         state = states.walk;
         spotlightID.expand = true;
@@ -448,7 +448,7 @@ function scr_fakepepboss_deformed()
     vsp = 0;
     var t = targetplayer;
     
-    if (sprite_index == spr_fakepeppino_deform && ANIMATION_END)
+    if (sprite_index == spr_fakepeppino_deform && ANIMATION_ENDED)
         image_index = image_number - 1;
     
     if (floor(image_index) < (image_number - 1) && (floor(image_index) div 5) == 0)
@@ -489,7 +489,7 @@ function scr_fakepepboss_deformed()
             image_index = 0;
             formed = true;
         }
-        else if (ANIMATION_END)
+        else if (ANIMATION_ENDED)
         {
             state = states.walk;
             sprite_index = spr_fakepeppino_idle;
@@ -505,7 +505,7 @@ function scr_fakepepboss_staggered()
     if (cooldown > 0)
         cooldown--;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
         state = states.walk;
 }
 
@@ -526,7 +526,7 @@ function scr_fakepepboss_grabdash()
     {
         hsp = image_xscale * attackspeed;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             state = states.walk;
         
         with (instance_place(x, y, obj_player))
@@ -570,7 +570,7 @@ function scr_fakepepboss_grabthrow()
         playerID = noone;
     }
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         state = states.walk;
         cooldown = 150;
@@ -587,7 +587,7 @@ function scr_fakepepboss_jump()
         if (x != targetplayer.x)
             image_xscale = sign(targetplayer.x - x);
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             sprite_index = spr_fakepeppino_bodyslamjump;
             attackspeed = 8;
@@ -597,7 +597,7 @@ function scr_fakepepboss_jump()
     }
     else
     {
-        if (sprite_index == spr_fakepeppino_bodyslamjump && ANIMATION_END)
+        if (sprite_index == spr_fakepeppino_bodyslamjump && ANIMATION_ENDED)
             image_index = image_number - 3;
         
         hsp = image_xscale * attackspeed;
@@ -614,7 +614,7 @@ function scr_fakepepboss_jump()
 
 function scr_fakepepboss_freefall()
 {
-    if (sprite_index == spr_fakepeppino_bodyslamfall && ANIMATION_END)
+    if (sprite_index == spr_fakepeppino_bodyslamfall && ANIMATION_ENDED)
         image_index = image_number - 4;
     
     if (object_index == obj_fakepepclone && bodyslam && vsp > 2)
@@ -754,7 +754,7 @@ function scr_fakepepboss_Sjumpprep()
     hsp = 0;
     vsp = 0;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         state = states.Sjump;
         var h = 11;
@@ -888,7 +888,7 @@ function scr_fakepepboss_throwing()
 {
     if (sprite_index == spr_fakepeppino_throwhead)
     {
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             image_index = image_number - 1;
             var b = false;
@@ -940,13 +940,13 @@ function scr_fakepepboss_throwing()
             }
         }
     }
-    else if (sprite_index == spr_fakepeppino_gethead && ANIMATION_END)
+    else if (sprite_index == spr_fakepeppino_gethead && ANIMATION_ENDED)
         state = states.walk;
 }
 
 function scr_fakepepboss_backbreaker()
 {
-    if (sprite_index == spr_fakepeppino_jump && ANIMATION_END)
+    if (sprite_index == spr_fakepeppino_jump && ANIMATION_ENDED)
         sprite_index = spr_fakepeppino_fall;
     
     if (vsp > 0 && sprite_index == spr_fakepeppino_fall && !taunted)
@@ -983,7 +983,7 @@ function scr_fakepepboss_backbreaker()
     {
         vsp = 0;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             sprite_index = spr_fakepeppino_fall;
     }
     

@@ -1,6 +1,6 @@
 if (state == states.flushtransition)
 {
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         switch (sprite_index)
         {

@@ -6,9 +6,9 @@ function scr_player_pistol()
     if (movespeed < 10)
         movespeed += 0.15;
     
-    if (ANIMATION_END && grounded && key_attack)
+    if (ANIMATION_ENDED && grounded && key_attack)
         state = states.mach2;
-    else if (ANIMATION_END)
+    else if (ANIMATION_ENDED)
         state = states.normal;
     
     if (key_jump && grounded && !key_down)

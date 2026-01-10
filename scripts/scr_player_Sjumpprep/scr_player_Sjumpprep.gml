@@ -21,7 +21,7 @@ function scr_player_Sjumpprep()
             if (sprite_index == spr_superjumpprep)
                 movespeed = Approach(movespeed, 0, 1);
             
-            if (ANIMATION_END && sprite_index == spr_superjumpprep)
+            if (ANIMATION_ENDED && sprite_index == spr_superjumpprep)
                 sprite_index = spr_superjumppreplight;
             
             if (sprite_index == spr_superjumppreplight)
@@ -73,7 +73,7 @@ function scr_player_Sjumpprep()
             pogochargeactive = false;
             pogocharge = 50;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 if (sprite_index == spr_playerN_jetpackstart)
                 {

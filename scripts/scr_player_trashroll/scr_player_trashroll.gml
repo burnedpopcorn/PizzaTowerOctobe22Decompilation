@@ -16,7 +16,7 @@ function scr_player_trashroll()
         }
         else
         {
-            if (ANIMATION_END && sprite_index == spr_player_trashjump2)
+            if (ANIMATION_ENDED && sprite_index == spr_player_trashjump2)
                 sprite_index = spr_player_trashfall;
             
             if (vsp > 0 && sprite_index == spr_player_trashjump)
@@ -36,7 +36,7 @@ function scr_player_trashroll()
     {
         image_speed = 0.35;
         
-        if (sprite_index == spr_player_corpsestart && ANIMATION_END)
+        if (sprite_index == spr_player_corpsestart && ANIMATION_ENDED)
             sprite_index = spr_player_corpsesurf;
     }
     

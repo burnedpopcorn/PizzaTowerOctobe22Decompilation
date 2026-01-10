@@ -29,7 +29,7 @@ if (touched && sprite_index == spr_secretportal_close)
         visible = false;
 }
 
-if (ANIMATION_END)
+if (ANIMATION_ENDED)
 {
     switch (sprite_index)
     {

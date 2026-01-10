@@ -1,4 +1,4 @@
-if (sprite_index == spr_kingghost_pinball3 && ANIMATION_END)
+if (sprite_index == spr_kingghost_pinball3 && ANIMATION_ENDED)
     sprite_index = spr_kingghost_pinball2;
 
 image_speed = 0.35;

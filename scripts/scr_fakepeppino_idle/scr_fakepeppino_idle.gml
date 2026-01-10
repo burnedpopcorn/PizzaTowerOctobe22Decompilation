@@ -5,13 +5,13 @@ function scr_fakepeppino_idle()
     if (x != obj_player.x)
         image_xscale = -sign(x - obj_player.x);
     
-    if (sprite_index == spr_fakepeppino_land && ANIMATION_END)
+    if (sprite_index == spr_fakepeppino_land && ANIMATION_ENDED)
     {
         image_index = 0;
         sprite_index = spr_fakepeppino_idle;
     }
     
-    if (sprite_index == spr_fakepeppino_idle && ANIMATION_END)
+    if (sprite_index == spr_fakepeppino_idle && ANIMATION_ENDED)
     {
         movespeed = 8;
         image_index = 0;

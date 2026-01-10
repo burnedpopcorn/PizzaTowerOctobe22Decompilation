@@ -109,7 +109,7 @@ function scr_player_Sjump()
         if (move != 0)
             xscale = move;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             jumpstop = true;
             vsp = -4;
@@ -158,7 +158,7 @@ function scr_player_Sjump()
             hsp = -3;
     }
     
-    if (character == "V" && ANIMATION_END)
+    if (character == "V" && ANIMATION_ENDED)
     {
         state = states.jump;
         sprite_index = spr_playerV_fall;

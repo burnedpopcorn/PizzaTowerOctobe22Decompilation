@@ -9,7 +9,7 @@ function scr_player_ratmountclimbwall()
         sprite_index = spr_player_ratmountbounceside;
         image_index = 0;
     }
-    else if (ANIMATION_END)
+    else if (ANIMATION_ENDED)
     {
         image_index = image_number - 1;
     }
@@ -21,7 +21,7 @@ function scr_player_ratmountclimbwall()
         sprite_index = spr_player_ratmountfall;
     }
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         if (key_jump2)
         {

@@ -15,7 +15,7 @@ function scr_player_keyget()
     machhitAnim = false;
     sprite_index = spr_keyget;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         global.keyget = false;
         state = states.normal;

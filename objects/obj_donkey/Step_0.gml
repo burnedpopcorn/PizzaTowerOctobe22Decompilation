@@ -3,7 +3,7 @@ if (cooldown > 0)
 
 if (sprite_index == spr_cowkick)
 {
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
         sprite_index = spr_cowidle;
 }
 else if (blink)

@@ -35,7 +35,7 @@ function scr_player_boots()
     if (key_jump)
         input_buffer_jump = 0;
     
-    if (ANIMATION_END && sprite_index == spr_playerV_bootsjump)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_bootsjump)
         sprite_index = spr_playerV_bootsfall;
     
     move = key_left + key_right;
@@ -63,7 +63,7 @@ function scr_player_boots()
         image_index = 0;
     }
     
-    if (ANIMATION_END && sprite_index == spr_playerV_bootsland)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_bootsland)
         sprite_index = spr_playerV_bootsidle;
     
     if (!key_attack)
@@ -103,7 +103,7 @@ function scr_player_boots()
         image_speed = 0.35;
     }
     
-    if (ANIMATION_END && sprite_index == spr_playerV_bootsout)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_bootsout)
         sprite_index = spr_playerV_bootsidle;
     
     if (key_down && movespeed > 12)

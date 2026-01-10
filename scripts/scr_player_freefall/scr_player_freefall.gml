@@ -40,10 +40,10 @@ function scr_player_freefall()
         vsp += 0.5;
     }
     
-    if (ANIMATION_END && sprite_index == spr_bodyslamstart)
+    if (ANIMATION_ENDED && sprite_index == spr_bodyslamstart)
         sprite_index = spr_bodyslamfall;
     
-    if (ANIMATION_END && sprite_index == spr_shotgunjump1)
+    if (ANIMATION_ENDED && sprite_index == spr_shotgunjump1)
         sprite_index = spr_shotgunjump3;
     
     move = key_left + key_right;

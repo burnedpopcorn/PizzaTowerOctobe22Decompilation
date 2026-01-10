@@ -1,4 +1,4 @@
-if (ANIMATION_END)
+if (ANIMATION_ENDED)
     image_speed = 0;
 
 if (global.collect >= global.collectN)

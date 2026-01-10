@@ -13,7 +13,7 @@ function scr_pepperman_arenaintro()
         if (other.sprite_index == spr_pepperman_intro1)
             sprite_index = spr_player_gnomecutscene1;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             if (sprite_index == spr_player_gnomecutscene2)
                 image_index = image_number - 1;
@@ -26,7 +26,7 @@ function scr_pepperman_arenaintro()
     {
         introbuffer--;
         
-        if (ANIMATION_END && sprite_index == spr_pepperman_intro2)
+        if (ANIMATION_ENDED && sprite_index == spr_pepperman_intro2)
             image_index = image_number - 1;
     }
     else if (sprite_index == spr_pepperman_intro1)
@@ -53,7 +53,7 @@ function scr_pepperman_arenaintro()
             image_index = 0;
         }
     }
-    else if (ANIMATION_END)
+    else if (ANIMATION_ENDED)
     {
         switch (sprite_index)
         {
@@ -211,7 +211,7 @@ function scr_pepperman_jump()
         grounded = false;
     }
     
-    if (sprite_index == spr_pepperman_jump && ANIMATION_END)
+    if (sprite_index == spr_pepperman_jump && ANIMATION_ENDED)
         sprite_index = spr_pepperman_fall;
 }
 
@@ -221,7 +221,7 @@ function scr_pepperman_freefallprep()
     vsp = 0;
     image_speed = 0.35;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         state = states.freefall;
         sprite_index = spr_pepperman_groundpound;
@@ -414,7 +414,7 @@ function scr_pepperman_freefallland()
     {
         image_speed = 0.35;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             state = states.walk;
     }
 }
@@ -554,7 +554,7 @@ function scr_pepperman_shoulderbash()
             attackspeed += 0.25;
     }
     
-    if (ANIMATION_END && sprite_index == spr_pepperman_shoulderstart)
+    if (ANIMATION_ENDED && sprite_index == spr_pepperman_shoulderstart)
         sprite_index = spr_pepperman_shoulderloop;
 }
 
@@ -604,10 +604,10 @@ function scr_pepperman_shoulderturn()
     
     hsp = image_xscale * attackspeed;
     
-    if (sprite_index == spr_pepperman_shoulderturn && ANIMATION_END)
+    if (sprite_index == spr_pepperman_shoulderturn && ANIMATION_ENDED)
         sprite_index = spr_pepperman_shoulderturnloop;
     
-    if (attackspeed <= 0 && sprite_index == spr_pepperman_shoulderturnloop && ANIMATION_END)
+    if (attackspeed <= 0 && sprite_index == spr_pepperman_shoulderturnloop && ANIMATION_ENDED)
     {
         if (phase == 2)
         {
@@ -640,7 +640,7 @@ function scr_pepperman_mini()
             hsp = 0;
             vsp = 0;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 if (sprite_index == spr_pepperman_ministart)
                 {
@@ -708,7 +708,7 @@ function scr_pepperman_mini()
         case states.jump:
             hsp = image_xscale * attackspeed;
             
-            if (ANIMATION_END && sprite_index == spr_pepperman_minijump)
+            if (ANIMATION_ENDED && sprite_index == spr_pepperman_minijump)
                 sprite_index = spr_pepperman_minifall;
             
             if (grounded && vsp > 0)

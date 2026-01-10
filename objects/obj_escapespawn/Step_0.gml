@@ -55,7 +55,7 @@ switch (state)
         break;
     
     case 3:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             visible = false;
         
         break;

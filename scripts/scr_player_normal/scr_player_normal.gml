@@ -146,7 +146,7 @@ function state_player_normal()
             
             if (idle >= 150 && breakdance_pressed < breakdance_max)
             {
-                if (sprite_index != idlespr && ANIMATION_END)
+                if (sprite_index != idlespr && ANIMATION_ENDED)
                 {
                     facehurt = false;
                     idle = 0;
@@ -223,7 +223,7 @@ function state_player_normal()
     {
         if (sprite_index == spr_player_mortland)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 landAnim = false;
                 sprite_index = spr_player_mortidle;
@@ -232,7 +232,7 @@ function state_player_normal()
         }
         else if (sprite_index == spr_player_pistolland)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 sprite_index = idlespr;
                 landAnim = false;
@@ -245,14 +245,14 @@ function state_player_normal()
                 movespeed = 0;
                 sprite_index = spr_land;
                 
-                if (ANIMATION_END)
+                if (ANIMATION_ENDED)
                     landAnim = false;
             }
             else
             {
                 sprite_index = spr_land2;
                 
-                if (ANIMATION_END)
+                if (ANIMATION_ENDED)
                 {
                     landAnim = false;
                     sprite_index = movespr;
@@ -264,7 +264,7 @@ function state_player_normal()
         {
             sprite_index = spr_shotgunland;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 landAnim = false;
                 sprite_index = spr_shotgunidle;
@@ -284,7 +284,7 @@ function state_player_normal()
     if (machslideAnim)
         sprite_index = spr_machslideend;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         switch (sprite_index)
         {
@@ -596,7 +596,7 @@ function state_pepperman_normal()
         scr_soundeffect(sfx_suplexdash);
     }
     
-    if (sprite_index == spr_pepperman_throw && ANIMATION_END)
+    if (sprite_index == spr_pepperman_throw && ANIMATION_ENDED)
         sprite_index = spr_pepperman_idle;
     
     if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == false && character != "V")

@@ -10,7 +10,7 @@ if (place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretporta
 else
     visible = playerid.visible;
 
-if (sprite_index == spr_antigrav_bubblesquish && ANIMATION_END)
+if (sprite_index == spr_antigrav_bubblesquish && ANIMATION_ENDED)
     sprite_index = spr_antigrav_bubble;
 
 if (playerid.state != states.antigrav && playerid.state != states.chainsaw && (playerid.state != states.teleport || (playerid.tauntstoredstate != states.antigrav && !visible)))

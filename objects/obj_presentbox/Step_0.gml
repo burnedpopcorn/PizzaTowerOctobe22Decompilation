@@ -304,7 +304,7 @@ if (getout == 0 && sprite_index == spr_present && (character == 0 || global.boxh
     sprite_index = upspr;
 }
 
-if (ANIMATION_END && sprite_index == upspr)
+if (ANIMATION_ENDED && sprite_index == upspr)
 {
     if (character == 0 && global.boxhp < 3 && global.boxhp != 1)
     {
@@ -332,7 +332,7 @@ if (outtime == 0 && sprite_index == spr)
     sprite_index = downspr;
 }
 
-if (sprite_index == downspr && ANIMATION_END)
+if (sprite_index == downspr && ANIMATION_ENDED)
 {
     ds_list_shuffle(global.boxlist);
     

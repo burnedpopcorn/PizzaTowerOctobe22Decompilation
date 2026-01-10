@@ -6,7 +6,7 @@ function scr_player_knightpep()
     if (sprite_index == spr_knightpep_attack && movespeed > 0)
         movespeed -= 0.05;
     
-    if (sprite_index == spr_knightpep_attack && ANIMATION_END)
+    if (sprite_index == spr_knightpep_attack && ANIMATION_ENDED)
         sprite_index = spr_knightpep_idle;
     
     if (sprite_index == spr_knightpepland || sprite_index == spr_knightpepwalk || sprite_index == spr_knightpepidle)
@@ -106,10 +106,10 @@ function scr_player_knightpep()
             movespeed = 6;
     }
     
-    if (ANIMATION_END && sprite_index == spr_knightpepjumpstart)
+    if (ANIMATION_ENDED && sprite_index == spr_knightpepjumpstart)
         sprite_index = spr_knightpepjump;
     
-    if ((ANIMATION_END && sprite_index == spr_knightpepjump) || (!grounded && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_downtrust && sprite_index != spr_knightpep_doublejump))
+    if ((ANIMATION_ENDED && sprite_index == spr_knightpepjump) || (!grounded && sprite_index != spr_knightpepjumpstart && sprite_index != spr_knightpepjump && sprite_index != spr_knightpepthunder && sprite_index != spr_knightpep_downtrust && sprite_index != spr_knightpep_doublejump))
         sprite_index = spr_knightpepfall;
     
     if ((sprite_index == spr_knightpep_downtrust || sprite_index == spr_knightpepfall || sprite_index == spr_knightpep_doublejump) && grounded && vsp > 0 && !scr_slope())
@@ -140,7 +140,7 @@ function scr_player_knightpep()
         GamepadSetVibration((object_index == obj_player1) ? 0 : 1, 1, 1, 0.9);
     }
     
-    if (ANIMATION_END && sprite_index == spr_knightpepland)
+    if (ANIMATION_ENDED && sprite_index == spr_knightpepland)
     {
         sprite_index = spr_knightpepidle;
         knightmomentum = 0;
@@ -210,10 +210,10 @@ function scr_player_knightpep()
     if (floor(image_index) == 4 && sprite_index == spr_knightpepstart)
         instance_create(x, y - 600, obj_thunder);
     
-    if (ANIMATION_END && sprite_index == spr_knightpepthunder)
+    if (ANIMATION_ENDED && sprite_index == spr_knightpepthunder)
         sprite_index = spr_knightpepidle;
     
-    if (ANIMATION_END && sprite_index == spr_knightpep_doublejump)
+    if (ANIMATION_ENDED && sprite_index == spr_knightpep_doublejump)
         image_index = image_number - 1;
     
     if (move != 0 && grounded && vsp > 0 && sprite_index != spr_knightpepstart && sprite_index != spr_knightpepthunder)

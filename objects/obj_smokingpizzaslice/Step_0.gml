@@ -55,7 +55,7 @@ switch (state)
                 image_speed = 0.35;
                 substate_buffer = 5;
                 
-                if (sprite_index == spr_pizzaslug_turn && ANIMATION_END)
+                if (sprite_index == spr_pizzaslug_turn && ANIMATION_ENDED)
                 {
                     image_xscale *= -1;
                     substate_buffer = substate_max;

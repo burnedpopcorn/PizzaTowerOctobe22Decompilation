@@ -76,7 +76,7 @@ function scr_player_secondjump()
     {
         sprite_index = spr_player_secondjump1;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             jumpAnim = false;
     }
     

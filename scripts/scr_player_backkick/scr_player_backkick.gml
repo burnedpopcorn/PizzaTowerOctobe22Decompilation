@@ -128,7 +128,7 @@ function scr_player_backkick()
     crouchslideAnim = true;
     crouchAnim = true;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
         state = states.normal;
     
     sprite_index = spr_backkick;

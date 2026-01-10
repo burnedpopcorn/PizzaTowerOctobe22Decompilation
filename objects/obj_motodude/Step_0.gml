@@ -38,7 +38,7 @@ instance_destroy(instance_place(x + hsp, y, obj_destructibles));
 switch (sprite_index)
 {
     case spr_pizzacar_jump:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             sprite_index = spr_pizzacar_fall;
         
         break;
@@ -53,7 +53,7 @@ switch (sprite_index)
         break;
     
     case spr_pizzacar_land:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             sprite_index = spr_pizzacar_move;
         
         break;

@@ -1,6 +1,6 @@
 image_speed = 0.35;
 
-if (ANIMATION_END && sprite_index == spr_pizzahead_TVprojectilebounce)
+if (ANIMATION_ENDED && sprite_index == spr_pizzahead_TVprojectilebounce)
     sprite_index = spr_pizzahead_TVprojectile;
 
 mask_index = spr_pizzahead_TVprojectile;

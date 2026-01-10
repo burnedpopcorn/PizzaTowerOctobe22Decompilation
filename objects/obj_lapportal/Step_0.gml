@@ -41,7 +41,7 @@ if (global.panic)
             visible = false;
         }
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             image_index = image_number - 1;
             image_speed = 0;

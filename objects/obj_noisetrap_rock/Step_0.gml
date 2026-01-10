@@ -21,7 +21,7 @@ if ((obj_noiserock.falling == true || obj_noiserock.hit == true) && jumpaway == 
     jumpaway = true;
 }
 
-if (sprite_index == spr_playerN_jump && ANIMATION_END)
+if (sprite_index == spr_playerN_jump && ANIMATION_ENDED)
     sprite_index = spr_playerN_fall;
 
 if (sprite_index != spr_playerN_jump && sprite_index != spr_playerN_fall)

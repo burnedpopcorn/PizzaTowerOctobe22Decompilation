@@ -13,7 +13,7 @@ function scr_player_shoulderbash()
         }
     }
     
-    if (sprite_index == spr_pepperman_shoulderstart && ANIMATION_END)
+    if (sprite_index == spr_pepperman_shoulderstart && ANIMATION_ENDED)
         sprite_index = spr_pepperman_shoulderloop;
     
     if (sprite_index == spr_pepperman_shoulderloop && !key_attack)

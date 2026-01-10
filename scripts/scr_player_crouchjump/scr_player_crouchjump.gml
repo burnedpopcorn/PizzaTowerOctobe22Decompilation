@@ -34,7 +34,7 @@ function scr_player_crouchjump()
         else
             sprite_index = spr_crouchjump;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             jumpAnim = false;
     }
     

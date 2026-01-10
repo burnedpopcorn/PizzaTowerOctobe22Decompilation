@@ -6,7 +6,7 @@ function scr_enemy_land()
     sprite_index = landspr;
     image_speed = 0.35;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         sprite_index = idlespr;
         state = states.idle;

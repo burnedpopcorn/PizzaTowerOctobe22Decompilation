@@ -15,7 +15,7 @@ function scr_pizzaface_arenaintro()
         if (other.sprite_index == spr_pizzaface)
             sprite_index = spr_player_gnomecutscene1;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             if (sprite_index == spr_player_gnomecutscene2)
                 image_index = image_number - 1;
@@ -28,7 +28,7 @@ function scr_pizzaface_arenaintro()
     {
         introbuffer--;
         
-        if (ANIMATION_END && sprite_index == spr_pizzaface_intro1)
+        if (ANIMATION_ENDED && sprite_index == spr_pizzaface_intro1)
             image_index = image_number - 1;
     }
     else if (sprite_index == spr_pizzaface)
@@ -55,7 +55,7 @@ function scr_pizzaface_arenaintro()
             image_index = 0;
         }
     }
-    else if (ANIMATION_END)
+    else if (ANIMATION_ENDED)
     {
         state = states.walk;
         spotlightID.expand = true;
@@ -131,7 +131,7 @@ function scr_pizzaface_normal()
                 }
             }
         }
-        else if (ANIMATION_END)
+        else if (ANIMATION_ENDED)
         {
             if (sprite_index == spr_pizzaface_nosespit1)
             {
@@ -196,7 +196,7 @@ function scr_pizzaface_ram()
             hsp = ramhsp;
             vsp = ramvsp;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 substate = states.pizzaface_ram;
                 var s = wastedhits;
@@ -249,7 +249,7 @@ function scr_pizzaface_ram()
             x = hitX + irandom_range(-1, 1);
             y = hitY + irandom_range(-1, 1);
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 substate = states.jump;
                 sprite_index = spr_pizzaface_attackjump;
@@ -262,7 +262,7 @@ function scr_pizzaface_ram()
             break;
         
         case states.jump:
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 1;
             
             if (vsp > 0)
@@ -278,7 +278,7 @@ function scr_pizzaface_ram()
         case states.transitioncutscene:
             vsp = 0;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 state = states.walk;
             
             break;
@@ -313,7 +313,7 @@ function scr_pizzaface_transitioncutscene()
             break;
         
         case states.hit:
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 fmod_event_one_shot_3d("event:/sfx/misc/explosion", x, y);
                 

@@ -10,7 +10,7 @@ function scr_player_ratmounttrickjump()
     {
         image_speed = 0.5;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             sprite_index = spr_player_ratmountwalljump;
     }
     

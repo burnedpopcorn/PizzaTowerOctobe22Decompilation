@@ -3,7 +3,7 @@ function scr_player_mortattack()
     image_speed = 0.45;
     hsp = movespeed;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         if (grounded && vsp > 0)
         {

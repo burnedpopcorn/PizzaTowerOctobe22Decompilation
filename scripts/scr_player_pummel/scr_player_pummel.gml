@@ -12,7 +12,7 @@ function scr_player_pummel()
     
     if (sprite_index != spr_grab)
     {
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             sprite_index = spr_grab;
             image_index = 0;

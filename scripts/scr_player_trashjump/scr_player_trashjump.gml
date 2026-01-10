@@ -15,7 +15,7 @@ function scr_player_trashjump()
         image_index = 0;
     }
     
-    if (ANIMATION_END && sprite_index == spr_player_trashjump2)
+    if (ANIMATION_ENDED && sprite_index == spr_player_trashjump2)
         sprite_index = spr_player_trashfall;
     
     if (vsp < 0 && sprite_index != spr_player_trashjump)

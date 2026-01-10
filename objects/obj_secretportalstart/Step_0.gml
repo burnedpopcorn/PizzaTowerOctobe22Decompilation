@@ -25,7 +25,7 @@ switch (sprite_index)
         waitbuffer = 80;
         drop = false;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
             sprite_index = spr_secretportal_spawnidle;
@@ -110,7 +110,7 @@ switch (sprite_index)
         break;
     
     case spr_secretportal_spawnclose:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             image_index = image_number - 1;
             instance_destroy();

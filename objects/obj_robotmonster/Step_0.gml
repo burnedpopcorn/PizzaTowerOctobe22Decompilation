@@ -27,7 +27,7 @@ switch (state)
             image_index = 0;
         }
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             state = states.robotchase;
             sprite_index = chasespr;
@@ -125,7 +125,7 @@ switch (state)
                 sprite_index = spr_monstershroom_fall;
         }
         
-        if (ANIMATION_END && hsp != 0 && !steppy)
+        if (ANIMATION_ENDED && hsp != 0 && !steppy)
         {
             steppy = true;
             
@@ -144,7 +144,7 @@ switch (state)
             }
         }
         
-        if (floor(image_index) != (image_number - 1))
+        if (ANIMATION_PLAYING)
             steppy = false;
         
         break;
@@ -152,7 +152,7 @@ switch (state)
     case states.fall:
         image_speed = 0.5;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             image_index = image_number - 1;
         
         if (scr_monster_solid(x, y + (grav * 2)))

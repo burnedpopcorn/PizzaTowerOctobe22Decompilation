@@ -9,7 +9,7 @@ switch (state)
         
         vsp = Approach(vsp, -10, 0.1);
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             if (image_speed < 2)
                 image_speed += 0.1;

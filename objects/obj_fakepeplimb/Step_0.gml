@@ -77,7 +77,7 @@ switch (state)
                 ID = other.id;
             }
         }
-        else if (ANIMATION_END)
+        else if (ANIMATION_ENDED)
         {
             image_speed = 0.35;
             state = states.crouch;

@@ -20,7 +20,7 @@ function scr_player_gameover()
     alarm[8] = -1;
     alarm[9] = -1;
     
-    if (ANIMATION_END && sprite_index == spr_deathstart)
+    if (ANIMATION_ENDED && sprite_index == spr_deathstart)
     {
         alarm[10] = 5;
         vsp = -10;

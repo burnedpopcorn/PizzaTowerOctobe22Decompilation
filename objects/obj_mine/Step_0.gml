@@ -4,5 +4,5 @@ if (place_meeting(x, y, obj_player) && image_speed == 0)
     image_speed = 0.35;
 }
 
-if (ANIMATION_END)
+if (ANIMATION_ENDED)
     instance_destroy();

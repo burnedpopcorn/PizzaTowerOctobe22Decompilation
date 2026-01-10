@@ -55,7 +55,7 @@ switch (state)
         hsp = 0;
         vsp = 0;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             state = states.walk;
             sprite_index = walkspr;

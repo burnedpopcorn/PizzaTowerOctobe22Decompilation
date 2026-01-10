@@ -12,7 +12,7 @@ else
 if (global.miniboss == false)
     instance_destroy();
 
-if (sprite_index == spr_noisebomb_intro && ANIMATION_END)
+if (sprite_index == spr_noisebomb_intro && ANIMATION_ENDED)
 {
     sprite_index = spr_noisebomb_idle;
     x = playerid.x;

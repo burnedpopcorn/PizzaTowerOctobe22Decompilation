@@ -6,7 +6,7 @@ if (sprite_index == spr_arenadoor_open)
         shot = true;
     }
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         count++;
         alarm[0] = 10;

@@ -1,4 +1,4 @@
-if (ANIMATION_END)
+if (ANIMATION_ENDED)
 {
     if (sprite_index == spr_cheeseblock)
     {

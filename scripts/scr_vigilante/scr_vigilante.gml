@@ -56,7 +56,7 @@ function scr_vigilante_arenaintro()
             if (other.sprite_index == spr_vigilante_intro1)
                 sprite_index = spr_player_gnomecutscene1;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 if (sprite_index == spr_player_gnomecutscene2)
                     image_index = image_number - 1;
@@ -69,7 +69,7 @@ function scr_vigilante_arenaintro()
         {
             introbuffer--;
             
-            if (ANIMATION_END && sprite_index == spr_vigilante_intro2)
+            if (ANIMATION_ENDED && sprite_index == spr_vigilante_intro2)
                 image_index = image_number - 1;
             
             if (sprite_index == spr_vigilante_intro2 && floor(image_index) == 13)
@@ -121,7 +121,7 @@ function scr_vigilante_arenaintro()
     }
     else
     {
-        if (sprite_index == spr_playerV_dynamitethrow && ANIMATION_END)
+        if (sprite_index == spr_playerV_dynamitethrow && ANIMATION_ENDED)
             sprite_index = spr_playerV_idle;
         
         if (introbuffer > 0)
@@ -131,7 +131,7 @@ function scr_vigilante_arenaintro()
             sprite_index = spr_vigilante_impatient;
             image_index = 0;
         }
-        else if (ANIMATION_END)
+        else if (ANIMATION_ENDED)
             image_index = image_number - 1;
         
         if (global.pistol)
@@ -284,7 +284,7 @@ function scr_vigilante_walk()
             image_index = 0;
         }
     }
-    else if (ANIMATION_END)
+    else if (ANIMATION_ENDED)
         sprite_index = spr_playerV_idle;
     
     woosh = false;
@@ -518,7 +518,7 @@ function scr_vigilante_jump()
 {
     hsp = 0;
     
-    if (ANIMATION_END && sprite_index == spr_playerV_jump)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_jump)
         sprite_index = spr_playerV_fall;
     
     if (vsp > 0)
@@ -594,7 +594,7 @@ function scr_vigilante_estampede()
             }
         }
     }
-    else if (ANIMATION_END)
+    else if (ANIMATION_ENDED)
         sprite_index = spr_vigilante_intro2loop;
 }
 
@@ -603,7 +603,7 @@ function scr_vigilante_revolver()
     image_speed = 0.35;
     hsp = Approach(hsp, 0, 0.5);
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         if (sprite_index == spr_playerV_revolverstart)
             sprite_index = spr_playerV_revolverhold;
@@ -662,7 +662,7 @@ function scr_vigilante_dynamite()
 {
     hsp = Approach(hsp, 0, 0.5);
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         if (!scr_vigilante_throw_dynamite())
             state = states.walk;
@@ -681,7 +681,7 @@ function scr_vigilante_throwing()
             state = states.walk;
     }
     
-    if (ANIMATION_END && sprite_index == spr_playerV_dynamitethrow)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_dynamitethrow)
         sprite_index = spr_playerV_idle;
 }
 
@@ -716,7 +716,7 @@ function scr_vigilante_mach2()
     else if (attackspeed < 8)
         attackspeed += 0.5;
     
-    if (ANIMATION_END && sprite_index == spr_playerV_mach1)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_mach1)
         sprite_index = spr_playerV_bootsmove;
     
     if (sprite_index == spr_playerV_crouchmove)
@@ -799,7 +799,7 @@ function scr_vigilante_crouchslide()
     if (attackspeed > 0)
         attackspeed -= 0.15;
     
-    if (ANIMATION_END && sprite_index == spr_playerV_divekickstart)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_divekickstart)
         sprite_index = spr_playerV_divekick;
     
     if (place_meeting(x + sign(hsp), y, obj_solid))
@@ -958,7 +958,7 @@ function scr_vigilante_duel()
                 break;
             
             case 3:
-                if (ANIMATION_END)
+                if (ANIMATION_ENDED)
                 {
                     sprite_index = spr_playerV_idle;
                     state = states.walk;
@@ -972,7 +972,7 @@ function scr_vigilante_duel()
         }
     }
     
-    if (sprite_index == spr_playerV_revolverstart && ANIMATION_END)
+    if (sprite_index == spr_playerV_revolverstart && ANIMATION_ENDED)
         sprite_index = spr_playerV_revolverhold;
 }
 
@@ -980,7 +980,7 @@ function scr_vigilante_punch()
 {
     image_speed = 0.35;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         state = tauntstoredstate;
         sprite_index = tauntstoredsprite;
@@ -996,7 +996,7 @@ function scr_vigilante_flamethrower()
         {
             hsp = 0;
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 sprite_index = spr_vigilante_flamethrower;
                 image_index = 0;
@@ -1034,7 +1034,7 @@ function scr_vigilante_flamethrower()
                 image_index = 0;
             }
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = 2;
             
             if (flamebuffer > 0)
@@ -1047,14 +1047,14 @@ function scr_vigilante_flamethrower()
                 image_index = 0;
             }
         }
-        else if (sprite_index == spr_vigilante_flamethrowerend && ANIMATION_END)
+        else if (sprite_index == spr_vigilante_flamethrowerend && ANIMATION_ENDED)
             state = states.walk;
     }
     else
     {
         image_speed = 0.35;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             sprite_index = spr_vigilante_flamethrowerintro;
             image_index = 13;
@@ -1072,7 +1072,7 @@ function scr_vigilante_machinegun()
         if (targetplayer.x != x)
             image_xscale = sign(targetplayer.x - x);
         
-        if (ANIMATION_END && !uziprepareshot)
+        if (ANIMATION_ENDED && !uziprepareshot)
         {
             uziprepareshot = true;
             
@@ -1092,14 +1092,14 @@ function scr_vigilante_machinegun()
                 image_speed = 0.35;
             }
         }
-        else if (floor(image_index) != (image_number - 1))
+        else if (ANIMATION_PLAYING)
             uziprepareshot = false;
     }
     else
     {
         hsp = image_xscale * 4;
         
-        if (sprite_index == spr_playerV_jump && (ANIMATION_END || vsp > -10))
+        if (sprite_index == spr_playerV_jump && (ANIMATION_ENDED || vsp > -10))
             sprite_index = spr_vigilante_uzi;
         
         if (place_meeting(x + hsp, y, obj_solid))
@@ -1186,7 +1186,7 @@ function scr_vigilante_bazooka()
             fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
         }
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             sprite_index = spr_playerV_fall;
     }
     
@@ -1204,7 +1204,7 @@ function scr_vigilante_crate()
             cow = true;
     }
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
         state = states.walk;
 }
 

@@ -86,7 +86,7 @@ if (state == states.Throw)
     {
         hsp = 0;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             sprite_index = spr_badrat_attack2;
             cooldown = 30;
@@ -117,7 +117,7 @@ if (state == states.Throw)
         
         hsp = image_xscale * mv;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             sprite_index = spr_badrat_attack3;
             instance_destroy(hitboxID);
@@ -127,7 +127,7 @@ if (state == states.Throw)
     {
         hsp = Approach(hsp, 0, 0.2);
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             sprite_index = walkspr;
             state = states.walk;

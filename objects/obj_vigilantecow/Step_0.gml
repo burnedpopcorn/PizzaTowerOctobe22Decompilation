@@ -37,7 +37,7 @@ if (place_meeting(x + (xscale * 4), y, obj_solid))
 
 if (sprite_index == spr_cowidle)
     image_index = 0;
-else if (sprite_index == spr_cowbounce && ANIMATION_END)
+else if (sprite_index == spr_cowbounce && ANIMATION_ENDED)
     sprite_index = spr_cowidle;
 
 mask_index = spr_bouncingcow_mask;

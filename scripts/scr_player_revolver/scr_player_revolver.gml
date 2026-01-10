@@ -9,7 +9,7 @@ function scr_player_revolver()
             movespeed -= 0.1;
     }
     
-    if (ANIMATION_END && sprite_index == spr_playerV_revolverstart)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_revolverstart)
         sprite_index = spr_playerV_revolverhold;
     
     if ((sprite_index == spr_playerV_revolverhold || sprite_index == spr_playerV_airrevolverstart || sprite_index == spr_playerV_revolverstart) && !key_slap)
@@ -30,7 +30,7 @@ function scr_player_revolver()
         scr_soundeffect(sfx_killingblow);
     }
     
-    if (ANIMATION_END && sprite_index == spr_playerV_revolvershoot)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_revolvershoot)
     {
         image_index = 0;
         state = states.normal;
@@ -46,7 +46,7 @@ function scr_player_revolver()
             state = states.normal;
     }
     
-    if (ANIMATION_END && sprite_index == spr_playerV_airrevolver)
+    if (ANIMATION_ENDED && sprite_index == spr_playerV_airrevolver)
     {
         if (key_attack && movespeed >= 6)
         {

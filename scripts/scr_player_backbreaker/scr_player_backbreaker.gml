@@ -103,7 +103,7 @@ function scr_player_backbreaker()
         vsp = 0;
     }
     
-    if (ANIMATION_END && (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt))
+    if (ANIMATION_ENDED && (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt))
     {
         movespeed = tauntstoredmovespeed;
         vsp = tauntstoredvsp;
@@ -139,16 +139,16 @@ function scr_player_backbreaker()
             scr_change_farmers();
     }
     
-    if (ANIMATION_END && sprite_index == spr_player_eatspaghetti)
+    if (ANIMATION_ENDED && sprite_index == spr_player_eatspaghetti)
         state = states.normal;
     
-    if (ANIMATION_END && sprite_index == spr_player_throw)
+    if (ANIMATION_ENDED && sprite_index == spr_player_throw)
         state = states.normal;
     
-    if (ANIMATION_END && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
+    if (ANIMATION_ENDED && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
         state = states.normal;
     
-    if (ANIMATION_END && (sprite_index == spr_player_levelcomplete || sprite_index == spr_playerN_victory))
+    if (ANIMATION_ENDED && (sprite_index == spr_player_levelcomplete || sprite_index == spr_playerN_victory))
         state = states.normal;
     
     if (key_jump && sprite_index == spr_player_phoneidle)
@@ -164,7 +164,7 @@ function scr_player_backbreaker()
         }
     }
     
-    if (global.miniboss == true && sprite_index == spr_bossintro && ANIMATION_END)
+    if (global.miniboss == true && sprite_index == spr_bossintro && ANIMATION_ENDED)
         state = states.normal;
     
     image_speed = 0.4;

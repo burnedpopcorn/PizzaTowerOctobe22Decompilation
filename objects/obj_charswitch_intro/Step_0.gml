@@ -1,7 +1,7 @@
 switch (state)
 {
     case states.transitioncutscene:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             state = states.normal;
             introbuffer = 50;

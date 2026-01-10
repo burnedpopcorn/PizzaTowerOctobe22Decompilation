@@ -103,7 +103,7 @@ else if (state == states.punch)
     image_speed = 0.35;
     hsp = 0;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         state = states.walk;
         sprite_index = walkspr;

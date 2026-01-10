@@ -21,7 +21,7 @@ else if (!shot && floor(image_index) == 1)
     
     shot = true;
 }
-else if (ANIMATION_END)
+else if (ANIMATION_ENDED)
 {
     sprite_index = spr_giantslime;
     refresh = 100;

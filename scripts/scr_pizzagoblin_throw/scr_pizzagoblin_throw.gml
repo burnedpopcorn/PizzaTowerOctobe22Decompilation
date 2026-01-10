@@ -7,7 +7,7 @@ function scr_pizzagoblin_throw()
     else if (place_meeting(x, y + 1, obj_railh2))
         hsp = 5;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         state = states.walk;
         sprite_index = walkspr;

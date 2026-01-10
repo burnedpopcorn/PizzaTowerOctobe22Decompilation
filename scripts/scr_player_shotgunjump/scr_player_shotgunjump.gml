@@ -137,6 +137,6 @@ function scr_player_shotgunjump()
         }
     }
     
-    if (sprite_index == spr_shotgunjump && ANIMATION_END)
+    if (sprite_index == spr_shotgunjump && ANIMATION_ENDED)
         sprite_index = spr_shotgunfall;
 }

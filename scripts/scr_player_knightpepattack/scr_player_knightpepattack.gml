@@ -12,7 +12,7 @@ function scr_player_knightpepattack()
             movespeed -= 0.2;
     }
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
         image_index = image_number - 1;
     
     if (movespeed <= 0)

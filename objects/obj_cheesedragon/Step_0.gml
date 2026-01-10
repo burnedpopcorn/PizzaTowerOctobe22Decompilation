@@ -3,7 +3,7 @@ if (obj_player1.spotlight == true)
 else
     playerid = obj_player2;
 
-if (ANIMATION_END && (sprite_index == spr_cheesedragon_flames || sprite_index == spr_cheesedragon_stomp))
+if (ANIMATION_ENDED && (sprite_index == spr_cheesedragon_flames || sprite_index == spr_cheesedragon_stomp))
 {
     sprite_index = spr_cheesedragon_idle;
     attacked = false;
@@ -40,7 +40,7 @@ if (attackcycle == 0 && attacked == false && floor(image_index) == 13 && sprite_
 if (attackcycle == 2 && floor(image_index) > 13 && floor(image_index) < 21 && sprite_index == spr_cheesedragon_flames && alarm[1] == -1)
     alarm[1] = 1;
 
-if (ANIMATION_END && sprite_index == spr_cheesedragon_hurt)
+if (ANIMATION_ENDED && sprite_index == spr_cheesedragon_hurt)
     sprite_index = spr_cheesedragon_goingup;
 
 if (sprite_index == spr_cheesedragon_goingup)

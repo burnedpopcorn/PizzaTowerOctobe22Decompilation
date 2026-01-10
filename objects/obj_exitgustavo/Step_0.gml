@@ -91,7 +91,7 @@ switch (state)
         break;
     
     case states.land:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             sprite_index = spr_gustavo_exitsign;
             state = states.normal;

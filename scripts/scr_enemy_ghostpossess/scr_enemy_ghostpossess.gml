@@ -84,7 +84,7 @@ function scr_enemy_ghostpossess()
                 
                 if (sprite_index == spr_indiancheese_jump)
                 {
-                    if (ANIMATION_END)
+                    if (ANIMATION_ENDED)
                         image_index = image_number - 1;
                     
                     if (grounded && vsp > 0)
@@ -120,7 +120,7 @@ function scr_enemy_ghostpossess()
                     hsp = 0;
                     vsp = 0;
                     
-                    if (ANIMATION_END)
+                    if (ANIMATION_ENDED)
                         sprite_index = spr_forknight_rageloop;
                 }
                 
@@ -162,7 +162,7 @@ function scr_enemy_ghostpossess()
                     hsp = 0;
                 }
                 
-                if (ANIMATION_END)
+                if (ANIMATION_ENDED)
                     sprite_index = spr_slimemove;
                 
                 break;

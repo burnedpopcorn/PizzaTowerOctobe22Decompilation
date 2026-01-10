@@ -29,7 +29,7 @@ if (!touched)
                 else
                     sprite_index = spr_fakepeppino_idle;
             }
-            else if (ANIMATION_END)
+            else if (ANIMATION_ENDED)
             {
                 sprite_index = spr_fakepeppino_idle;
             }
@@ -74,7 +74,7 @@ if (!touched)
             break;
         
         case states.jump:
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 if (sprite_index == spr_fakepeppino_jumpstart)
                     sprite_index = spr_fakepeppino_jump;

@@ -145,7 +145,7 @@ switch (state)
         break;
     
     case states.transitioncutscene:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             state = states.victory;
         
         break;

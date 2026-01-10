@@ -45,7 +45,7 @@ function scr_player_handstandjump()
     else
         attackdash = spr_suplexdash;
     
-    if (sprite_index == spr_player_lungestart && ANIMATION_END)
+    if (sprite_index == spr_player_lungestart && ANIMATION_ENDED)
         sprite_index = spr_player_lunge;
     
     var airattackdash = spr_suplexdashjump;
@@ -96,13 +96,13 @@ function scr_player_handstandjump()
     if (grounded && sprite_index == airattackdash && key_attack && character != "N" && global.attackstyle != 2)
         state = states.mach2;
     
-    if (ANIMATION_END && sprite_index == attackdash)
+    if (ANIMATION_ENDED && sprite_index == attackdash)
         state = states.normal;
     
-    if (ANIMATION_END && sprite_index == airattackdashstart)
+    if (ANIMATION_ENDED && sprite_index == airattackdashstart)
         sprite_index = airattackdash;
     
-    if (ANIMATION_END && key_attack && sprite_index == attackdash)
+    if (ANIMATION_ENDED && key_attack && sprite_index == attackdash)
     {
         image_speed = 0.35;
         state = states.mach2;

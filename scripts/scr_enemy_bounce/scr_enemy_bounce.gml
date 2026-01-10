@@ -5,7 +5,7 @@ function scr_enemy_bounce()
     else
         hsp = 0;
     
-    if (sprite_index == jumpprepspr && ANIMATION_END)
+    if (sprite_index == jumpprepspr && ANIMATION_ENDED)
     {
         if (global.bosshealth == 8)
         {
@@ -83,7 +83,7 @@ function scr_enemy_bounce()
         sprite_index = landspr;
     }
     
-    if (sprite_index == landspr && ANIMATION_END)
+    if (sprite_index == landspr && ANIMATION_ENDED)
     {
         if (global.bosshealth == 8 && !instance_exists(obj_noisey))
         {

@@ -44,14 +44,14 @@ function scr_player_faceplant()
         instance_create(x + 10, y + 10, obj_bumpeffect);
     }
     
-    if (ANIMATION_END && !key_attack)
+    if (ANIMATION_ENDED && !key_attack)
     {
         image_speed = 0.35;
         state = states.normal;
         grav = 0.5;
     }
     
-    if (ANIMATION_END && key_attack)
+    if (ANIMATION_ENDED && key_attack)
     {
         image_speed = 0.35;
         state = states.mach2;

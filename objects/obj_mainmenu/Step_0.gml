@@ -40,7 +40,7 @@ switch (state)
                     sprite_index = spr_titlepep_righttomiddle;
             }
             
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
             {
                 switch (sprite_index)
                 {

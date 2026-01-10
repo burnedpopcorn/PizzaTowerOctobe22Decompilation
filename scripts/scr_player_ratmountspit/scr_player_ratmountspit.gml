@@ -7,7 +7,7 @@ function scr_player_ratmountspit()
     with (ratgrabbedID)
         scr_enemy_ratgrabbed();
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         state = states.ratmount;
         ratgrabbedID = -4;

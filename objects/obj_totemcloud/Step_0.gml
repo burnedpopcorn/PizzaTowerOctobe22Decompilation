@@ -35,7 +35,7 @@ if (active && !found_active)
         audio_stop_sound(sfx_thundercloud);
 }
 
-if (sprite_index == spr_totemcloud_spawn && ANIMATION_END)
+if (sprite_index == spr_totemcloud_spawn && ANIMATION_ENDED)
 {
     sprite_index = spr_totemcloud_idle;
     alarm[0] = 40;
@@ -44,7 +44,7 @@ if (sprite_index == spr_totemcloud_spawn && ANIMATION_END)
 
 if (sprite_index == spr_totemcloud_attack)
 {
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         sprite_index = spr_totemcloud_idle;
         shot = false;
@@ -67,7 +67,7 @@ if (sprite_index != spr_totemcloud_end)
 {
     image_speed = 0.35;
 }
-else if (ANIMATION_END)
+else if (ANIMATION_ENDED)
 {
     image_index = image_number - 1;
     image_speed = 0;

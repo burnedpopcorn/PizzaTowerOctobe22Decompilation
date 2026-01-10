@@ -35,7 +35,7 @@ function scr_enemy_stun()
             else
                 sprite_index = spr_dead;
         }
-        else if (ANIMATION_END && sprite_index == spr_tank_hitwall)
+        else if (ANIMATION_ENDED && sprite_index == spr_tank_hitwall)
         {
             state = states.walk;
             stunned = 0;
@@ -49,7 +49,7 @@ function scr_enemy_stun()
         else if (sprite_index != spr_pepperman_shoulderhurt && sprite_index != spr_pepperman_shoulderhurtstart)
             sprite_index = stunfallspr;
         
-        if (sprite_index == spr_pepperman_shoulderhurtstart && ANIMATION_END)
+        if (sprite_index == spr_pepperman_shoulderhurtstart && ANIMATION_ENDED)
             sprite_index = spr_pepperman_shoulderhurt;
     }
     else if (object_index == obj_fakepepboss || object_index == obj_pf_fakepep)

@@ -55,7 +55,7 @@ function scr_player_slap()
     
     if (sprite_index != spr_player_slapup && sprite_index != spr_player_slapdash)
     {
-        if (ANIMATION_END && slapbuffer < 8)
+        if (ANIMATION_ENDED && slapbuffer < 8)
         {
             if (grounded && move == 0)
             {
@@ -125,7 +125,7 @@ function scr_player_slap()
         }
     }
     
-    if (ANIMATION_END && slapbuffer == 8)
+    if (ANIMATION_ENDED && slapbuffer == 8)
     {
         if (mach2 >= 35)
         {

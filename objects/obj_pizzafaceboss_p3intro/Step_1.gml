@@ -4,7 +4,7 @@ switch (introstate)
         hsp = 0;
         vsp = 0;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             image_index = image_number - 1;
             introbuffer = 120;
@@ -43,7 +43,7 @@ switch (introstate)
                     sprite_index = spr_player_gnomecutscene2;
                     image_index = 0;
                 }
-                else if (ANIMATION_END)
+                else if (ANIMATION_ENDED)
                 {
                     image_index = image_number - 1;
                 }
@@ -62,7 +62,7 @@ switch (introstate)
     case 3:
         with (obj_player)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 1;
         }
         
@@ -81,11 +81,11 @@ switch (introstate)
     case 4:
         with (obj_player)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 1;
         }
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             sprite_index = spr_pizzahead_throwaway;
             image_index = 0;
@@ -110,7 +110,7 @@ switch (introstate)
     case 5:
         with (obj_player)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 1;
         }
         
@@ -135,7 +135,7 @@ switch (introstate)
     case 6:
         with (obj_player)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 1;
         }
         
@@ -160,11 +160,11 @@ switch (introstate)
     case 7:
         with (obj_player)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 1;
         }
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             image_index = image_number - 1;
         
         if (introbuffer > 0)
@@ -187,11 +187,11 @@ switch (introstate)
     case 8:
         with (obj_player1)
         {
-            if (sprite_index == spr_player_gnomecutscene3 && ANIMATION_END)
+            if (sprite_index == spr_player_gnomecutscene3 && ANIMATION_ENDED)
                 sprite_index = spr_player_gnomecutscene4;
         }
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             image_index = image_number - 1;
         
         if (introbuffer > 0)
@@ -215,7 +215,7 @@ switch (introstate)
         break;
     
     case 9:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             if (sprite_index == spr_pizzahead_intro2)
                 image_index = image_number - 1;
@@ -262,7 +262,7 @@ switch (introstate)
         break;
     
     case 10:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
             image_index = image_number - 3;
         
         if (introbuffer > 0)
@@ -286,7 +286,7 @@ switch (introstate)
     case 11:
         with (obj_player1)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 1;
         }
         
@@ -307,7 +307,7 @@ switch (introstate)
     case 12:
         with (obj_player1)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 6;
         }
         
@@ -338,7 +338,7 @@ switch (introstate)
     case 13:
         with (obj_player1)
         {
-            if (ANIMATION_END)
+            if (ANIMATION_ENDED)
                 image_index = image_number - 6;
         }
         

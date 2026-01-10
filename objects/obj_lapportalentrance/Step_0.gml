@@ -9,7 +9,7 @@ if (active)
     }
 }
 
-if (ANIMATION_END)
+if (ANIMATION_ENDED)
 {
     switch (sprite_index)
     {

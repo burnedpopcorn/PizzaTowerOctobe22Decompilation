@@ -5,7 +5,7 @@ if (playerid != -4)
         if (floor(image_index) >= 9)
             global.noisejetpack = false;
         
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             state = states.normal;
             landAnim = false;
@@ -28,5 +28,5 @@ if (playerid != -4)
     }
 }
 
-if (sprite_index == spr_freemilksuprised && ANIMATION_END)
+if (sprite_index == spr_freemilksuprised && ANIMATION_ENDED)
     sprite_index = spr_freemilk;

@@ -8,7 +8,7 @@ function scr_player_finishingblow()
     else
         movespeed = Approach(movespeed, -xscale * 4, 0.5);
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         movespeed = 0;
         railmovespeed = 4;

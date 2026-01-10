@@ -89,10 +89,10 @@ function scr_player_mach2()
         }
     }
     
-    if (ANIMATION_END && sprite_index == spr_mach1)
+    if (ANIMATION_ENDED && sprite_index == spr_mach1)
         sprite_index = spr_mach;
     
-    if (ANIMATION_END && sprite_index == spr_player_longjump)
+    if (ANIMATION_ENDED && sprite_index == spr_player_longjump)
         sprite_index = spr_player_longjumpend;
     
     if (!grounded)
@@ -157,10 +157,10 @@ function scr_player_mach2()
         }
     }
     
-    if (grounded && ANIMATION_END && (sprite_index == spr_rollgetup || sprite_index == spr_player_rampjump))
+    if (grounded && ANIMATION_ENDED && (sprite_index == spr_rollgetup || sprite_index == spr_player_rampjump))
         sprite_index = spr_mach;
     
-    if (ANIMATION_END && sprite_index == spr_suplexdash)
+    if (ANIMATION_ENDED && sprite_index == spr_suplexdash)
         sprite_index = spr_mach;
     
     if (!grounded && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_player_longjump && sprite_index != spr_player_longjumpend)
@@ -171,13 +171,13 @@ function scr_player_mach2()
             sprite_index = spr_clownfall;
     }
     
-    if (ANIMATION_END && sprite_index == spr_secondjump1)
+    if (ANIMATION_ENDED && sprite_index == spr_secondjump1)
         sprite_index = spr_secondjump2;
     
-    if (ANIMATION_END && sprite_index == spr_walljumpstart)
+    if (ANIMATION_ENDED && sprite_index == spr_walljumpstart)
         sprite_index = spr_walljumpend;
     
-    if (!grounded && sprite_index != spr_clownfall && sprite_index == spr_clownjump && ANIMATION_END)
+    if (!grounded && sprite_index != spr_clownfall && sprite_index == spr_clownjump && ANIMATION_ENDED)
         sprite_index = spr_clownfall;
     
     if (key_down && !place_meeting(x, y, obj_dashpad))

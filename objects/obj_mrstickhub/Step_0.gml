@@ -4,7 +4,7 @@ switch (state)
         break;
     
     case states.transitioncutscene:
-        if (ANIMATION_END)
+        if (ANIMATION_ENDED)
         {
             instance_activate_object(bossdoorID);
             

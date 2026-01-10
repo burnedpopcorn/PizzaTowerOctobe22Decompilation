@@ -97,7 +97,7 @@ function scr_player_machroll()
             break;
         
         case "V":
-            if (sprite_index == spr_playerV_divekickstart && ANIMATION_END)
+            if (sprite_index == spr_playerV_divekickstart && ANIMATION_ENDED)
                 sprite_index = spr_playerV_divekick;
             
             if ((scr_solid(x + 1, y) && xscale == 1) && !place_meeting(x + sign(hsp), y, obj_slope))

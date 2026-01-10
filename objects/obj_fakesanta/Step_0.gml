@@ -83,7 +83,7 @@ if (activated == true)
                         }
                     }
                     
-                    if (ANIMATION_END)
+                    if (ANIMATION_ENDED)
                     {
                         sprite_index = spr_fakesanta_idle;
                         random_buffer = random_max;

@@ -13,12 +13,12 @@ function scr_player_door()
     movespeed = 0;
     image_speed = 0.35;
     
-    if (ANIMATION_END)
+    if (ANIMATION_ENDED)
     {
         image_speed = 0;
         image_index = image_number - 1;
     }
     
-    if (ANIMATION_END && !instance_exists(obj_fadeout) && (sprite_index == spr_downpizzabox || sprite_index == spr_uppizzabox))
+    if (ANIMATION_ENDED && !instance_exists(obj_fadeout) && (sprite_index == spr_downpizzabox || sprite_index == spr_uppizzabox))
         instance_create(x, y, obj_fadeout);
 }

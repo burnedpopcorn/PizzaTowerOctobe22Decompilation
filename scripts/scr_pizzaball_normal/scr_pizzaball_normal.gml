@@ -89,7 +89,7 @@ function scr_pizzaball_normal()
     if (jspd < 0)
         jspd = 0;
     
-    if (ANIMATION_END && (sprite_index == spr_pizzaball_hitwall || sprite_index == spr_pizzaball_hitwall2))
+    if (ANIMATION_ENDED && (sprite_index == spr_pizzaball_hitwall || sprite_index == spr_pizzaball_hitwall2))
         sprite_index = spr_pizzaball_idle2;
     
     if (sprite_index != spr_pizzaball_hitwall && sprite_index != spr_pizzaball_hitwall2)
@@ -115,7 +115,7 @@ function scr_pizzaball_normal()
                 image_speed = 0.35;
             }
         }
-        else if (ANIMATION_END)
+        else if (ANIMATION_ENDED)
         {
             sprite_index = spr_pizzaball_idle2;
         }

@@ -4,7 +4,7 @@ function scr_player_meteorpep()
     landAnim = true;
     vsp = 0;
     
-    if (sprite_index == spr_meteorpep_impact && ANIMATION_END)
+    if (sprite_index == spr_meteorpep_impact && ANIMATION_ENDED)
         sprite_index = spr_meteorpep_flying;
     
     if (sprite_index == spr_meteorpep_flying)
@@ -62,7 +62,7 @@ function scr_player_meteorpep()
         sprite_index = spr_meteorpep_land;
     }
     
-    if (sprite_index == spr_meteorpep_land && ANIMATION_END)
+    if (sprite_index == spr_meteorpep_land && ANIMATION_ENDED)
         state = states.normal;
     
     image_speed = 0.35;
