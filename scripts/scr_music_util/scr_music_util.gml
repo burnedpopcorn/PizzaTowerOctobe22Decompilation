@@ -28,7 +28,7 @@ function add_music(arg0, arg1, arg2, arg3, arg4 = noone)
         }
     }
     
-    ds_map_set(music_map, arg0, b);
+    music_map[? arg0] = b;
     return b;
 }
 

@@ -19,7 +19,7 @@ function set_master_gain(_gain)
     for (var i = 0; i < num; i++)
     {
         var info = audio_get_listener_info(i);
-        audio_set_master_gain(ds_map_find_value(info, "index"), _gain);
+        audio_set_master_gain(info[? "index"], _gain);
         ds_map_destroy(info);
     }
 }

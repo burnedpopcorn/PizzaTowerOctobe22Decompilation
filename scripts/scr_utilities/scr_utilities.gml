@@ -209,7 +209,7 @@ function instance_nearest_random(arg0, arg1)
         if (ds_list_size(list) < n)
             n = ds_list_size(list) - 1;
         
-        b = ds_list_find_value(list, ds_list_size(list) - n);
+        b = list[| ds_list_size(list) - n];
     }
     
     ds_list_destroy(list);

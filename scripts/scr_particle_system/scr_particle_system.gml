@@ -1,8 +1,8 @@
 function declare_particle(arg0, arg1, arg2, arg3)
 {
-    ds_map_set(global.part_map, arg0, part_type_create());
-    ds_map_set(global.part_depth, arg0, arg3);
-    var p = ds_map_find_value(global.part_map, arg0);
+    global.part_map[? arg0] = part_type_create();
+    global.part_depth[? arg0] = arg3;
+    var p = global.part_map[? arg0];
     part_type_sprite(p, arg1, true, true, false);
     var t = sprite_get_number(arg1);
     var s = arg2;
@@ -13,7 +13,7 @@ function declare_particle(arg0, arg1, arg2, arg3)
 
 function particle_set_scale(arg0, arg1, arg2)
 {
-    part_type_scale(ds_map_find_value(global.part_map, arg0), arg1, arg2);
+    part_type_scale(global.part_map[? arg0], arg1, arg2);
 }
 
 function create_debris(arg0, arg1, arg2, arg3 = false)
@@ -74,12 +74,12 @@ function create_particle(arg0, arg1, arg2, arg3 = 0)
     if (arg3 == undefined)
         arg3 = 0;
     
-    var _depth = ds_map_find_value(global.part_depth, arg2);
+    var _depth = global.part_depth[? arg2];
     
     if (is_undefined(_depth))
         _depth = object_get_depth(object_index);
     
     part_system_depth(global.particle_system, _depth);
     part_emitter_region(global.particle_system, global.part_emitter, arg0 - arg3, arg0 + arg3, arg1 - arg3, arg1 + arg3, 0, 0);
-    part_emitter_burst(global.particle_system, global.part_emitter, ds_map_find_value(global.part_map, arg2), 1);
+    part_emitter_burst(global.particle_system, global.part_emitter, global.part_map[? arg2], 1);
 }

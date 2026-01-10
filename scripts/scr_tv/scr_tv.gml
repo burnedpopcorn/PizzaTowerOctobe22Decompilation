@@ -41,7 +41,7 @@ function tv_push_prompt(arg0, arg1, arg2, arg3)
                 
                 for (var i = 0; i < ds_list_size(tvprompts_list); i++)
                 {
-                    var b2 = ds_list_find_value(tvprompts_list, i);
+                    var b2 = tvprompts_list[| i];
                     
                     if (b2[1] == tvprompt.transfo)
                     {
@@ -88,7 +88,7 @@ function tv_push_prompt_once(arg0, arg1)
         if (special_prompts == noone)
             return false;
         
-        var b = ds_map_find_value(special_prompts, arg1);
+        var b = special_prompts[? arg1];
         
         if (is_undefined(b))
             return false;
@@ -96,7 +96,7 @@ function tv_push_prompt_once(arg0, arg1)
         if (b != 1)
         {
             tv_push_prompt(arg0[0], arg0[1], arg0[2], arg0[3]);
-            ds_map_set(special_prompts, arg1, 1);
+            special_prompts[? arg1] = 1;
             ini_open_from_string(obj_savesystem.ini_str);
             ini_write_real("Prompts", arg1, 1);
             obj_savesystem.ini_str = ini_close();

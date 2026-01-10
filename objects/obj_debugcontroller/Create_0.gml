@@ -258,7 +258,7 @@ if (DEBUG)
         if (arg0 == undefined)
             exit;
         
-        arg0 = ds_map_find_value(state_map, arg0);
+        arg0 = state_map[? arg0];
         
         if (!is_undefined(arg0))
         {
@@ -302,11 +302,11 @@ if (DEBUG)
     showcollisions = false;
     showhud = true;
     state_map = ds_map_create();
-    ds_map_set(state_map, "states.normal", states.normal);
-    ds_map_set(state_map, "states.cheesepep", states.cheesepep);
-    ds_map_set(state_map, "states.knightpep", states.knightpep);
-    ds_map_set(state_map, "states.firemouth", states.firemouth);
-    ds_map_set(state_map, "states.ratmount", states.ratmount);
+    state_map[? "states.normal"] = states.normal;
+    state_map[? "states.cheesepep"] = states.cheesepep;
+    state_map[? "states.knightpep"] = states.knightpep;
+    state_map[? "states.firemouth"] = states.firemouth;
+    state_map[? "states.ratmount"] = states.ratmount;
     command_list = ds_list_create();
     ds_list_add(command_list, DESTROYICE, SHOW_HUD, SHOW_COLLISIONS, PLAYER_ROOM, CAMERA_ZOOM, HARDMODE, PLAYER_SET_STATE, PANIC, ALLTOPPINS, GIVEHEAT);
     ds_list_add(command_list, SETCOMBO, GIVEKEY, LOADTEST, NOCLIP, THROWARC, HIDETILES, LOCKCAMERA);
@@ -321,7 +321,7 @@ if (DEBUG)
     {
         for (var i = 0; i < ds_list_size(command_list); i++)
         {
-            var b = ds_list_find_value(command_list, i);
+            var b = command_list[| i];
             
             if (b.command_id == arg0)
                 return b;

@@ -80,7 +80,7 @@ function scr_cutoff()
         
         for (var j = 0; j < num; j++)
         {
-            var b = ds_list_find_value(global.instancelist, j);
+            var b = global.instancelist[| j];
             
             with (b)
             {

@@ -6,7 +6,7 @@ for (var i = 0; i < array_length(monster_room); i++)
     if (i == 4)
         continue;
     
-    monster_room[i] = ds_grid_get(room_grid, monster_pos[i].x, monster_pos[i].y);
+    monster_room[i] = room_grid[# monster_pos[i].x, monster_pos[i].y];
 }
 
 if (player_posX != -1 && player_posY != -1)

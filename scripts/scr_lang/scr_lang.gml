@@ -31,7 +31,7 @@ function scr_get_languages()
 
 function lang_get_value(arg0)
 {
-    return ds_map_find_value(ds_map_find_value(global.lang_map, global.lang), arg0);
+    return global.lang_map[? global.lang][? arg0];
 }
 
 function lang_parse(arg0)
@@ -39,8 +39,8 @@ function lang_parse(arg0)
     var list = ds_list_create();
     lang_lexer(list, arg0);
     var map = lang_exec(list);
-    var lang = ds_map_find_value(map, "lang");
-    ds_map_set(global.lang_map, lang, map);
+    var lang = map[? "lang"];
+    global.lang_map[? lang] = map;
     ds_list_destroy(list);
 }
 
@@ -165,14 +165,14 @@ function lang_exec(arg0)
     
     while (pos < len)
     {
-        var q = ds_list_find_value(arg0, pos++);
+        var q = arg0[| pos++];
         
         switch (q[0])
         {
             case lexer.set:
-                var ident = array_get(ds_list_find_value(arg0, pos - 2), 2);
-                var val = array_get(ds_list_find_value(arg0, pos++), 2);
-                ds_map_set(map, ident, val);
+                var ident = array_get(arg0[| pos - 2], 2);
+                var val = array_get(arg0[| pos++], 2);
+                map[? ident] = val;
                 break;
         }
     }
@@ -182,17 +182,17 @@ function lang_exec(arg0)
 
 function lang_get_custom_font(arg0, arg1)
 {
-    var font_map = ds_map_find_value(arg1, concat(arg0, "_map"));
+    var font_map = arg1[? concat(arg0, "_map")];
     var font_size = string_length(font_map);
-    var font_sep = ds_map_find_value(arg1, concat(arg0, "_sep"));
+    var font_sep = arg1[? concat(arg0, "_sep")];
     font_sep = real(font_sep);
     var font_xorig = 0;
     var font_yorig = 0;
-    var spr = sprite_add(concat("lang/", ds_map_find_value(arg1, concat(arg0, "_dir"))), font_size, true, false, font_xorig, font_yorig);
+    var spr = sprite_add(concat("lang/", arg1[? concat(arg0, "_dir")]), font_size, true, false, font_xorig, font_yorig);
     return font_add_sprite_ext(spr, font_map, false, font_sep);
 }
 
 function lang_get_font(arg0)
 {
-    return ds_map_find_value(global.font_map, lang_get_value(arg0));
+    return global.font_map[? lang_get_value(arg0)];
 }

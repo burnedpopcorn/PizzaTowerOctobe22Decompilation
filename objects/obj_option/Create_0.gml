@@ -164,8 +164,8 @@ var lang = [];
 var key = ds_map_find_first(global.lang_map);
 for (var i = 0; i < ds_map_size(global.lang_map); i++)
 {
-    var l = ds_map_find_value(global.lang_map, key);
-    array_push(lang, create_option_value(ds_map_find_value(l, "display_name"), key, false));
+    var l = global.lang_map[? key];
+    array_push(lang, create_option_value(l[? "display_name"], key, false));
     key = ds_map_find_next(global.lang_map, key);
 }
 var lang_option = add_option_multiple(game_menu, 1, "option_lang", lang, function(arg0)

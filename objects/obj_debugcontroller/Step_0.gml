@@ -52,7 +52,7 @@ if (DEBUG)
             
             for (var i = 0; i < ds_list_size(command_list); i++)
             {
-                var b = ds_list_find_value(command_list, i);
+                var b = command_list[| i];
                 var s = b.command_id;
                 var d = string_split(input_text, " ");
                 var t = d[1];

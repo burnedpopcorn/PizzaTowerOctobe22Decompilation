@@ -5,7 +5,7 @@ for (var i = 0; i < ds_grid_width(room_grid); i++)
 {
     for (var j = 0; j < ds_grid_height(room_grid); j++)
     {
-        var _room = ds_grid_get(room_grid, i, j);
+        var _room = room_grid[# i, j];
         var _drawNum = 0;
         
         for (var xx = 0; xx < array_length(monster_room); xx++)

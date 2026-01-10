@@ -7,7 +7,7 @@ function vigilante_cancel_attack()
         targetstunned = 0;
         state = argument[irandom(argument_count - 1)];
         combo_count--;
-        cancel_buffer = ds_map_find_value(cancel_max, state);
+        cancel_buffer = cancel_max[? state];
         
         if (is_undefined(cancel_buffer))
             cancel_buffer = cancel_maxdefault;
@@ -112,7 +112,7 @@ function boss_vigilante_decide_attack()
         else
             vigilante_decide_attack_phase5();
         
-        cancel_buffer = ds_map_find_value(cancel_max, state);
+        cancel_buffer = cancel_max[? state];
         
         if (is_undefined(cancel_buffer))
             cancel_buffer = cancel_maxdefault;
@@ -126,7 +126,7 @@ function boss_vigilante_decide_attack()
         else
             vigilante_decide_attack_phase6_nohonor();
         
-        cancel_buffer = ds_map_find_value(cancel_max, state);
+        cancel_buffer = cancel_max[? state];
         
         if (is_undefined(cancel_buffer))
             cancel_buffer = cancel_maxdefault;

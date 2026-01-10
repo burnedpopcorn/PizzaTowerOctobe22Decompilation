@@ -1,7 +1,7 @@
 function scr_pause_activate_objects()
 {
     for (var i = 0; i < ds_list_size(instance_list); i++)
-        instance_activate_object(array_get(ds_list_find_value(instance_list, i), 0));
+        instance_activate_object(array_get(instance_list[| i], 0));
     
     ds_list_clear(instance_list);
     audio_resume_all();
@@ -54,7 +54,7 @@ function pause_update_priests()
 {
     for (var i = 0; i < ds_list_size(priest_list); i++)
     {
-        var b = ds_list_find_value(priest_list, i);
+        var b = priest_list[| i];
         var destroy = false;
         
         with (b)
@@ -81,7 +81,7 @@ function pause_draw_priests()
 {
     for (var i = 0; i < ds_list_size(priest_list); i++)
     {
-        var b = ds_list_find_value(priest_list, i);
+        var b = priest_list[| i];
         
         with (b)
             draw_sprite_ext(spr_angelpriest, image_index, x, y, image_xscale, 1, 0, c_white, 1);

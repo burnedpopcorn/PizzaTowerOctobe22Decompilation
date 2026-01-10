@@ -16,7 +16,7 @@ function scr_collide_destructibles()
                     
                     for (var j = 0; j < num; j++)
                     {
-                        var inst = ds_list_find_value(global.instancelist, j);
+                        var inst = global.instancelist[| j];
                         
                         if (inst != noone && inst != -1 && inst != undefined)
                         {
@@ -76,7 +76,7 @@ function scr_collide_destructibles()
                 
                 for (var i = 0; i < num; i++)
                 {
-                    with (ds_list_find_value(global.instancelist, i))
+                    with (global.instancelist[| i])
                     {
                         GamepadSetVibration(0, 0.8, 0.8, 0.5);
                         instance_destroy();
@@ -148,7 +148,7 @@ function scr_collide_destructibles()
         
         for (var k = 0; k < num; k++)
         {
-            with (ds_list_find_value(global.instancelist, k))
+            with (global.instancelist[| k])
             {
                 falling = true;
                 

@@ -101,7 +101,7 @@ function achievement_add_variable(_name, _value, _save = false, _resettable = fa
 
 function achievement_get_variable(_name)
 {
-    return ds_map_find_value(variables, _name);
+    return variables[? _name];
 }
 
 function achievement_unlock(_name, _disp_name, _sprite, _index = 0)
@@ -151,7 +151,7 @@ function achievement_reset_variables(_array)
             
             for (var j = 0; j < size; j++)
             {
-                var q = ds_map_find_value(variables, key);
+                var q = variables[? key];
                 
                 if (q.resettable)
                     q.value = q.init_value;
@@ -176,7 +176,7 @@ function achievement_save_variables(_array)
             
             for (var j = 0; j < size; j++)
             {
-                var q = ds_map_find_value(variables, key);
+                var q = variables[? key];
                 
                 if (q.save)
                     ini_write_real("achievements_variables", key, q.value);
@@ -203,7 +203,7 @@ function achievements_load(_array)
             
             for (var j = 0; j < size; j++)
             {
-                var q = ds_map_find_value(variables, key);
+                var q = variables[? key];
                 
                 if (q.save)
                     q.value = ini_read_real("achievements_variables", key, q.init_value);
