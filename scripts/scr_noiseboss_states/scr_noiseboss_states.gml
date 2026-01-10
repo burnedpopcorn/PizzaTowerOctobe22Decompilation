@@ -1,3 +1,11 @@
+enum noise_dist
+{
+	none = 0,
+	close = 1,
+	far = 2,
+	anywhere = 3,
+}
+
 function boss_noise_decide_attack()
 {
     if (attack_cooldown > 0)
@@ -14,7 +22,7 @@ function boss_noise_decide_attack()
 function get_attack()
 {
     var chance = irandom(100) > 40;
-    var c = UnknownEnum.Value_0;
+    var c = noise_dist.none;
     
     if (chance)
         c = attack_pool[phase - 1][irandom(array_length(attack_pool[phase - 1]) - 1)];
@@ -34,7 +42,7 @@ function boss_noise_do_attack()
     targetstunned = 0;
     state = current_attack;
     attack_cooldown = attack_max[phase - 1];
-    current_behaviour = UnknownEnum.Value_0;
+    current_behaviour = noise_dist.none;
     image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
     
     if (!angry)
@@ -361,7 +369,7 @@ function noise_behaviour_far()
     {
         var i = 0;
         
-        while (current_behaviour == UnknownEnum.Value_2)
+        while (current_behaviour == noise_dist.far)
         {
             attack_cooldown = 0;
             boss_noise_decide_attack();
@@ -381,19 +389,19 @@ function boss_noise_normal()
     
     switch (current_behaviour)
     {
-        case UnknownEnum.Value_0:
+        case noise_dist.none:
             noise_behaviour_none();
             break;
         
-        case UnknownEnum.Value_1:
+        case noise_dist.close:
             noise_behaviour_close();
             break;
         
-        case UnknownEnum.Value_3:
+        case noise_dist.anywhere:
             noise_behaviour_anywhere();
             break;
         
-        case UnknownEnum.Value_2:
+        case noise_dist.far:
             noise_behaviour_far();
             break;
     }

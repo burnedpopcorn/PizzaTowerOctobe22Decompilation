@@ -4287,7 +4287,6 @@
     {"id":{"name":"spr_mach4block","path":"sprites/spr_mach4block/spr_mach4block.yy",},"order":1766,},
     {"id":{"name":"spr_metalblockdebris","path":"sprites/spr_metalblockdebris/spr_metalblockdebris.yy",},"order":1767,},
     {"id":{"name":"spr_metalblockdebrisescape","path":"sprites/spr_metalblockdebrisescape/spr_metalblockdebrisescape.yy",},"order":1768,},
-    {"id":{"name":"_GLOBAL_INIT","path":"scripts/_GLOBAL_INIT/_GLOBAL_INIT.yy",},"order":1768,},
     {"id":{"name":"spr_bowlingballtrap","path":"sprites/spr_bowlingballtrap/spr_bowlingballtrap.yy",},"order":1769,},
     {"id":{"name":"spr_bowlingballfalling","path":"sprites/spr_bowlingballfalling/spr_bowlingballfalling.yy",},"order":1770,},
     {"id":{"name":"spr_boxxedpep_jump","path":"sprites/spr_boxxedpep_jump/spr_boxxedpep_jump.yy",},"order":1771,},

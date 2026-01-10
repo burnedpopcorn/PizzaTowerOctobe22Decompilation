@@ -1,5 +1,13 @@
+enum debug_text_type
+{
+	normal = 0,
+	command = 1,
+	traced = 2,
+	error = 3,
+}
+
 depth = -500;
-DEBUG = false;
+DEBUG = (GM_build_type == "run");
 
 if (parameter_count() > 2)
     DEBUG = true;
@@ -332,21 +340,21 @@ if (DEBUG)
             
             if (c != undefined)
             {
-                TextList_Add(UnknownEnum.Value_1, arg0);
+                TextList_Add(debug_text_type.command, arg0);
                 array_delete(commands, 0, 2);
                 c.Invoke(commands);
                 return true;
             }
             else
             {
-                TextList_Add(UnknownEnum.Value_0, arg0);
-                TextList_Add(UnknownEnum.Value_3, "Invalid command");
+                TextList_Add(debug_text_type.normal, arg0);
+                TextList_Add(debug_text_type.error, "Invalid command");
             }
         }
         else
         {
-            TextList_Add(UnknownEnum.Value_0, arg0);
-            TextList_Add(UnknownEnum.Value_3, "No text typed");
+            TextList_Add(debug_text_type.normal, arg0);
+            TextList_Add(debug_text_type.error, "No text typed");
         }
         
         return false;

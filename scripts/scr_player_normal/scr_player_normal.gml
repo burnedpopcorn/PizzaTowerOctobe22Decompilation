@@ -400,7 +400,7 @@ function state_player_normal()
         if (shotgunAnim)
             scr_shotgunshoot();
         else if (global.pistol)
-            scr_pistolshoot(UnknownEnum.Value_0);
+            scr_pistolshoot(states.normal);
     }
     
     if ((key_slap2 || input_buffer_slap < 8) && !key_up && shotgunAnim == false && !global.pistol)

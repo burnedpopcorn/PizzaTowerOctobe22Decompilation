@@ -1,9 +1,7 @@
 function vigilante_cancel_attack()
 {
     if (cancel_buffer > 0)
-    {
         cancel_buffer--;
-    }
     else if (combo_count > 0)
     {
         targetstunned = 0;

@@ -44,6 +44,15 @@ function lang_parse(arg0)
     ds_list_destroy(list);
 }
 
+enum lexer
+{
+	set = 0,
+	name = 1,
+	value = 2,
+	keyword = 3,
+	eof = 4,
+}
+
 function lang_lexer(arg0, arg1)
 {
     var len = string_length(arg1);
@@ -57,18 +66,18 @@ function lang_lexer(arg0, arg1)
         
         switch (char)
         {
-            case 32:
-            case 9:
-            case 13:
-            case 10:
+            case ord(" "):
+            case ord("	"):
+            case ord("\r"):
+            case ord("\n"):
                 break;
             
-            case 35:
+            case ord("#"):
                 while (pos <= len)
                 {
                     char = string_ord_at(arg1, pos);
                     
-                    if (char == 13 || char == 10)
+                    if (char == ord("\r") || char == ord("\n"))
                         break;
                     
                     pos += 1;
@@ -76,17 +85,17 @@ function lang_lexer(arg0, arg1)
                 
                 break;
             
-            case 61:
-                ds_list_add(arg0, [UnknownEnum.Value_0, start]);
+            case ord("="):
+                ds_list_add(arg0, [lexer.set, start]);
                 break;
             
-            case 34:
-            case 39:
+            case ord("\""):
+            case ord("'"):// might be ord("\\") idk //39
                 while (pos <= len)
                 {
                     char = string_ord_at(arg1, pos);
                     
-                    if (char != 34 && char != 39)
+                    if (char != ord("\"") && char != ord("'"))
                         pos += 1;
                     else
                         break;
@@ -95,13 +104,11 @@ function lang_lexer(arg0, arg1)
                 if (pos <= len)
                 {
                     var val = string_copy(arg1, start + 1, pos - start - 1);
-                    ds_list_add(arg0, [UnknownEnum.Value_2, start, val]);
+                    ds_list_add(arg0, [lexer.value, start, val]);
                     pos += 1;
                 }
                 else
-                {
                     exit;
-                }
                 
                 break;
             
@@ -123,15 +130,15 @@ function lang_lexer(arg0, arg1)
                     switch (name)
                     {
                         case "false":
-                            ds_list_add(arg0, [UnknownEnum.Value_3, start, false]);
+                            ds_list_add(arg0, [lexer.keyword, start, false]);
                             break;
                         
                         case "true":
-                            ds_list_add(arg0, [UnknownEnum.Value_3, start, true]);
+                            ds_list_add(arg0, [lexer.keyword, start, true]);
                             break;
                         
                         default:
-                            ds_list_add(arg0, [UnknownEnum.Value_1, start, name]);
+                            ds_list_add(arg0, [lexer.name, start, name]);
                     }
                 }
                 
@@ -139,15 +146,15 @@ function lang_lexer(arg0, arg1)
         }
     }
     
-    ds_list_add(arg0, [UnknownEnum.Value_4, len + 1]);
+    ds_list_add(arg0, [lexer.eof, len + 1]);
 }
 
 function lang_get_identifier(arg0, arg1)
 {
     if (arg1)
-        return arg0 == 95 || (arg0 >= 97 && arg0 <= 122) || (arg0 >= 65 && arg0 <= 90) || (arg0 >= 48 && arg0 <= 57);
+        return arg0 == ord("_") || (arg0 >= ord("a") && arg0 <= ord("z")) || (arg0 >= ord("A") && arg0 <= ord("Z")) || (arg0 >= ord("0") && arg0 <= ord("9"));
     else
-        return arg0 == 95 || (arg0 >= 97 && arg0 <= 122) || (arg0 >= 65 && arg0 <= 90);
+        return arg0 == ord("_") || (arg0 >= ord("a") && arg0 <= ord("z")) || (arg0 >= ord("A") && arg0 <= ord("Z"));
 }
 
 function lang_exec(arg0)
@@ -162,7 +169,7 @@ function lang_exec(arg0)
         
         switch (q[0])
         {
-            case UnknownEnum.Value_0:
+            case lexer.set:
                 var ident = array_get(ds_list_find_value(arg0, pos - 2), 2);
                 var val = array_get(ds_list_find_value(arg0, pos++), 2);
                 ds_map_set(map, ident, val);

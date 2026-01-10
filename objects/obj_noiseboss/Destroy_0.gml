@@ -14,11 +14,11 @@ if (pizzahead && elitehit <= 0 && destroyable)
         vsp = -18;
         elitehit = 4;
         prevhp = elitehit;
-        fakepep_set_attack(1, 0, UnknownEnum.Value_0, 80, 0);
-        fakepep_set_attack(1, 1, UnknownEnum.Value_1, 80, 0);
-        fakepep_set_attack(1, 2, UnknownEnum.Value_4, 120, 0);
-        fakepep_set_attack(1, 3, UnknownEnum.Value_5, 120, 0);
-        fakepep_set_attack(1, 4, UnknownEnum.Value_5, 120, 0);
+        fakepep_set_attack(1, 0, fakepep_attacks.grabclone, 80, 0);
+        fakepep_set_attack(1, 1, fakepep_attacks.bodyslamclone, 80, 0);
+        fakepep_set_attack(1, 2, fakepep_attacks.flailingclone, 120, 0);
+        fakepep_set_attack(1, 3, fakepep_attacks.tauntclone, 120, 0);
+        fakepep_set_attack(1, 4, fakepep_attacks.tauntclone, 120, 0);
         fakepep_start_projectiles(1, 0);
         fakepep_add_grabclone(1, 0, 1, 180);
         fakepep_add_grabclone(1, 0, -1, 180);

@@ -1,3 +1,14 @@
+enum fakepep_attacks
+{
+	grabclone = 0,
+	bodyslamclone = 1,
+	machclone = 2,
+	superjumpclone = 3,
+	flailingclone = 4,
+	tauntclone = 5,
+	stunned = 6,
+}
+
 function fakepep_set_attack(arg0, arg1, arg2, arg3, arg4)
 {
     if (arg3 != 0 && arg4 == 0)
@@ -35,7 +46,7 @@ function fakepep_add_grabclone(arg0, arg1, arg2, arg3)
 {
     fakepep_add_projectile(arg0, arg1, 
     {
-        attack: UnknownEnum.Value_0,
+        attack: fakepep_attacks.grabclone,
         cooldown: arg3,
         direction: arg2
     });
@@ -45,7 +56,7 @@ function fakepep_add_bodyslamclone(arg0, arg1, arg2, arg3)
 {
     fakepep_add_projectile(arg0, arg1, 
     {
-        attack: UnknownEnum.Value_1,
+        attack: fakepep_attacks.bodyslamclone,
         cooldown: arg3,
         direction: arg2
     });
@@ -55,7 +66,7 @@ function fakepep_add_machclone(arg0, arg1, arg2, arg3, arg4)
 {
     fakepep_add_projectile(arg0, arg1, 
     {
-        attack: UnknownEnum.Value_2,
+        attack: fakepep_attacks.machclone,
         cooldown: arg3,
         direction: arg2,
         bodyslam: arg4
@@ -69,7 +80,7 @@ function fakepep_add_superjumpclones(arg0, arg1, arg2, arg3, arg4, arg5, arg6, a
     
     fakepep_add_projectile(arg0, arg1, 
     {
-        attack: UnknownEnum.Value_3,
+        attack: fakepep_attacks.superjumpclone,
         cooldown: arg6,
         direction: arg2,
         timer: arg3,
@@ -85,7 +96,7 @@ function fakepep_add_flailingclone(arg0, arg1, arg2, arg3, arg4 = 100, arg5 = 85
 {
     fakepep_add_projectile(arg0, arg1, 
     {
-        attack: UnknownEnum.Value_4,
+        attack: fakepep_attacks.flailingclone,
         cooldown: arg3,
         direction: arg2,
         x1: arg4,
@@ -98,7 +109,7 @@ function fakepep_add_tauntclones(arg0, arg1, arg2, arg3, arg4, arg5 = 125, arg6 
 {
     fakepep_add_projectile(arg0, arg1, 
     {
-        attack: UnknownEnum.Value_5,
+        attack: fakepep_attacks.tauntclone,
         cooldown: arg4,
         vsp1: arg2,
         vsp2: arg3,
@@ -125,8 +136,8 @@ function scr_fakepepboss_do_projectiles(arg0, arg1)
     
     switch (_attack.attack)
     {
-        case UnknownEnum.Value_0:
-        case UnknownEnum.Value_1:
+        case fakepep_attacks.grabclone:
+        case fakepep_attacks.bodyslamclone:
             with (instance_create(x, y, obj_fakepepclone))
             {
                 attack = _attack;
@@ -156,7 +167,7 @@ function scr_fakepepboss_do_projectiles(arg0, arg1)
             
             break;
         
-        case UnknownEnum.Value_2:
+        case fakepep_attacks.machclone:
             var yy = 402;
             var xx = x;
             
@@ -173,7 +184,7 @@ function scr_fakepepboss_do_projectiles(arg0, arg1)
             
             break;
         
-        case UnknownEnum.Value_3:
+        case fakepep_attacks.superjumpclone:
             if (!instance_exists(obj_fakepepspawner))
             {
                 with (instance_create(0, 0, obj_fakepepspawner))
@@ -192,7 +203,7 @@ function scr_fakepepboss_do_projectiles(arg0, arg1)
             
             break;
         
-        case UnknownEnum.Value_4:
+        case fakepep_attacks.flailingclone:
             var xx = _attack.x1;
             
             if (_attack.direction == -1)
@@ -217,7 +228,7 @@ function scr_fakepepboss_do_projectiles(arg0, arg1)
             
             break;
         
-        case UnknownEnum.Value_5:
+        case fakepep_attacks.tauntclone:
             with (instance_create(_attack.x1, _attack.y, obj_fakepepclone))
             {
                 attack = _attack;
@@ -334,7 +345,7 @@ function scr_fakepepboss_walk()
             
             switch (attack.attack)
             {
-                case UnknownEnum.Value_0:
+                case fakepep_attacks.grabclone:
                     if (abs(x - targetplayer.x) <= 330)
                     {
                         state = states.grabdash;
@@ -352,7 +363,7 @@ function scr_fakepepboss_walk()
                     
                     break;
                 
-                case UnknownEnum.Value_1:
+                case fakepep_attacks.bodyslamclone:
                     if (ix != 0)
                         image_xscale = ix;
                     
@@ -362,7 +373,7 @@ function scr_fakepepboss_walk()
                     cooldown = attack.cooldown;
                     break;
                 
-                case UnknownEnum.Value_2:
+                case fakepep_attacks.machclone:
                     if (ix != 0)
                         image_xscale = ix;
                     
@@ -373,7 +384,7 @@ function scr_fakepepboss_walk()
                     cooldown = attack.cooldown;
                     break;
                 
-                case UnknownEnum.Value_3:
+                case fakepep_attacks.superjumpclone:
                     if (ix != 0)
                         image_xscale = ix;
                     
@@ -387,7 +398,7 @@ function scr_fakepepboss_walk()
                     image_index = 0;
                     break;
                 
-                case UnknownEnum.Value_4:
+                case fakepep_attacks.flailingclone:
                     if (ix != 0)
                         image_xscale = ix;
                     
@@ -399,7 +410,7 @@ function scr_fakepepboss_walk()
                     cooldown = attack.cooldown;
                     break;
                 
-                case UnknownEnum.Value_5:
+                case fakepep_attacks.tauntclone:
                     fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
                     create_particle(x, y, particle.highjumpcloud2);
                     state = states.backbreaker;
@@ -411,7 +422,7 @@ function scr_fakepepboss_walk()
                     hsp = 0;
                     break;
                 
-                case UnknownEnum.Value_6:
+                case fakepep_attacks.stunned:
                     sprite_index = spr_fakepeppino_vulnerable;
                     state = states.stun;
                     stunned = 5000;
@@ -627,7 +638,7 @@ function scr_fakepepboss_freefall()
         bodyslamlandbuffer = 20;
         hsp = 0;
         
-        if (object_index != obj_fakepepclone || attack.attack == UnknownEnum.Value_1)
+        if (object_index != obj_fakepepclone || attack.attack == fakepep_attacks.bodyslamclone)
         {
             with (instance_create(x + 20, y + 26, obj_spitcheesespike))
             {

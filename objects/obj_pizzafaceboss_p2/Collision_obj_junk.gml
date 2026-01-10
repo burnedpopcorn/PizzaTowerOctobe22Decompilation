@@ -7,9 +7,9 @@ if (other.thrown && state != states.stun)
     vsp = -4;
     
     if (other.object_index == obj_pizzaheadportrait)
-        lastattack = UnknownEnum.Value_1;
+        lastattack = pizzaface_attacks.tv;
     else if (other.object_index == obj_pizzafacebrick)
-        lastattack = UnknownEnum.Value_3;
+        lastattack = pizzaface_attacks.ratball;
     
     instance_destroy(obj_junk);
 }

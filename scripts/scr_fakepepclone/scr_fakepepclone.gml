@@ -19,10 +19,10 @@ function scr_fakepepclone_transitioncutscene()
             state = states.walk;
             cooldown = 15;
             
-            if (attack.attack == UnknownEnum.Value_2 || attack.attack == UnknownEnum.Value_4 || attack.attack == UnknownEnum.Value_5)
+            if (attack.attack == fakepep_attacks.machclone || attack.attack == fakepep_attacks.flailingclone || attack.attack == fakepep_attacks.tauntclone)
                 cooldown = 0;
             
-            if (attack.attack == UnknownEnum.Value_3)
+            if (attack.attack == fakepep_attacks.superjumpclone)
             {
                 state = states.Sjumpprep;
                 hsp = 0;
@@ -30,7 +30,7 @@ function scr_fakepepclone_transitioncutscene()
                 image_index = 0;
                 image_speed = 0;
             }
-            else if (attack.attack == UnknownEnum.Value_5)
+            else if (attack.attack == fakepep_attacks.tauntclone)
             {
                 fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
                 create_particle(x, y, particle.highjumpcloud2);
@@ -74,7 +74,7 @@ function scr_fakepepclone_walk()
         {
             switch (attack.attack)
             {
-                case UnknownEnum.Value_0:
+                case fakepep_attacks.grabclone:
                     if (abs(x - targetplayer.x) <= 150)
                     {
                         attacked = true;
@@ -91,7 +91,7 @@ function scr_fakepepclone_walk()
                     
                     break;
                 
-                case UnknownEnum.Value_1:
+                case fakepep_attacks.bodyslamclone:
                     attacked = true;
                     
                     if (x != targetplayer.x)
@@ -102,7 +102,7 @@ function scr_fakepepclone_walk()
                     state = states.jump;
                     break;
                 
-                case UnknownEnum.Value_2:
+                case fakepep_attacks.machclone:
                     attacked = true;
                     image_xscale = (x > (room_width / 2)) ? 1 : -1;
                     attackspeed = 4;
@@ -118,7 +118,7 @@ function scr_fakepepclone_walk()
                     cooldown = attack.cooldown;
                     break;
                 
-                case UnknownEnum.Value_4:
+                case fakepep_attacks.flailingclone:
                     state = states.throwing;
                     hsp = 0;
                     
@@ -143,7 +143,7 @@ function scr_fakepepclone_walk()
         sprite_index = spr_fakepeppino_deform;
         image_index = 0;
         
-        if (attack.attack == UnknownEnum.Value_3)
+        if (attack.attack == fakepep_attacks.superjumpclone)
             sprite_index = spr_fakepeppino_deformdown;
     }
 }

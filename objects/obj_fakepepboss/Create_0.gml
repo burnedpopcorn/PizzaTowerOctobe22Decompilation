@@ -1,24 +1,30 @@
 scr_initenemy();
 var default_deformed_timer = 500;
-fakepep_set_attack(0, 0, UnknownEnum.Value_0, 80, default_deformed_timer);
-fakepep_set_attack(0, 1, UnknownEnum.Value_1, 80, default_deformed_timer);
-fakepep_set_attack(0, 2, UnknownEnum.Value_2, 120, default_deformed_timer);
-fakepep_set_attack(0, 3, UnknownEnum.Value_3, 120, 500);
-fakepep_set_attack(0, 4, UnknownEnum.Value_4, 120, default_deformed_timer);
-fakepep_set_attack(0, 5, UnknownEnum.Value_5, 120, 700);
-fakepep_set_attack(1, 0, UnknownEnum.Value_0, 80, 0);
-fakepep_set_attack(1, 1, UnknownEnum.Value_1, 80, 0);
-fakepep_set_attack(1, 2, UnknownEnum.Value_2, 120, 0);
-fakepep_set_attack(1, 3, UnknownEnum.Value_3, 120, 0);
-fakepep_set_attack(1, 4, UnknownEnum.Value_4, 120, 0);
-fakepep_set_attack(1, 5, UnknownEnum.Value_5, 120, 0);
-fakepep_set_attack(2, 0, UnknownEnum.Value_6, 0, default_deformed_timer);
-fakepep_set_attack(2, 1, UnknownEnum.Value_6, 0, default_deformed_timer);
-fakepep_set_attack(2, 2, UnknownEnum.Value_6, 0, default_deformed_timer);
-fakepep_set_attack(2, 3, UnknownEnum.Value_6, 0, default_deformed_timer);
-fakepep_set_attack(2, 4, UnknownEnum.Value_6, 0, default_deformed_timer);
-fakepep_set_attack(2, 5, UnknownEnum.Value_6, 0, default_deformed_timer);
-projectile_list = -4;
+
+// Phase 1
+fakepep_set_attack(0, 0, fakepep_attacks.grabclone, 80, default_deformed_timer);
+fakepep_set_attack(0, 1, fakepep_attacks.bodyslamclone, 80, default_deformed_timer);
+fakepep_set_attack(0, 2, fakepep_attacks.machclone, 120, default_deformed_timer);
+fakepep_set_attack(0, 3, fakepep_attacks.superjumpclone, 120, 500);
+fakepep_set_attack(0, 4, fakepep_attacks.flailingclone, 120, default_deformed_timer);
+fakepep_set_attack(0, 5, fakepep_attacks.tauntclone, 120, 700);
+
+// Phase 2
+fakepep_set_attack(1, 0, fakepep_attacks.grabclone, 80, 0);
+fakepep_set_attack(1, 1, fakepep_attacks.bodyslamclone, 80, 0);
+fakepep_set_attack(1, 2, fakepep_attacks.machclone, 120, 0);
+fakepep_set_attack(1, 3, fakepep_attacks.superjumpclone, 120, 0);
+fakepep_set_attack(1, 4, fakepep_attacks.flailingclone, 120, 0);
+fakepep_set_attack(1, 5, fakepep_attacks.tauntclone, 120, 0);
+
+fakepep_set_attack(2, 0, fakepep_attacks.stunned, 0, default_deformed_timer);
+fakepep_set_attack(2, 1, fakepep_attacks.stunned, 0, default_deformed_timer);
+fakepep_set_attack(2, 2, fakepep_attacks.stunned, 0, default_deformed_timer);
+fakepep_set_attack(2, 3, fakepep_attacks.stunned, 0, default_deformed_timer);
+fakepep_set_attack(2, 4, fakepep_attacks.stunned, 0, default_deformed_timer);
+fakepep_set_attack(2, 5, fakepep_attacks.stunned, 0, default_deformed_timer);
+
+projectile_list = noone;
 fakepep_start_projectiles(0, 0);
 fakepep_add_grabclone(0, 0, 1, 80);
 fakepep_add_grabclone(0, 0, -1, 80);

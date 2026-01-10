@@ -1,3 +1,18 @@
+enum vigi_attacks
+{
+	revolver = 0,
+	dynamite = 1,
+	cow = 2,
+	estampede = 3,
+	flamethrower = 4,
+	machinegun = 5,
+	bazooka = 6,
+	crate = 7,
+	mach = 8,
+	wait = 9,
+	reload = 10,
+}
+
 function vigilante_start_attack(arg0, arg1)
 {
     attack_list[arg0][arg1] = array_create(0);
@@ -16,16 +31,14 @@ function vigilante_end_attack(arg0, arg1)
     {
         var b = attack_list[arg0][arg1][i];
         
-        if (b[0] == UnknownEnum.Value_10 || b[0] == UnknownEnum.Value_7)
+        if (b[0] == vigi_attacks.reload || b[0] == vigi_attacks.crate)
         {
             found = true;
             break;
         }
     }
     
-    if (!found)
-    {
-    }
+    if (!found) { }
 }
 
 function scr_vigilante_arenaintro()
@@ -112,18 +125,14 @@ function scr_vigilante_arenaintro()
             sprite_index = spr_playerV_idle;
         
         if (introbuffer > 0)
-        {
             introbuffer--;
-        }
         else if (sprite_index != spr_vigilante_impatient)
         {
             sprite_index = spr_vigilante_impatient;
             image_index = 0;
         }
         else if (floor(image_index) == (image_number - 1))
-        {
             image_index = image_number - 1;
-        }
         
         if (global.pistol)
         {
@@ -151,7 +160,7 @@ function scr_vigilante_phase1hurt()
         hsp = 0;
         vsp = 0;
         state = states.actor;
-        pistolanim = -4;
+        pistolanim = noone;
         sprite_index = spr_player_pistolshotend;
         invtime = 30;
     }
@@ -217,9 +226,7 @@ function scr_vigilante_walk()
     if (sprite_index != spr_playerV_revolverend)
     {
         if (flickertime > 0)
-        {
             sprite_index = spr_playerV_hurt;
-        }
         else if (grounded)
         {
             sprite_index = spr_playerV_idle;
@@ -240,7 +247,7 @@ function scr_vigilante_walk()
                         t = id;
                 }
                 
-                oldspotID = -4;
+                oldspotID = noone;
                 
                 if (x != t.x)
                     image_xscale = sign(t.x - x);
@@ -264,7 +271,7 @@ function scr_vigilante_walk()
             }
             
             spotID = t;
-            oldspotID = -4;
+            oldspotID = noone;
             
             if (x != t.x)
                 image_xscale = sign(t.x - x);
@@ -278,9 +285,7 @@ function scr_vigilante_walk()
         }
     }
     else if (floor(image_index) == (image_number - 1))
-    {
         sprite_index = spr_playerV_idle;
-    }
     
     woosh = false;
     
@@ -296,23 +301,23 @@ function scr_vigilante_walk()
         
         switch (attack[0])
         {
-            case UnknownEnum.Value_0:
+            case vigi_attacks.revolver:
                 scr_vigilante_do_revolver(1, attack[1], false);
                 break;
             
-            case UnknownEnum.Value_10:
+            case vigi_attacks.reload:
                 scr_vigilante_do_reload(attack[1]);
                 break;
             
-            case UnknownEnum.Value_1:
+            case vigi_attacks.dynamite:
                 scr_vigilante_do_dynamite(1);
                 break;
             
-            case UnknownEnum.Value_2:
+            case vigi_attacks.cow:
                 scr_vigilante_do_cow(1, attack[1]);
                 break;
             
-            case UnknownEnum.Value_3:
+            case vigi_attacks.estampede:
                 estampedemax = attack[1];
                 state = states.estampede;
                 estampedecooldown = 30;
@@ -331,7 +336,7 @@ function scr_vigilante_walk()
                 
                 break;
             
-            case UnknownEnum.Value_9:
+            case vigi_attacks.wait:
                 waitbuffer = attack[1];
                 state = states.wait;
                 
@@ -340,7 +345,7 @@ function scr_vigilante_walk()
                 
                 break;
             
-            case UnknownEnum.Value_4:
+            case vigi_attacks.flamethrower:
                 state = states.flamethrower;
                 
                 if (targetplayer.x != x)
@@ -354,7 +359,7 @@ function scr_vigilante_walk()
                 image_speed = 0.35;
                 break;
             
-            case UnknownEnum.Value_5:
+            case vigi_attacks.machinegun:
                 create_particle(x, y, particle.highjumpcloud2);
                 state = states.machinegun;
                 sprite_index = spr_vigilante_uziprepare;
@@ -368,7 +373,7 @@ function scr_vigilante_walk()
                 
                 break;
             
-            case UnknownEnum.Value_6:
+            case vigi_attacks.bazooka:
                 create_particle(x, y, particle.highjumpcloud2);
                 state = states.bazooka;
                 hsp = 0;
@@ -381,7 +386,7 @@ function scr_vigilante_walk()
                 image_index = 0;
                 break;
             
-            case UnknownEnum.Value_7:
+            case vigi_attacks.crate:
                 state = states.crate;
                 hsp = 0;
                 sprite_index = spr_vigilante_order;
@@ -396,7 +401,7 @@ function scr_vigilante_walk()
                 
                 break;
             
-            case UnknownEnum.Value_8:
+            case vigi_attacks.mach:
                 state = states.mach2;
                 kickbuffer = attack[1];
                 kick = true;
@@ -447,9 +452,7 @@ function scr_vigilante_throw_cow()
         return true;
     }
     else
-    {
         return false;
-    }
 }
 
 function scr_vigilante_do_revolver(arg0, arg1, arg2 = false)
@@ -508,9 +511,7 @@ function scr_vigilante_throw_dynamite()
         return true;
     }
     else
-    {
         return false;
-    }
 }
 
 function scr_vigilante_jump()
@@ -542,9 +543,7 @@ function scr_vigilante_wait()
         sprite_index = spr_playerV_revolverhold;
     
     if (waitbuffer > 0)
-    {
         waitbuffer--;
-    }
     else
     {
         state = states.walk;
@@ -596,9 +595,7 @@ function scr_vigilante_estampede()
         }
     }
     else if (floor(image_index) == (image_number - 1))
-    {
         sprite_index = spr_vigilante_intro2loop;
-    }
 }
 
 function scr_vigilante_revolver()
@@ -609,9 +606,7 @@ function scr_vigilante_revolver()
     if (floor(image_index) == (image_number - 1))
     {
         if (sprite_index == spr_playerV_revolverstart)
-        {
             sprite_index = spr_playerV_revolverhold;
-        }
         else if (sprite_index == spr_playerV_revolvershoot)
         {
             image_index = image_number - 1;
@@ -624,9 +619,7 @@ function scr_vigilante_revolver()
     if (sprite_index == spr_playerV_revolverhold)
     {
         if (revolverbuffer > 0)
-        {
             revolverbuffer--;
-        }
         else
         {
             fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
@@ -681,9 +674,7 @@ function scr_vigilante_throwing()
     hsp = Approach(hsp, 0, 0.5);
     
     if (throwbuffer > 0)
-    {
         throwbuffer--;
-    }
     else if (sprite_index != spr_playerV_dynamitethrow)
     {
         if (!scr_vigilante_throw_cow())
@@ -700,9 +691,7 @@ function scr_vigilante_reloading()
     hsp = Approach(hsp, 0, 1);
     
     if (reloadbuffer > 0)
-    {
         reloadbuffer--;
-    }
     else
     {
         ammo = 6;
@@ -725,9 +714,7 @@ function scr_vigilante_mach2()
             attackspeed += 0.1;
     }
     else if (attackspeed < 8)
-    {
         attackspeed += 0.5;
-    }
     
     if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_mach1)
         sprite_index = spr_playerV_bootsmove;
@@ -738,9 +725,7 @@ function scr_vigilante_mach2()
             attackspeed += 0.5;
         
         if (crouchalphabuffer > 0)
-        {
             crouchalphabuffer--;
-        }
         else
         {
             crouchalphabuffer = 5;
@@ -755,9 +740,7 @@ function scr_vigilante_mach2()
     if (kick)
     {
         if (kickbuffer > 0)
-        {
             kickbuffer--;
-        }
         else
         {
             image_alpha = 1;
@@ -1055,9 +1038,7 @@ function scr_vigilante_flamethrower()
                 image_index = 2;
             
             if (flamebuffer > 0)
-            {
                 flamebuffer--;
-            }
             else
             {
                 instance_destroy(flameID);
@@ -1067,9 +1048,7 @@ function scr_vigilante_flamethrower()
             }
         }
         else if (sprite_index == spr_vigilante_flamethrowerend && floor(image_index) == (image_number - 1))
-        {
             state = states.walk;
-        }
     }
     else
     {
@@ -1114,9 +1093,7 @@ function scr_vigilante_machinegun()
             }
         }
         else if (floor(image_index) != (image_number - 1))
-        {
             uziprepareshot = false;
-        }
     }
     else
     {
@@ -1139,9 +1116,7 @@ function scr_vigilante_machinegun()
         if (sprite_index == spr_vigilante_uzi)
         {
             if (shootbuffer > 0)
-            {
                 shootbuffer--;
-            }
             else
             {
                 var angle = 255;
@@ -1264,7 +1239,5 @@ function scr_vigilante_hit()
         }
     }
     else
-    {
         scr_enemy_hit();
-    }
 }

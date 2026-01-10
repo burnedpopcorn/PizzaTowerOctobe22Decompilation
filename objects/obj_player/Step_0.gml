@@ -1053,7 +1053,7 @@ if (global.pistol)
         }
         else
         {
-            scr_pistolshoot(UnknownEnum.Value_0);
+            scr_pistolshoot(states.normal);
             pistolchargedelay = 5;
             pistolchargeshot -= 1;
         }

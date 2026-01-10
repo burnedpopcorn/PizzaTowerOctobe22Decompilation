@@ -1,3 +1,11 @@
+enum pizzaface_attacks
+{
+	pullinglevel = 0,
+	tv = 1,
+	gun = 2,
+	ratball = 3,
+}
+
 function scr_pizzaface_p2_fall()
 {
     image_speed = 0.35;
@@ -21,9 +29,7 @@ function scr_pizzaface_p2_fall()
                 vsp = 0;
             }
             else
-            {
                 vsp = 20;
-            }
             
             if (grounded && vsp > 0)
             {
@@ -131,9 +137,7 @@ function scr_pizzaface_p2_look()
     hsp = 0;
     
     if (fishingbuffer > 0)
-    {
         fishingbuffer--;
-    }
     else if (fishcount > 0)
     {
         fishcount--;
@@ -177,7 +181,7 @@ function scr_pizzaface_p2_fishing()
     {
         saveddir = -image_xscale;
         
-        if (throwsword && lastattack != UnknownEnum.Value_0)
+        if (throwsword && lastattack != pizzaface_attacks.pullinglevel)
             leveldown = true;
         
         if (miniguncount > 0)
@@ -212,7 +216,7 @@ function scr_pizzaface_p2_fishing()
             
             switch (t)
             {
-                case UnknownEnum.Value_0:
+                case pizzaface_attacks.pullinglevel:
                     state = states.pizzahead_pullinglevel;
                     substate = 0;
                     sprite_index = spr_pizzahead_pullinglevel1;
@@ -227,7 +231,7 @@ function scr_pizzaface_p2_fishing()
                     
                     break;
                 
-                case UnknownEnum.Value_3:
+                case pizzaface_attacks.ratball:
                     brick = true;
                     state = states.throwing;
                     brickcount = 1;
@@ -235,14 +239,14 @@ function scr_pizzaface_p2_fishing()
                     image_index = 0;
                     break;
                 
-                case UnknownEnum.Value_1:
+                case pizzaface_attacks.tv:
                     state = states.pizzahead_portraitthrow;
                     shot = false;
                     sprite_index = spr_pizzahead_grabTV;
                     image_index = 0;
                     break;
                 
-                case UnknownEnum.Value_2:
+                case pizzaface_attacks.gun:
                     sprite_index = spr_pizzahead_grabgun;
                     image_index = 0;
                     state = states.shotgun;
@@ -447,9 +451,7 @@ function boss_pizzahead_shotgun()
                     sprite_index = spr_pizzahead_machinegun;
             }
             else if (attackbuffer > 0)
-            {
                 attackbuffer--;
-            }
             else
             {
                 attackbuffer = 5;
@@ -475,13 +477,9 @@ function boss_pizzahead_shotgun()
                             minigun_dir *= -1;
                     }
                     else if (minigun_dir == -1 && minigun_angle < 315)
-                    {
                         minigun_dir *= -1;
-                    }
                     else if (minigun_dir == 1 && minigun_angle > 405)
-                    {
                         minigun_dir *= -1;
-                    }
                 }
                 else
                 {
@@ -573,7 +571,7 @@ function boss_pizzahead_p2_phase1hurt()
         vsp = 0;
         invtime = 30;
         state = states.actor;
-        pistolanim = -4;
+        pistolanim = noone;
         sprite_index = spr_player_pistolshotend;
     }
     

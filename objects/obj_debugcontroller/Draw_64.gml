@@ -29,17 +29,17 @@ if (DEBUG)
         
         switch (t)
         {
-            case UnknownEnum.Value_3:
+            case debug_text_type.error:
                 str = concat("[ERROR] ", txt);
                 c = 255;
                 break;
             
-            case UnknownEnum.Value_2:
+            case debug_text_type.traced:
                 str = concat("[DEBUG] ", txt);
                 c = 8421504;
                 break;
             
-            case UnknownEnum.Value_1:
+            case debug_text_type.command:
                 str = concat("[COMMAND] ", txt);
                 c = 32768;
                 break;
