@@ -2,7 +2,7 @@ if (phase == 0 && attacking)
 {
     if (state == states.pizzaface_ram)
     {
-        if (other.state == states.backbreaker && other.parry_inst != -4)
+        if (other.state == states.backbreaker && other.parry_inst != noone)
         {
             state = states.normal;
             boss_hurt(10, other.id);
@@ -16,7 +16,7 @@ if (phase == 0 && attacking)
                 image_speed = 0.35;
                 taunttimer = 20;
                 movespeed = 8;
-                parry_inst = -4;
+                parry_inst = noone;
                 parry_count = parry_max;
                 
                 with (instance_create(x, y, obj_parryeffect))
@@ -34,16 +34,16 @@ if (phase == 0 && attacking)
                 if (lostattacks > 0)
                 {
                     lostattacks--;
-                    var choseattack = -4;
+                    var choseattack = noone;
                     var j = 0;
                     
-                    while (choseattack == -4)
+                    while (choseattack == noone)
                     {
                         j = irandom_range(1, array_length(phase1attacks)) - 1;
                         choseattack = phase1attacks[j];
                     }
                     
-                    phase1attacks[j] = -4;
+                    phase1attacks[j] = noone;
                     
                     with (instance_create(x, y, obj_pizzafacepart))
                     {

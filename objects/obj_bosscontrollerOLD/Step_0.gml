@@ -1,4 +1,4 @@
-if (!instance_exists(bossID) && bossID != -4 && state != states.victory && !fakedeath)
+if (!instance_exists(bossID) && bossID != noone && state != states.victory && !fakedeath)
 {
     state = states.victory;
     alarm[1] = room_speed * 4;
@@ -10,7 +10,7 @@ if (player_hp <= 0)
     
     if (state != states.transitioncutscene && state != states.gameover)
     {
-        if (endroundfunc != -4)
+        if (endroundfunc != noone)
             endroundfunc();
         
         depth = obj_player1.depth + 1;
@@ -164,7 +164,7 @@ switch (state)
         }
         else
         {
-            if (startroundfunc != -4)
+            if (startroundfunc != noone)
                 startroundfunc();
             
             minutes = maxminutes;

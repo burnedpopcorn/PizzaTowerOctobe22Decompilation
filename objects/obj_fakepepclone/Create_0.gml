@@ -1,7 +1,7 @@
 hsp = 0;
 vsp = 0;
 grav = 0.5;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;
 paletteselect = 0;

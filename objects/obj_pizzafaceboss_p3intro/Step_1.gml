@@ -17,9 +17,7 @@ switch (introstate)
         image_index = image_number - 1;
         
         if (introbuffer > 0)
-        {
             introbuffer--;
-        }
         else
         {
             sprite_index = spr_pizzahead_phase3_intro2;
@@ -31,9 +29,7 @@ switch (introstate)
     
     case 2:
         if (floor(image_index) >= 50)
-        {
             image_xscale = -1;
-        }
         else if (floor(image_index) >= 16)
         {
             with (obj_player)
@@ -44,9 +40,7 @@ switch (introstate)
                     image_index = 0;
                 }
                 else if (ANIMATION_ENDED)
-                {
                     image_index = image_number - 1;
-                }
             }
         }
         
@@ -168,9 +162,7 @@ switch (introstate)
             image_index = image_number - 1;
         
         if (introbuffer > 0)
-        {
             introbuffer--;
-        }
         else
         {
             with (obj_player1)
@@ -195,9 +187,7 @@ switch (introstate)
             image_index = image_number - 1;
         
         if (introbuffer > 0)
-        {
             introbuffer--;
-        }
         else
         {
             shot = false;
@@ -266,9 +256,7 @@ switch (introstate)
             image_index = image_number - 3;
         
         if (introbuffer > 0)
-        {
             introbuffer--;
-        }
         else
         {
             introstate++;
@@ -324,9 +312,7 @@ switch (introstate)
         }
         
         if (introbuffer > 0)
-        {
             introbuffer--;
-        }
         else
         {
             introbuffer = 80;
@@ -343,9 +329,7 @@ switch (introstate)
         }
         
         if (introbuffer > 0)
-        {
             introbuffer--;
-        }
         else
         {
             introstate++;

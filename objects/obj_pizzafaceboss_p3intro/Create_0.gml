@@ -3,13 +3,19 @@ vsp = 0;
 hsp_carry = 0;
 vsp_carry = 0;
 grav = 0.5;
-platformid = -4;
+platformid = noone;
 image_speed = 0.35;
 introstate = 0;
 introbuffer = 0;
-peppermanid = -4;
+peppermanid = noone;
 prop = 0;
-proparr = [[1143, 3547, 3062, -7], [2755, 2766, 861, -6], [1190, 1108, 861, -5], [3425, 1425, 861, -4]];
+proparr = 
+[
+	[spr_pepperman_scared, spr_pepperman_sour, spr_pepperman_mask, -7], 
+	[spr_playerV_hurt, spr_playerV_angryidle, spr_player_mask, -6], 
+	[spr_playerN_hurt, spr_playerN_panicidle, spr_player_mask, -5], 
+	[spr_fakepeppino_stun, spr_fakepeppino_intro3loop, spr_player_mask, -4]
+];
 
 with (obj_music)
     fmod_event_instance_set_parameter(music.event, "state", 2, false);

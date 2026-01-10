@@ -1,3 +1,3 @@
 spawnbuffer = 0;
-attack = -4;
+attack = noone;
 state = 0;

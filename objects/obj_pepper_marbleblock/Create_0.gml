@@ -17,6 +17,6 @@ grav = 0.5;
 hsp_carry = 0;
 vsp_carry = 0;
 grounded = false;
-platformid = -4;
+platformid = noone;
 image_speed = 0;
 sprite_index = choose(spr_pepperman_statues1, spr_pepperman_statues2, spr_pepperman_statues3);

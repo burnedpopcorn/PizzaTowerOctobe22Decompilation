@@ -15,7 +15,7 @@ function following_character_init()
     vsp = 0;
     hsp_carry = 0;
     vsp_carry = 0;
-    platformid = -4;
+    platformid = noone;
     grav = 0.5;
     grounded = false;
     use_collision = false;

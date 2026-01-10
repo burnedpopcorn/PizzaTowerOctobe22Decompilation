@@ -1,8 +1,8 @@
 pause = false;
 var i = false;
 color = make_color_rgb(121, 103, 151);
-player1 = -4;
-player2 = -4;
+player1 = noone;
+player2 = noone;
 selected = 0;
 stickpressed = false;
 image_speed = 0;

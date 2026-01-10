@@ -84,12 +84,12 @@ if (pause && !instance_exists(obj_option))
                 
                 if (!global.snickchallenge)
                 {
-                    var rm = -4;
+                    var rm = noone;
                     rm = global.leveltorestart;
                     ds_list_clear(global.saveroom);
                     ds_list_clear(global.baddieroom);
                     
-                    if (rm != -4 && rm != -1)
+                    if (rm != noone && rm != -1)
                     {
                         instance_destroy(obj_fadeout);
                         instance_activate_all();
@@ -134,7 +134,7 @@ if (pause && !instance_exists(obj_option))
                         scr_characterspr();
                     }
                     
-                    global.leveltosave = -4;
+                    global.leveltosave = noone;
                     scr_playerreset();
                     alarm[0] = 2;
                     obj_player1.state = states.titlescreen;
@@ -162,8 +162,8 @@ if (pause && !instance_exists(obj_option))
                     if (instance_exists(obj_player2))
                         obj_player2.targetDoor = "HUB";
                     
-                    global.leveltorestart = -4;
-                    global.leveltosave = -4;
+                    global.leveltorestart = noone;
+                    global.leveltosave = noone;
                 }
                 
                 break;

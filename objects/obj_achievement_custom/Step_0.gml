@@ -1,6 +1,6 @@
 var a = active;
 
-if (step != -4)
+if (step != noone)
     step();
 
 if (a != active)

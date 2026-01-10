@@ -19,13 +19,19 @@ has_attacked = false;
 floatdir = 1;
 attackbuffermax = 180;
 attackbuffer = attackbuffermax;
-phase1attacks = [states.pizzaface_moustache, states.pizzaface_eyes, states.pizzaface_mouth, states.pizzaface_nose];
+phase1attacks = 
+[
+	states.pizzaface_moustache, 
+	states.pizzaface_eyes, 
+	states.pizzaface_mouth, 
+	states.pizzaface_nose
+];
 lostattacks = array_length(phase1attacks);
 parrycount = 0;
 transitionstate = 0;
 bombtimer = 0;
 hasbomb = false;
-bombgrabID = -4;
+bombgrabID = noone;
 knightbuffer = 0;
 spawnpool = [obj_forknight, obj_cheeseslime];
 hitplayer = false;
@@ -38,7 +44,7 @@ function player_hurt(arg0, arg1)
     {
         SUPER_player_hurt(arg0, arg1);
     }
-    else if ((arg1.state != states.backbreaker || arg1.parry_inst == -4) && arg1.state != states.Parry && ds_list_find_index(hitlist, arg1) == -1)
+    else if ((arg1.state != states.backbreaker || arg1.parry_inst == noone) && arg1.state != states.Parry && ds_list_find_index(hitlist, arg1) == -1)
     {
         ds_list_add(hitlist, arg1);
         SUPER_player_hurt(arg0, arg1);

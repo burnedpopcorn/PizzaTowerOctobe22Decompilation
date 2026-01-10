@@ -7,7 +7,7 @@ if (!fadeout)
     if (monster)
         scr_monster_activate();
     
-    if (content != -4)
+    if (content != noone)
     {
         with (instance_create(x, y, content))
         {

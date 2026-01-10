@@ -1,14 +1,7 @@
-if (bossID == -4)
-    exit;
-
-if (!instance_exists(bossID))
-    exit;
-
-if (bossID.destroyed)
-    exit;
-
-if (bossID.playerdestroyed)
-    exit;
+if (bossID == noone) exit;
+if (!instance_exists(bossID)) exit;
+if (bossID.destroyed) exit;
+if (bossID.playerdestroyed) exit;
 
 switch (state)
 {

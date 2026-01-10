@@ -1,4 +1,4 @@
-sprite_index = !collide ? spr_bomb : -4;
+sprite_index = !collide ? spr_bomb : noone;
 
 if (instance_exists(obj_bomb))
     collide = false;

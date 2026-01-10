@@ -1,4 +1,4 @@
-var p = -4;
+var p = noone;
 
 if (player == obj_hardmode)
     p = obj_player1.id;

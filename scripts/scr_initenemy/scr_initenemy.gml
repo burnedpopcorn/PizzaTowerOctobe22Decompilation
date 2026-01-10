@@ -8,7 +8,7 @@ function scr_initenemy()
     steppy = false;
     santaID = -4;
     rattime = 0;
-    platformid = -4;
+    platformid = noone;
     usepalette = false;
     blur_effect = 0;
     hsp_carry = 0;

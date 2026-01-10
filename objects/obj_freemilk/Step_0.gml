@@ -1,4 +1,4 @@
-if (playerid != -4)
+if (playerid != noone)
 {
     with (playerid)
     {
@@ -12,7 +12,7 @@ if (playerid != -4)
             
             with (other)
             {
-                playerid = -4;
+                playerid = noone;
                 
                 if (ds_list_find_index(global.saveroom, id) == -1)
                 {

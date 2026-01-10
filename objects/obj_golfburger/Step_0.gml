@@ -103,7 +103,7 @@ if (state == states.throwing)
             scr_pizzaball_go_to_thrown(14 * other.image_xscale, -7, false);
         }
         
-        golfid = -4;
+        golfid = noone;
     }
 }
 

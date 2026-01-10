@@ -1,6 +1,6 @@
 event_inherited();
-targetRoom = -4;
-targetDoor = -4;
+targetRoom = noone;
+targetDoor = noone;
 key = false;
 save = "w1stick";
 unlocked = false;
