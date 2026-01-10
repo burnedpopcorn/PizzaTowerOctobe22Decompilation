@@ -1110,7 +1110,7 @@ function boss_vigilante_superattack()
     if (duel_buffer == -1 && !instance_exists(duelinst))
     {
         duel_buffer = -2;
-        duelinst = -4;
+        duelinst = noone;
         sprite_index = spr_playerV_revolvershoot;
         image_index = 0;
         

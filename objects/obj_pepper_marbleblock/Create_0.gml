@@ -1,8 +1,8 @@
 hp = 3;
 maxhp = hp;
-parentID = -4;
-spotID = -4;
-blockID = -4;
+parentID = noone;
+spotID = noone;
+blockID = noone;
 death = false;
 statue = true;
 fall = false;

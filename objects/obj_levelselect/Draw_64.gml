@@ -6,7 +6,7 @@ var _levelinfo = level_array[selected_world][selected_level];
 draw_text(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, concat(world_array[selected_world], "\n", selected_level + 1, ". ", _levelinfo[0]));
 var xx = 355;
 var yy = 380;
-var c = 16777215;
+var c = c_white;
 ini_open_from_string(obj_savesystem.ini_str);
 draw_text(SCREEN_WIDTH / 2, yy - 38, ini_read_real("Highscore", _levelinfo[2], 0));
 
@@ -22,7 +22,7 @@ for (var i = 0; i < array_length(toppin_info); i++)
     }
     else
     {
-        c = 16777215;
+        c = c_white;
     }
     
     draw_sprite_ext(b[1], ix, xx + (i * 47), yy, 1, 1, 0, c, 1);
@@ -33,7 +33,7 @@ if (_levelinfo[1] != war_1)
     if (!ini_read_real("Treasure", _levelinfo[2], false))
         c = 0;
     else
-        c = 16777215;
+        c = c_white;
     
     draw_sprite_ext(spr_treasure_eggplant, 0, 587, yy + 26, 1, 1, 0, c, 1);
 }

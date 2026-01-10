@@ -25,7 +25,7 @@ if (kidsparty_lightning || dark_lightning)
         draw_rectangle_color(0, 0, tsw, tsh, c_black, c_black, c_black, c_black, false);
         var p = get_triangle_points(0, tsh / 2, 0, 300, 24);
         gpu_set_blendmode(bm_subtract);
-        draw_triangle_color(0, tsh / 2, p[0], p[1], p[2], p[3], c_white, 16777215, 16777215, false);
+        draw_triangle_color(0, tsh / 2, p[0], p[1], p[2], p[3], c_white, c_white, c_white, false);
         surface_reset_target();
         surface_set_target(patrolcone_tex);
         gpu_set_blendmode(bm_normal);
@@ -61,7 +61,7 @@ if (kidsparty_lightning || dark_lightning)
                 if (instance_exists(baddieID) && baddieID.state == states.walk)
                 {
                     var points = get_triangle_points(x, y, image_angle, len, size);
-                    var c = 16777215;
+                    var c = c_white;
                     draw_triangle_color(x - surf_x, y - surf_y, points[0] - surf_x, points[1] - surf_y, points[2] - surf_x, points[3] - surf_y, c, c, c, false);
                 }
             }
@@ -85,7 +85,7 @@ if (kidsparty_lightning || dark_lightning)
             {
                 if (instance_exists(baddieID) && baddieID.state == states.walk)
                 {
-                    var c = 16777215;
+                    var c = c_white;
                     draw_surface_ext(other.patrolcone_tex, x - surf_x, y - surf_y - (tsh / 2), (image_angle > 90) ? -1 : 1, 1, 0, c, 1);
                 }
             }

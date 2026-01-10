@@ -1,14 +1,17 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_pizzafaceboss_p2OLD",
   "spriteId": {
     "name": "spr_pizzahead_giddy",
-    "path": "sprites/spr_pizzahead_giddy/spr_pizzahead_giddy.yy"
+    "path": "sprites/spr_pizzahead_giddy/spr_pizzahead_giddy.yy",
   },
   "solid": false,
   "visible": true,
   "managed": false,
   "spriteMaskId": {
     "name": "spr_pizzahead_giddy",
-    "path": "sprites/spr_pizzahead_giddy/spr_pizzahead_giddy.yy"
+    "path": "sprites/spr_pizzahead_giddy/spr_pizzahead_giddy.yy",
   },
   "persistent": false,
   "parentObjectId": null,
@@ -25,68 +28,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 0,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 3,
-      "collisionObjectId": null,
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 4,
-      "collisionObjectId": {
-        "name": "obj_player",
-        "path": "objects/obj_player/obj_player.yy"
-      },
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 4,
-      "collisionObjectId": {
-        "name": "obj_pizzaheadportrait",
-        "path": "objects/obj_pizzaheadportrait/obj_pizzaheadportrait.yy"
-      },
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    },
-    {
-      "isDnD": false,
-      "eventNum": 0,
-      "eventType": 4,
-      "collisionObjectId": {
-        "name": "obj_baddiecollisionbox",
-        "path": "objects/obj_baddiecollisionbox/obj_baddiecollisionbox.yy"
-      },
-      "resourceType": "GMEvent",
-      "resourceVersion": "1.0",
-      "name": ""
-    }
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_pizzaheadportrait","path":"objects/obj_pizzaheadportrait/obj_pizzaheadportrait.yy",},},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_baddiecollisionbox","path":"objects/obj_baddiecollisionbox/obj_baddiecollisionbox.yy",},},
   ],
   "properties": [],
   "overriddenProperties": [],
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "obj_pizzafaceboss_p2OLD",
   "parent": {
     "name": "Unused",
     "path": "folders/Objects/Unused.yy",
-  }
+  },
 }

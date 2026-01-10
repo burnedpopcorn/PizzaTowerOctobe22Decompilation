@@ -164,7 +164,7 @@ function scr_bosscontroller_victory()
     }
 }
 
-function scr_bosscontroller_draw_health(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 = -4)
+function scr_bosscontroller_draw_health(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 = noone)
 {
     var hpp = 0;
     
@@ -173,7 +173,7 @@ function scr_bosscontroller_draw_health(arg0, arg1, arg2, arg3, arg4, arg5, arg6
         var c = c_white;
         var zpad = _index * 3;
         
-        if (arg10 != -4)
+        if (arg10 != noone)
             pal_swap_set(arg10, _index, false);
         
         var _x = 0;

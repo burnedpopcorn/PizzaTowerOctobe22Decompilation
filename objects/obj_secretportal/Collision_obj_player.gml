@@ -40,7 +40,7 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
     
     if (!touched)
     {
-        other.superchargedeffectid = -4;
+        other.superchargedeffectid = noone;
         
         if (other.state != states.knightpep && other.state != states.knightpepslopes && other.state != states.knightpepbump && other.state != states.firemouth)
         {

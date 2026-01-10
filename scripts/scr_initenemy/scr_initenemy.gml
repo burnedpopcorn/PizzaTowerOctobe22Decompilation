@@ -1,12 +1,12 @@
 function scr_initenemy()
 {
-    pizzaheadKO = -4;
-    pizzaheadKO_ID = -4;
+    pizzaheadKO = noone;
+    pizzaheadKO_ID = noone;
     pizzaheadKO_buffer = 0;
     camzoom = 1;
     mach2 = false;
     steppy = false;
-    santaID = -4;
+    santaID = noone;
     rattime = 0;
     platformid = noone;
     usepalette = false;
@@ -24,7 +24,7 @@ function scr_initenemy()
     flying = false;
     straightthrow = false;
     stomped = false;
-    escapespawnID = -4;
+    escapespawnID = noone;
     reset = false;
     bombreset = 0;
     hp = 1;
@@ -93,7 +93,7 @@ function scr_initenemy()
     turntimer = 0;
     turnstart = false;
     timedgate = false;
-    chargeID = -4;
+    chargeID = noone;
     angle = image_angle;
     is_controllable = false;
     possess_movespeed = 0;

@@ -3,7 +3,7 @@ function scr_dotaunt()
     if (key_taunt2 || input_finisher_buffer > 0 || (state == states.backbreaker && key_up && supercharged))
     {
         input_finisher_buffer = 0;
-        pistolanim = -4;
+        pistolanim = noone;
         
         if (place_meeting(x, y, obj_exitgate) && global.panic == true && global.combotime > 0)
         {

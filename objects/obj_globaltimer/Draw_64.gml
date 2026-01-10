@@ -56,5 +56,5 @@ else
 draw_set_halign(fa_right);
 draw_set_valign(fa_bottom);
 draw_set_font(global.smallfont);
-draw_set_alpha(16777215);
+draw_set_alpha(c_white);
 draw_text(SCREEN_WIDTH - 8, SCREEN_HEIGHT - 8, concat(hours, ":", m_str, ":", s_str, ":", mm));

@@ -18,7 +18,7 @@ if (pause)
         
         if (selected == i)
         {
-            c = 16777215;
+            c = c_white;
             draw_sprite(spr_cursor, cursor_index, xx - 48, yy + (cursor_sprite_height / 2));
         }
         

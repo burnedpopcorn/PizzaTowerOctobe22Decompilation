@@ -1,6 +1,6 @@
 hp = 3;
-parentID = -4;
-spotID = -4;
+parentID = noone;
+spotID = noone;
 hsp = 0;
 vsp = 0;
 grav = 0.5;

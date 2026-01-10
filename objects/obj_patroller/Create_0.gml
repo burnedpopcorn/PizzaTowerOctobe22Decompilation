@@ -1,6 +1,6 @@
 scr_initenemy();
 patrolfound = false;
-coneID = -4;
+coneID = noone;
 cooldown = 0;
 patroltimer = 0;
 patroltimermax = 4;

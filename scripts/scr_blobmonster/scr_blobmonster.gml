@@ -5,7 +5,7 @@ function scr_blob_normal()
     var _calc = 32 * obstacle_max * sign(image_yscale);
     var _col1 = collision_line(x, y, x, y - _calc, obj_solid, false, true);
     
-    if (_col1 != -4)
+    if (_col1 != noone)
     {
         var _side = (image_yscale > 0) ? (_col1.bbox_bottom + 8) : (_col1.bbox_top - 8);
         _calc = abs(y - _side) * sign(image_yscale);
@@ -15,10 +15,8 @@ function scr_blob_normal()
     
     if (place_meeting(x + hsp, y, obj_solid))
     {
-        if (_col != -4 || changeside_buffer > 0)
-        {
+        if (_col != noone || changeside_buffer > 0)
             image_xscale *= -1;
-        }
         else
         {
             image_yscale *= -1;

@@ -10,5 +10,5 @@ image_alpha = 0;
 target_alpha = 0.6;
 alpha = false;
 state = states.normal;
-trapid = -4;
+trapid = noone;
 image_speed = 0.35;

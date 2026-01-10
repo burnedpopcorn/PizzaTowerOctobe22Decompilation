@@ -35,7 +35,7 @@ function scr_editor_get_object_mouse(arg0, arg1)
         
         with (b)
         {
-            if (layerdepth == other.layerdepth && (o == -4 || depth < o.depth))
+            if (layerdepth == other.layerdepth && (o == noone || depth < o.depth))
                 o = b;
         }
     }

@@ -40,7 +40,7 @@ else if (state == 6)
 
 with (obj_player)
 {
-    pistolanim = -4;
+    pistolanim = noone;
     sprite_index = spr_peppino_duel;
     image_speed = 0.35;
 }

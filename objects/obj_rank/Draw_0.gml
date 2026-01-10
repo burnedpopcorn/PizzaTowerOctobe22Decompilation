@@ -8,7 +8,7 @@ if (global.collectN > global.collect)
 
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 shader_reset();
-var c = 16777215;
+var c = c_white;
 var xx = 523;
 var cash_y = 0;
 var sep = 89;
@@ -19,7 +19,7 @@ while (i >= 0)
     if (toppin[i] == 0)
         c = 0;
     else
-        c = 16777215;
+        c = c_white;
     
     if (toppin[i] == 1)
     {

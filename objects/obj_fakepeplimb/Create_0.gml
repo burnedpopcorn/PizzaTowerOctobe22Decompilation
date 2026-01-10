@@ -2,7 +2,7 @@ scr_initenemy();
 hidden = true;
 possess_movespeed = 0;
 cooldown = 0;
-hitboxID = -4;
+hitboxID = noone;
 ceiling = false;
 spr_attack = spr_fakepeplimb1_attack;
 spr_hidden = spr_fakepeplimb1_hidden;

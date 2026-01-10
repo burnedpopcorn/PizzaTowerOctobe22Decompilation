@@ -2,7 +2,7 @@ active = false;
 alpha = 1;
 depth = -7;
 desireddepth = -6;
-surf = -4;
+surf = noone;
 tiles[0] = array_create(0);
 tiles[1] = array_create(0);
 tiles[2] = array_create(0);
@@ -10,13 +10,13 @@ tiles[2] = array_create(0);
 for (var i = 0; i < 3; i++)
 {
     var lay_id = layer_get_id(concat("Tiles_Secret", i + 1));
-    tilemap_sprite[i] = -4;
+    tilemap_sprite[i] = noone;
     
     if (lay_id != -1)
     {
         var map_id = layer_tilemap_get_id(lay_id);
         var ts = tilemap_get_tileset(map_id);
-        var t = -4;
+        var t = noone;
         
         switch (ts)
         {

@@ -67,7 +67,7 @@ switch (state)
     
     case states.normal:
     case states.victory:
-        scr_bosscontroller_draw_health(3230, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, -4);
+        scr_bosscontroller_draw_health(spr_bossfight_playerhp, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, noone);
         shader_set(global.Pal_Shader);
         scr_bosscontroller_draw_health(boss_hpsprite, boss_rowmax, boss_columnmax, boss_hp, boss_maxhp, boss_hp_x, boss_hp_y, boss_xpad, boss_ypad, boss_index, boss_palette);
         reset_shader_fix();

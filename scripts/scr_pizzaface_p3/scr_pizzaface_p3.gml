@@ -170,7 +170,7 @@ function scr_pizzaface_p3_walk()
                     sprite_index = spr_pizzahead_bigpunch;
                     image_index = 0;
                     instance_destroy(hitboxID);
-                    hitboxID = -4;
+                    hitboxID = noone;
                     break;
                 
                 case states.stomp:
@@ -221,7 +221,7 @@ function scr_pizzaface_p3_punch()
 {
     hsp = 0;
     
-    if (floor(image_index) >= 17 && hitboxID == -4)
+    if (floor(image_index) >= 17 && hitboxID == noone)
     {
         with (instance_create(x, y, obj_forkhitbox))
         {

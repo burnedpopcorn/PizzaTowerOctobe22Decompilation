@@ -48,7 +48,7 @@ function scr_robot_chase()
     
     var _col = collision_line(x, y, playerinst.x, playerinst.y, obj_solid, false, true);
     
-    if (playerinst.y < (y - attack_threshold_y) && _col == -4 && playerinst.x > (x - attack_threshold_x) && playerinst.x < (x + attack_threshold_x))
+    if (playerinst.y < (y - attack_threshold_y) && _col == noone && playerinst.x > (x - attack_threshold_x) && playerinst.x < (x + attack_threshold_x))
     {
         hsp = 0;
         state = states.throwing;
@@ -85,7 +85,7 @@ function scr_robot_detect()
     var _player_colX = (image_xscale > 0) ? (playerinst.x < (x + threshold_x) && playerinst.x > x) : (playerinst.x > (x - threshold_x) && playerinst.x < x);
     var _player_colY = playerinst.y > (y - threshold_y) && playerinst.y < (y + threshold_y);
     
-    if ((global.monsterspeed >= 1 && point_in_camera(x, y, view_camera[0])) || (_col == -4 && _player_colX && _player_colY))
+    if ((global.monsterspeed >= 1 && point_in_camera(x, y, view_camera[0])) || (_col == noone && _player_colX && _player_colY))
     {
         if (image_yscale < 0)
         {

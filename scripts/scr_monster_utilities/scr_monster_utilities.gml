@@ -62,7 +62,7 @@ function scr_puppet_detect()
             return id;
     }
     
-    return -4;
+    return noone;
 }
 
 function scr_puppet_appear(arg0)
@@ -102,7 +102,7 @@ function scr_puppet_appear(arg0)
     
     var _col = collision_line(x, y, x, y - room_height, obj_solid, true, false);
     
-    if (_col != -4)
+    if (_col != noone)
     {
         while (!place_meeting(x, y - 1, obj_solid))
             y--;

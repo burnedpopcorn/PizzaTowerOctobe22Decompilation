@@ -6,5 +6,5 @@ depth = 0;
 mainmenu_sprite = -1;
 controls_sprite = -1;
 angrybuffer = 0;
-savedsprite = -4;
+savedsprite = noone;
 savedindex = 0;

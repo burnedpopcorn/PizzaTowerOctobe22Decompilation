@@ -29,7 +29,7 @@ switch (state)
         break;
     
     case states.normal:
-        if (arrowID == -4)
+        if (arrowID == noone)
             arrowID = scr_create_uparrowhitbox();
         
         if (sprite_index != spr_stick_idleanim1 && sprite_index != spr_stick_idleanim2 && sprite_index != spr_stick_idleanim3)

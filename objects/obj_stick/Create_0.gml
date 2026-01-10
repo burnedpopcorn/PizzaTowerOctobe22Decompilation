@@ -7,6 +7,6 @@ hsp_carry = 0;
 vsp_carry = 0;
 grav = 0.5;
 platformid = noone;
-arrowID = -4;
+arrowID = noone;
 drawing = false;
 money_y = 0;

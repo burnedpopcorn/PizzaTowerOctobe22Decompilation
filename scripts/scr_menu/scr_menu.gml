@@ -50,7 +50,7 @@ function add_option_press(arg0, arg1, arg2, arg3)
     return b;
 }
 
-function add_option_toggle(arg0, arg1, arg2, arg3 = -4)
+function add_option_toggle(arg0, arg1, arg2, arg3 = noone)
 {
     var b = 
     {

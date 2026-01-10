@@ -40,9 +40,9 @@ if (global.panic)
         audio_stop_sound(musicID);
         musicID = scr_music(music);
         
-        if (pillarmusicID != -4)
+        if (pillarmusicID != noone)
             audio_stop_sound(pillarmusicID);
         
-        pillarmusicID = -4;
+        pillarmusicID = noone;
     }
 }

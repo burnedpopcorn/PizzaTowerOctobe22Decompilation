@@ -120,10 +120,10 @@ if (state != states.stun)
 if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (bigcheeseID != -4)
+if (bigcheeseID != noone)
 {
     if (!instance_exists(bigcheeseID) || bigcheeseID.state != states.throwing || bigcheeseID.shot)
-        bigcheeseID = -4;
+        bigcheeseID = noone;
     else
         invincible = true;
 }

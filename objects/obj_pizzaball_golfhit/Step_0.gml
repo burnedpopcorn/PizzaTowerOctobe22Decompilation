@@ -1,4 +1,4 @@
-if (primoburg == -4)
+if (primoburg == noone)
 {
     with (obj_pizzaball)
         other.primoburg = golfhit[0];

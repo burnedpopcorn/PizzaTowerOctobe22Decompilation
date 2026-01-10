@@ -52,7 +52,7 @@ duelseconds_threshold = 25;
 duel_buffer = 0;
 duel_max = 120;
 duel_random = 80;
-duelinst = -4;
+duelinst = noone;
 revolver_count = 0;
 revolver_jump = -1;
 revolver_jumpcount = 0;
@@ -79,7 +79,7 @@ attack_max[3] = 70;
 attack_max[4] = 80;
 attack_max[5] = 80;
 attack_cooldown = attack_max[0];
-dashcloudid = -4;
+dashcloudid = noone;
 targetstunned = 0;
 targetstunnedminus[0] = 30;
 targetstunnedminus[1] = 30;
@@ -136,7 +136,7 @@ function boss_hurt_noplayer(arg0)
 
 function player_hurt(arg0, arg1)
 {
-    if (!arg1.inv_frames && (arg1.state != states.backbreaker || arg1.parry_inst == -4))
+    if (!arg1.inv_frames && (arg1.state != states.backbreaker || arg1.parry_inst == noone))
     {
         hitstate = state;
         hithsp = hsp;

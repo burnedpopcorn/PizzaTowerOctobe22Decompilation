@@ -25,7 +25,7 @@ function scr_enemy_hit()
     {
         x = hitX;
         y = hitY;
-        var _player = -4;
+        var _player = noone;
         
         if (grabbedby == 1)
             _player = obj_player1.id;

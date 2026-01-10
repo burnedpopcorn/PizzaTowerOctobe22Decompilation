@@ -2,7 +2,7 @@ scr_fmod_soundeffect(global.snd_breakblock, x, y);
 create_debris(x, y, obj_skateboardebris1);
 create_debris(x, y, obj_skateboardebris2);
 
-if (playerid != -4)
+if (playerid != noone)
 {
     with (playerid)
     {

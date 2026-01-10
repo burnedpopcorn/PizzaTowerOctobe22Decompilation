@@ -1,7 +1,15 @@
 scr_get_languages();
-tex_list = -4;
+tex_list = noone;
 draw_flush();
-var group_arr = ["playergroup", "backgroundgroup", "hudgroup", "smallgroup", "baddiegroup", "levelstructuregroup"];
+var group_arr = 
+[
+	"playergroup", 
+	"backgroundgroup", 
+	"hudgroup", 
+	"smallgroup", 
+	"baddiegroup", 
+	"levelstructuregroup"
+];
 tex_list = ds_list_create();
 tex_pos = 0;
 

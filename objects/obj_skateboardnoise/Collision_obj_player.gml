@@ -1,4 +1,4 @@
-if (playerid == -4)
+if (playerid == noone)
 {
     playerid = other.id;
     other.state = states.skateboardnoise;

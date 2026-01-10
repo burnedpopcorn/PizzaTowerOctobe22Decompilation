@@ -4,7 +4,7 @@ if (instance_number(object_index) > 1)
     exit;
 }
 
-bossID = -4;
+bossID = noone;
 bossdead = false;
 glitchbuffer = 40;
 arenastate = 0;
@@ -15,7 +15,7 @@ introshake_acc = 0;
 victory_buffer = 0;
 boss_prevhp = 8;
 boss_hp = 8;
-boss_func = -4;
+boss_func = noone;
 boss_columnmax = 4;
 boss_rowmax = 2;
 boss_hp_x = 762;
@@ -39,7 +39,7 @@ bosstimer_y = 466;
 bell_sprite = spr_bosstimer_bell;
 bell_index = 0;
 bell_buffer = 0;
-bar_surface = -4;
+bar_surface = noone;
 barfill_x = 0;
 round_timermax = 36000;
 round_timer = round_timermax;
@@ -55,4 +55,4 @@ flashed = false;
 bossintrostate = states.normal;
 vstitle = spr_vstitle_noise;
 playerspr = spr_vspeppino;
-bossspr = 1684;
+bossspr = spr_vsnoise;

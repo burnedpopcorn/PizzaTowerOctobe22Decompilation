@@ -5,14 +5,12 @@ if (place_meeting(x + sign(hsp), y, obj_solid))
 
 scr_collide();
 
-if (playerid != -4)
+if (playerid != noone)
 {
     with (playerid)
     {
         if (state != states.skateboardnoise)
-        {
-            other.playerid = -4;
-        }
+            other.playerid = noone;
         else
         {
             x = other.x;

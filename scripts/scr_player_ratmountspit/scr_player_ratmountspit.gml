@@ -10,6 +10,6 @@ function scr_player_ratmountspit()
     if (ANIMATION_ENDED)
     {
         state = states.ratmount;
-        ratgrabbedID = -4;
+        ratgrabbedID = noone;
     }
 }

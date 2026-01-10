@@ -25,7 +25,7 @@ if (state == states.titlescreen)
     
     for (var i = 0; i < array_length(hub_array); i++)
     {
-        var c = (selected == i) ? 16777215 : 8421504;
+        var c = (selected == i) ? c_white : 8421504;
         var txt = hub_array[i][1];
         draw_text_color(480, yy, txt, c, c, c, c, 1);
         yy -= string_height(txt);

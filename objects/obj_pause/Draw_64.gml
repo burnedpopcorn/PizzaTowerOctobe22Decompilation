@@ -34,7 +34,7 @@ if (fade > 0)
         {
             var cx = (SCREEN_WIDTH / 2) - (string_width(t) / 2) - 60;
             draw_sprite(spr_pizzaangel, cursor_index, cx + cursor_x, yy + cursor_y);
-            c = 16777215;
+            c = c_white;
         }
         
         draw_text_color(SCREEN_WIDTH / 2, yy, t, c, c, c, c, fade);

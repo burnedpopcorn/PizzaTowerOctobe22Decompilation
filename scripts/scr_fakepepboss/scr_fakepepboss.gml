@@ -554,7 +554,7 @@ function scr_fakepepboss_grabthrow()
     
     hsp = Approach(hsp, 0, 1);
     
-    if (floor(image_index) >= 4 && playerID != -4)
+    if (floor(image_index) >= 4 && playerID != noone)
     {
         scr_hurtplayer(playerID);
         

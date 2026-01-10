@@ -16,7 +16,7 @@ if (!trapped)
         instance_destroy();
     }
 }
-else if (other.state == states.ratmountpunch && baddieID == -4)
+else if (other.state == states.ratmountpunch && baddieID == noone)
 {
     fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
     vsp = -6;
