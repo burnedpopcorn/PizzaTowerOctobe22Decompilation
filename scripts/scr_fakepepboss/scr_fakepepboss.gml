@@ -9,128 +9,131 @@ enum fakepep_attacks
 	stunned = 6,
 }
 
-function fakepep_set_attack(arg0, arg1, arg2, arg3, arg4)
+#region Helper Funcs
+function fakepep_set_attack(_phase, _wastedhits, _attack, _cooldown, _deformed_timer)
 {
-    if (arg3 != 0 && arg4 == 0)
-        arg4 = arg3;
+    if (_cooldown != 0 && _deformed_timer == 0)
+        _deformed_timer = _cooldown;
     
-    attack_list[arg0][arg1] = 
+    attack_list[_phase][_wastedhits] = 
     {
-        attack: arg2,
-        cooldown: arg3,
-        deformed_timer: arg4
+        attack: _attack,
+        cooldown: _cooldown,
+        deformed_timer: _deformed_timer
     };
 }
 
-function fakepep_get_attack(arg0, arg1)
+function fakepep_get_attack(_phase, _wastedhits)
 {
-    return attack_list[arg0][arg1];
+    return attack_list[_phase][_wastedhits];
 }
 
-function fakepep_start_projectiles(arg0, arg1)
+function fakepep_start_projectiles(_phase, _wastedhits)
 {
-    projectile_list[arg0][arg1] = array_create(0);
+    projectile_list[_phase][_wastedhits] = array_create(0);
 }
 
-function fakepep_add_projectile(arg0, arg1, arg2)
+function fakepep_add_projectile(_phase, _wastedhits, _projectile_struct)
 {
-    array_push(projectile_list[arg0][arg1], arg2);
+    array_push(projectile_list[_phase][_wastedhits], _projectile_struct);
 }
 
-function fakepep_get_projectile(arg0, arg1, arg2)
+function fakepep_get_projectile(_phase, _wastedhits, _projectile)
 {
-    return projectile_list[arg0][arg1][arg2];
+    return projectile_list[_phase][_wastedhits][_projectile];
 }
-
-function fakepep_add_grabclone(arg0, arg1, arg2, arg3)
+#endregion
+#region Attack Funcs
+function fakepep_add_grabclone(_phase, _wastedhits, _direction, _cooldown)
 {
-    fakepep_add_projectile(arg0, arg1, 
+    fakepep_add_projectile(_phase, _wastedhits, 
     {
         attack: fakepep_attacks.grabclone,
-        cooldown: arg3,
-        direction: arg2
+        cooldown: _cooldown,
+        direction: _direction
     });
 }
 
-function fakepep_add_bodyslamclone(arg0, arg1, arg2, arg3)
+function fakepep_add_bodyslamclone(_phase, _wastedhits, _direction, _cooldown)
 {
-    fakepep_add_projectile(arg0, arg1, 
+    fakepep_add_projectile(_phase, _wastedhits, 
     {
         attack: fakepep_attacks.bodyslamclone,
-        cooldown: arg3,
-        direction: arg2
+        cooldown: _cooldown,
+        direction: _direction
     });
 }
 
-function fakepep_add_machclone(arg0, arg1, arg2, arg3, arg4)
+function fakepep_add_machclone(_phase, _wastedhits, _direction, _cooldown, _bodyslam)
 {
-    fakepep_add_projectile(arg0, arg1, 
+    fakepep_add_projectile(_phase, _wastedhits, 
     {
         attack: fakepep_attacks.machclone,
-        cooldown: arg3,
-        direction: arg2,
-        bodyslam: arg4
+        cooldown: _cooldown,
+        direction: _direction,
+        bodyslam: _bodyslam
     });
 }
 
-function fakepep_add_superjumpclones(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7 = 100, arg8 = 850, arg9 = 402)
+function fakepep_add_superjumpclones(_phase, _wastedhits, _direction, _timer, _size, _emptyspot, _cooldown, _x1 = 100, _x2 = 850, _y = 402)
 {
-    if (arg2 == -1)
-        arg5 = arg4 - arg5;
+    if (_direction == -1)
+        _emptyspot = _size - _emptyspot;
     
-    fakepep_add_projectile(arg0, arg1, 
+    fakepep_add_projectile(_phase, _wastedhits, 
     {
         attack: fakepep_attacks.superjumpclone,
-        cooldown: arg6,
-        direction: arg2,
-        timer: arg3,
-        size: arg4,
-        emptyspot: arg5,
-        x1: arg7,
-        x2: arg8,
-        y: arg9
+        cooldown: _cooldown,
+        direction: _direction,
+        timer: _timer,
+        size: _size,
+        emptyspot: _emptyspot,
+        x1: _x1,
+        x2: _x2,
+        y: _y
     });
 }
 
-function fakepep_add_flailingclone(arg0, arg1, arg2, arg3, arg4 = 100, arg5 = 850, arg6 = 402)
+function fakepep_add_flailingclone(_phase, _wastedhits, _direction, _cooldown, _x1 = 100, _x2 = 850, _y = 402)
 {
-    fakepep_add_projectile(arg0, arg1, 
+    fakepep_add_projectile(_phase, _wastedhits, 
     {
         attack: fakepep_attacks.flailingclone,
-        cooldown: arg3,
-        direction: arg2,
-        x1: arg4,
-        x2: arg5,
-        y: arg6
+        cooldown: _cooldown,
+        direction: _direction,
+        x1: _x1,
+        x2: _x2,
+        y: _y
     });
 }
 
-function fakepep_add_tauntclones(arg0, arg1, arg2, arg3, arg4, arg5 = 125, arg6 = 825, arg7 = 402)
+function fakepep_add_tauntclones(_phase, _wastedhits, _vsp1, _vsp2, _cooldown, _x1 = 125, _x2 = 825, _y = 402)
 {
-    fakepep_add_projectile(arg0, arg1, 
+    fakepep_add_projectile(_phase, _wastedhits, 
     {
         attack: fakepep_attacks.tauntclone,
-        cooldown: arg4,
-        vsp1: arg2,
-        vsp2: arg3,
-        x1: arg5,
-        x2: arg6,
-        y: arg7
+        cooldown: _cooldown,
+        vsp1: _vsp1,
+        vsp2: _vsp2,
+        x1: _x1,
+        x2: _x2,
+        y: _y
     });
 }
+#endregion
 
-function scr_fakepepboss_do_projectiles(arg0, arg1)
+function scr_fakepepboss_do_projectiles(_phase, _wastedhits)
 {
     if (pizzahead)
         exit;
     
     var t = targetplayer;
     
-    if (currentprojectile >= array_length(projectile_list[arg0][arg1]))
+    if (currentprojectile >= array_length(projectile_list[_phase][_wastedhits]))
         currentprojectile = 0;
     
     var currp = currentprojectile;
-    var _attack = fakepep_get_projectile(arg0, arg1, currentprojectile);
+    var _attack = fakepep_get_projectile(_phase, _wastedhits, currentprojectile);
     currentprojectile += 1;
     deformed_cooldown = _attack.cooldown;
     
@@ -245,6 +248,7 @@ function scr_fakepepboss_do_projectiles(arg0, arg1)
     }
 }
 
+#region State Funcs
 function scr_fakepepboss_arenaintro()
 {
     image_speed = 0.35;
@@ -990,3 +994,4 @@ function scr_fakepepboss_backbreaker()
     if (grounded && vsp > 0)
         state = states.walk;
 }
+#endregion

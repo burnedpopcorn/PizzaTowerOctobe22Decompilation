@@ -1,6 +1,6 @@
-function scr_pizzaface_p3_do_player_attack(arg0)
+function scr_pizzaface_p3_do_player_attack(_playerID)
 {
-    with (arg0)
+    with (_playerID)
     {
         state = states.supergrab;
         substate = states.grab;
@@ -12,8 +12,8 @@ function scr_pizzaface_p3_do_player_attack(arg0)
     }
     
     hsp = 0;
-    image_xscale = -arg0.xscale;
-    playerid = arg0;
+    image_xscale = -_playerID.xscale;
+    playerid = _playerID;
     state = states.supergrab;
     substate = states.grabbed;
 }
@@ -58,9 +58,7 @@ function scr_pizzaface_p3_arenaintro()
             if (obj_player1.sprite_index != obj_player1.spr_victory)
             {
                 if (introbuffer > 0)
-                {
                     introbuffer--;
-                }
                 else if (elitehit < maxhp)
                 {
                     elitehit++;
@@ -144,9 +142,7 @@ function scr_pizzaface_p3_walk()
             image_xscale = ix;
         
         if (cooldown > 0)
-        {
             cooldown--;
-        }
         else
         {
             cooldown = 100 - (wastedhits * 5);

@@ -21,9 +21,7 @@ function state_turret_charge()
     sprite_index = shootspr;
     
     if (charge_buffer > 0)
-    {
         charge_buffer--;
-    }
     else if (can_fire)
     {
         with (instance_create(x, y, obj_enemybullet))

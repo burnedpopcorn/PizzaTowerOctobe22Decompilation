@@ -1,9 +1,5 @@
-function cutscene_move_actor(arg0, arg1, arg2, arg3)
+function cutscene_move_actor(_obj, xx, yy, interp)
 {
-    var _obj = arg0;
-    var xx = arg1;
-    var yy = arg2;
-    var interp = arg3;
     var finish = false;
     
     with (_obj)

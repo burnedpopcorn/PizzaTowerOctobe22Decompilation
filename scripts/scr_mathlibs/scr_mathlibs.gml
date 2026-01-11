@@ -1,95 +1,97 @@
-function Vector2(arg0, arg1) constructor
+function Vector2(_x, _y) constructor
 {
-    static Update = function(arg0, arg1)
+    static Update = function(_x, _y)
     {
-        x = arg0;
-        y = arg1;
+        x = _x;
+        y = _y;
     };
     
-    static UpdateVector = function(arg0)
+    static UpdateVector = function(_vector)
     {
-        x = arg0.x;
-        y = arg0.y;
+        x = _vector.x;
+        y = _vector.y;
     };
     
-    static Add = function(arg0, arg1)
+    static Add = function(_x, _y)
     {
-        x += arg0;
-        y += arg1;
+        x += _x;
+        y += _y;
     };
     
-    static AddVector = function(arg0)
+    static AddVector = function(_vector)
     {
-        x += arg0.x;
-        y += arg0.y;
+        x += _vector.x;
+        y += _vector.y;
     };
     
-    static Multiply = function(arg0, arg1)
+    static Multiply = function(_x, _y)
     {
-        x *= arg0;
-        y *= arg1;
+        x *= _x;
+        y *= _y;
     };
     
-    static Divide = function(arg0, arg1)
+    static Divide = function(_x, _y)
     {
-        x /= arg0;
-        y /= arg1;
+        x /= _x;
+        y /= _y;
     };
     
-    static MultiplyVector = function(arg0)
+    static MultiplyVector = function(_vector)
     {
-        x *= arg0.x;
-        y *= arg0.y;
+        x *= _vector.x;
+        y *= _vector.y;
     };
     
-    static DivideVector = function(arg0)
+    static DivideVector = function(_vector)
     {
-        x /= arg0.x;
-        y /= arg0.y;
+        x /= _vector.x;
+        y /= _vector.y;
     };
     
-    x = arg0;
-    y = arg1;
+    x = _x;
+    y = _y;
 }
 
-function cycle(arg0, arg1, arg2)
+// https://forum.gamemaker.io/index.php?threads/smooth-camera-rotation.84059/
+function cycle(_value, _min, _max)
 {
-    var delta = arg2 - arg1;
-    var result = (arg0 - arg1) % delta;
-    
-    if (result < 0)
-        result += delta;
-    
-    return result + arg1;
+	var result, delta;
+	delta = (_max - _min);
+	// % is remainder-of-division operator here.
+	// limit input to (-delta .. +delta):
+	result = (_value - _min) % delta;
+	// wrap negative results around the limit:
+	if (result < 0) result += delta;
+	// return adjusted input:
+	return result + _min;
+}
+function angle_rotate(_angle, _target, _speed)
+{
+	var diff;
+	// 180 is to be replaced by "pi" for radians
+	diff = cycle(_target - _angle, -180, 180);
+	// clamp rotations by speed:
+	if (diff < -_speed) return _angle - _speed;
+	if (diff > _speed) return _angle + _speed;
+	// if difference within speed, rotation's done:
+	return _target;
 }
 
-function angle_rotate(arg0, arg1, arg2)
+function get_velocity(a, b)
 {
-    var diff = cycle(arg1 - arg0, -180, 180);
-    
-    if (diff < -arg2)
-        return arg0 - arg2;
-    
-    if (diff > arg2)
-        return arg0 + arg2;
-    
-    return arg1;
+	return a / b;
 }
 
-function get_velocity(arg0, arg1)
+function Wave(from, to, duration, offset, time = noone)
 {
-    return arg0 / arg1;
-}
-
-function Wave(arg0, arg1, arg2, arg3, arg4 = noone)
-{
-    var a4 = (arg1 - arg0) * 0.5;
-    var t = current_time;
-    
-    if (arg4 != noone)
-        t = arg4;
-    
-    return arg0 + a4 + (sin((((t * 0.001) + (arg2 * arg3)) / arg2) * (2 * pi)) * a4);
+	// https://forum.gamemaker.io/index.php?threads/wave-script.62475/
+	var a4 = (to - from) * 0.5;
+	
+	var t = current_time;
+	if time != noone
+		t = time;
+	
+	return from + a4 + (sin((((t * 0.001) + (duration * offset)) / duration) * (pi * 2)) * a4);
 }
 
 function distance_to_pos(arg0, arg1, arg2, arg3, arg4, arg5)
@@ -160,13 +162,9 @@ function get_projectile_angle(arg0, arg1, arg2, arg3, arg4, arg5)
             angle -= 180;
     }
     else if (xt > 0)
-    {
         angle = 45;
-    }
     else
-    {
         angle = 135;
-    }
     
     return angle;
 }

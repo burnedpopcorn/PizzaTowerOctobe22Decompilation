@@ -1,4 +1,4 @@
-function scr_do_command(arg0)
+function scr_do_command(_command)
 {
     with (obj_editor)
     {
@@ -10,8 +10,8 @@ function scr_do_command(arg0)
             ds_list_delete(commandlist, t);
         }
         
-        arg0.Do();
-        ds_list_add(commandlist, arg0);
+        _command.Do();
+        ds_list_add(commandlist, _command);
     }
 }
 

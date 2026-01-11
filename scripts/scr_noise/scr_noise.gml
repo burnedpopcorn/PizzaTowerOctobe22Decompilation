@@ -87,14 +87,14 @@ function scr_noise_arenaintro()
     }
 }
 
-function scr_noise_do_hurt(arg0)
+function scr_noise_do_hurt(_obj)
 {
     if (state != states.stun)
     {
-        instance_destroy(arg0);
+        instance_destroy(_obj);
         
-        if (x != arg0.x)
-            image_xscale = sign(arg0.x - x);
+        if (x != _obj.x)
+            image_xscale = sign(_obj.x - x);
         
         if (abs(hsp) > 7)
             hsp = -image_xscale * abs(hsp);

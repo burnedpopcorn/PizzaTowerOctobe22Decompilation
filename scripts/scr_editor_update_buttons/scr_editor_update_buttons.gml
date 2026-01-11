@@ -10,9 +10,7 @@ function scr_editor_update_buttons()
             hovered = true;
         }
         else
-        {
             hovered = false;
-        }
     }
     
     with (button)

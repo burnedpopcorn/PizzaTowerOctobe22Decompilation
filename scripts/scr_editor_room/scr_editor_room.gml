@@ -1,5 +1,5 @@
-function EditorRoom(arg0 = 960, arg1 = 544) constructor
+function EditorRoom(_w = 960, _h = 544) constructor
 {
-    width = arg0;
-    height = arg1;
+    width = _w;
+    height = _h;
 }

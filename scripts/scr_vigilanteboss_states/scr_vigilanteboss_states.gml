@@ -94,17 +94,11 @@ function vigilante_cancel_attack()
 function boss_vigilante_decide_attack()
 {
     if (phase < 3)
-    {
         vigilante_decide_attack_phase1();
-    }
     else if (phase == 3)
-    {
         vigilante_decide_attack_phase3();
-    }
     else if (phase == 4)
-    {
         vigilante_decide_attack_phase4();
-    }
     else if (phase == 5)
     {
         if (honor)
@@ -172,21 +166,15 @@ function boss_vigilante_decide_attack()
 function vigilante_decide_attack_phase6_nohonor()
 {
     if (attack_cooldown > 0)
-    {
         attack_cooldown--;
-    }
     else
     {
         var attack_chance = irandom(200);
         
         if (attack_chance >= 150)
-        {
             vigilante_decide_attack_phase4();
-        }
         else if (attack_chance >= 100 && attack_chance < 150)
-        {
             vigilante_decide_attack_phase3();
-        }
         else if (attack_chance >= 50 && attack_chance < 100)
         {
             vigilante_decide_attack_phase1();
@@ -210,9 +198,7 @@ function vigilante_decide_attack_phase6_nohonor()
 function vigilante_decide_attack_phase5()
 {
     if (attack_cooldown > 0)
-    {
         attack_cooldown--;
-    }
     else
     {
         var attack_chance = irandom(100);
@@ -229,9 +215,7 @@ function vigilante_decide_attack_phase5()
 function vigilante_decide_attack_phase4()
 {
     if (attack_cooldown > 0)
-    {
         attack_cooldown--;
-    }
     else
     {
         targetstunned = 0;
@@ -272,9 +256,7 @@ function vigilante_decide_attack_phase4()
 function vigilante_decide_attack_phase3()
 {
     if (attack_cooldown > 0)
-    {
         attack_cooldown--;
-    }
     else
     {
         targetstunned = 0;
@@ -321,9 +303,7 @@ function vigilante_decide_attack_phase3()
 function vigilante_decide_attack_phase1()
 {
     if (attack_cooldown > 0)
-    {
         attack_cooldown--;
-    }
     else
     {
         targetstunned = 0;
@@ -361,9 +341,7 @@ function vigilante_decide_attack_phase1()
 function vigilante_decide_normalattack()
 {
     if (normalattack_cooldown > 0)
-    {
         normalattack_cooldown--;
-    }
     else if (distance_to_pos(x, y, targetplayer.x, targetplayer.y, 180, 340))
     {
         normalattack_cooldown = normalattack_max[phase - 1];
@@ -428,13 +406,9 @@ function boss_vigilante_normal_phase4()
             image_speed = 0.6;
     }
     else if (movespeed > 0)
-    {
         movespeed -= 0.1;
-    }
     else if (movespeed <= 0)
-    {
         movespeed = 0;
-    }
     
     boss_decide_taunt(180);
     
@@ -490,13 +464,9 @@ function boss_vigilante_normal()
             image_speed = 0.6;
     }
     else if (movespeed > 0)
-    {
         movespeed -= 0.1;
-    }
     else if (movespeed <= 0)
-    {
         movespeed = 0;
-    }
     
     boss_decide_taunt(180);
     
@@ -677,9 +647,7 @@ function boss_vigilante_crouchslide()
             sprite_index = spr_playerV_divekick;
         
         if (movespeed > 0)
-        {
             movespeed -= 0.2;
-        }
         else
         {
             movespeed = 0;
@@ -728,9 +696,7 @@ function boss_vigilante_jump()
     hsp = image_xscale * movespeed;
     
     if (dynamite_buffer > 0)
-    {
         dynamite_buffer--;
-    }
     else if (dynamite_count > 0)
     {
         state = states.dynamite;
@@ -815,9 +781,7 @@ function boss_vigilante_punch()
     }
     
     if (movespeed > 0)
-    {
         movespeed -= 0.2;
-    }
     else
     {
         movespeed = 0;
@@ -833,9 +797,7 @@ function boss_vigilante_groundpunchstart()
     image_speed = (phase != 6) ? 0.35 : 0.5;
     
     if (x > (targetplayer.x - 32) && x < (targetplayer.x + 32))
-    {
         move = 0;
-    }
     else
     {
         image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
@@ -867,9 +829,7 @@ function boss_vigilante_groundpunchstart()
 function boss_vigilante_freefallprep()
 {
     if (x > (targetplayer.x - 24) && x < (targetplayer.x + 24))
-    {
         move = 0;
-    }
     else
     {
         image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
@@ -945,9 +905,7 @@ function boss_vigilante_millionpunch()
     image_speed = (phase != 6) ? 0.6 : 0.7;
     
     if (x > (targetplayer.x - 24) && x < (targetplayer.x + 24))
-    {
         move = 0;
-    }
     else
     {
         image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
@@ -1008,9 +966,7 @@ function boss_vigilante_superattackstart()
     image_xscale = (x > (room_width / 2)) ? -1 : 1;
     
     if (x != tx)
-    {
         sprite_index = grounded ? walkspr : fallspr;
-    }
     else
     {
         movespeed = 0;
@@ -1040,9 +996,7 @@ function boss_vigilante_superattackstart()
             xscale = (x > (room_width / 2)) ? -1 : 1;
             
             if (x != tx2)
-            {
                 sprite_index = grounded ? spr_move : spr_fall;
-            }
             else
             {
                 movespeed = 0;

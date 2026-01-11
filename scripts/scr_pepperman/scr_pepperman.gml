@@ -98,9 +98,7 @@ function scr_pepperman_walk()
         cooldown--;
     
     if (flickertime > 0)
-    {
         sprite_index = spr_pepperman_scared;
-    }
     else if (grounded)
     {
         if (phase == 2)
@@ -168,9 +166,7 @@ function pepperman_nearestspot()
         }
     }
     else
-    {
         targetspot = instance_nearest(obj_player1.x, obj_player1.y, obj_pepper_groundpoundspot);
-    }
     
     state = states.jump;
     jump_speed = floor(distance_to_object(targetspot) * 0.04);
@@ -542,9 +538,7 @@ function scr_pepperman_shoulderbash()
         }
     }
     else
-    {
         hsp = -image_xscale * 1;
-    }
     
     if (attackspeed < 20)
     {
@@ -617,9 +611,7 @@ function scr_pepperman_shoulderturn()
                 image_xscale = other.image_xscale;
         }
         else
-        {
             attackspeed = 12;
-        }
         
         state = states.shoulderbash;
         sprite_index = spr_pepperman_shoulderloop;
@@ -670,9 +662,7 @@ function scr_pepperman_mini()
                 sprite_index = spr_pepperman_minimove;
             }
             else
-            {
                 sprite_index = spr_pepperman_miniidle;
-            }
             
             if (!grounded)
             {
@@ -722,7 +712,5 @@ function scr_pepperman_phase1hurt()
 {
     sprite_index = spr_pepperman_hurtplayer;
     image_speed = 0.35;
-    scr_boss_phase1hurt(function()
-    {
-    });
+    scr_boss_phase1hurt(function() { });
 }

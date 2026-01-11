@@ -1,24 +1,21 @@
 #macro ANIMATION_ENDED floor(image_index) == (image_number - 1)
 #macro ANIMATION_PLAYING floor(image_index) != (image_number - 1)
 
-function Approach(arg0, arg1, arg2)
+function Approach(a, b, amount)
 {
-    if (arg0 < arg1)
+    if (a < b)
     {
-        arg0 += arg2;
-        
-        if (arg0 > arg1)
-            return arg1;
+        a += amount;
+        if (a > b)
+            return b;
     }
     else
     {
-        arg0 -= arg2;
-        
-        if (arg0 < arg1)
-            return arg1;
+        a -= amount;
+        if (a < b)
+            return b;
     }
-    
-    return arg0;
+    return a;
 }
 
 function get_milliseconds()
@@ -26,34 +23,36 @@ function get_milliseconds()
     return get_timer() / 1000;
 }
 
-function camera_zoom(arg0, arg1)
+function camera_zoom(_zoom, _speed)
 {
     with (obj_camera)
     {
-        targetzoom = arg0;
+        targetzoom = _zoom;
         targetzoom = clamp(targetzoom, 0, max_zoom);
         
-        if (arg1 != undefined)
-            zoomspd = abs(arg1);
+        if (_speed != undefined)
+            zoomspd = abs(_speed);
     }
 }
 
-function camera_set_zoom(arg0)
+function camera_set_zoom(_zoom)
 {
     with (obj_camera)
-        zoom = arg0;
+        zoom = _zoom;
 }
 
-function try_solid(arg0, arg1, arg2, arg3)
+//_obj isn't used in the function, but this function is still used a lot in the code
+// so its probably still here and needed because of lazyness
+function try_solid(_xoff, _yoff, _obj, _iterations)
 {
     var old_x = x;
     var old_y = y;
     var n = -1;
     
-    for (var i = 0; i < arg3; i++)
+    for (var i = 0; i < _iterations; i++)
     {
-        x += arg0;
-        y += arg1;
+        x += _xoff;
+        y += _yoff;
         
         if (!scr_solid(x, y))
         {
@@ -67,12 +66,12 @@ function try_solid(arg0, arg1, arg2, arg3)
     return n;
 }
 
-function ledge_bump(arg0)
+function ledge_bump(_iterations)
 {
     var old_x = x;
     var old_y = y;
     x += (xscale * 4);
-    var ty = try_solid(0, -1, obj_solid, arg0);
+    var ty = try_solid(0, -1, obj_solid, _iterations);
     x = old_x;
     
     if (ty != -1)
@@ -93,25 +92,25 @@ function ledge_bump(arg0)
     return true;
 }
 
-function instance_create_unique(arg0, arg1, arg2)
+function instance_create_unique(_x, _y, _obj)
 {
-    if (instance_exists(arg2))
+    if (instance_exists(_obj))
         return noone;
     
-    var b = instance_create(arg0, arg1, arg2);
+    var b = instance_create(_x, _y, _obj);
     return b;
 }
 
-function get_solid_difference(arg0, arg1, arg2)
+function get_solid_difference(_xoff, _yoff, _dist)
 {
     var old_x = x;
     var old_y = y;
     var n = 0;
     
-    for (var i = 0; i < arg2; i++)
+    for (var i = 0; i < _dist; i++)
     {
-        x += arg0;
-        y += arg1;
+        x += _xoff;
+        y += _yoff;
         
         if (!scr_solid(x, y))
             n++;
@@ -142,7 +141,7 @@ function concat()
     return _string;
 }
 
-function ds_list_add_unique(arg0)
+function ds_list_add_unique(_list)
 {
     if (argument_count > 1)
     {
@@ -150,50 +149,50 @@ function ds_list_add_unique(arg0)
         {
             var b = argument[i];
             
-            if (ds_list_find_index(arg0, b) == -1)
-                ds_list_add(arg0, b);
+            if (ds_list_find_index(_list, b) == -1)
+                ds_list_add(_list, b);
         }
     }
 }
 
-function point_in_camera(arg0, arg1, arg2)
+function point_in_camera(_x, _y, _cam)
 {
-    var cam_x = camera_get_view_x(arg2);
-    var cam_y = camera_get_view_y(arg2);
-    var cam_w = camera_get_view_width(arg2);
-    var cam_h = camera_get_view_height(arg2);
-    return point_in_rectangle(arg0, arg1, cam_x, cam_y, cam_x + cam_w, cam_y + cam_h);
+    var cam_x = camera_get_view_x(_cam);
+    var cam_y = camera_get_view_y(_cam);
+    var cam_w = camera_get_view_width(_cam);
+    var cam_h = camera_get_view_height(_cam);
+    return point_in_rectangle(_x, _y, cam_x, cam_y, cam_x + cam_w, cam_y + cam_h);
 }
 
-function point_in_camera_ext(arg0, arg1, arg2, arg3, arg4)
+function point_in_camera_ext(_x, _y, _cam, _width, _height)
 {
-    var cam_x = camera_get_view_x(arg2);
-    var cam_y = camera_get_view_y(arg2);
-    var cam_w = camera_get_view_width(arg2);
-    var cam_h = camera_get_view_height(arg2);
-    return point_in_rectangle(arg0, arg1, cam_x - arg3, cam_y - arg4, cam_x + cam_w + arg3, cam_y + cam_h + arg4);
+    var cam_x = camera_get_view_x(_cam);
+    var cam_y = camera_get_view_y(_cam);
+    var cam_w = camera_get_view_width(_cam);
+    var cam_h = camera_get_view_height(_cam);
+    return point_in_rectangle(_x, _y, cam_x - _width, cam_y - _height, cam_x + cam_w + _width, cam_y + cam_h + _height);
 }
 
-function bbox_in_camera(arg0, arg1)
+function bbox_in_camera(_cam, _padding)
 {
-    if (is_undefined(arg1))
-        arg1 = 0;
+    if (is_undefined(_padding))
+        _padding = 0;
     
-    var cam_x = camera_get_view_x(arg0);
-    var cam_y = camera_get_view_y(arg0);
-    var cam_w = camera_get_view_width(arg0);
-    var cam_h = camera_get_view_height(arg0);
-    return bbox_left < (cam_x + cam_w + arg1) && bbox_right > (cam_x - arg1) && bbox_top < (cam_y + cam_h + arg1) && bbox_bottom > (cam_y - arg1);
+    var cam_x = camera_get_view_x(_cam);
+    var cam_y = camera_get_view_y(_cam);
+    var cam_w = camera_get_view_width(_cam);
+    var cam_h = camera_get_view_height(_cam);
+    return bbox_left < (cam_x + cam_w + _padding) && bbox_right > (cam_x - _padding) && bbox_top < (cam_y + cam_h + _padding) && bbox_bottom > (cam_y - _padding);
 }
 
-function instance_nearest_random(arg0, arg1)
+function instance_nearest_random(_obj, _range)
 {
-    var l = instance_furthest(x, y, arg0);
+    var l = instance_furthest(x, y, _obj);
     var list = ds_list_create();
     
-    for (var i = 0; i < instance_number(arg0); i++)
+    for (var i = 0; i < instance_number(_obj); i++)
     {
-        b = instance_find(arg0, i);
+        b = instance_find(_obj, i);
         var t = distance_to_object(b);
         
         if (t <= l)
@@ -204,7 +203,7 @@ function instance_nearest_random(arg0, arg1)
     
     if (ds_list_size(list) > 0)
     {
-        var n = irandom(arg1);
+        var n = irandom(_range);
         
         if (ds_list_size(list) < n)
             n = ds_list_size(list) - 1;
@@ -216,12 +215,12 @@ function instance_nearest_random(arg0, arg1)
     return b;
 }
 
-function instance_random(arg0)
+function instance_random(_obj)
 {
-    return instance_find(arg0, irandom(instance_number(arg0) - 1));
+    return instance_find(_obj, irandom(instance_number(_obj) - 1));
 }
 
-function heat_calculate(arg0)
+function heat_calculate(_value)
 {
-    return arg0;
+    return _value;
 }

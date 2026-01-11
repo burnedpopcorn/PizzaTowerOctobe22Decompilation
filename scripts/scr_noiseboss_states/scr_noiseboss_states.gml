@@ -6,6 +6,7 @@ enum noise_dist
 	anywhere = 3,
 }
 
+#region Attack Funcs
 function boss_noise_decide_attack()
 {
     if (attack_cooldown > 0)
@@ -265,7 +266,8 @@ function noise_do_attack_angry()
             break;
     }
 }
-
+#endregion
+#region Behaviour Funcs
 function noise_behaviour_none()
 {
     move = 0;
@@ -382,7 +384,8 @@ function noise_behaviour_far()
     else
         boss_noise_do_attack();
 }
-
+#endregion
+#region State Funcs
 function boss_noise_normal()
 {
     boss_noise_decide_attack();
@@ -833,3 +836,4 @@ function boss_noise_jetpackspin()
         }
     }
 }
+#endregion

@@ -7,7 +7,7 @@ function Command() constructor
     state = 1;
 }
 
-function PlaceCommand(arg0, arg1, arg2) : Command() constructor
+function PlaceCommand(_x, _y, _obj) : Command() constructor
 {
     static Do = function()
     {
@@ -45,8 +45,8 @@ function PlaceCommand(arg0, arg1, arg2) : Command() constructor
         }
     };
     
-    x = arg0;
-    y = arg1;
-    object = arg2;
+    x = _x;
+    y = _y;
+    object = _obj;
     instance = noone;
 }

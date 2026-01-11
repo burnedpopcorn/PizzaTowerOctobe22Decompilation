@@ -1,3 +1,2 @@
-function scr_fakepeppino_hit()
-{
-}
+// unused
+function scr_fakepeppino_hit() { }

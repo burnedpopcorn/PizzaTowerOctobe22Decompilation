@@ -13,23 +13,24 @@ enum vigi_attacks
 	reload = 10,
 }
 
-function vigilante_start_attack(arg0, arg1)
+#region Helper Funcs
+function vigilante_start_attack(_phase, _wastedhits)
 {
-    attack_list[arg0][arg1] = array_create(0);
+    attack_list[_phase][_wastedhits] = array_create(0);
 }
 
-function vigilante_add_attack(arg0, arg1, arg2, arg3 = 0)
+function vigilante_add_attack(_phase, _wastedhits, _attack, _cooldown = 0)
 {
-    array_push(attack_list[arg0][arg1], [arg2, arg3]);
+    array_push(attack_list[_phase][_wastedhits], [_attack, _cooldown]);
 }
 
-function vigilante_end_attack(arg0, arg1)
+function vigilante_end_attack(_phase, _wastedhits)
 {
     var found = false;
     
-    for (var i = 0; i < array_length(attack_list[arg0][arg1]); i++)
+    for (var i = 0; i < array_length(attack_list[_phase][_wastedhits]); i++)
     {
-        var b = attack_list[arg0][arg1][i];
+        var b = attack_list[_phase][_wastedhits][i];
         
         if (b[0] == vigi_attacks.reload || b[0] == vigi_attacks.crate)
         {
@@ -40,7 +41,8 @@ function vigilante_end_attack(arg0, arg1)
     
     if (!found) { }
 }
-
+#endregion
+#region State Funcs
 function scr_vigilante_arenaintro()
 {
     if (!introwait)
@@ -142,9 +144,9 @@ function scr_vigilante_arenaintro()
     }
 }
 
-function scr_vigilante_do_hurt_phase2(arg0)
+function scr_vigilante_do_hurt_phase2(_playerID)
 {
-    scr_boss_do_hurt_phase2(arg0);
+    scr_boss_do_hurt_phase2(_playerID);
 }
 
 function scr_vigilante_phase1hurt()
@@ -421,10 +423,10 @@ function scr_vigilante_walk()
     }
 }
 
-function scr_vigilante_do_cow(arg0 = 1, arg1 = 0)
+function scr_vigilante_do_cow(_shot = 1, _buffermax = 0)
 {
-    shot = arg0;
-    throwbuffermax = arg1;
+    shot = _shot;
+    throwbuffermax = _buffermax;
     scr_vigilante_throw_cow();
 }
 
@@ -455,12 +457,12 @@ function scr_vigilante_throw_cow()
         return false;
 }
 
-function scr_vigilante_do_revolver(arg0, arg1, arg2 = false)
+function scr_vigilante_do_revolver(_shot, _revolverbuffer, _jump = false)
 {
-    shot = arg0;
-    jump = arg2;
+    shot = _shot;
+    jump = _jump;
     state = states.revolver;
-    revolverbuffer = arg1;
+    revolverbuffer = _revolverbuffer;
     
     if (sprite_index != spr_playerV_revolvershoot && sprite_index != spr_playerV_revolverend)
         sprite_index = spr_playerV_revolverstart;
@@ -482,9 +484,9 @@ function scr_vigilante_do_revolver(arg0, arg1, arg2 = false)
     }
 }
 
-function scr_vigilante_do_dynamite(arg0)
+function scr_vigilante_do_dynamite(_shot)
 {
-    shot = arg0;
+    shot = _shot;
     state = states.dynamite;
     scr_vigilante_throw_dynamite();
 }
@@ -650,10 +652,10 @@ function scr_vigilante_revolver()
     }
 }
 
-function scr_vigilante_do_reload(arg0 = 360)
+function scr_vigilante_do_reload(_reloadbuffer = 360)
 {
     state = states.reloading;
-    reloadbuffer = arg0;
+    reloadbuffer = _reloadbuffer;
     sprite_index = spr_vigilante_vulnerable;
     image_index = 0;
 }
@@ -1241,3 +1243,4 @@ function scr_vigilante_hit()
     else
         scr_enemy_hit();
 }
+#endregion

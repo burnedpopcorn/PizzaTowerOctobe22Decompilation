@@ -1,6 +1,5 @@
-function cutscene_customer_start(arg0)
+function cutscene_customer_start(player)
 {
-    var player = arg0;
     var finish = true;
     
     if (finish)

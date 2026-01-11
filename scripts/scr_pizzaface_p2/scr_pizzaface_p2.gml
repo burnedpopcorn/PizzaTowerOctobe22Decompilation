@@ -207,8 +207,7 @@ function scr_pizzaface_p2_fishing()
             
             var t;
             
-            do
-                t = availablemoves[irandom(array_length(availablemoves) - 1)];
+            do { t = availablemoves[irandom(array_length(availablemoves) - 1)]; }
             until (lastattack != t || array_length(availablemoves) <= 1);
             
             lastattack = t;

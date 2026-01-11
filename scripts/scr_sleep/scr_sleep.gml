@@ -1,7 +1,7 @@
-function scr_sleep(arg0)
+function scr_sleep(_ms)
 {
     var time = current_time;
-    var ms = arg0;
+    var ms = _ms;
     
     do { } until ((current_time - time) >= round(ms));
     

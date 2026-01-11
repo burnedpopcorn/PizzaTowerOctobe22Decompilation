@@ -1,27 +1,27 @@
-function scr_destroy_tiles(arg0, arg1, arg2 = 0)
+function scr_destroy_tiles(_size, _layer, _spread = 0)
 {
-    var lay_id = layer_get_id(arg1);
+    var lay_id = layer_get_id(_layer);
     
     if (lay_id != -1)
     {
         var map_id = layer_tilemap_get_id(lay_id);
-        var w = abs(sprite_width) / arg0;
-        var h = abs(sprite_height) / arg0;
+        var w = abs(sprite_width) / _size;
+        var h = abs(sprite_height) / _size;
         var ix = sign(image_xscale);
         var iy = sign(image_yscale);
         
         if (ix < 0)
             w++;
         
-        var yy = 0 - arg2;
+        var yy = 0 - _spread;
         
-        while (yy < (h + arg2))
+        while (yy < (h + _spread))
         {
-            var xx = 0 - arg2;
+            var xx = 0 - _spread;
             
-            while (xx < (w + arg2))
+            while (xx < (w + _spread))
             {
-                scr_destroy_tile(x + (xx * arg0 * ix), y + (yy * arg0 * iy), map_id);
+                scr_destroy_tile(x + (xx * _size * ix), y + (yy * _size * iy), map_id);
                 xx++;
             }
             
@@ -30,25 +30,25 @@ function scr_destroy_tiles(arg0, arg1, arg2 = 0)
     }
 }
 
-function scr_destroy_tile_arr(arg0, arg1, arg2 = 0)
+function scr_destroy_tile_arr(_size, _array, _spread = 0)
 {
-    for (var i = 0; i < array_length(arg1); i++)
-        scr_destroy_tiles(arg0, arg1[i], arg2);
+    for (var i = 0; i < array_length(_array); i++)
+        scr_destroy_tiles(_size, _array[i], _spread);
 }
 
-function scr_destroy_tile(arg0, arg1, arg2)
+function scr_destroy_tile(_x, _y, _tilemap)
 {
-    var data = tilemap_get_at_pixel(arg2, arg0, arg1);
+    var data = tilemap_get_at_pixel(_tilemap, _x, _y);
     data = tile_set_empty(data);
-    tilemap_set_at_pixel(arg2, data, arg0, arg1);
+    tilemap_set_at_pixel(_tilemap, data, _x, _y);
 }
 
-function scr_solid_line(arg0)
+function scr_solid_line(_obj)
 {
-    if (collision_line(x, y, arg0.x, arg0.y, obj_solid, false, true) != noone)
+    if (collision_line(x, y, _obj.x, _obj.y, obj_solid, false, true) != noone)
         return true;
     
-    if (collision_line(x, y, arg0.x, arg0.y, obj_slope, false, true) != noone)
+    if (collision_line(x, y, _obj.x, _obj.y, obj_slope, false, true) != noone)
         return true;
     
     return false;
@@ -85,9 +85,7 @@ function scr_cutoff()
             with (b)
             {
                 if (!place_meeting(x, y, obj_solid))
-                {
                     instance_destroy();
-                }
                 else if (other.object_index == obj_tiledestroy || ((object_index != obj_cutoffsmall || other.object_index == obj_secretblock) && (object_index != obj_cutoff || (other.object_index == obj_secretbigblock || other.object_index == obj_secretmetalblock))))
                 {
                     var a = scr_cutoff_get_angle(b);
@@ -114,9 +112,9 @@ function scr_cutoff()
     ds_list_clear(global.instancelist);
 }
 
-function scr_cutoff_get_angle(arg0)
+function scr_cutoff_get_angle(_obj)
 {
-    var a = arg0.image_angle + 90;
-    var d = point_direction(0, 0, lengthdir_x(1, a) * arg0.image_yscale, lengthdir_y(1, a) * arg0.image_yscale);
+    var a = _obj.image_angle + 90;
+    var d = point_direction(0, 0, lengthdir_x(1, a) * _obj.image_yscale, lengthdir_y(1, a) * _obj.image_yscale);
     return d;
 }

@@ -1,10 +1,10 @@
-function cutscene_change_room(arg0)
+function cutscene_change_room(_room)
 {
     with (obj_player)
-        targetRoom = arg0;
+        targetRoom = _room;
     
     instance_create(x, y, obj_fadeout);
     
-    if (room == arg0)
+    if (room == _room)
         cutscene_end_action();
 }

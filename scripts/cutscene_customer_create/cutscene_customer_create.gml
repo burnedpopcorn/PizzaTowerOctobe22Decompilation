@@ -1,11 +1,5 @@
-function cutscene_customer_create(arg0, arg1, arg2, arg3, arg4)
+function cutscene_customer_create(xx, yy, _idle, _happy, _xscale)
 {
-    var xx = arg0;
-    var yy = arg1;
-    var _idle = arg2;
-    var _happy = arg3;
-    var _xscale = arg4;
-    
     with (instance_create(xx, yy, obj_customeractor))
     {
         image_xscale = _xscale;

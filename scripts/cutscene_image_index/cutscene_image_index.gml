@@ -1,8 +1,5 @@
-function cutscene_image_index(arg0, arg1)
+function cutscene_image_index(_obj, _index)
 {
-    var _obj = arg0;
-    var _index = arg1;
-    
     with (_obj)
         image_index = _index;
     

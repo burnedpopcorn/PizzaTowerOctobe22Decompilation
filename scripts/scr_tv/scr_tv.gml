@@ -17,19 +17,19 @@ function tv_reset()
     }
 }
 
-function tv_create_prompt(arg0, arg1, arg2, arg3)
+function tv_create_prompt(_text, _type, _sprite, _textspeed)
 {
-    return [arg0, arg1, arg2, arg3];
+    return [_text, _type, _sprite, _textspeed];
 }
 
-function tv_push_prompt(arg0, arg1, arg2, arg3)
+function tv_push_prompt(_text, _type, _sprite, _textspeed)
 {
     with (obj_tv)
     {
-        var b = [arg0, arg1, arg2, arg3];
+        var b = [_text, _type, _sprite, _textspeed];
         var play = false;
         
-        switch (arg1)
+        switch (_type)
         {
             case tvprompt.normal:
                 play = true;
@@ -69,36 +69,36 @@ function tv_push_prompt(arg0, arg1, arg2, arg3)
     }
 }
 
-function tv_push_prompt_array(arg0)
+function tv_push_prompt_array(_prompt)
 {
-    for (var i = 0; i < array_length(arg0); i++)
+    for (var i = 0; i < array_length(_prompt); i++)
     {
         with (obj_tv)
         {
-            var b = arg0[i];
+            var b = _prompt[i];
             tv_push_prompt(b[0], b[1], b[2], b[3]);
         }
     }
 }
 
-function tv_push_prompt_once(arg0, arg1)
+function tv_push_prompt_once(_prompt, _savename)
 {
     with (obj_tv)
     {
         if (special_prompts == noone)
             return false;
         
-        var b = special_prompts[? arg1];
+        var b = special_prompts[? _savename];
         
         if (is_undefined(b))
             return false;
         
         if (b != 1)
         {
-            tv_push_prompt(arg0[0], arg0[1], arg0[2], arg0[3]);
-            special_prompts[? arg1] = 1;
+            tv_push_prompt(_prompt[0], _prompt[1], _prompt[2], _prompt[3]);
+            special_prompts[? _savename] = 1;
             ini_open_from_string(obj_savesystem.ini_str);
-            ini_write_real("Prompts", arg1, 1);
+            ini_write_real("Prompts", _savename, 1);
             obj_savesystem.ini_str = ini_close();
             return true;
         }
@@ -112,14 +112,14 @@ function tv_default_condition()
     return place_meeting(x, y, obj_player);
 }
 
-function tv_do_expression(arg0)
+function tv_do_expression(_sprite)
 {
     with (obj_tv)
     {
-        if (expressionsprite != arg0 && bubblespr == noone)
+        if (expressionsprite != _sprite && bubblespr == noone)
         {
             state = states.tv_whitenoise;
-            expressionsprite = arg0;
+            expressionsprite = _sprite;
             
             switch (expressionsprite)
             {

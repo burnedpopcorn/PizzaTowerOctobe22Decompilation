@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Boss",
-    "path": "folders/Scripts/Baddies/Boss.yy",
+    "name": "Vigilante",
+    "path": "folders/Scripts/Baddies/Boss/Vigilante.yy",
   },
 }

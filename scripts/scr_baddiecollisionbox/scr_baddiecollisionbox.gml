@@ -1,8 +1,8 @@
-function baddiecollisionbox_update(arg0)
+function baddiecollisionbox_update(_player)
 {
-    if (arg0.cutscene == false && arg0.state != states.firemouth)
+    if (_player.cutscene == false && _player.state != states.firemouth)
     {
-        with (arg0)
+        with (_player)
         {
             var _destroy = false;
             var _stagger = false;
@@ -18,9 +18,7 @@ function baddiecollisionbox_update(arg0)
                     _destroy = true;
                 }
                 else if (state == states.Sjump || (state == states.freefall && freefallsmash > 10))
-                {
                     _destroy = true;
-                }
                 
                 if ((state == states.mach2 || state == states.machroll) && grounded)
                 {
@@ -51,9 +49,7 @@ function baddiecollisionbox_update(arg0)
                         }
                     }
                     else
-                    {
                         _destroy = true;
-                    }
                 }
                 
                 if (character == "M" && state == states.freefall)

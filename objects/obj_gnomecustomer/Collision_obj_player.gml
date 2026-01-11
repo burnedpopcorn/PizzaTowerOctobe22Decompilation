@@ -31,7 +31,13 @@ if (ds_list_find_index(global.saveroom, id) == -1)
         {
             var door_xscale = -sign(door.image_xscale * 16);
             depth = other.depth - 1;
-            scene_info = [[cutscene_customer_check, door.gnome_id, player, door], [cutscene_customer_start, player], [cutscene_customer_create, xx, yy, other.spr_idle, other.spr_happy, -door_xscale], [cutscene_customer_end, player]];
+            scene_info = 
+			[
+				[cutscene_customer_check, door.gnome_id, player, door], 
+				[cutscene_customer_start, player], 
+				[cutscene_customer_create, xx, yy, other.spr_idle, other.spr_happy, -door_xscale], 
+				[cutscene_customer_end, player]
+			];
         }
     }
 }

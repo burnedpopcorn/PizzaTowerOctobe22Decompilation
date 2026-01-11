@@ -164,32 +164,32 @@ function scr_bosscontroller_victory()
     }
 }
 
-function scr_bosscontroller_draw_health(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 = noone)
+function scr_bosscontroller_draw_health(_sprite, _maxrows, _maxcolumn, _HPcurrent, _HPmax, _HPx, _HPy, _xpad, _ypad, _subimg_index, _palette = noone)
 {
     var hpp = 0;
     
-    for (var _index = 0; hpp < arg4; _index++)
+    for (var _index = 0; hpp < _HPmax; _index++)
     {
         var c = c_white;
         var zpad = _index * 3;
         
-        if (arg10 != noone)
-            pal_swap_set(arg10, _index, false);
+        if (_palette != noone)
+            pal_swap_set(_palette, _index, false);
         
         var _x = 0;
         var _y = 0;
         
-        repeat (arg1 * arg2)
+        repeat (_maxrows * _maxcolumn)
         {
-            if (_index == 0 && arg3 < (arg1 * arg2) && hpp >= arg3)
+            if (_index == 0 && _HPcurrent < (_maxrows * _maxcolumn) && hpp >= _HPcurrent)
                 c = 0;
             
-            if (_index == 0 || hpp < arg3)
-                draw_sprite_ext(arg0, arg9, (arg5 + (_x * arg7)) - zpad, (arg6 + (_y * arg8)) - zpad, 1, 1, 0, c, 1);
+            if (_index == 0 || hpp < _HPcurrent)
+                draw_sprite_ext(_sprite, _subimg_index, (_HPx + (_x * _xpad)) - zpad, (_HPy + (_y * _ypad)) - zpad, 1, 1, 0, c, 1);
             
             _x++;
             
-            if (_x >= arg2)
+            if (_x >= _maxcolumn)
             {
                 _x = 0;
                 _y++;
@@ -200,26 +200,26 @@ function scr_bosscontroller_draw_health(arg0, arg1, arg2, arg3, arg4, arg5, arg6
     }
 }
 
-function scr_bosscontroller_get_health_pos(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8 = false)
+function scr_bosscontroller_get_health_pos(_HPcurrent, _maxrow, _maxcolumn, _HPmax, _HPx, _HPy, _xpad, _ypad, _unused = false)
 {
     var hpp = 0;
     
-    for (var _index = 0; hpp < arg3; _index++)
+    for (var _index = 0; hpp < _HPmax; _index++)
     {
         var zpad = _index * 3;
         var _x = 0;
         var _y = 0;
         
-        repeat (arg1 * arg2)
+        repeat (_maxrow * _maxcolumn)
         {
             hpp++;
             
-            if (hpp >= arg0)
-                return [(arg4 + (_x * arg6)) - zpad, (arg5 + (_y * arg7)) - zpad, _index];
+            if (hpp >= _HPcurrent)
+                return [(_HPx + (_x * _xpad)) - zpad, (_HPy + (_y * _ypad)) - zpad, _index];
             
             _x++;
             
-            if (_x >= arg2)
+            if (_x >= _maxcolumn)
             {
                 _x = 0;
                 _y++;

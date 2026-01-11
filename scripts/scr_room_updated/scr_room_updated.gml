@@ -1,7 +1,7 @@
 // unused and broken
-function scr_room_updated(arg0)
+function scr_room_updated(_room)
 {
-    if (arg0 == room || (room == live_blank_room && live_live_room == arg0))
+    if (_room == room || (room == live_blank_room && live_live_room == _room))
     {
         with (obj_player)
         {
@@ -11,6 +11,6 @@ function scr_room_updated(arg0)
             verticalhallway = savedverticalhallway;
         }
         
-        room_goto_live(arg0);
+        room_goto_live(_room);
     }
 }

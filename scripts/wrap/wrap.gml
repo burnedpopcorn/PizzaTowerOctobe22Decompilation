@@ -9,16 +9,10 @@ function wrap()
         while (_val > _max || _val < _min)
         {
             if (_val > _max)
-            {
                 _val = (_min + _val) - _max - 1;
-            }
             else if (_val < _min)
-            {
                 _val = ((_max + _val) - _min) + 1;
-            }
-            else
-            {
-            }
+            else { }
         }
         
         return _val;
@@ -32,16 +26,10 @@ function wrap()
             _old = _val;
             
             if (_val < _min)
-            {
                 _val = _max - (_min - _val);
-            }
             else if (_val > _max)
-            {
                 _val = _min + (_val - _max);
-            }
-            else
-            {
-            }
+            else { }
         }
         
         return _val;

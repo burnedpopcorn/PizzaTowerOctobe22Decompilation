@@ -98,9 +98,7 @@ function scr_pizzaface_normal()
             if (y < (room_height / 2))
             {
                 if (attackbuffer > 0)
-                {
                     attackbuffer--;
-                }
                 else
                 {
                     attackbuffer = 120 - (wastedhits * 15);
@@ -146,9 +144,7 @@ function scr_pizzaface_normal()
                 }
             }
             else if (sprite_index == spr_pizzaface_nosespit2)
-            {
                 sprite_index = spr_pizzaface_nosespit3;
-            }
             else if (sprite_index == spr_pizzaface_nosespit3)
             {
                 if (nosecount > 0)
@@ -157,9 +153,7 @@ function scr_pizzaface_normal()
                     sprite_index = spr_pizzaface_nosespit1;
                 }
                 else
-                {
                     sprite_index = spr_pizzaface;
-                }
             }
         }
     }

@@ -1,6 +1,5 @@
-function cutscene_gustavofail_end(arg0)
+function cutscene_gustavofail_end(time)
 {
-    var time = arg0;
     timer++;
     
     with (obj_gustavo)

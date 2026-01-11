@@ -1,9 +1,9 @@
-function scr_solid(arg0, arg1)
+function scr_solid(_x, _y)
 {
     var old_x = x;
     var old_y = y;
-    x = arg0;
-    y = arg1;
+    x = _x;
+    y = _y;
     
     if (place_meeting(x, y, obj_solid))
     {
@@ -47,9 +47,9 @@ function scr_solid(arg0, arg1)
     return false;
 }
 
-function check_slope(arg0)
+function check_slope(_obj)
 {
-    var slope = instance_place(x, y, arg0);
+    var slope = instance_place(x, y, _obj);
     
     if (slope)
     {
@@ -83,12 +83,12 @@ function check_slope(arg0)
     return false;
 }
 
-function scr_solid_slope(arg0, arg1)
+function scr_solid_slope(_x, _y)
 {
     var old_x = x;
     var old_y = y;
-    x = arg0;
-    y = arg1;
+    x = _x;
+    y = _y;
     
     if (check_slope(obj_slope))
     {

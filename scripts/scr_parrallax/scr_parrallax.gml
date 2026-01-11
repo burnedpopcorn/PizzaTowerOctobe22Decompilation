@@ -1,7 +1,7 @@
-function calculate_parrallax_still_x(arg0, arg1)
+function calculate_parrallax_still_x(_layer, _x)
 {
     var _cam_x = camera_get_view_x(view_camera[0]);
-    var lay = layer_get_id(arg0);
+    var lay = layer_get_id(_layer);
     var w = room_width - SCREEN_WIDTH;
     var per_x;
     
@@ -12,15 +12,15 @@ function calculate_parrallax_still_x(arg0, arg1)
     
     var si = layer_background_get_sprite(layer_background_get_id(lay));
     var sw = sprite_get_width(si) - SCREEN_WIDTH;
-    var r = sw * per_x * arg1;
+    var r = sw * per_x * _x;
     r = max(r, 0);
     return r;
 }
 
-function calculate_parrallax_still_y(arg0, arg1)
+function calculate_parrallax_still_y(_layer, _y)
 {
     var _cam_y = camera_get_view_y(view_camera[0]);
-    var lay = arg0;
+    var lay = _layer;
     var h = room_height - SCREEN_HEIGHT;
     var per_y;
     
@@ -31,7 +31,7 @@ function calculate_parrallax_still_y(arg0, arg1)
     
     var si = layer_background_get_sprite(layer_background_get_id(lay));
     var sh = sprite_get_height(si) - SCREEN_HEIGHT;
-    var r = sh * per_y * arg1;
+    var r = sh * per_y * _y;
     r = max(r, 0);
     return r;
 }

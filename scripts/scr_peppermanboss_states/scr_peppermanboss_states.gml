@@ -1,3 +1,4 @@
+#region Attack Funcs
 function boss_pepperman_decide_attack()
 {
     if (phase < 5)
@@ -11,9 +12,7 @@ function boss_pepperman_decide_attack()
 function pepperman_decide_attack_phase6()
 {
     if (attack_cooldown > 0)
-    {
         attack_cooldown--;
-    }
     else
     {
         targetstunned = 0;
@@ -50,9 +49,7 @@ function pepperman_decide_attack_phase6()
 function pepperman_decide_attack_phase5()
 {
     if (attack_cooldown > 0)
-    {
         attack_cooldown--;
-    }
     else
     {
         targetstunned = 0;
@@ -101,9 +98,7 @@ function pepperman_decide_attack_phase5()
 function pepperman_decide_attack_phase1()
 {
     if (attack_cooldown > 0)
-    {
         attack_cooldown--;
-    }
     else
     {
         targetstunned = 0;
@@ -176,7 +171,8 @@ function pepperman_decide_attack_phase1()
         }
     }
 }
-
+#endregion
+#region State Funcs
 function boss_pepperman_normal()
 {
     image_speed = 0.35;
@@ -187,9 +183,7 @@ function boss_pepperman_normal()
         var is_middle_player = targetplayer.x > (room_width / 5) && targetplayer.x < (room_width - (room_width / 5));
         
         if (is_middle && hsp == 0)
-        {
             hsp = (targetplayer.x > (room_width / 2)) ? -normal_spd : normal_spd;
-        }
         else if (!is_middle && hsp != 0)
         {
             image_xscale = -sign(hsp);
@@ -204,9 +198,7 @@ function boss_pepperman_normal()
         var is_playerside = (targetplayer.x > (room_width / 2)) ? (x > (room_width / 5)) : (x < (room_width - (room_width / 5)));
         
         if (is_playerside)
-        {
             hsp = (targetplayer.x > (room_width / 2)) ? -normal_spd : normal_spd;
-        }
         else if (!is_playerside && hsp != 0)
         {
             image_xscale = -sign(hsp);
@@ -232,9 +224,7 @@ function boss_pepperman_normal()
             boss_pepperman_decide_attack();
         }
         else
-        {
             sprite_index = spr_pepperman_fall;
-        }
     }
 }
 
@@ -253,9 +243,7 @@ function boss_pepperman_phase3normal()
         boss_pepperman_decide_attack();
     }
     else
-    {
         sprite_index = spr_pepperman_fall;
-    }
 }
 
 function boss_pepperman_jump()
@@ -325,9 +313,7 @@ function boss_pepperman_freefallprep()
         if (x > (target_x - 8) && x < (target_x + 8))
         {
             if (groundpound_readjust_buffer > 0)
-            {
                 groundpound_readjust_buffer--;
-            }
             else if (groundpound_readjust > 0)
             {
                 groundpound_readjust--;
@@ -423,9 +409,7 @@ function boss_pepperman_shoulderbash()
             shoulderpound_buffer = 0;
         
         if (shoulderpound_buffer > 0)
-        {
             shoulderpound_buffer--;
-        }
         else
         {
             with (instance_create(x, y - 5, obj_crazyrunothereffect))
@@ -581,9 +565,7 @@ function boss_pepperman_superattackcharge()
     y = Approach(y, targetplayer.y, _spd);
     
     if (superattack_buffer > 0)
-    {
         superattack_buffer--;
-    }
     else
     {
         state = states.superslam;
@@ -612,9 +594,7 @@ function boss_pepperman_fistmatch()
     vsp = 0;
     
     if (fist_buffer > 0)
-    {
         fist_buffer--;
-    }
     else
     {
         obj_bosscontroller.player_hp -= fist_dmg;
@@ -681,9 +661,7 @@ function boss_pepperman_fistmatch()
                 }
             }
             else if (image_index > (image_number - 1))
-            {
                 sprite_index = spr_idle;
-            }
         }
     }
     else
@@ -732,6 +710,7 @@ function boss_pepperman_fistmatchend()
             state = states.normal;
     }
 }
+#endregion
 
 function boss_pepperman_summonbricks()
 {

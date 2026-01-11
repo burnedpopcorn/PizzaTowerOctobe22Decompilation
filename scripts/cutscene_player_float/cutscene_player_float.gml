@@ -1,7 +1,7 @@
-function cutscene_player_float(arg0)
+function cutscene_player_float(_float)
 {
     with (obj_player)
-        float = arg0;
+        float = _float;
     
     cutscene_end_action();
 }

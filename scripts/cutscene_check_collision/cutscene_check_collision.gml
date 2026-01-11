@@ -1,7 +1,5 @@
-function cutscene_check_collision(arg0, arg1)
+function cutscene_check_collision(obj1, obj2)
 {
-    var obj1 = arg0;
-    var obj2 = arg1;
     var finish = false;
     
     with (obj1)

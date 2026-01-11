@@ -90,7 +90,7 @@ function scr_boss_pizzaheadjump()
     }
 }
 
-function boss_update_pizzaheadKO(arg0, arg1)
+function boss_update_pizzaheadKO(_HPsprite, _palette)
 {
     if (pizzahead && pizzaheadKO && !instance_exists(pizzaheadKO_ID))
     {
@@ -100,8 +100,8 @@ function boss_update_pizzaheadKO(arg0, arg1)
         
         with (obj_bosscontroller)
         {
-            boss_hpsprite = arg0;
-            boss_palette = arg1;
+            boss_hpsprite = _HPsprite;
+            boss_palette = _palette;
         }
         
         image_alpha = 1;
@@ -176,12 +176,12 @@ function scr_boss_pizzaheadKO()
     }
 }
 
-function scr_boss_do_hurt_phase2(arg0, arg1 = 80)
+function scr_boss_do_hurt_phase2(_playerID, _inv_time = 80)
 {
-    with (arg0)
+    with (_playerID)
     {
         state = states.phase1hurt;
-        invtime = arg1 + 40;
+        invtime = _inv_time + 40;
         sprite_index = spr_finishingblow1;
         image_index = 0;
         hitX = x;
@@ -190,14 +190,14 @@ function scr_boss_do_hurt_phase2(arg0, arg1 = 80)
     
     pulse = 0;
     state = states.phase1hurt;
-    buildup = arg1;
-    buildup_playerID = arg0;
+    buildup = _inv_time;
+    buildup_playerID = _playerID;
     camzoom = 1;
-    image_xscale = -arg0.xscale;
+    image_xscale = -_playerID.xscale;
     instance_create(0, 0, obj_bossdark);
 }
 
-function scr_boss_phase1hurt(arg0 = noone)
+function scr_boss_phase1hurt(_func = noone)
 {
     var player = buildup_playerID;
     var px = player.x + (player.xscale * 60);
@@ -305,8 +305,8 @@ function scr_boss_phase1hurt(arg0 = noone)
             thrown = true;
             linethrown = true;
             
-            if (arg0 != noone)
-                arg0();
+            if (_func != noone)
+                _func();
         }
     }
 }

@@ -1,8 +1,8 @@
-function add_music(arg0, arg1, arg2, arg3, arg4 = noone)
+function add_music(_room, _event, _secretevent, _continuous, _func = noone)
 {
     var b = 
     {
-        continuous: arg3,
+        continuous: _continuous,
         on_room_start: noone,
         value: 0,
         immediate: false,
@@ -12,23 +12,23 @@ function add_music(arg0, arg1, arg2, arg3, arg4 = noone)
     
     with (b)
     {
-        if (arg4 != noone)
-            on_room_start = method(self, arg4);
+        if (_func != noone)
+            on_room_start = method(self, _func);
         
-        if (arg1 != noone)
+        if (_event != noone)
         {
-            event_name = arg1;
-            event = fmod_event_create_instance(arg1);
+            event_name = _event;
+            event = fmod_event_create_instance(_event);
         }
         
-        if (arg2 != noone)
+        if (_secretevent != noone)
         {
-            event_secret_name = arg2;
-            event_secret = fmod_event_create_instance(arg2);
+            event_secret_name = _secretevent;
+            event_secret = fmod_event_create_instance(_secretevent);
         }
     }
     
-    music_map[? arg0] = b;
+    music_map[? _room] = b;
     return b;
 }
 
@@ -47,47 +47,47 @@ function stop_music()
     }
 }
 
-function hub_state(arg0, arg1, arg2)
+function hub_state(_room, _sound, _unused)
 {
     var s = 0;
     
-    switch (arg0)
+    switch (_room)
     {
-        case 248:
-        case 214:
+        case tower_1:
+        case tower_1up:
             s = 0;
             break;
         
-        case 292:
-        case 192:
+        case tower_2:
+        case tower_2up:
             s = 0;
             break;
         
-        case 267:
-        case 360:
+        case tower_3:
+        case tower_3up:
             s = 2;
             break;
         
-        case 335:
-        case 281:
+        case tower_4:
+        case tower_4up:
             s = 3;
             break;
         
-        case 339:
+        case tower_5:
             s = 0;
             break;
     }
     
-    fmod_event_instance_set_parameter(arg1, "hub", s, false);
+    fmod_event_instance_set_parameter(_sound, "hub", s, false);
 }
 
-function music_get_pos_wrap(arg0, arg1)
+function music_get_pos_wrap(_pos, _length)
 {
-    while (arg0 > arg1)
-        arg0 -= arg1;
+    while (_pos > _length)
+        _pos -= _length;
     
-    if (arg0 < 1)
-        arg0 = 1;
+    if (_pos < 1)
+        _pos = 1;
     
-    return arg0;
+    return _pos;
 }

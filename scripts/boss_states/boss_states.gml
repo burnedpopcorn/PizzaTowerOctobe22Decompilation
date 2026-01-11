@@ -18,7 +18,7 @@ function state_boss_chainsaw()
     }
 }
 
-function state_boss_walk(arg0)
+function state_boss_walk(_cooldown_func)
 {
     image_speed = 0.35;
     sprite_index = fallspr;
@@ -37,7 +37,7 @@ function state_boss_walk(arg0)
         {
             if (attack_cooldown <= 0)
             {
-                arg0();
+                _cooldown_func();
                 
                 if (object_index != obj_mrstickboss)
                     image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : targetxscale;
@@ -86,7 +86,7 @@ function state_boss_arenaround()
 }
 
 // unused
-function boss_decide_taunt(arg0) { }
+function boss_decide_taunt(_val) { }
 
 function state_boss_taunt()
 {

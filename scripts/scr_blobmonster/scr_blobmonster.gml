@@ -25,9 +25,7 @@ function scr_blob_normal()
         }
     }
     else if (place_meeting(x + hsp, y, obj_hallway))
-    {
         image_xscale *= -1;
-    }
 }
 
 function scr_blob_fall()

@@ -21,26 +21,26 @@ function scr_monster_activate()
     instance_create_unique(0, 0, obj_kidspartybg);
 }
 
-function get_triangle_points(arg0, arg1, arg2, arg3, arg4)
+function get_triangle_points(_x, _y, _angle, _len, _size)
 {
-    var x2 = arg0 + lengthdir_x(arg3, arg2 - arg4);
-    var y2 = arg1 + lengthdir_y(arg3, arg2 - arg4);
-    var x3 = arg0 + lengthdir_x(arg3, arg2 + arg4);
-    var y3 = arg1 + lengthdir_y(arg3, arg2 + arg4);
+    var x2 = _x + lengthdir_x(_len, _angle - _size);
+    var y2 = _y + lengthdir_y(_len, _angle - _size);
+    var x3 = _x + lengthdir_x(_len, _angle + _size);
+    var y3 = _y + lengthdir_y(_len, _angle + _size);
     return [x2, y2, x3, y3];
 }
 
-function scr_monster_detect(arg0, arg1, arg2)
+function scr_monster_detect(_x, _y, _obj)
 {
-    var _dir = (image_xscale > 0) ? (arg2.x > x) : (arg2.x < x);
+    var _dir = (image_xscale > 0) ? (_obj.x > x) : (_obj.x < x);
     
-    if (_dir && arg2.x < (x + arg0) && arg2.x > (x - arg0) && arg2.y < (y + arg1) && arg2.y > (y - arg1))
+    if (_dir && _obj.x < (x + _x) && _obj.x > (x - _x) && _obj.y < (y + _y) && _obj.y > (y - _y))
     {
         var detect = false;
         
-        if (arg2.y > (y - 200))
+        if (_obj.y > (y - 200))
         {
-            with (arg2)
+            with (_obj)
             {
                 if (state != states.crouch || (!scr_solid(x, y - 24) && !place_meeting(x, y - 24, obj_platform)))
                     detect = true;
@@ -65,37 +65,37 @@ function scr_puppet_detect()
     return noone;
 }
 
-function scr_puppet_appear(arg0)
+function scr_puppet_appear(_obj)
 {
     var _xdir = 96;
     var i = 0;
     
-    while (collision_line(arg0.x, arg0.y, arg0.x + (_xdir * arg0.xscale), arg0.y, obj_solid, false, true))
+    while (collision_line(_obj.x, _obj.y, _obj.x + (_xdir * _obj.xscale), _obj.y, obj_solid, false, true))
     {
         _xdir--;
         i++;
         
         if (i > room_width)
         {
-            x = arg0.x;
+            x = _obj.x;
             break;
         }
     }
     
-    x = arg0.x + (abs(_xdir) * arg0.xscale);
-    y = arg0.y;
+    x = _obj.x + (abs(_xdir) * _obj.xscale);
+    y = _obj.y;
     state = states.robotchase;
     substate = states.fall;
-    playerid = arg0;
+    playerid = _obj;
     
     while (place_meeting(x, y, obj_solid))
     {
-        x += ((arg0.x > x) ? 1 : -1);
+        x += ((_obj.x > x) ? 1 : -1);
         i++;
         
         if (i > room_width)
         {
-            x = arg0.x;
+            x = _obj.x;
             break;
         }
     }
@@ -109,7 +109,7 @@ function scr_puppet_appear(arg0)
     }
 }
 
-function scr_monsterinvestigate(arg0, arg1, arg2)
+function scr_monsterinvestigate(_hsp, _chase_sprite, _idle_sprite)
 {
     targetplayer = instance_nearest(x, y, obj_player);
     image_speed = 0.35;
@@ -118,8 +118,8 @@ function scr_monsterinvestigate(arg0, arg1, arg2)
     {
         case 0:
         case 1:
-            sprite_index = arg1;
-            hsp = image_xscale * arg0;
+            sprite_index = _chase_sprite;
+            hsp = image_xscale * _hsp;
             
             if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
             {
@@ -139,13 +139,11 @@ function scr_monsterinvestigate(arg0, arg1, arg2)
             break;
         
         case 2:
-            sprite_index = arg2;
+            sprite_index = _idle_sprite;
             hsp = 0;
             
             if (waitbuffer > 0)
-            {
                 waitbuffer--;
-            }
             else
             {
                 state = states.robotroaming;
@@ -180,9 +178,7 @@ function scr_monster_detect_audio()
                 chase = false;
             }
             else
-            {
                 state = states.robotchase;
-            }
         }
     }
 }

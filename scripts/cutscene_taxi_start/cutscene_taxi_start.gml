@@ -1,7 +1,5 @@
-function cutscene_taxi_start(arg0)
+function cutscene_taxi_start(player)
 {
-    var player = arg0;
-    
     with (player)
     {
         global.failcutscene = true;

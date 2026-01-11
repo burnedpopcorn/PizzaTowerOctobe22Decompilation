@@ -1,5 +1,5 @@
-function cutscene_do_dialog(arg0)
+function cutscene_do_dialog(_dialog)
 {
-    do_dialog(arg0);
+    do_dialog(_dialog);
     cutscene_end_action();
 }
