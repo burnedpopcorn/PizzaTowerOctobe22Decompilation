@@ -1,6 +1,6 @@
-// string_split conflicts with newer GMS2 versions
-// either rename this function or remove it when upgrading
-function string_split(_string, _split)
+// string_split conflicts with newer GMS2 versions, including LTS
+// so yeah, gotta change it a bit
+function _string_split(_string, _split)
 {
     _string += " ";
     var _current_str = "";

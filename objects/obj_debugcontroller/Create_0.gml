@@ -332,7 +332,7 @@ if (DEBUG)
     
     function DoCommand(arg0)
     {
-        var commands = string_split(arg0, " ");
+        var commands = _string_split(arg0, " ");
         
         if (array_length(commands) > 1)
         {
