@@ -1,44 +1,44 @@
-function scr_get_tutorial_key(arg0)
+function scr_get_tutorial_key(_key)
 {
     var spr = noone;
     var ix = 0;
     var txt = noone;
     
-    switch (arg0)
+    switch (_key)
     {
-        case 37:
+        case vk_left:
             spr = spr_tutorialgamepad;
             ix = 16;
             break;
         
-        case 39:
+        case vk_right:
             spr = spr_tutorialgamepad;
             ix = 17;
             break;
         
-        case 38:
+        case vk_up:
             spr = spr_tutorialgamepad;
             ix = 4;
             break;
         
-        case 40:
+        case vk_down:
             spr = spr_tutorialgamepad;
             ix = 5;
             break;
         
-        case 16:
-        case 160:
+        case vk_shift:
+        case vk_lshift:
             spr = spr_tutorialkeyspecial;
             ix = 0;
             break;
         
-        case 17:
-        case 162:
+        case vk_control:
+        case vk_lcontrol:
             spr = spr_tutorialkeyspecial;
             ix = 1;
             break;
         
-        case 32:
+        case vk_space:
             spr = spr_tutorialkeyspecial;
             ix = 2;
             break;
@@ -46,18 +46,18 @@ function scr_get_tutorial_key(arg0)
         default:
             spr = spr_tutorialkey;
             ix = 0;
-            txt = chr(arg0);
+            txt = chr(_key);
             break;
     }
     
     return [spr, ix, txt];
 }
 
-function scr_string_width(arg0)
+function scr_string_width(_string)
 {
     var pos = 0;
     var w = 0;
-    var originalstr = arg0;
+    var originalstr = _string;
     var str_arr = array_create(0);
     
     while (pos < string_length(originalstr))
@@ -72,13 +72,11 @@ function scr_string_width(arg0)
                 break;
         }
         else
-        {
             pos++;
-        }
     }
     
     if (array_length(str_arr) == 0)
-        w = string_width(arg0);
+        w = string_width(_string);
     
     for (var i = 0; i < array_length(str_arr); i++)
     {
@@ -91,16 +89,16 @@ function scr_string_width(arg0)
     return w;
 }
 
-function scr_separate_text(arg0, arg1, arg2)
+function scr_separate_text(_string, _font, _width)
 {
-    draw_set_font(arg1);
+    draw_set_font(_font);
     
-    while (scr_string_width(arg0) > (arg2 - string_width("a")))
+    while (scr_string_width(_string) > (_width - string_width("a")))
     {
-        var _pos = string_length(arg0);
+        var _pos = string_length(_string);
         var _oldpos = _pos;
         
-        while (string_char_at(arg0, _pos) != " ")
+        while (string_char_at(_string, _pos) != " ")
         {
             _pos--;
             
@@ -108,33 +106,33 @@ function scr_separate_text(arg0, arg1, arg2)
                 _pos = _oldpos;
         }
         
-        if (string_char_at(arg0, _pos) == " ")
-            arg0 = string_delete(arg0, _pos, 1);
+        if (string_char_at(_string, _pos) == " ")
+            _string = string_delete(_string, _pos, 1);
         
-        arg0 = string_insert("\n", arg0, _pos);
+        _string = string_insert("\n", _string, _pos);
     }
     
-    return arg0;
+    return _string;
 }
 
-function scr_calculate_text(arg0)
+function scr_calculate_text(_text)
 {
     draw_set_font(font2);
     var pos = 0;
     var str2 = "";
     
-    while (pos <= string_length(arg0))
+    while (pos <= string_length(_text))
     {
         pos++;
-        str2 = string_insert(string_char_at(arg0, pos), str2, string_length(str2) + 1);
+        str2 = string_insert(string_char_at(_text, pos), str2, string_length(str2) + 1);
         str2 = scr_separate_text(str2);
     }
     
     return str2;
 }
 
-function scr_calculate_height(arg0)
+function scr_calculate_height(_text)
 {
-    var str2 = scr_calculate_text(arg0);
+    var str2 = scr_calculate_text(_text);
     return string_height(str2);
 }

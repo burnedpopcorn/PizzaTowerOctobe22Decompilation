@@ -29,15 +29,15 @@ function scr_get_languages()
     }
 }
 
-function lang_get_value(arg0)
+function lang_get_value(_entry)
 {
-    return global.lang_map[? global.lang][? arg0];
+    return global.lang_map[? global.lang][? _entry];
 }
 
-function lang_parse(arg0)
+function lang_parse(_langstring)
 {
     var list = ds_list_create();
-    lang_lexer(list, arg0);
+    lang_lexer(list, _langstring);
     var map = lang_exec(list);
     var lang = map[? "lang"];
     global.lang_map[? lang] = map;
@@ -53,15 +53,15 @@ enum lexer
 	eof = 4,
 }
 
-function lang_lexer(arg0, arg1)
+function lang_lexer(_list, _string)
 {
-    var len = string_length(arg1);
+    var len = string_length(_string);
     var pos = 1;
     
     while (pos <= len)
     {
         var start = pos;
-        var char = string_ord_at(arg1, pos);
+        var char = string_ord_at(_string, pos);
         pos += 1;
         
         switch (char)
@@ -75,7 +75,7 @@ function lang_lexer(arg0, arg1)
             case ord("#"):
                 while (pos <= len)
                 {
-                    char = string_ord_at(arg1, pos);
+                    char = string_ord_at(_string, pos);
                     
                     if (char == ord("\r") || char == ord("\n"))
                         break;
@@ -86,14 +86,14 @@ function lang_lexer(arg0, arg1)
                 break;
             
             case ord("="):
-                ds_list_add(arg0, [lexer.set, start]);
+                ds_list_add(_list, [lexer.set, start]);
                 break;
             
             case ord("\""):
             case ord("'"):// might be ord("\\") idk //39
                 while (pos <= len)
                 {
-                    char = string_ord_at(arg1, pos);
+                    char = string_ord_at(_string, pos);
                     
                     if (char != ord("\"") && char != ord("'"))
                         pos += 1;
@@ -103,8 +103,8 @@ function lang_lexer(arg0, arg1)
                 
                 if (pos <= len)
                 {
-                    var val = string_copy(arg1, start + 1, pos - start - 1);
-                    ds_list_add(arg0, [lexer.value, start, val]);
+                    var val = string_copy(_string, start + 1, pos - start - 1);
+                    ds_list_add(_list, [lexer.value, start, val]);
                     pos += 1;
                 }
                 else
@@ -117,7 +117,7 @@ function lang_lexer(arg0, arg1)
                 {
                     while (pos <= len)
                     {
-                        char = string_ord_at(arg1, pos);
+                        char = string_ord_at(_string, pos);
                         
                         if (lang_get_identifier(char, true))
                             pos += 1;
@@ -125,20 +125,20 @@ function lang_lexer(arg0, arg1)
                             break;
                     }
                     
-                    var name = string_copy(arg1, start, pos - start);
+                    var name = string_copy(_string, start, pos - start);
                     
                     switch (name)
                     {
                         case "false":
-                            ds_list_add(arg0, [lexer.keyword, start, false]);
+                            ds_list_add(_list, [lexer.keyword, start, false]);
                             break;
                         
                         case "true":
-                            ds_list_add(arg0, [lexer.keyword, start, true]);
+                            ds_list_add(_list, [lexer.keyword, start, true]);
                             break;
                         
                         default:
-                            ds_list_add(arg0, [lexer.name, start, name]);
+                            ds_list_add(_list, [lexer.name, start, name]);
                     }
                 }
                 
@@ -146,32 +146,32 @@ function lang_lexer(arg0, arg1)
         }
     }
     
-    ds_list_add(arg0, [lexer.eof, len + 1]);
+    ds_list_add(_list, [lexer.eof, len + 1]);
 }
 
-function lang_get_identifier(arg0, arg1)
+function lang_get_identifier(_keycode, _allow_numbers)
 {
-    if (arg1)
-        return arg0 == ord("_") || (arg0 >= ord("a") && arg0 <= ord("z")) || (arg0 >= ord("A") && arg0 <= ord("Z")) || (arg0 >= ord("0") && arg0 <= ord("9"));
+    if (_allow_numbers)
+        return _keycode == ord("_") || (_keycode >= ord("a") && _keycode <= ord("z")) || (_keycode >= ord("A") && _keycode <= ord("Z")) || (_keycode >= ord("0") && _keycode <= ord("9"));
     else
-        return arg0 == ord("_") || (arg0 >= ord("a") && arg0 <= ord("z")) || (arg0 >= ord("A") && arg0 <= ord("Z"));
+        return _keycode == ord("_") || (_keycode >= ord("a") && _keycode <= ord("z")) || (_keycode >= ord("A") && _keycode <= ord("Z"));
 }
 
-function lang_exec(arg0)
+function lang_exec(_list)
 {
     var map = ds_map_create();
-    var len = ds_list_size(arg0);
+    var len = ds_list_size(_list);
     var pos = 0;
     
     while (pos < len)
     {
-        var q = arg0[| pos++];
+        var q = _list[| pos++];
         
         switch (q[0])
         {
             case lexer.set:
-                var ident = array_get(arg0[| pos - 2], 2);
-                var val = array_get(arg0[| pos++], 2);
+                var ident = array_get(_list[| pos - 2], 2);
+                var val = array_get(_list[| pos++], 2);
                 map[? ident] = val;
                 break;
         }
@@ -180,19 +180,19 @@ function lang_exec(arg0)
     return map;
 }
 
-function lang_get_custom_font(arg0, arg1)
+function lang_get_custom_font(_fontname, _language)
 {
-    var font_map = arg1[? concat(arg0, "_map")];
+    var font_map = _language[? concat(_fontname, "_map")];
     var font_size = string_length(font_map);
-    var font_sep = arg1[? concat(arg0, "_sep")];
+    var font_sep = _language[? concat(_fontname, "_sep")];
     font_sep = real(font_sep);
     var font_xorig = 0;
     var font_yorig = 0;
-    var spr = sprite_add(concat("lang/", arg1[? concat(arg0, "_dir")]), font_size, true, false, font_xorig, font_yorig);
+    var spr = sprite_add(concat("lang/", _language[? concat(_fontname, "_dir")]), font_size, true, false, font_xorig, font_yorig);
     return font_add_sprite_ext(spr, font_map, false, font_sep);
 }
 
-function lang_get_font(arg0)
+function lang_get_font(_fontname)
 {
-    return global.font_map[? lang_get_value(arg0)];
+    return global.font_map[? lang_get_value(_fontname)];
 }

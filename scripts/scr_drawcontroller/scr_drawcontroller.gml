@@ -1,6 +1,6 @@
-function get_dark(arg0, arg1)
+function get_dark(_blend, _use_dark)
 {
-    if (arg1)
+    if (_use_dark)
     {
         var d = room_width * room_height;
         var b = d;
@@ -30,15 +30,13 @@ function get_dark(arg0, arg1)
         a -= 102;
         t = clamp(t, 0, 255);
         a = clamp(a, 0, 255);
-        return make_color_rgb((color_get_red(arg0) - t) + a, (color_get_green(arg0) - t) + a, (color_get_blue(arg0) - t) + a);
+        return make_color_rgb((color_get_red(_blend) - t) + a, (color_get_green(_blend) - t) + a, (color_get_blue(_blend) - t) + a);
     }
     else
-    {
         return image_blend;
-    }
 }
 
-function draw_enemy(arg0, arg1, arg2 = c_white)
+function draw_enemy(_healthbar, _palette, _color = c_white)
 {
     var _stun = 0;
     
@@ -50,13 +48,13 @@ function draw_enemy(arg0, arg1, arg2 = c_white)
         var c = image_blend;
         
         if (elite)
-            c = 65535;
+            c = c_yellow;
         
         if (elitegrab)
-            c = 32768;
+            c = c_green;
         
-        if (arg2 != c_white)
-            c = arg2;
+        if (_color != c_white)
+            c = _color;
         
         var b = get_dark(c, obj_drawcontroller.use_dark);
         
@@ -65,7 +63,7 @@ function draw_enemy(arg0, arg1, arg2 = c_white)
             shader_set(global.Pal_Shader);
             pal_swap_set(spr_peppalette, 1, false);
         }
-        else if (usepalette && arg1)
+        else if (usepalette && _palette)
         {
             shader_set(global.Pal_Shader);
             pal_swap_set(spr_palette, paletteselect, false);
@@ -86,7 +84,7 @@ function draw_enemy(arg0, arg1, arg2 = c_white)
         
         draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
         
-        if (arg0)
+        if (_healthbar)
         {
             if (hp > maxhp)
                 maxhp = hp;
@@ -94,7 +92,7 @@ function draw_enemy(arg0, arg1, arg2 = c_white)
             draw_healthbar(x - 16, y - 50, x + 16, y - 45, (hp / maxhp) * 100, c_black, c_red, c_red, 0, true, true);
         }
         
-        if (object_index == obj_peppinoclone || (usepalette && arg1))
+        if (object_index == obj_peppinoclone || (usepalette && _palette))
             shader_reset();
         
         if (object_index == obj_hamkuff)

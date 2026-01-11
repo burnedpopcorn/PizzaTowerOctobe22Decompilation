@@ -6,7 +6,7 @@ enum menutype
 	slide = 3,
 }
 
-function menu_goto(arg0)
+function menu_goto(_menuID)
 {
     menu = 0;
     
@@ -14,7 +14,7 @@ function menu_goto(arg0)
     {
         var b = menus[i];
         
-        if (b.menu_id == arg0)
+        if (b.menu_id == _menuID)
         {
             menu = i;
             break;
@@ -24,82 +24,82 @@ function menu_goto(arg0)
     optionselected = 0;
 }
 
-function create_menu_fixed(arg0, arg1, arg2, arg3)
+function create_menu_fixed(_menuID, _anchor, _xpad, _ypad)
 {
     return 
     {
-        menu_id: arg0,
+        menu_id: _menuID,
         type: menutype.toggle,
-        anchor: arg1,
-        xpad: arg2,
-        ypad: arg3,
+        anchor: _anchor,
+        xpad: _xpad,
+        ypad: _ypad,
         options: []
     };
 }
 
-function add_option_press(arg0, arg1, arg2, arg3)
+function add_option_press(_menu, _optionID, _name, _func)
 {
     var b = 
     {
-        option_id: arg1,
+        option_id: _optionID,
         type: menutype.press,
-        func: arg3,
-        name: arg2
+        func: _func,
+        name: _name
     };
-    array_push(arg0.options, b);
+    array_push(_menu.options, b);
     return b;
 }
 
-function add_option_toggle(arg0, arg1, arg2, arg3 = noone)
+function add_option_toggle(_menu, _optionID, _name, _on_changed = noone)
 {
     var b = 
     {
-        option_id: arg1,
+        option_id: _optionID,
         type: menutype.toggle,
         value: false,
-        name: arg2,
-        on_changed: arg3
+        name: _name,
+        on_changed: _on_changed
     };
-    array_push(arg0.options, b);
+    array_push(_menu.options, b);
     return b;
 }
 
-function add_option_multiple(arg0, arg1, arg2, arg3, arg4 = noone)
+function add_option_multiple(_menu, _optionID, _name, _values, _on_changed = noone)
 {
     var b = 
     {
-        option_id: arg1,
+        option_id: _optionID,
         type: menutype.multiple,
-        values: arg3,
+        values: _values,
         value: 0,
-        name: arg2,
-        on_changed: arg4
+        name: _name,
+        on_changed: _on_changed
     };
-    array_push(arg0.options, b);
+    array_push(_menu.options, b);
     return b;
 }
 
-function create_option_value(arg0, arg1, arg2 = true)
+function create_option_value(_name, _value, _localization = true)
 {
     return 
     {
-        name: arg0,
-        value: arg1,
-        localization: arg2
+        name: _name,
+        value: _value,
+        localization: _localization
     };
 }
 
-function add_option_slide(arg0, arg1, arg2, arg3 = noone)
+function add_option_slide(_menu, _optionID, _name, _on_changed = noone)
 {
     var b = 
     {
-        option_id: arg1,
+        option_id: _optionID,
         type: menutype.slide,
         value: 100,
         moved: false,
-        name: arg2,
-        on_changed: arg3
+        name: _name,
+        on_changed: _on_changed
     };
-    array_push(arg0.options, b);
+    array_push(_menu.options, b);
     return b;
 }

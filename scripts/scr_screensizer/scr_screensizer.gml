@@ -12,18 +12,18 @@ function screen_apply_size()
     }
 }
 
-function surface_safe_set_target(arg0)
+function surface_safe_set_target(_surf)
 {
     surface_reset_target();
-    surface_set_target(arg0);
+    surface_set_target(_surf);
 }
 
-function set_gui_target(arg0)
+function set_gui_target(_surf)
 {
     while (surface_get_target() != -1 && surface_get_target() != application_surface)
         surface_reset_target();
     
-    surface_set_target(arg0);
+    surface_set_target(_surf);
 }
 
 function surface_safe_reset_target()
@@ -59,55 +59,55 @@ function reset_shader_fix()
     shader_set(shd_alphafix);
 }
 
-function window_to_gui_x(arg0)
+function window_to_gui_x(_x)
 {
-    var _win_pos = arg0 / window_get_width();
+    var _win_pos = _x / window_get_width();
     return display_get_gui_width() * _win_pos;
 }
 
-function window_to_gui_y(arg0)
+function window_to_gui_y(_y)
 {
-    var _win_pos = arg0 / window_get_height();
+    var _win_pos = _y / window_get_height();
     return display_get_gui_height() * _win_pos;
 }
 
-function window_to_gui_xscale(arg0)
+function window_to_gui_xscale(_xscale)
 {
-    return (arg0 * display_get_gui_width()) / window_get_width();
+    return (_xscale * display_get_gui_width()) / window_get_width();
 }
 
-function window_to_gui_yscale(arg0)
+function window_to_gui_yscale(_yscale)
 {
-    return (arg0 * display_get_gui_height()) / window_get_height();
+    return (_yscale * display_get_gui_height()) / window_get_height();
 }
 
-function get_resolution_width(arg0, arg1 = aspectratio.normal)
+function get_resolution_width(_resolution, _aspect_ratio = aspectratio.normal)
 {
-    if (arg0 < 0 || arg0 >= array_length(global.resolutions[arg1]))
-        return get_resolution_width(1, arg1);
+    if (_resolution < 0 || _resolution >= array_length(global.resolutions[_aspect_ratio]))
+        return get_resolution_width(1, _aspect_ratio);
     
-    return global.resolutions[arg1][arg0][0];
+    return global.resolutions[_aspect_ratio][_resolution][0];
 }
 
-function get_resolution_height(arg0, arg1 = aspectratio.normal)
+function get_resolution_height(_resolution, _aspect_ratio = aspectratio.normal)
 {
-    if (arg0 < 0 || arg0 >= array_length(global.resolutions[arg1]))
-        return get_resolution_height(1, arg1);
+    if (_resolution < 0 || _resolution >= array_length(global.resolutions[_aspect_ratio]))
+        return get_resolution_height(1, _aspect_ratio);
     
-    return global.resolutions[arg1][arg0][1];
+    return global.resolutions[_aspect_ratio][_resolution][1];
 }
 
-function get_resolution(arg0, arg1 = aspectratio.normal)
+function get_resolution(_resolution, _aspect_ratio = aspectratio.normal)
 {
-    if (arg0 < 0 || arg0 >= array_length(global.resolutions[arg1]))
+    if (_resolution < 0 || _resolution >= array_length(global.resolutions[_aspect_ratio]))
         return noone;
     
-    return global.resolutions[arg1][arg0];
+    return global.resolutions[_aspect_ratio][_resolution];
 }
 
-function screen_clear(arg0 = 0)
+function screen_clear(_color = c_black)
 {
-    draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, arg0, arg0, arg0, arg0, false);
+    draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, _color, _color, _color, _color, false);
 }
 
 function get_options()

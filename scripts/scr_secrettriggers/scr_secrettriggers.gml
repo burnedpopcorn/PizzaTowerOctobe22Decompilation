@@ -1,23 +1,23 @@
-function secret_add(arg0, arg1)
+function secret_add(_create_func, _func)
 {
     with (obj_secretmanager)
     {
-        ds_list_add(secrettriggers, [arg1]);
+        ds_list_add(secrettriggers, [_func]);
         
-        if (arg0 != noone)
-            method(id, arg0)();
+        if (_create_func != noone)
+            method(id, _create_func)();
     }
 }
 
-function secret_add_touchall(arg0, arg1, arg2)
+function secret_add_touchall(_room, _trigger, _touchallID)
 {
     with (obj_secretmanager)
-        ds_list_add(touchall, [arg0, arg1, arg2]);
+        ds_list_add(touchall, [_room, _trigger, _touchallID]);
 }
 
-function secret_add_touchall_requirement(arg0, arg1)
+function secret_add_touchall_requirement(_idx, _trigger)
 {
-    touchrequirement[arg0] = [arg1, false];
+    touchrequirement[_idx] = [_trigger, false];
 }
 
 function secret_check_touchall()
@@ -58,45 +58,40 @@ function secret_check_touchall()
     return false;
 }
 
-function secret_check_trigger(arg0)
+function secret_check_trigger(_secret_trigger)
 {
     var _found = false;
     
     with (obj_secrettrigger)
     {
-        if (trigger == arg0 && active)
+        if (trigger == _secret_trigger && active)
             _found = true;
     }
     
     if (_found)
-    {
-        trace(
-        {
-            found: _found
-        });
-    }
+        trace( { found: _found } );
     
     return _found;
 }
 
-function secret_open_portal(arg0)
+function secret_open_portal(_secret_trigger)
 {
     with (obj_secretportal)
     {
-        if (trigger == arg0 && ds_list_find_index(global.saveroom, id) == -1 && !place_meeting(x, y, obj_marbleblock) && !place_meeting(x, y, obj_secretblock) && !place_meeting(x, y, obj_secretbigblock) && !place_meeting(x, y, obj_secretmetalblock) && !place_meeting(x, y, obj_secretdestroyable))
+        if (trigger == _secret_trigger && ds_list_find_index(global.saveroom, id) == -1 && !place_meeting(x, y, obj_marbleblock) && !place_meeting(x, y, obj_secretblock) && !place_meeting(x, y, obj_secretbigblock) && !place_meeting(x, y, obj_secretmetalblock) && !place_meeting(x, y, obj_secretdestroyable))
             active = true;
     }
 }
 
-function secret_close_portal(arg0, arg1 = false)
+function secret_close_portal(_secret_trigger, _fast = false)
 {
     with (obj_secretportal)
     {
-        if (trigger == arg0 && sprite_index != spr_secretportal_close)
+        if (trigger == _secret_trigger && sprite_index != spr_secretportal_close)
         {
             sprite_index = spr_secretportal_close;
             
-            if (!arg1)
+            if (!_fast)
                 image_index = 0;
             else
                 image_index = 14;
@@ -106,9 +101,9 @@ function secret_close_portal(arg0, arg1 = false)
     }
 }
 
-function secret_close_portalID(arg0)
+function secret_close_portalID(_portalID)
 {
-    with (arg0)
+    with (_portalID)
     {
         sprite_index = spr_secretportal_close;
         image_index = 14;

@@ -23,11 +23,11 @@ enum texttype
 	array = 2,		// does scr_draw_text_arr within itself
 }
 
-function create_transformation_tip(arg0, arg1 = noone)
+function create_transformation_tip(_string, _save_entry = noone)
 {
     ini_open_from_string(obj_savesystem.ini_str);
     
-    if (arg1 != noone && ini_read_real("Tip", arg1, false))
+    if (_save_entry != noone && ini_read_real("Tip", _save_entry, false))
     {
         ini_close();
         exit;
@@ -36,27 +36,27 @@ function create_transformation_tip(arg0, arg1 = noone)
     instance_destroy(obj_transfotip);
     
     with (instance_create(0, 0, obj_transfotip))
-        text = arg0;
+        text = _string;
     
-    if (arg1 != noone)
-        ini_write_real("Tip", arg1, true);
+    if (_save_entry != noone)
+        ini_write_real("Tip", _save_entry, true);
     
     obj_savesystem.ini_str = ini_close();
 }
 
-function scr_compile_icon_text(arg0, arg1 = 1, arg2 = false)
+function scr_compile_icon_text(_text, _pos = 1, _return_array = false)
 {
     var arr = [];
-    var len = string_length(arg0);
+    var len = string_length(_text);
     var newline = string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     var char_x = 0;
     var char_y = 0;
     var saved_pos = 1;
     
-    while (arg1 <= len)
+    while (_pos <= len)
     {
-        var start = arg1;
-        var char = string_ord_at(arg0, arg1);
+        var start = _pos;
+        var char = string_ord_at(_text, _pos);
         
         switch (char)
         {
@@ -66,10 +66,10 @@ function scr_compile_icon_text(arg0, arg1 = 1, arg2 = false)
                 break;
             
             case ord("{"):
-                var effect = string_copy(arg0, arg1, 3);
+                var effect = string_copy(_text, _pos, 3);
                 var te = texteffects.shake;
-                arg1 += 3;
-                var n = scr_compile_icon_text(arg0, arg1, true);
+                _pos += 3;
+                var n = scr_compile_icon_text(_text, _pos, true);
                 
                 switch (effect)
                 {
@@ -79,13 +79,13 @@ function scr_compile_icon_text(arg0, arg1 = 1, arg2 = false)
                 }
                 
                 array_push(arr, [char_x, char_y, texttype.array, te, n[0]]);
-                arg1 = n[1];
+                _pos = n[1];
                 char_x = n[2];
                 char_y = n[3];
                 break;
             
             case ord("["):
-                var button = string_copy(arg0, arg1, 3);
+                var button = string_copy(_text, _pos, 3);
                 var t = texttype.icon;
                 var b = textkey.up;
                 
@@ -134,53 +134,53 @@ function scr_compile_icon_text(arg0, arg1 = 1, arg2 = false)
                 
                 array_push(arr, [char_x, char_y, t, b]);
                 char_x += 32;
-                arg1 += 2;
+                _pos += 2;
                 break;
             
             case ord("/"):
-                if (arg2)
+                if (_return_array)
                 {
-                    saved_pos = arg1;
-                    arg1 = len + 1;
+                    saved_pos = _pos;
+                    _pos = len + 1;
                 }
                 
                 break;
             
             default:
-                while ((arg1 + 1) <= len)
+                while ((_pos + 1) <= len)
                 {
-                    char = string_ord_at(arg0, arg1 + 1);
+                    char = string_ord_at(_text, _pos + 1);
                     
                     if (char != ord("[") && char != ord("\n") && char != ord("{") && char != ord("/"))
-                        arg1 += 1;
+                        _pos += 1;
                     else
                         break;
                 }
                 
-                var n = string_copy(arg0, start, (arg1 - start) + 1);
+                var n = string_copy(_text, start, (_pos - start) + 1);
                 array_push(arr, [char_x, char_y, texttype.normal, n]);
                 char_x += string_width(n);
                 break;
         }
         
-        arg1 += 1;
+        _pos += 1;
     }
     
-    if (arg2)
+    if (_return_array)
         return [arr, saved_pos, char_x, char_y];
     
     return arr;
 }
 
-function scr_text_arr_size(arg0)
+function scr_text_arr_size(_array)
 {
     var w = 0;
     var newline = string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     var h = newline;
     
-    for (var i = 0; i < array_length(arg0); i++)
+    for (var i = 0; i < array_length(_array); i++)
     {
-        var b = arg0[i];
+        var b = _array[i];
         var cx = b[0];
         var cy = b[1];
         var t = b[2];
@@ -223,16 +223,16 @@ function scr_text_arr_size(arg0)
     return [w, h];
 }
 
-function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = texteffects.normal)
+function scr_draw_text_arr(_x, _y, _text_arr, _color = c_white, _alpha = 1, _effect = texteffects.normal)
 {
-    if (arg2 == noone)
+    if (_text_arr == noone)
         exit;
     
-    for (var i = 0; i < array_length(arg2); i++)
+    for (var i = 0; i < array_length(_text_arr); i++)
     {
-        var b = arg2[i];
-        var cx = arg0 + b[0];
-        var cy = arg1 + b[1];
+        var b = _text_arr[i];
+        var cx = _x + b[0];
+        var cy = _y + b[1];
         var t = b[2];
         var val = b[3];
         
@@ -363,9 +363,9 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = te
                     }
                 }
                 
-                if (arg5 != texteffects.normal)
+                if (_effect != texteffects.normal)
                 {
-                    switch (arg5)
+                    switch (_effect)
                     {
                         case texteffects.shake:
                             cx += irandom_range(-2, 2);
@@ -395,17 +395,17 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = te
             
             case texttype.array:
                 var val2 = b[4];
-                scr_draw_text_arr(cx, cy, val2, arg3, arg4, val);
+                scr_draw_text_arr(cx, cy, val2, _color, _alpha, val);
                 break;
             
             case texttype.normal:
-                if (arg5 == texteffects.normal)
-                    draw_text_color(cx, cy, val, arg3, arg3, arg3, arg3, arg4);
+                if (_effect == texteffects.normal)
+                    draw_text_color(cx, cy, val, _color, _color, _color, _color, _alpha);
                 else
                 {
                     var x2 = 0;
                     
-                    switch (arg5)
+                    switch (_effect)
                     {
                         case texteffects.shake:
                             for (var j = 1; j <= string_length(val); j++)
@@ -413,7 +413,7 @@ function scr_draw_text_arr(arg0, arg1, arg2, arg3 = c_white, arg4 = 1, arg5 = te
                                 var q = string_char_at(val, j);
                                 var s1 = irandom_range(-1, 1);
                                 var s2 = irandom_range(-1, 1);
-                                draw_text_color(cx + x2 + s1, cy + s2, q, arg3, arg3, arg3, arg3, arg4);
+                                draw_text_color(cx + x2 + s1, cy + s2, q, _color, _color, _color, _color, _alpha);
                                 x2 += string_width(q);
                             }
                             
