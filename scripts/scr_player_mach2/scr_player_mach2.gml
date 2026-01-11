@@ -212,9 +212,7 @@ function scr_player_mach2()
         sprite_index = spr_machslidestart;
     }
     else if (!key_attack && movespeed < 8 && grounded && skateboarding == false)
-    {
         state = states.normal;
-    }
     
     if (move == -xscale && movespeed >= 8 && grounded && skateboarding == false)
     {
@@ -288,9 +286,7 @@ function scr_player_mach2()
     if (state != states.machslide && scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
     {
         if (skateboarding)
-        {
             xscale *= -1;
-        }
         else
         {
             var _bump = ledge_bump((vsp >= 0) ? 32 : 22);

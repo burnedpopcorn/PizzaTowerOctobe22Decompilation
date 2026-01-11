@@ -9,9 +9,7 @@ function scr_player_Sjumpprep()
                 move = xscale;
             
             if (!place_meeting(x, y + 1, obj_railparent))
-            {
                 hsp = move * movespeed;
-            }
             else
             {
                 var _railinst = instance_place(x, y + 1, obj_railparent);
@@ -50,9 +48,7 @@ function scr_player_Sjumpprep()
                     }
                 }
                 else
-                {
                     sprite_index = spr_superjumppreplight;
-                }
             }
             
             if (!key_up && grounded && (character == "S" || (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))

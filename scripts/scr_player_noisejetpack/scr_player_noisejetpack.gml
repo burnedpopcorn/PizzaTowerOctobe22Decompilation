@@ -10,9 +10,7 @@ function scr_player_noisejetpack()
         sprite_index = spr_playerN_doublejump;
     }
     else
-    {
         sprite_index = spr_playerN_doublejumpfall;
-    }
     
     if (move != 0)
     {
@@ -27,9 +25,7 @@ function scr_player_noisejetpack()
             }
         }
         else if (movespeed < 8)
-        {
             movespeed = Approach(movespeed, 8, 0.5);
-        }
     }
     
     if (place_meeting(x + sign(hsp), y, obj_solid) || scr_solid_slope(x + sign(hsp), y))

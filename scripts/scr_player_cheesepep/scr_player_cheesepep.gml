@@ -8,9 +8,7 @@ function scr_player_cheesepep()
     move = key_left + key_right;
     
     if (!place_meeting(x, y + 1, obj_railparent))
-    {
         hsp = xscale * movespeed;
-    }
     else
     {
         var _railinst = instance_place(x, y + 1, obj_railparent);
@@ -37,9 +35,7 @@ function scr_player_cheesepep()
         movespeed = Approach(movespeed, 6, 0.25);
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 1);
-    }
     
     image_speed = 0.35;
     

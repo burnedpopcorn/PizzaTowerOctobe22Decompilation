@@ -4,9 +4,7 @@ function scr_player_tacklecharge()
         windingAnim++;
     
     if (!place_meeting(x, y + 1, obj_railparent))
-    {
         hsp = xscale * movespeed;
-    }
     else
     {
         var _railinst = instance_place(x, y + 1, obj_railparent);

@@ -46,9 +46,7 @@ function scr_player_facestomp()
     }
     
     if (facestompAnim == false)
-    {
         sprite_index = spr_player_facestomp;
-    }
     else if (facestompAnim == true)
     {
         sprite_index = spr_player_facestomphit;

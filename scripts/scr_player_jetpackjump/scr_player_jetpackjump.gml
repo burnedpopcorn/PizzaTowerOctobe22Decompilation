@@ -5,9 +5,7 @@ function scr_player_jetpackjump()
     landAnim = false;
     
     if (firemouth_afterimage > 0)
-    {
         firemouth_afterimage--;
-    }
     else if ((collision_flags & colflag.secret) == 0)
     {
         firemouth_afterimage = 8;
@@ -123,9 +121,7 @@ function scr_player_jetpackjump()
             image_speed = Approach(image_speed, 0.6, 0.05);
         }
         else
-        {
             image_speed = Approach(image_speed, 0.4, 0.1);
-        }
         
         if (sprite_index == spr_player_jetpackstart && vsp > 0)
         {
@@ -133,9 +129,7 @@ function scr_player_jetpackjump()
             image_index = 0;
         }
         else if (sprite_index == spr_player_jetpackmid && ANIMATION_ENDED)
-        {
             sprite_index = spr_player_jetpackend;
-        }
         
         if (move != 0)
         {
@@ -148,14 +142,10 @@ function scr_player_jetpackjump()
                     xscale = move;
             }
             else if (movespeed < 8)
-            {
                 movespeed += 1;
-            }
         }
         else
-        {
             movespeed = Approach(movespeed, 0, 1);
-        }
         
         hsp = move * movespeed;
     }
@@ -197,9 +187,7 @@ function scr_player_jetpackjump()
     hsp = xscale * movespeed;
     
     if (firemouth_afterimage > 0)
-    {
         firemouth_afterimage--;
-    }
     else if ((collision_flags & colflag.secret) == 0)
     {
         firemouth_afterimage = 8;
@@ -209,9 +197,7 @@ function scr_player_jetpackjump()
     }
     
     if (punch_afterimage > 0)
-    {
         punch_afterimage--;
-    }
     else
     {
         punch_afterimage = 8 + irandom_range(-4, 2);

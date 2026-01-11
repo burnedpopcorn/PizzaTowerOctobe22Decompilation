@@ -36,9 +36,7 @@ function scr_player_finishingblow()
     }
     
     if (punch_afterimage > 0)
-    {
         punch_afterimage--;
-    }
     else
     {
         punch_afterimage = 5;

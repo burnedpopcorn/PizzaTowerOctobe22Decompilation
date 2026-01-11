@@ -19,14 +19,10 @@ function scr_player_animatronic()
         movespeed = 4;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (animatronic_buffer > 0)
-    {
         animatronic_buffer--;
-    }
     else
     {
         with (create_debris(x, y, spr_animatronicdebris))
@@ -42,9 +38,7 @@ function scr_player_animatronic()
     }
     
     if (animatronic_collect_buffer > 0)
-    {
         animatronic_collect_buffer--;
-    }
     else
     {
         animatronic_collect_buffer = 30;

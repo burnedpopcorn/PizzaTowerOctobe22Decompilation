@@ -51,9 +51,7 @@ function state_player_jump()
             movespeed = 0;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed > 8)
         movespeed -= 0.1;
@@ -273,9 +271,7 @@ function state_player_jump()
         }
     }
     else if (sprite_index == spr_stompprep && ANIMATION_ENDED)
-    {
         sprite_index = spr_stomp;
-    }
     
     if (key_down2 && !global.kungfu)
     {
@@ -431,9 +427,7 @@ function state_player_jump()
                     }
                 }
             }
-            else if (character != "V")
-            {
-            }
+            else if (character != "V") { }
         }
     }
     

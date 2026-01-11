@@ -118,9 +118,7 @@ function state_player_normal()
         if (move != 0 && grounded && vsp > 0)
         {
             if (steppybuffer > 0)
-            {
                 steppybuffer--;
-            }
             else
             {
                 create_particle(x, y + 43, particle.cloudeffect, 0);
@@ -277,9 +275,7 @@ function state_player_normal()
         }
     }
     else if (shotgunAnim && sprite_index != spr_shotgunshoot && !machslideAnim)
-    {
         sprite_index = (move == 0) ? spr_shotgunidle : spr_shotgunwalk;
-    }
     
     if (machslideAnim)
         sprite_index = spr_machslideend;
@@ -367,9 +363,7 @@ function state_player_normal()
             jumpAnim = false;
         }
         else
-        {
             jumpAnim = true;
-        }
         
         state = states.jump;
     }

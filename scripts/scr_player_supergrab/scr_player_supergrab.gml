@@ -8,9 +8,7 @@ function scr_player_supergrab()
             camzoom = lerp(camzoom, 1, 0.08);
     }
     else
-    {
         camzoom = 1;
-    }
     
     invtime = 30;
     
@@ -136,9 +134,7 @@ function scr_player_supergrab()
             }
             
             if (hitLag > 0)
-            {
                 hitLag--;
-            }
             else
             {
                 x = hitX;

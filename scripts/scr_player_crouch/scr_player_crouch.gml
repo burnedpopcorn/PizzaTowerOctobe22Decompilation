@@ -3,9 +3,7 @@ function scr_player_crouch()
     move = key_left + key_right;
     
     if (!place_meeting(x, y + 1, obj_railparent))
-    {
         hsp = move * movespeed;
-    }
     else
     {
         var _railinst = instance_place(x, y + 1, obj_railparent);

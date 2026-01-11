@@ -92,9 +92,7 @@ function scr_player_firemouth()
                 xscale = move;
             }
             else
-            {
                 movespeed = Approach(movespeed, 0, 0.5);
-            }
             
             if (dir != xscale)
             {
@@ -125,9 +123,7 @@ function scr_player_firemouth()
                         xscale = move;
                 }
                 else if (movespeed < 8)
-                {
                     movespeed += 0.5;
-                }
             }
             
             if (!doublejump && key_slap2)
@@ -163,9 +159,7 @@ function scr_player_firemouth()
             movespeed = 0;
         
         if (firemouth_afterimage > 0)
-        {
             firemouth_afterimage--;
-        }
         else if ((collision_flags & colflag.secret) == 0)
         {
             firemouth_afterimage = 8;
@@ -227,9 +221,7 @@ function scr_player_firemouth()
             image_speed = 0.25;
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if (hsp != 0 && (floor(image_index) == 0 || floor(image_index) == 2) && steppy == false && grounded)
         steppy = true;

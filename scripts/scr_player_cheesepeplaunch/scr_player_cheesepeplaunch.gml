@@ -33,9 +33,7 @@ function scr_player_cheesepeplaunch()
                 wallspeed = 8;
         }
         else
-        {
             wallspeed = 0;
-        }
         
         movespeed = 0;
         sticktime = 10;

@@ -9,9 +9,7 @@ function scr_player_rideweenie()
     if (move != 0)
     {
         if (move == xscale)
-        {
             movespeed = Approach(movespeed, xscale * 16, 0.35);
-        }
         else
         {
             movespeed = Approach(movespeed, 0, 0.7);
@@ -32,9 +30,7 @@ function scr_player_rideweenie()
             image_speed = 0.6;
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.7);
-    }
     
     if (sprite_index == spr_player_weenieturn && ANIMATION_ENDED)
         sprite_index = spr_rideweenie;
@@ -88,9 +84,7 @@ function scr_player_rideweenie()
         dashcloudtimer--;
     
     if (punch_afterimage > 0)
-    {
         punch_afterimage--;
-    }
     else if (abs(hsp) > 12)
     {
         punch_afterimage = 10;

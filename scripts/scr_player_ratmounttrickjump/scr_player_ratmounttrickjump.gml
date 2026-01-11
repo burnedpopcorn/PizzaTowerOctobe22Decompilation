@@ -3,9 +3,7 @@ function scr_player_ratmounttrickjump()
     hsp = movespeed * xscale;
     
     if (sprite_index != spr_supertaunt1)
-    {
         image_speed = 0.35;
-    }
     else
     {
         image_speed = 0.5;

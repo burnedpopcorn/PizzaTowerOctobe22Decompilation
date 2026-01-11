@@ -27,9 +27,7 @@ function scr_collide_player()
             repeat (abs(target_y - y))
             {
                 if (!scr_solid_player(x, y + sv))
-                {
                     y += sv;
-                }
                 else
                 {
                     vsp = 0;
@@ -75,9 +73,7 @@ function scr_collide_player()
                 }
                 
                 if (!scr_solid_player(x + sh, y))
-                {
                     x += sh;
-                }
                 else
                 {
                     hsp = 0;

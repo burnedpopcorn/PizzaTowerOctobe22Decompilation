@@ -89,13 +89,9 @@ function scr_player_boxxedpep()
                 movespeed = Approach(movespeed, 0, 0.8);
         }
         else if (boxxeddash == false)
-        {
             movespeed = Approach(movespeed, 0, 0.8);
-        }
         else
-        {
             movespeed = Approach(movespeed, 0, 0.25);
-        }
     }
     
     if (sprite_index == spr_boxxedpepintro && ANIMATION_ENDED)
@@ -137,9 +133,7 @@ function scr_player_boxxedpep()
     if (move != 0 && grounded && vsp > 0)
     {
         if (steppybuffer > 0)
-        {
             steppybuffer--;
-        }
         else
         {
             create_particle(x, y + 43, particle.cloudeffect, 0);

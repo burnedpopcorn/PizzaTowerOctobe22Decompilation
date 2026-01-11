@@ -21,9 +21,7 @@ function scr_player_bombdelete()
             movespeed = 5;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed > 5)
         movespeed -= 0.1;

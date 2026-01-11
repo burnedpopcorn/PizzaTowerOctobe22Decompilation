@@ -33,15 +33,11 @@ function scr_player_knightpep()
                 }
             }
             else
-            {
                 movespeed = Approach(movespeed, 6, _accel);
-            }
         }
     }
     else if (grounded)
-    {
         hsp = 0;
-    }
     
     if (!grounded && key_down2 && sprite_index != spr_knightpep_downtrust)
     {
@@ -161,9 +157,7 @@ function scr_player_knightpep()
                 movespeed = 6;
         }
         else if (sprite_index != spr_knightpepjumpstart)
-        {
             movespeed = 0;
-        }
     }
     else if (knightmiddairstop == 0)
     {
@@ -203,9 +197,7 @@ function scr_player_knightpep()
             image_speed = 0.6;
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if (floor(image_index) == 4 && sprite_index == spr_knightpepstart)
         instance_create(x, y - 600, obj_thunder);

@@ -63,9 +63,7 @@ function scr_playerN_hookshot()
             movespeed = 8;
     }
     else
-    {
         movespeed = 0;
-    }
     
     image_speed = 0.35;
 }

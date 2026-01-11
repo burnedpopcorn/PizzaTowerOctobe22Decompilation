@@ -1,6 +1,6 @@
-function scr_farmerpeasanto_projectile(arg0, arg1)
+function scr_farmerpeasanto_projectile(_haystack, _unused)
 {
-    with (arg0)
+    with (_haystack)
     {
         if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup)
         {
@@ -14,23 +14,23 @@ function scr_farmerpeasanto_projectile(arg0, arg1)
     return false;
 }
 
-function scr_farmer2_projectile(arg0, arg1)
+function scr_farmer2_projectile(_haystack, _projectile)
 {
-    with (arg0)
+    with (_haystack)
     {
-        x_to = x + (64 * arg1.image_xscale);
-        dir = arg1.image_xscale;
+        x_to = x + (64 * _projectile.image_xscale);
+        dir = _projectile.image_xscale;
     }
     
     return true;
 }
 
-function scr_farmer3_projectile(arg0, arg1)
+function scr_farmer3_projectile(_haystack, _projectile)
 {
-    with (arg0)
+    with (_haystack)
     {
-        x_to = x + (64 * -arg1.image_xscale);
-        dir = -arg1.image_xscale;
+        x_to = x + (64 * -_projectile.image_xscale);
+        dir = -_projectile.image_xscale;
     }
     
     return true;

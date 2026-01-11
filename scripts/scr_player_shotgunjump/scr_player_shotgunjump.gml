@@ -26,9 +26,7 @@ function scr_player_shotgunjump()
             movespeed = 6;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (!key_jump2 && vsp < 0.5 && !jumpstop)
     {

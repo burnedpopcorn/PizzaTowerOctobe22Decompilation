@@ -169,9 +169,7 @@ function scr_player_tumble()
                 image_index = 0;
             }
             else
-            {
                 state = states.normal;
-            }
         }
     }
     

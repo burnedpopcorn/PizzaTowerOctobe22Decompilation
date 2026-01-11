@@ -55,9 +55,7 @@ function scr_player_mach3()
             if (sprite_index == spr_crazyrun)
             {
                 if (flamecloud_buffer > 0)
-                {
                     flamecloud_buffer--;
-                }
                 else
                 {
                     flamecloud_buffer = 10;
@@ -130,9 +128,7 @@ function scr_player_mach3()
                     }
                 }
                 else if (movespeed <= 16 && sprite_index == spr_crazyrun)
-                {
                     sprite_index = spr_mach4;
-                }
             }
             
             if (sprite_index == spr_crazyrun && !instance_exists(crazyruneffectid))
@@ -388,9 +384,7 @@ function scr_player_mach3()
                     sprite_index = spr_crazyrun;
                 }
                 else if (abs(hsp) <= 20 && sprite_index == spr_crazyrun)
-                {
                     sprite_index = spr_mach4;
-                }
             }
             
             if (sprite_index == spr_crazyrun && !instance_exists(crazyruneffectid))
@@ -692,9 +686,7 @@ function scr_player_mach3()
                     if (sprite_index == spr_crazyrun)
                     {
                         if (flamecloud_buffer > 0)
-                        {
                             flamecloud_buffer--;
-                        }
                         else
                         {
                             flamecloud_buffer = 220 + irandom_range(1, 180);
@@ -725,9 +717,7 @@ function scr_player_mach3()
                     sprite_index = spr_crazyrun;
                 }
                 else if (movespeed <= 20 && sprite_index == spr_crazyrun)
-                {
                     sprite_index = spr_playerN_jetpackboost;
-                }
             }
             
             if (character == "N" && key_jump2 && fightball == false)

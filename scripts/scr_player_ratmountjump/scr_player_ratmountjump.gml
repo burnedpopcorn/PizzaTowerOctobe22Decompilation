@@ -73,13 +73,9 @@ function scr_player_ratmountjump()
                 movespeed = Approach(movespeed, 0, 0.5);
         }
         else if (gustavodash == 51)
-        {
             movespeed = Approach(movespeed, 0, 0.5);
-        }
         else
-        {
             movespeed = Approach(movespeed, 0, 0.5);
-        }
         
         if (move != xscale && move != 0)
         {
@@ -133,9 +129,7 @@ function scr_player_ratmountjump()
                     sprite_index = spr_player_ratmountballoonend2;
                 }
                 else
-                {
                     jumpAnim = true;
-                }
                 
                 break;
         }

@@ -39,9 +39,7 @@ function scr_player_slam()
         xscale = move;
     
     if (floor(image_index) == 3 && !grounded)
-    {
         image_speed = 0;
-    }
     else if (grounded && slamming == false && vsp > 0)
     {
         slamming = true;

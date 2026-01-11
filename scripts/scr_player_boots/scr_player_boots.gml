@@ -79,9 +79,7 @@ function scr_player_boots()
                 movespeed = 14;
         }
         else
-        {
             movespeed = 0;
-        }
         
         if (movespeed > 20)
             movespeed -= 0.1;
@@ -99,9 +97,7 @@ function scr_player_boots()
             image_speed = 0.6;
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if (ANIMATION_ENDED && sprite_index == spr_playerV_bootsout)
         sprite_index = spr_playerV_bootsidle;

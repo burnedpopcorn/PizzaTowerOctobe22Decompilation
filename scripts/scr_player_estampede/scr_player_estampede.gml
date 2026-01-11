@@ -17,9 +17,7 @@ function scr_player_estampede()
         }
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if (grounded && vsp > 0)
     {
@@ -32,11 +30,7 @@ function scr_player_estampede()
         }
     }
     else if (move != 0)
-    {
         movespeed = Approach(movespeed, move * 6, 0.5);
-    }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.5);
-    }
 }

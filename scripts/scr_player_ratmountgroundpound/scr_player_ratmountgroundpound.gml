@@ -29,9 +29,7 @@ function scr_player_ratmountgroundpound()
             instance_create(x, y - 20, obj_bangeffect);
         }
         else
-        {
             instance_create(x + (xscale * 50), y + 20, obj_bangeffect);
-        }
         
         gustavokicktimer = -1;
     }
@@ -50,9 +48,7 @@ function scr_player_ratmountgroundpound()
             movespeed = Approach(movespeed, move * ratmount_movespeed, 0.5);
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.5);
-    }
     
     if (sprite_index == spr_lonegustavo_groundpoundstart && ANIMATION_ENDED)
     {
@@ -153,9 +149,7 @@ function scr_player_ratmountgroundpound()
     image_speed = 0.35;
     
     if (punch_afterimage > 0)
-    {
         punch_afterimage--;
-    }
     else
     {
         punch_afterimage = 5;

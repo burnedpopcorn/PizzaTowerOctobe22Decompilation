@@ -43,9 +43,7 @@ function scr_player_bombgrab()
             movespeed -= 0.5;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (!instance_exists(bombgrabID))
         state = states.normal;
@@ -60,9 +58,7 @@ function scr_player_bombgrab()
                 sprite_index = spr_haulingidle;
         }
         else if (sprite_index != spr_haulingjump)
-        {
             sprite_index = spr_haulingfall;
-        }
         
         if (input_buffer_jump < 8 && grounded && vsp > 0)
         {

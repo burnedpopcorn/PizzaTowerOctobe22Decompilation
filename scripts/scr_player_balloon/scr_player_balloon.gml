@@ -15,9 +15,7 @@ function scr_player_balloon()
         movespeed = 0;
     
     if (balloonbuffer > 0)
-    {
         balloonbuffer--;
-    }
     else
     {
         create_particle(x, y - 20, particle.genericpoofeffect, 0);

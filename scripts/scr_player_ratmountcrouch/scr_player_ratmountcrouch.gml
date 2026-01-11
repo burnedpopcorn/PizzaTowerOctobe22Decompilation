@@ -34,9 +34,7 @@ function scr_player_ratmountcrouch()
             image_speed = 0.6;
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.5);
-    }
     
     if (!grounded)
     {

@@ -15,9 +15,7 @@ function scr_player_mach1()
     }
     
     if (!place_meeting(x, y + 1, obj_railparent))
-    {
         hsp = xscale * movespeed;
-    }
     else
     {
         var _railinst = instance_place(x, y + 1, obj_railparent);
@@ -76,9 +74,7 @@ function scr_player_mach1()
         }
     }
     else if (sprite_index != spr_airdash1)
-    {
         sprite_index = spr_airdash2;
-    }
     
     if (sprite_index == spr_airdash1 && ANIMATION_ENDED)
         sprite_index = spr_airdash2;

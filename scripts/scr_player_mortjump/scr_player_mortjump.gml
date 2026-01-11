@@ -24,9 +24,7 @@ function scr_player_mortjump()
             xscale = move;
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.5);
-    }
     
     if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope))
     {

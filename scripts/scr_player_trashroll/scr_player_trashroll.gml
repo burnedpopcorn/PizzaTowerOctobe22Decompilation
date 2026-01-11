@@ -11,9 +11,7 @@ function scr_player_trashroll()
     if (sprite_index != spr_player_corpsestart && sprite_index != spr_player_corpsesurf)
     {
         if (sprite_index != spr_player_trashjump && sprite_index != spr_player_trashjump2 && sprite_index != spr_player_trashfall)
-        {
             sprite_index = spr_player_trashslide;
-        }
         else
         {
             if (ANIMATION_ENDED && sprite_index == spr_player_trashjump2)

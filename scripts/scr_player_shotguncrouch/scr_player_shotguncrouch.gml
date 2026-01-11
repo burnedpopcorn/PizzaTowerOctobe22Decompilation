@@ -20,9 +20,7 @@ function scr_player_shotguncrouch()
             sprite_index = spr_shotgunduck;
     }
     else if (ANIMATION_ENDED)
-    {
         sprite_index = spr_shotgunduck;
-    }
     
     if (!grounded && input_buffer_jump >= 8)
     {

@@ -72,20 +72,20 @@ function farmer_rearrange()
     }
 }
 
-function following_has_follower(arg0)
+function following_has_follower(_obj)
 {
     for (var i = 0; i < ds_list_size(global.followerlist); i++)
     {
         var b = global.followerlist[| i];
         
-        if (instance_exists(b) && b.object_index == arg0)
+        if (instance_exists(b) && b.object_index == _obj)
             return true;
     }
     
     return false;
 }
 
-function following_count(arg0)
+function following_count(_obj)
 {
     var n = 0;
     
@@ -93,7 +93,7 @@ function following_count(arg0)
     {
         var b = global.followerlist[| i];
         
-        if (instance_exists(b) && b.object_index == arg0)
+        if (instance_exists(b) && b.object_index == _obj)
             n++;
     }
     

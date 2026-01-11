@@ -55,9 +55,7 @@ function scr_player_barrelslide()
         if (!place_meeting(x, y, obj_solid))
         {
             if (grounded)
-            {
                 state = states.barrel;
-            }
             else
             {
                 state = states.barreljump;

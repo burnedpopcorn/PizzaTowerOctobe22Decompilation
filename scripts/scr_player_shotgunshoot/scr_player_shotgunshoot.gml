@@ -15,9 +15,7 @@ function scr_player_shotgunshoot()
             movespeed = Approach(movespeed, -8, 0.2);
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.1);
-    }
     
     if (ANIMATION_ENDED)
     {

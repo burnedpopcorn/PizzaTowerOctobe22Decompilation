@@ -1,9 +1,7 @@
 function scr_player_machroll()
 {
     if (!place_meeting(x, y + 1, obj_railparent))
-    {
         hsp = xscale * movespeed;
-    }
     else
     {
         var _railinst = instance_place(x, y + 1, obj_railparent);
@@ -51,9 +49,7 @@ function scr_player_machroll()
             }
             
             if (grounded && sprite_index != spr_playerV_divekickstart)
-            {
                 sprite_index = !skateboarding ? spr_machroll : spr_clowncrouch;
-            }
             else if (sprite_index != spr_dive && !skateboarding)
             {
                 sprite_index = spr_dive;
@@ -140,9 +136,7 @@ function scr_player_machroll()
             }
             
             if (grounded && sprite_index != spr_playerV_divekickstart)
-            {
                 sprite_index = spr_machroll;
-            }
             else if (sprite_index != spr_dive)
             {
                 sprite_index = spr_dive;

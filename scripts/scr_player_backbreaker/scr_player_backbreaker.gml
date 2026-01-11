@@ -8,9 +8,7 @@ function scr_player_backbreaker()
         movespeed = 0;
     }
     else
-    {
         hsp = xscale * movespeed;
-    }
     
     move = key_right2 + key_left2;
     landAnim = false;

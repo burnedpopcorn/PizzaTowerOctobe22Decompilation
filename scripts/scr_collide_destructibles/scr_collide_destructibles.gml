@@ -192,12 +192,10 @@ function scr_collide_destructibles()
                 with (instance_place(x, y + vsp + 2, obj_destructibles))
                 {
                     with (other)
-                    {
-                        if (place_meeting(x, y + vsp + 2, obj_bigdestructibles))
-                        {
-                        }
-                    }
-                    
+					{
+                        if (place_meeting(x, y + vsp + 2, obj_bigdestructibles)) { }
+					}
+					
                     instance_destroy();
                 }
             }

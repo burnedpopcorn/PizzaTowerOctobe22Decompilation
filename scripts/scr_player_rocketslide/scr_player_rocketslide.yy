@@ -1,11 +1,11 @@
 {
-  "isDnd": false,
-  "isCompatibility": false,
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
   "name": "scr_player_rocketslide",
+  "isDnD": false,
+  "isCompatibility": false,
   "parent": {
-    "name": "States",
-    "path": "folders/Scripts/Player/States.yy",
-  }
+    "name": "Rocket",
+    "path": "folders/Scripts/Player/States/Transfomations/Rocket.yy",
+  },
 }

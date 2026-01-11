@@ -96,9 +96,7 @@ function scr_player_ratmount()
                 movespeed = Approach(movespeed, 0, 0.5);
         }
         else
-        {
             movespeed = Approach(movespeed, 0, 0.5);
-        }
     }
     
     if (abs(movespeed) > 2)
@@ -175,9 +173,7 @@ function scr_player_ratmount()
                 sprite_index = spr_lonegustavo_walk;
         }
         else
-        {
             sprite_index = spr_lonegustavo_idle;
-        }
         
         image_speed = 0.35;
     }
@@ -185,9 +181,7 @@ function scr_player_ratmount()
     if (hsp != 0 && grounded && vsp > 0 && !front)
     {
         if (steppybuffer > 0)
-        {
             steppybuffer--;
-        }
         else
         {
             create_particle(x, y + 43, particle.cloudeffect, 0);
@@ -209,13 +203,9 @@ function scr_player_ratmount()
                 sprite_index = spr_player_ratmountjump;
         }
         else if (ratmount_movespeed >= 12 && key_attack)
-        {
             sprite_index = spr_lonegustavo_dashjump;
-        }
         else
-        {
             sprite_index = spr_player_ratmountgroundpound;
-        }
         
         image_index = 0;
         jumpAnim = true;
@@ -237,13 +227,9 @@ function scr_player_ratmount()
                 sprite_index = spr_lonegustavo_dashjump;
         }
         else if (brick)
-        {
             sprite_index = spr_player_ratmountfall;
-        }
         else
-        {
             sprite_index = spr_player_ratmountgroundpoundfall;
-        }
     }
     
     if (key_attack && grounded && !place_meeting(x + xscale, y, obj_solid))

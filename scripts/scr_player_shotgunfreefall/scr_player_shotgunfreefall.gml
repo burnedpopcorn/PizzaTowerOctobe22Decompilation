@@ -16,9 +16,7 @@ function scr_player_shotgunfreefall()
             movespeed += 0.5;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (sprite_index == spr_shotgunjump1)
     {

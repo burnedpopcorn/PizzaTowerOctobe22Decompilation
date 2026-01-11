@@ -25,9 +25,7 @@ function scr_player_barrel()
             xscale = move;
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.5);
-    }
     
     if (sprite_index == spr_player_barrelland && ANIMATION_ENDED)
         sprite_index = spr_player_barrelidle;
@@ -104,9 +102,7 @@ function scr_player_barrel()
     if (sprite_index == spr_player_barrelmove)
     {
         if (steppybuffer > 0)
-        {
             steppybuffer--;
-        }
         else
         {
             create_particle(x, y + 43, particle.cloudeffect, 0);

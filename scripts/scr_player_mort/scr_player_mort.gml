@@ -20,9 +20,7 @@ function scr_player_mort()
             xscale = move;
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.8);
-    }
     
     if (move != 0 && grounded && vsp > 0)
     {
@@ -55,9 +53,7 @@ function scr_player_mort()
     if (!landAnim)
     {
         if (move != 0)
-        {
             sprite_index = spr_player_mortwalk;
-        }
         else
         {
             sprite_index = spr_player_mortidle;
@@ -121,9 +117,7 @@ function mort_attack()
             sprite_index = spr_player_mortattackdown;
         }
         else
-        {
             movespeed = xscale * 10;
-        }
         
         with (instance_create(x, y, obj_morthitbox))
         {
@@ -140,9 +134,7 @@ function mort_attack()
     if (sprite_index == spr_player_mortattackdown || sprite_index == spr_player_mortattackup || sprite_index == spr_player_mortattack)
     {
         if (punch_afterimage > 0)
-        {
             punch_afterimage--;
-        }
         else
         {
             punch_afterimage = 5;

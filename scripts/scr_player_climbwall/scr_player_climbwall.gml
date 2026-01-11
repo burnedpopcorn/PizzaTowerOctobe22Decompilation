@@ -113,9 +113,7 @@ function scr_player_climbwall()
             image_speed = 0.6;
             
             if (steppybuffer > 0)
-            {
                 steppybuffer--;
-            }
             else
             {
                 create_particle(x, y + 43, particle.cloudeffect, 0);

@@ -40,9 +40,7 @@ function scr_playersounds()
             fmod_event_instance_set_3d_attributes(knightslidesnd, x, y);
         }
         else if (fmod_event_instance_is_playing(knightslidesnd))
-        {
             fmod_event_instance_stop(knightslidesnd, true);
-        }
         
         if (state == states.Sjumpprep)
         {
@@ -53,9 +51,7 @@ function scr_playersounds()
             }
         }
         else if (state == states.Sjump)
-        {
             fmod_event_instance_set_parameter(superjumpsnd, "state", 1, true);
-        }
         else if (state != states.Sjump)
         {
             if (fmod_event_instance_is_playing(superjumpsnd) && fmod_event_instance_get_parameter(superjumpsnd, "state") < 1)
@@ -110,9 +106,7 @@ function scr_playersounds()
             fmod_event_instance_set_3d_attributes(gravecorpsesnd, x + hsp, y + vsp);
         }
         else
-        {
             fmod_event_instance_stop(gravecorpsesnd, true);
-        }
         
         if (state == states.barrelslide && grounded && vsp > 0)
         {
@@ -122,9 +116,7 @@ function scr_playersounds()
             fmod_event_instance_set_3d_attributes(barrelslidesnd, x + hsp, y + vsp);
         }
         else
-        {
             fmod_event_instance_stop(barrelslidesnd, true);
-        }
         
         if (state == states.slipnslide && sprite_index == spr_currentplayer)
         {
@@ -134,8 +126,6 @@ function scr_playersounds()
             fmod_event_instance_set_3d_attributes(waterslidesnd, x + hsp, y + vsp);
         }
         else
-        {
             fmod_event_instance_stop(waterslidesnd, true);
-        }
     }
 }

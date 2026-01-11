@@ -35,9 +35,7 @@ function scr_player_bump()
                     state = states.normal;
             }
             else
-            {
                 state = states.mach2;
-            }
         }
         
         if (grounded && vsp > 0 && _gus && ANIMATION_ENDED)

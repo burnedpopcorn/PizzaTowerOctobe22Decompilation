@@ -49,9 +49,7 @@ function scr_player_chainsawpogo()
             sprite_index = spr_player_chainsawpogo2;
     }
     else if (floor(image_index) == 4)
-    {
         sprite_index = spr_player_chainsawpogo2;
-    }
     
     image_speed = 0.35;
     

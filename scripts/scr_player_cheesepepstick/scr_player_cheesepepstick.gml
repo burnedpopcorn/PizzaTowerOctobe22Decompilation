@@ -68,9 +68,7 @@ function scr_player_cheesepepstickside()
             movespeed = 6;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (place_meeting(x - 1, y, obj_solid))
         xscale = 1;
@@ -115,9 +113,7 @@ function scr_player_cheesepepstickside()
         var tx = try_solid(xscale, 0, obj_solid, 64);
         
         if (tx != -1)
-        {
             x += (tx * xscale);
-        }
         else
         {
             tx = try_solid(-xscale, 0, obj_solid, 64);
@@ -169,9 +165,7 @@ function scr_player_cheesepepstickside()
             }
         }
         else
-        {
             vsp = 0;
-        }
     }
 }
 
@@ -186,9 +180,7 @@ function scr_player_cheesepepstickup()
     vsp = 0;
     
     if (!place_meeting(x, y + stickdir, obj_railparent))
-    {
         hsp = move * movespeed;
-    }
     else
     {
         var _railinst = instance_place(x, y + stickdir, obj_railparent);
@@ -212,9 +204,7 @@ function scr_player_cheesepepstickup()
             movespeed = 6;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (move == sign(hsp) && place_meeting(x + sign(hsp), y, obj_solid))
     {
@@ -287,8 +277,6 @@ function scr_player_cheesepepstickup()
             vsp = move * movespeed;
         }
         else
-        {
             hsp = 0;
-        }
     }
 }

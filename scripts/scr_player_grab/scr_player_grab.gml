@@ -40,9 +40,7 @@ function scr_player_grab()
                         movespeed = 6;
                 }
                 else
-                {
                     movespeed = 0;
-                }
                 
                 if (movespeed > 6)
                     movespeed -= 0.1;
@@ -58,9 +56,7 @@ function scr_player_grab()
                     movespeed = 2;
             }
             else
-            {
                 movespeed = 0;
-            }
             
             if (movespeed > 2)
                 movespeed -= 1;
@@ -81,13 +77,9 @@ function scr_player_grab()
                     image_speed = 0.6;
             }
             else if (heavy == true)
-            {
                 image_speed = 0.1;
-            }
             else
-            {
                 image_speed = 0.35;
-            }
         }
     }
     

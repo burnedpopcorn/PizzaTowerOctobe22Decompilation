@@ -10,9 +10,7 @@ function scr_player_ratmountclimbwall()
         image_index = 0;
     }
     else if (ANIMATION_ENDED)
-    {
         image_index = image_number - 1;
-    }
     
     if (!grounded && !place_meeting(x + 1, y, obj_solid) && !place_meeting(x - 1, y, obj_solid))
     {

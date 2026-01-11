@@ -26,9 +26,7 @@ function scr_player_superslam()
     if (sprite_index == spr_piledriver && vsp >= 0)
     {
         if (steppybuffer > 0)
-        {
             steppybuffer--;
-        }
         else
         {
             create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
@@ -46,9 +44,7 @@ function scr_player_superslam()
             }
             
             if (piledrivereffect > 0)
-            {
                 piledrivereffect--;
-            }
             else
             {
                 with (instance_create(x, y, obj_parryeffect))
@@ -136,9 +132,7 @@ function scr_player_superslam()
             movespeed = 6;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed > 6)
         movespeed -= 0.1;

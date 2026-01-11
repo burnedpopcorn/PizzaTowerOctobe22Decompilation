@@ -1,11 +1,11 @@
 {
-  "isDnd": false,
-  "isCompatibility": false,
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
   "name": "scr_player_boxxedpepjump",
+  "isDnD": false,
+  "isCompatibility": false,
   "parent": {
-    "name": "States",
-    "path": "folders/Scripts/Player/States.yy",
-  }
+    "name": "Boxxed Pep",
+    "path": "folders/Scripts/Player/States/Transfomations/Boxxed Pep.yy",
+  },
 }

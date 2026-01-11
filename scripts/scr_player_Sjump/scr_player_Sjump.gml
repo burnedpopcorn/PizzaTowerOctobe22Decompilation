@@ -15,9 +15,7 @@ function scr_player_Sjump()
     if (sprite_index == spr_superjump)
     {
         if (steppybuffer > 0)
-        {
             steppybuffer--;
-        }
         else
         {
             create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
@@ -31,9 +29,7 @@ function scr_player_Sjump()
         }
         
         if (piledrivereffect > 0)
-        {
             piledrivereffect--;
-        }
         else
         {
             with (instance_create(x, y, obj_parryeffect))

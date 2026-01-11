@@ -1,6 +1,6 @@
-function scr_pistolshoot(arg0)
+function scr_pistolshoot(_state)
 {
-    if ((pistolcooldown <= 0 && state == arg0 && instance_number(obj_pistolbullet) < 3) || pistolchargeshooting == true)
+    if ((pistolcooldown <= 0 && state == _state && instance_number(obj_pistolbullet) < 3) || pistolchargeshooting == true)
     {
         input_buffer_shoot = 0;
         pistolanim = spr_pistolshot;
@@ -13,7 +13,7 @@ function scr_pistolshoot(arg0)
         crouchAnim = false;
         stompAnim = false;
         
-        if (arg0 == states.mach3 || arg0 == states.mach2)
+        if (_state == states.mach3 || _state == states.mach2)
             state = states.normal;
         
         windingAnim = 0;

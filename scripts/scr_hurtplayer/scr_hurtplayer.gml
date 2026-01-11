@@ -1,26 +1,16 @@
-function scr_hurtplayer(arg0)
+function scr_hurtplayer(_player)
 {
     var _obj = object_index;
-    var _savedstate = arg0.state;
+    var _savedstate = _player.state;
     var _hurt = false;
     
-    with (arg0)
+    with (_player)
     {
-        if (global.failcutscene)
-        {
-        }
-        else if (state == states.supergrab || state == states.pizzaface_phase2transition || state == states.Parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == states.spaceshuttle || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan)
-        {
-        }
-        else if (holycross > 0 || invtime > 0)
-        {
-        }
-        else if (state == states.handstandjump && flash == true)
-        {
-        }
-        else if (state == states.backbreaker || state == states.chainsaw || state == states.phase1hurt || state == states.actor || instance_exists(obj_bossdark))
-        {
-        }
+        if (global.failcutscene) { }
+        else if (state == states.supergrab || state == states.pizzaface_phase2transition || state == states.Parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == states.spaceshuttle || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan) { }
+        else if (holycross > 0 || invtime > 0) { }
+        else if (state == states.handstandjump && flash == true) { }
+        else if (state == states.backbreaker || state == states.chainsaw || state == states.phase1hurt || state == states.actor || instance_exists(obj_bossdark)) { }
         else if (global.kungfu)
         {
             if (state == states.blockstance)
@@ -98,18 +88,12 @@ function scr_hurtplayer(arg0)
                 _hurt = true;
             }
         }
-        else if (state == states.shotgundash)
-        {
-        }
-        else if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.knightpepbump) && cutscene == false)
-        {
-        }
-        else if (state == states.ghost)
-        {
-        }
+        else if (state == states.shotgundash) { }
+        else if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.knightpepbump) && cutscene == false) { }
+        else if (state == states.ghost) { }
         else if (state == states.ghostpossess)
         {
-            if (instance_exists(possessID) && object_get_parent(possessID) == 555)
+            if (instance_exists(possessID) && object_get_parent(possessID) == obj_baddie)
             {
                 state = states.ghost;
                 
@@ -120,24 +104,12 @@ function scr_hurtplayer(arg0)
                 }
             }
         }
-        else if (state == states.slipnslide)
-        {
-        }
-        else if (state == states.trickjump)
-        {
-        }
-        else if (state == states.chainsawbump)
-        {
-        }
-        else if (state == states.bombpep && hurted == false)
-        {
-        }
-        else if (state == states.rideweenie)
-        {
-        }
-        else if (state == states.slipnslide)
-        {
-        }
+        else if (state == states.slipnslide) { }
+        else if (state == states.trickjump) { }
+        else if (state == states.chainsawbump) { }
+        else if (state == states.bombpep && hurted == false) { }
+        else if (state == states.rideweenie) { }
+        else if (state == states.slipnslide) { }
         else if (state == states.boxxedpep)
         {
             hsp = -xscale * 4;
@@ -252,7 +224,7 @@ function scr_hurtplayer(arg0)
         
         if (_hurt)
         {
-            notification_push(notifs.hurt_player, [arg0.id, _savedstate, _obj]);
+            notification_push(notifs.hurt_player, [_player.id, _savedstate, _obj]);
             global.combotime -= 25;
             global.style -= 25;
             global.hurtcounter += 1;

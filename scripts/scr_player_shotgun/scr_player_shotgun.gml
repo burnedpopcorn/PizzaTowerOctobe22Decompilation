@@ -15,9 +15,7 @@ function scr_player_shotgun()
             exit;
         }
         else
-        {
             exit;
-        }
     }
     
     if (key_jump)
@@ -49,9 +47,7 @@ function scr_player_shotgun()
             image_speed = 0.6;
     }
     else
-    {
         movespeed = 0;
-    }
     
     if (movespeed > 8)
         movespeed -= 0.1;

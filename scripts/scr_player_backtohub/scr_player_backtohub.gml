@@ -52,9 +52,7 @@ function scr_player_backtohub()
         image_index = image_number - 1;
         
         if (backtohubbuffer > 0)
-        {
             backtohubbuffer--;
-        }
         else
         {
             state = states.normal;

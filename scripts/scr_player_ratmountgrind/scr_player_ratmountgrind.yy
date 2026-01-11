@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "States",
-    "path": "folders/Scripts/Player/States.yy",
+    "name": "Rat Mount",
+    "path": "folders/Scripts/Player/States/Transfomations/Rat Mount.yy",
   },
 }

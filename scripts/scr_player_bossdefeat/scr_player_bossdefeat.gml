@@ -1,3 +1,2 @@
-function scr_player_bossdefeat()
-{
-}
+// unused
+function scr_player_bossdefeat() { }

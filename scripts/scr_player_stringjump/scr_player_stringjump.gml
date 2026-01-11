@@ -8,9 +8,7 @@ function scr_player_stringjump()
         if (xscale != move)
         {
             if (movespeed > 0)
-            {
                 movespeed = Approach(movespeed, 0, 0.5);
-            }
             else
             {
                 xscale = move;
@@ -18,9 +16,7 @@ function scr_player_stringjump()
             }
         }
         else if (movespeed < 8)
-        {
             movespeed = Approach(movespeed, 8, 0.25);
-        }
     }
     
     if (place_meeting(x + sign(hsp), y, obj_solid))

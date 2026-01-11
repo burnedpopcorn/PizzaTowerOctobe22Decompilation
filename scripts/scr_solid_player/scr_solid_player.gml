@@ -1,9 +1,9 @@
-function scr_solid_player(arg0, arg1)
+function scr_solid_player(_x, _y)
 {
     var old_x = x;
     var old_y = y;
-    x = arg0;
-    y = arg1;
+    x = _x;
+    y = _y;
     var num = instance_place_list(x, y, obj_solid, global.instancelist, false);
     var _collided = false;
     
@@ -91,9 +91,9 @@ function scr_solid_player(arg0, arg1)
     return false;
 }
 
-function check_slope_player(arg0)
+function check_slope_player(_obj)
 {
-    var slope = instance_place(x, y, arg0);
+    var slope = instance_place(x, y, _obj);
     
     if (slope)
     {

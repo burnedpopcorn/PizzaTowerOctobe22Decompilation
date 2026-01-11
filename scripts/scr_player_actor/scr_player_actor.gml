@@ -33,9 +33,7 @@ function scr_player_actor()
     if (room == boss_vigilante && sprite_index == spr_player_pistolshotend)
     {
         if (actorbuffer > 0)
-        {
             actorbuffer--;
-        }
         else
         {
             landAnim = false;

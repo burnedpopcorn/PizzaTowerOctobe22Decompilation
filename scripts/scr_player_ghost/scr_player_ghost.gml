@@ -108,9 +108,7 @@ function scr_player_ghost()
                 }
             }
             else
-            {
                 sprite_index = spr_ghostidle;
-            }
         }
         
         if (place_meeting(x, y, obj_tombstone) && sprite_index != spr_ghostend)

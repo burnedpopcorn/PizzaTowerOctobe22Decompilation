@@ -27,9 +27,7 @@ function scr_player_barreljump()
             xscale = move;
     }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.5);
-    }
     
     if (grounded && vsp > 0)
     {

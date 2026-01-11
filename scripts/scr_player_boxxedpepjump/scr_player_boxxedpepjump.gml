@@ -39,13 +39,9 @@ function scr_player_boxxedpepjump()
             movespeed = Approach(movespeed, 0, 0.8);
     }
     else if (boxxeddash == false)
-    {
         movespeed = Approach(movespeed, 0, 0.8);
-    }
     else
-    {
         movespeed = Approach(movespeed, 0, 0.25);
-    }
     
     if (grounded)
     {

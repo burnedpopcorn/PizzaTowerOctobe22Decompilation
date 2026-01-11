@@ -18,9 +18,7 @@ function scr_player_fireass()
         if (sprite_index == spr_fireass)
         {
             if (fireasseffect > 0)
-            {
                 fireasseffect--;
-            }
             else
             {
                 fireasseffect = 7;
@@ -47,23 +45,17 @@ function scr_player_fireass()
                     xscale = move;
             }
             else
-            {
                 movespeed = Approach(movespeed, 0, 0.1);
-            }
         }
         
         if (place_meeting(x, y + 1, obj_haystack))
-        {
             vsp = -20;
-        }
         else if (grounded && vsp > 0 && !place_meeting(x, y + 1, obj_ratblock))
         {
             movespeed = 6;
             
             if (sprite_index == spr_fireass)
-            {
                 sprite_index = spr_fireassground;
-            }
             else
             {
                 movespeed = 0;

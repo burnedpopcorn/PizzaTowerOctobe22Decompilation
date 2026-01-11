@@ -16,9 +16,7 @@ function scr_player_slap()
     if (sprite_index != spr_player_slapdash)
     {
         if (!place_meeting(x, y + 1, obj_railparent))
-        {
             hsp = move * movespeed;
-        }
         else
         {
             var _railinst = instance_place(x, y + 1, obj_railparent);
@@ -26,9 +24,7 @@ function scr_player_slap()
         }
     }
     else
-    {
         hsp = xscale * movespeed;
-    }
     
     if (sprite_index != spr_player_slapdash)
     {
@@ -120,21 +116,15 @@ function scr_player_slap()
                 sprite_index = spr_player_hitboxslapup;
         }
         else
-        {
             instance_create(x, y, obj_slaphitbox2);
-        }
     }
     
     if (ANIMATION_ENDED && slapbuffer == 8)
     {
         if (mach2 >= 35)
-        {
             state = states.mach2;
-        }
         else if (mach2 >= 100)
-        {
             state = states.mach3;
-        }
         else if (grounded)
         {
             if (move != 0)

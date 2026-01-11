@@ -20,9 +20,7 @@ function scr_player_tackle()
                 state = states.normal;
         }
         else if (ANIMATION_ENDED && grounded)
-        {
             state = states.normal;
-        }
     }
     else
     {

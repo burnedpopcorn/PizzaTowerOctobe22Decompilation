@@ -38,9 +38,7 @@ function scr_player_chainsaw()
                 image_index = 0;
             }
             else if (tauntstoredstate == states.handstandjump || tauntstoredstate == states.finishingblow)
-            {
                 state = states.normal;
-            }
         }
         
         if (global.attackstyle == 1)

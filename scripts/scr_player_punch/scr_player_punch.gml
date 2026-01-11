@@ -30,9 +30,7 @@ function scr_player_punch()
         }
         
         if (punch_afterimage > 0)
-        {
             punch_afterimage--;
-        }
         else
         {
             punch_afterimage = 5;
@@ -68,9 +66,7 @@ function scr_player_punch()
                             movespeed -= 0.1;
                     }
                     else if (move == xscale && movespeed < 6 && sprite_index == spr_player_kungfujump)
-                    {
                         movespeed += 0.2;
-                    }
                 }
                 
                 hsp = xscale * movespeed;
@@ -147,9 +143,7 @@ function scr_player_punch()
                             image_index = 0;
                         }
                         else
-                        {
                             state = states.normal;
-                        }
                     }
                     
                     if (sprite_index == spr_player_Sjumpcancelslide)
@@ -166,9 +160,7 @@ function scr_player_punch()
                 }
                 
                 if (punch_afterimage > 0)
-                {
                     punch_afterimage--;
-                }
                 else
                 {
                     punch_afterimage = 5;

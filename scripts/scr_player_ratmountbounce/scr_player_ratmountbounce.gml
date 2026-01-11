@@ -15,9 +15,7 @@ function scr_player_ratmountbounce()
         }
     }
     else
-    {
         image_speed = 0.35;
-    }
     
     if (sprite_index == spr_player_ratmountbounce)
     {
