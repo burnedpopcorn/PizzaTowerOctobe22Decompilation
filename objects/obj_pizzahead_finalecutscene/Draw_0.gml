@@ -1,7 +1,5 @@
 if (state != states.superslam)
-{
     draw_self();
-}
 else
 {
     if (!pizzahead_front)

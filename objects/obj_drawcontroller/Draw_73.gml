@@ -101,7 +101,7 @@ if (kidsparty_lightning || dark_lightning)
                 {
                     if (collision || (instance_exists(baddieID) && baddieID.alarm[5] != -1))
                     {
-                        var c = 255;
+                        var c = c_red;
                         draw_surface_ext(other.patrolcone_tex, x - surf_x, y - surf_y - (tsh / 2), (image_angle > 90) ? -1 : 1, 1, 0, c, 1);
                     }
                 }

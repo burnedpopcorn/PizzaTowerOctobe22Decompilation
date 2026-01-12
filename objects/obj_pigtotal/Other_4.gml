@@ -7,15 +7,34 @@ else
     visible = true;
 
 if (global.panic)
-{
     instance_destroy();
-}
 else
 {
     global.pigtotal = 0;
     global.pigreduction = 0;
     ini_open_from_string(obj_savesystem.ini_str);
-    var levels = ["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "golf", "street", "sewer", "industrial", "freezer", "chateau", "kidsparty", "war"];
+    var levels = 
+	[
+		"entrance", 
+		"medieval", 
+		"ruin", 
+		"dungeon", 
+		"badland", 
+		"graveyard", 
+		"farm", 
+		"saloon", 
+		"plage", 
+		"forest", 
+		"space", 
+		"golf", 
+		"street", 
+		"sewer", 
+		"industrial", 
+		"freezer", 
+		"chateau", 
+		"kidsparty", 
+		"war"
+	];
     
     for (var i = 0; i < array_length(levels); i++)
     {

@@ -15,9 +15,7 @@ switch (state)
             x = xstart + irandom_range(-1, 1);
             
             if (other.puffbuffer > 0)
-            {
                 other.puffbuffer--;
-            }
             else if (hitY <= room_height)
             {
                 other.puffbuffer = 10 + irandom(15);
@@ -74,9 +72,7 @@ switch (state)
             state++;
         
         if (spawn_buffer > 0)
-        {
             spawn_buffer--;
-        }
         else
         {
             spawn_buffer = 180 + irandom_range(-30, 40);
@@ -155,9 +151,7 @@ switch (state)
         if (fade <= 0)
         {
             if (introbuffer > 0)
-            {
                 introbuffer--;
-            }
             else
             {
                 state++;

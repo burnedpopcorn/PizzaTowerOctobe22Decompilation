@@ -11,9 +11,7 @@ switch (state)
     
     case states.normal:
         if (introbuffer > 0)
-        {
             introbuffer--;
-        }
         else
         {
             image_speed = 0;

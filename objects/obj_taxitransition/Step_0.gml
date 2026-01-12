@@ -14,17 +14,13 @@ if (fadein)
     }
 }
 else
-{
     fade = Approach(fade, 0, 0.1);
-}
 
 if (instance_exists(obj_fadeout))
     fade = obj_fadeout.fadealpha;
 
 if (shake_mag > 0)
-{
     shake_mag = Approach(shake_mag, 0, shake_mag_acc);
-}
 else
 {
     shakecount++;

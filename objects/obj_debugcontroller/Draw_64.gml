@@ -31,17 +31,17 @@ if (DEBUG)
         {
             case debug_text_type.error:
                 str = concat("[ERROR] ", txt);
-                c = 255;
+                c = c_red;
                 break;
             
             case debug_text_type.traced:
                 str = concat("[DEBUG] ", txt);
-                c = 8421504;
+                c = c_gray;
                 break;
             
             case debug_text_type.command:
                 str = concat("[COMMAND] ", txt);
-                c = 32768;
+                c = c_green;
                 break;
         }
         

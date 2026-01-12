@@ -38,9 +38,7 @@ if (!global.panic)
         fmod_set_parameter("pillarfade", 0, true);
     }
     else
-    {
         fmod_event_instance_stop(pillarmusicID, true);
-    }
 }
 
 if (music != noone && music.on_room_start != noone)

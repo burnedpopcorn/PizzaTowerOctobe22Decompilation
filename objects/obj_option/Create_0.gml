@@ -58,23 +58,23 @@ add_option_press(audio_menu, 0, "option_back", function()
 });
 
 #region Master
-add_option_slide(audio_menu, 1, "option_master", function(arg0)
+add_option_slide(audio_menu, 1, "option_master", function(_value)
 {
-    global.option_master_volume = arg0 / 100;
+    global.option_master_volume = _value / 100;
     set_audio_config();
 }).value = global.option_master_volume * 100;
 #endregion
 #region Music
-add_option_slide(audio_menu, 2, "option_music", function(arg0)
+add_option_slide(audio_menu, 2, "option_music", function(_value)
 {
-    global.option_music_volume = arg0 / 100;
+    global.option_music_volume = _value / 100;
     set_audio_config();
 }).value = global.option_music_volume * 100;
 #endregion
 #region SFX
-add_option_slide(audio_menu, 3, "option_sfx", function(arg0)
+add_option_slide(audio_menu, 3, "option_sfx", function(_value)
 {
-    global.option_sfx_volume = arg0 / 100;
+    global.option_sfx_volume = _value / 100;
     set_audio_config();
 }).value = global.option_sfx_volume * 100;
 #endregion
@@ -90,11 +90,11 @@ add_option_press(video_menu, 0, "option_back", function()
 });
 
 #region Fullscreen
-add_option_toggle(video_menu, 1, "option_fullscreen", function(arg0)
+add_option_toggle(video_menu, 1, "option_fullscreen", function(_value)
 {
-    window_set_fullscreen(arg0);
+    window_set_fullscreen(_value);
     
-    if (arg0)
+    if (_value)
     {
         window_set_size(display_get_width(), display_get_height());
         obj_screensizer.window_width_current = 0;
@@ -104,8 +104,8 @@ add_option_toggle(video_menu, 1, "option_fullscreen", function(arg0)
         screen_apply_size();
     
     ini_open("saveData.ini");
-    global.option_fullscreen = arg0;
-    ini_write_real("Option", "fullscreen", arg0);
+    global.option_fullscreen = _value;
+    ini_write_real("Option", "fullscreen", _value);
     ini_close();
 }).value = global.option_fullscreen;
 #endregion
@@ -116,12 +116,12 @@ for (var i = 0; i < array_length(global.resolutions[obj_screensizer.aspect_ratio
     var b = global.resolutions[obj_screensizer.aspect_ratio][i];
     array_push(res, create_option_value(concat(b[0], "X", b[1]), i, false));
 }
-add_option_multiple(video_menu, 2, "option_resolution", res, function(arg0)
+add_option_multiple(video_menu, 2, "option_resolution", res, function(_value)
 {
     ini_open("saveData.ini");
-    ini_write_real("Option", "resolution", arg0);
+    ini_write_real("Option", "resolution", _value);
     ini_close();
-    global.option_resolution = arg0;
+    global.option_resolution = _value;
     screen_apply_size();
 }).value = global.option_resolution;
 #endregion
@@ -131,21 +131,21 @@ add_option_multiple(video_menu, 3, "option_scaling",
 	create_option_value("option_scaling_fit", 0), 
 	create_option_value("option_scaling_pp", 1)
 ], 
-function(arg0)
+function(_value)
 {
     ini_open("saveData.ini");
-    ini_write_real("Option", "scale_mode", arg0);
+    ini_write_real("Option", "scale_mode", _value);
     ini_close();
-    global.option_scale_mode = arg0;
+    global.option_scale_mode = _value;
 }).value = global.option_scale_mode;
 #endregion
 #region HUD
-add_option_toggle(video_menu, 4, "option_hud", function(arg0)
+add_option_toggle(video_menu, 4, "option_hud", function(_value)
 {
     ini_open("saveData.ini");
-    ini_write_real("Option", "hud", arg0);
+    ini_write_real("Option", "hud", _value);
     ini_close();
-    global.option_hud = arg0;
+    global.option_hud = _value;
 }).value = global.option_hud;
 #endregion
 
@@ -168,12 +168,12 @@ for (var i = 0; i < ds_map_size(global.lang_map); i++)
     array_push(lang, create_option_value(l[? "display_name"], key, false));
     key = ds_map_find_next(global.lang_map, key);
 }
-var lang_option = add_option_multiple(game_menu, 1, "option_lang", lang, function(arg0)
+var lang_option = add_option_multiple(game_menu, 1, "option_lang", lang, function(_value)
 {
     ini_open("saveData.ini");
-    ini_write_string("Option", "lang", arg0);
+    ini_write_string("Option", "lang", _value);
     ini_close();
-    global.option_lang = arg0;
+    global.option_lang = _value;
     global.lang = global.option_lang;
 });
 var r = 0;
@@ -188,12 +188,12 @@ for (var i = 0; i < array_length(lang); i++)
 lang_option.value = r;
 #endregion
 #region Timer
-add_option_toggle(game_menu, 2, "option_timer", function(arg0)
+add_option_toggle(game_menu, 2, "option_timer", function(_value)
 {
     ini_open("saveData.ini");
-    ini_write_real("Option", "timer", arg0);
+    ini_write_real("Option", "timer", _value);
     ini_close();
-    global.option_timer = arg0;
+    global.option_timer = _value;
 }).value = global.option_timer;
 #endregion
 #region Timer Type
@@ -202,12 +202,12 @@ add_option_multiple(game_menu, 3, "option_timer_type",
 	create_option_value("option_timer_level", 0), 
 	create_option_value("option_timer_save", 1)
 ], 
-function(arg0)
+function(_value)
 {
     ini_open("saveData.ini");
-    ini_write_real("Option", "timer_type", arg0);
+    ini_write_real("Option", "timer_type", _value);
     ini_close();
-    global.option_timer_type = arg0;
+    global.option_timer_type = _value;
 }).value = global.option_timer_type;
 #endregion
 

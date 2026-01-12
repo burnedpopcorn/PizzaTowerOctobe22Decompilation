@@ -317,22 +317,22 @@ if (DEBUG)
     search_w = 0;
     keyboard_string = "";
     
-    function FindCommand(arg0)
+    function FindCommand(_command)
     {
         for (var i = 0; i < ds_list_size(command_list); i++)
         {
             var b = command_list[| i];
             
-            if (b.command_id == arg0)
+            if (b.command_id == _command)
                 return b;
         }
         
         return undefined;
     }
     
-    function DoCommand(arg0)
+    function DoCommand(_command)
     {
-        var commands = _string_split(arg0, " ");
+        var commands = _string_split(_command, " ");
         
         if (array_length(commands) > 1)
         {
@@ -340,70 +340,70 @@ if (DEBUG)
             
             if (c != undefined)
             {
-                TextList_Add(debug_text_type.command, arg0);
+                TextList_Add(debug_text_type.command, _command);
                 array_delete(commands, 0, 2);
                 c.Invoke(commands);
                 return true;
             }
             else
             {
-                TextList_Add(debug_text_type.normal, arg0);
+                TextList_Add(debug_text_type.normal, _command);
                 TextList_Add(debug_text_type.error, "Invalid command");
             }
         }
         else
         {
-            TextList_Add(debug_text_type.normal, arg0);
+            TextList_Add(debug_text_type.normal, _command);
             TextList_Add(debug_text_type.error, "No text typed");
         }
         
         return false;
     }
     
-    function GetDouble(arg0)
+    function GetDouble(_input)
     {
-        var n = string_digits(arg0);
+        var n = string_digits(_input);
         
         if (n != undefined && n != "")
         {
-            n = real(arg0);
+            n = real(_input);
             return n;
         }
         
         return undefined;
     }
     
-    function get_bool(arg0)
+    function get_bool(_input)
     {
-        if (arg0 == "true")
+        if (_input == "true")
         {
-            arg0 = true;
-            return arg0;
+            _input = true;
+            return _input;
         }
-        else if (arg0 == "false")
+        else if (_input == "false")
         {
-            arg0 = false;
-            return arg0;
+            _input = false;
+            return _input;
         }
-        else if (is_real(real(string_digits(arg0))))
+        else if (is_real(real(string_digits(_input))))
         {
-            arg0 = bool(real(string_digits(arg0)));
-            return arg0;
+            _input = bool(real(string_digits(_input)));
+            return _input;
         }
         
         return undefined;
     }
     
-    function get_number_string(arg0)
+    function get_number_string(_input)
     {
-        var n = arg0;
+        var n = _input;
         
-        if (is_string(arg0))
+        if (is_string(_input))
         {
-            n = real(string_digits(arg0));
+            n = real(string_digits(_input));
             
-            if (string_char_at(arg0, 1) == "-")
-                n = -real(string_digits(arg0));
+            if (string_char_at(_input, 1) == "-")
+                n = -real(string_digits(_input));
         }
         
         return n;

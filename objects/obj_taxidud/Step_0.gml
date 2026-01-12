@@ -14,9 +14,7 @@ if (hsp != 0)
 if (start)
 {
     if (jumpbuffer > 0)
-    {
         jumpbuffer--;
-    }
     else if (!jump)
     {
         jump = true;

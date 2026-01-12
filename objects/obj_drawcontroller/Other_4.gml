@@ -26,6 +26,4 @@ if (room == dungeon_5 || room == dungeon_6)
     dark_alpha = 1;
 }
 else
-{
     use_dark = false;
-}

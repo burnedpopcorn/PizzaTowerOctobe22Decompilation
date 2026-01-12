@@ -213,9 +213,7 @@ switch (state)
         y = hitY + irandom_range(-4, 4);
         
         if (hitLag > 0)
-        {
             hitLag--;
-        }
         else
         {
             x = hitX;

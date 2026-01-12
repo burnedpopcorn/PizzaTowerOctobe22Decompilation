@@ -5,9 +5,7 @@ if (fadein)
     if (fadealpha >= 1)
     {
         if (!instance_exists(obj_player1))
-        {
             instance_activate_object(obj_player1);
-        }
         else
         {
             fadein = false;
@@ -21,9 +19,7 @@ else
     if (!pos_player)
     {
         if (!instance_exists(obj_player1))
-        {
             instance_activate_object(obj_player1);
-        }
         else
         {
             pos_player = true;

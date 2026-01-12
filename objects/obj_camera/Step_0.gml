@@ -45,9 +45,7 @@ if (global.coop == true)
     p2pdistancex = (p1.x >= p2.x) ? (-p2pdistance / 5) : (p2pdistance / 5);
 }
 else
-{
     p2pdistancex = 0;
-}
 
 if (floor(image_index) == 10)
     shoving = false;
@@ -80,9 +78,7 @@ if (global.combo > 0)
         }
     }
     else
-    {
         combobubblevisible = true;
-    }
 }
 else if (comboend)
 {
@@ -133,9 +129,7 @@ if (global.seconds > 59)
 if (global.timedgatetimer)
 {
     if (global.timedgatetime > 0)
-    {
         global.timedgatetime--;
-    }
     else
     {
         global.timedgatetime = 0;
@@ -182,9 +176,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
             ty = target.backtohubstarty;
         
         if (player.cutscene || (player.collision_flags & colflag.secret) > 0)
-        {
             chargecamera = Approach(chargecamera, 0, 10);
-        }
         else if (player.state == states.mach2 || player.state == states.mach3)
         {
             var _targetcharge = player.xscale * ((player.movespeed / 4) * 50);
@@ -202,13 +194,9 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
             chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
         }
         else if (player.state == states.machslide)
-        {
             chargecamera = Approach(chargecamera, 0, 10);
-        }
         else
-        {
             chargecamera = Approach(chargecamera, 0, 6);
-        }
         
         var cam_width = camera_get_view_width(view_camera[0]);
         var cam_height = camera_get_view_height(view_camera[0]);

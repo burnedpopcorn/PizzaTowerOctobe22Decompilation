@@ -7,6 +7,8 @@ music = noone;
 pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
 panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
 panicstart = false;
+
+// Main Menu and Hub
 add_music(Mainmenu, "event:/music/title", noone, false);
 add_music(tower_tutorial1, "event:/music/tutorial", noone, false);
 add_music(tower_entrancehall, "event:/music/hub", noone, false, hub_state);
@@ -17,23 +19,27 @@ add_music(tower_4, "event:/music/hub", noone, false, hub_state);
 add_music(tower_5, "event:/music/hub", noone, false, hub_state);
 add_music(tower_finalhallway, "event:/music/finalescape", noone, false);
 add_music(tower_pizzafacehall, "event:/music/finalescape", noone, false);
+
+// Bosses
 add_music(boss_vigilante, "event:/music/boss/vigilante", noone, false);
 add_music(boss_fakepep, "event:/music/boss/fakepep", noone, false);
 add_music(boss_fakepephallway, "event:/music/pillarmusic", noone, false);
 add_music(boss_fakepepkey, "event:/music/boss/fakepep", noone, false);
 add_music(boss_noise, "event:/music/boss/noise", noone, false);
 add_music(boss_pepperman, "event:/music/boss/pepperman", noone, false);
-add_music(boss_pizzaface, "event:/music/boss/pizzaface", noone, false, function(arg0, arg1)
+add_music(boss_pizzaface, "event:/music/boss/pizzaface", noone, false, function(_room, _parameter)
 {
-    if (arg0 == 25)
-        fmod_event_instance_set_parameter(arg1, "state", 0, true);
-    else if (arg0 == 150)
-        fmod_event_instance_set_parameter(arg1, "state", 4, false);
+    if (_room == boss_pizzaface)
+        fmod_event_instance_set_parameter(_parameter, "state", 0, true);
+    else if (_room == boss_pizzafacehub)
+        fmod_event_instance_set_parameter(_parameter, "state", 4, false);
 });
+
+// Floor 1
 add_music(entrance_1, "event:/music/w1/entrance", "event:/music/w1/medievalsecret", false);
-add_music(medieval_1, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", false, function(arg0, arg1, arg2)
+add_music(medieval_1, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", false, function(_room, _event, _secret_event)
 {
-    if (!global.panic && (arg0 == 436 || arg0 == 370 || arg0 == 437 || arg0 == 440))
+    if (!global.panic && (_room == medieval_3 || _room == medieval_3b || _room == medieval_4 || _room == medieval_5))
         fmod_set_parameter("musicmuffle", 0.6, false);
     else
         fmod_set_parameter("musicmuffle", 0, false);
@@ -44,6 +50,8 @@ add_music(ruin_7, "event:/music/w1/ruinremix", "event:/music/w1/ruinsecret", tru
 add_music(dungeon_1, "event:/music/w1/dungeon", "event:/music/w1/dungeonsecret", false);
 add_music(dungeon_8, "event:/music/w1/dungeon", "event:/music/w1/dungeonsecret", false);
 add_music(dungeon_9, "event:/music/w1/dungeondepth", "event:/music/w1/dungeonsecret", false);
+
+// Floor 2
 add_music(badland_1, "event:/music/w2/desert", "event:/music/w2/desertsecret", false);
 add_music(badland_8b, "event:/music/w2/desert", "event:/music/w2/desertsecret", true);
 add_music(badland_9, "event:/music/w2/ufo", "event:/music/w2/desertsecret", true);
@@ -52,6 +60,8 @@ add_music(badland_10, "event:/music/w2/desert", "event:/music/w2/desertsecret", 
 add_music(farm_2, "event:/music/w2/farm", "event:/music/w2/farmsecret", false);
 add_music(graveyard_1, "event:/music/w2/graveyard", "event:/music/w1/medievalsecret", false);
 add_music(saloon_1, "event:/music/w2/saloon", "event:/music/w2/saloonsecret", false);
+
+// Floor 3
 add_music(plage_entrance, "event:/music/w3/beach", "event:/music/w1/medievalsecret", false);
 add_music(forest_1, "event:/music/w3/forest", "event:/music/w1/medievalsecret", false);
 add_music(forest_G1, "event:/music/w3/forest", "event:/music/w1/medievalsecret", true);
@@ -59,10 +69,14 @@ add_music(forest_G1b, "event:/music/w3/gustavo", "event:/music/w1/medievalsecret
 add_music(forest_5, "event:/music/w3/forest", "event:/music/w1/medievalsecret", false);
 add_music(minigolf_1, "event:/music/w3/golf", "event:/music/w1/medievalsecret", false);
 add_music(space_1, "event:/music/w3/space", "event:/music/w3/spacesecret", false);
+
+// Floor 4
 add_music(freezer_1, "event:/music/w4/freezer", "event:/music/w1/medievalsecret", false);
 add_music(industrial_1, "event:/music/w4/industrial", "event:/music/w1/medievalsecret", false);
 add_music(sewer_1, "event:/music/w4/sewer", "event:/music/w1/medievalsecret", false);
 add_music(street_1, "event:/music/w4/street", "event:/music/w1/medievalsecret", false);
+
+// Floor 5
 add_music(chateau_1, "event:/music/w5/chateau", "event:/music/w1/medievalsecret", false);
 add_music(kidsparty_1, "event:/music/w5/kidsparty", "event:/music/w1/medievalsecret", false);
 add_music(war_1, "event:/music/w5/war", "event:/music/w1/medievalsecret", false);

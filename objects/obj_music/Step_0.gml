@@ -14,9 +14,7 @@ if (instance_exists(obj_hungrypillar))
         pillar_on_camera = p;
 }
 else
-{
     pillar_on_camera = false;
-}
 
 if (prevpillar_on_camera != pillar_on_camera)
 {

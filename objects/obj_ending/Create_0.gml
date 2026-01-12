@@ -15,7 +15,49 @@ whitefade = 0;
 image_speed = 0.35;
 puffbuffer = 0;
 introbuffer = 0;
-spawn_arr = [obj_hppickup, obj_vigilantecow, obj_escapespawn, obj_totem, obj_noisebigbomb, 3480, obj_rocketdead, obj_timeattack, obj_badratspawner, obj_johnecheese_spawner, obj_laundrymachine, obj_hiddenobject, obj_cutoff, obj_pepper_groundpoundspot, 2383, obj_destroyablegolf, obj_tank, 1414, obj_fakepepspawner, obj_press, 1734, obj_farmerparent, 3323, obj_iceblock_breakable, obj_pizzahead_haywire, obj_pause, 2094, 1047, obj_boilingsauce, 2642, obj_lapportal, obj_menutv, obj_laundrymachine, obj_mine, 1041, 2137, 3612, obj_gerome, obj_file3, obj_pizzacoinindicator];
+spawn_arr = 
+[
+	spr_forknight_walk, 
+	spr_slimemove, 
+	spr_pepgoblin, 
+	spr_ancho, 
+	spr_pizzagoblin_walk, 
+	spr_badrat_walk, 
+	spr_banditochicken_chase, 
+	spr_tank_walk, 
+	spr_bigcheese_walk, 
+	spr_canongoblin_walk, 
+	spr_robot_walk, 
+	spr_coolpinea, 
+	spr_minijohn_charge, 
+	spr_fencer_charge, 
+	spr_farmer1_walk, 
+	spr_farmer2_walk, 
+	spr_peasanto_walk, 
+	spr_ghostknight_move, 
+	spr_ghoul_attack, 
+	spr_golfburger_walk, 
+	spr_golfdemon_walk, 
+	spr_indiancheese_walk, 
+	spr_kentukybomber_move, 
+	spr_kentukykenny_walk, 
+	spr_ufolive, 
+	spr_archergoblin_walk, 
+	spr_patroller_walk, 
+	spr_pepbat_move, 
+	spr_pickle_walk, 
+	spr_pizzaball_roll, 
+	spr_pizzard_walk, 
+	spr_pizzice_walk, 
+	spr_robot_walk, 
+	spr_sausageman_walk, 
+	spr_pizzaslug_walk, 
+	spr_newpizzice_walk, 
+	spr_soldier_walk, 
+	spr_swedishmonkey_walk, 
+	spr_shrimp_walk, 
+	spr_treasureguy_escape
+];
 
 with (instance_create(0, 0, obj_introprop))
 {

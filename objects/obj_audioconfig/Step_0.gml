@@ -48,9 +48,7 @@ if (key_jump || keyboard_check_pressed(vk_enter))
 }
 
 if (key_buffer > 0)
-{
     key_buffer--;
-}
 else
 {
     if (-key_left || keyboard_check(vk_left))

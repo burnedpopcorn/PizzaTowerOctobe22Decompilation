@@ -20,7 +20,5 @@ if (use_static)
         }
     }
     else if (static_dir < 0 && static_index <= 0)
-    {
         instance_destroy();
-    }
 }
