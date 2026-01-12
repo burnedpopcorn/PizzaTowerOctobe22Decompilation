@@ -1,6 +1,8 @@
 scr_initenemy();
 attack_list = noone;
 currentattack = 0;
+
+#region Phase 1 Attacks
 vigilante_start_attack(0, 0);
 vigilante_add_attack(0, 0, vigi_attacks.revolver, 25);
 vigilante_add_attack(0, 0, vigi_attacks.revolver, 25);
@@ -10,6 +12,7 @@ vigilante_add_attack(0, 0, vigi_attacks.revolver, 25);
 vigilante_add_attack(0, 0, vigi_attacks.revolver, 15);
 vigilante_add_attack(0, 0, vigi_attacks.mach, 45);
 vigilante_end_attack(0, 0);
+
 vigilante_start_attack(0, 1);
 vigilante_add_attack(0, 1, vigi_attacks.dynamite);
 vigilante_add_attack(0, 1, vigi_attacks.dynamite);
@@ -32,11 +35,13 @@ vigilante_add_attack(0, 1, vigi_attacks.mach, 5);
 vigilante_add_attack(0, 1, vigi_attacks.wait, 85);
 vigilante_add_attack(0, 1, vigi_attacks.revolver, 10);
 vigilante_end_attack(0, 1);
+
 vigilante_start_attack(0, 2);
 vigilante_add_attack(0, 2, vigi_attacks.machinegun);
 vigilante_add_attack(0, 2, vigi_attacks.dynamite);
 vigilante_add_attack(0, 2, vigi_attacks.dynamite);
 vigilante_end_attack(0, 2);
+
 vigilante_start_attack(0, 3);
 vigilante_add_attack(0, 3, vigi_attacks.machinegun);
 vigilante_add_attack(0, 3, vigi_attacks.revolver, 10);
@@ -44,10 +49,12 @@ vigilante_add_attack(0, 3, vigi_attacks.revolver, 10);
 vigilante_add_attack(0, 3, vigi_attacks.revolver, 10);
 vigilante_add_attack(0, 3, vigi_attacks.revolver, 10);
 vigilante_end_attack(0, 3);
+
 vigilante_start_attack(0, 4);
 vigilante_add_attack(0, 4, vigi_attacks.mach, 45);
 vigilante_add_attack(0, 4, vigi_attacks.wait, 5);
 vigilante_end_attack(0, 4);
+
 vigilante_start_attack(0, 5);
 vigilante_add_attack(0, 5, vigi_attacks.bazooka);
 vigilante_add_attack(0, 5, vigi_attacks.mach, 20);
@@ -62,15 +69,18 @@ vigilante_add_attack(0, 5, vigi_attacks.dynamite);
 vigilante_add_attack(0, 5, vigi_attacks.revolver, 5);
 vigilante_add_attack(0, 5, vigi_attacks.revolver, 5);
 vigilante_end_attack(0, 5);
+
 vigilante_start_attack(0, 6);
 vigilante_add_attack(0, 6, vigi_attacks.dynamite);
 vigilante_add_attack(0, 6, vigi_attacks.dynamite);
 vigilante_add_attack(0, 6, vigi_attacks.flamethrower, 200);
 vigilante_end_attack(0, 6);
+
 vigilante_start_attack(0, 7);
 vigilante_add_attack(0, 7, vigi_attacks.flamethrower, 200);
 vigilante_add_attack(0, 7, vigi_attacks.wait, 45);
 vigilante_end_attack(0, 7);
+
 vigilante_start_attack(0, 8);
 vigilante_add_attack(0, 8, vigi_attacks.crate);
 vigilante_add_attack(0, 8, vigi_attacks.wait, 300);
@@ -90,15 +100,20 @@ vigilante_add_attack(0, 8, vigi_attacks.revolver, 5);
 vigilante_add_attack(0, 8, vigi_attacks.dynamite);
 vigilante_add_attack(0, 8, vigi_attacks.dynamite);
 vigilante_end_attack(0, 8);
+#endregion
+#region Phase 2 Attacks
 vigilante_start_attack(1, 0);
 vigilante_add_attack(1, 0, vigi_attacks.dynamite);
 vigilante_end_attack(1, 0);
+
 vigilante_start_attack(1, 1);
 vigilante_add_attack(1, 1, vigi_attacks.mach, 25);
 vigilante_end_attack(1, 1);
+
 vigilante_start_attack(1, 2);
 vigilante_add_attack(1, 2, vigi_attacks.revolver, 25);
 vigilante_end_attack(1, 2);
+
 vigilante_start_attack(1, 3);
 vigilante_add_attack(1, 3, vigi_attacks.dynamite);
 vigilante_add_attack(1, 3, vigi_attacks.dynamite);
@@ -107,10 +122,12 @@ vigilante_add_attack(1, 3, vigi_attacks.dynamite);
 vigilante_add_attack(1, 3, vigi_attacks.dynamite);
 vigilante_add_attack(1, 3, vigi_attacks.bazooka);
 vigilante_end_attack(1, 3);
+
 vigilante_start_attack(1, 4);
 vigilante_add_attack(1, 4, vigi_attacks.crate);
 vigilante_add_attack(1, 4, vigi_attacks.flamethrower, 1900);
 vigilante_end_attack(1, 4);
+
 vigilante_start_attack(1, 5);
 vigilante_add_attack(1, 5, vigi_attacks.crate);
 vigilante_add_attack(1, 5, vigi_attacks.machinegun);
@@ -123,6 +140,7 @@ vigilante_add_attack(1, 5, vigi_attacks.machinegun);
 vigilante_add_attack(1, 5, vigi_attacks.machinegun);
 vigilante_add_attack(1, 5, vigi_attacks.machinegun);
 vigilante_end_attack(1, 5);
+
 vigilante_start_attack(1, 6);
 vigilante_add_attack(1, 6, vigi_attacks.crate);
 vigilante_add_attack(1, 6, vigi_attacks.mach, 45);
@@ -139,9 +157,11 @@ vigilante_add_attack(1, 6, vigi_attacks.mach, 45);
 vigilante_add_attack(1, 6, vigi_attacks.mach, 45);
 vigilante_add_attack(1, 6, vigi_attacks.mach, 45);
 vigilante_end_attack(1, 6);
+
 vigilante_start_attack(1, 7);
 vigilante_add_attack(1, 7, vigi_attacks.mach, 45);
 vigilante_end_attack(1, 7);
+
 vigilante_start_attack(1, 8);
 vigilante_add_attack(1, 8, vigi_attacks.revolver, 25);
 vigilante_add_attack(1, 8, vigi_attacks.revolver, 24);
@@ -164,6 +184,8 @@ vigilante_add_attack(1, 8, vigi_attacks.revolver, 8);
 vigilante_add_attack(1, 8, vigi_attacks.revolver, 7);
 vigilante_add_attack(1, 8, vigi_attacks.wait, 200);
 vigilante_end_attack(1, 8);
+#endregion
+
 targetguy_max = 1000;
 alarm[8] = targetguy_max;
 crouchalphabuffer = 0;

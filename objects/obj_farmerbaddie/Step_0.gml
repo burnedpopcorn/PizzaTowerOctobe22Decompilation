@@ -13,9 +13,7 @@ switch (state)
     
     case states.walk:
         if (!idle)
-        {
             scr_enemy_walk();
-        }
         else
         {
             sprite_index = idlespr;
@@ -76,9 +74,7 @@ if (state == states.walk)
     var t = playerid.x > (x - x1) && playerid.x < (x + x1) && playerid.y > (y - 100) && playerid.y < (y + 100);
     
     if (cooldown > 0)
-    {
         cooldown--;
-    }
     else if (t && collision_line(x, y, playerid.x, playerid.y, obj_solid, false, true) == noone)
     {
         state = states.jump;
@@ -135,9 +131,7 @@ else if (state == states.charge)
             attackspeed = Approach(attackspeed, 0, 0.1);
     }
     else
-    {
         attackspeed = Approach(attackspeed, attackmaxspeed, 1);
-    }
     
     if (attackspeed <= 0)
     {

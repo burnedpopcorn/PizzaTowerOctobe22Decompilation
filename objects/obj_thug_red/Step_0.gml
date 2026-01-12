@@ -161,9 +161,7 @@ if (state == states.punch)
     }
 }
 else if (flash && alarm[4] == -1)
-{
     alarm[4] = 7;
-}
 
 switch (state)
 {

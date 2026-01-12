@@ -185,9 +185,7 @@ if (state == states.stun)
     }
 }
 else
-{
     savedthrown = false;
-}
 
 if (prevhp != elitehit)
 {
@@ -254,7 +252,7 @@ if (place_meeting(x, y, obj_player) && !invincible && state != states.phase1hurt
     if (obj_player1.flash)
         obj_player1.flash = false;
     
-    scr_hurtplayer(464);
+    scr_hurtplayer(obj_player1);
     tauntstoredsprite = sprite_index;
     tauntstoredindex = image_index;
     tauntstoredstate = state;

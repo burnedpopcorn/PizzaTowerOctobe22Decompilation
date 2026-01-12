@@ -18,9 +18,7 @@ with (obj_noiseboss)
 if (b)
 {
     if (spawnbuffer > 0)
-    {
         spawnbuffer--;
-    }
     else
     {
         spawnbuffer = spawnmax;

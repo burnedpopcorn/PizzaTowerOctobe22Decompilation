@@ -8,9 +8,7 @@ switch (state)
 {
     case states.walk:
         if (substate_buffer > 0)
-        {
             substate_buffer--;
-        }
         else
         {
             substate_buffer = substate_max;
@@ -20,9 +18,7 @@ switch (state)
                 substate = choose(states.walk, states.idle, states.turn);
             
             if (substate == states.walk)
-            {
                 image_xscale = choose(-1, 1);
-            }
             else if (substate == states.turn)
             {
                 sprite_index = spr_pizzaslug_turn;

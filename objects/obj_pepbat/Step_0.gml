@@ -22,9 +22,7 @@ switch (state)
             vsp = 0;
             
             if (scaredbuffer > 0)
-            {
                 scaredbuffer--;
-            }
             else
             {
                 sprite_index = spr_pepbat_idle;

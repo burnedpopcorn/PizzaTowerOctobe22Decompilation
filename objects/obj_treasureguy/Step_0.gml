@@ -158,9 +158,7 @@ if (state == states.chase)
             }
         }
         else
-        {
             jumped = false;
-        }
     }
     
     if (distance_to_object(targetplayer) > idle_threshold)

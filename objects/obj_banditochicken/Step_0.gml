@@ -111,9 +111,7 @@ if (bonebuffer == 0)
         while (y < room_height)
         {
             if (place_meeting(x, y, obj_solid))
-            {
                 y++;
-            }
             else
             {
                 t = true;

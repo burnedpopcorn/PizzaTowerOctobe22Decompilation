@@ -33,13 +33,9 @@ switch (state)
         var is = 1.25;
         
         if (image_speed < is)
-        {
             image_speed = Approach(image_speed, is, 0.03);
-        }
         else if (cooldown > 0)
-        {
             cooldown--;
-        }
         else
         {
             shot--;
@@ -112,9 +108,7 @@ if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
 if (bombreset > 0 && state != states.stun)
-{
     bombreset--;
-}
 else if (state == states.walk && distance_to_object(obj_player) < 300)
 {
     state = states.Throw;

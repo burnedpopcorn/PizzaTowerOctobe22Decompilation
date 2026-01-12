@@ -15,7 +15,7 @@ if (!noise_grabbed)
             if (obj_player1.flash)
                 obj_player1.flash = false;
             
-            scr_hurtplayer(464);
+            scr_hurtplayer(obj_player1);
         }
     }
     
@@ -33,9 +33,7 @@ if (!noise_grabbed)
                 image_index = 0;
             }
             else
-            {
                 scr_noise_do_hurt(other.id);
-            }
         }
     }
     

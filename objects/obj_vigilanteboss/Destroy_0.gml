@@ -1,6 +1,4 @@
-if (destroyable && elitehit <= 0)
-{
-}
+if (destroyable && elitehit <= 0) { }
 
 if (elitehit <= 0 && pizzahead && destroyable)
 {

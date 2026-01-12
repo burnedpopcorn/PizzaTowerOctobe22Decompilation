@@ -91,9 +91,7 @@ with (ID)
                     instance_destroy(other);
             }
             else if (state == states.mach2 || state == states.tackle)
-            {
                 other.x = x + (image_xscale * 20);
-            }
             
             break;
         

@@ -4,6 +4,4 @@ if (other.state != states.handstandjump && !hasgrabbed)
         scr_hurtplayer(other);
 }
 else if (!move)
-{
     event_inherited();
-}

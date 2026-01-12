@@ -3,7 +3,19 @@ on_y = false;
 attackbuffer = 120;
 floatdir = 1;
 facepart_count = 4;
-baddie_arr = [[579, 176], [613, 198], [727, 3497], [586, 423], [608, 449], [612, 3623], [584, 408], [584, 408], [584, 408], [584, 408]];
+baddie_arr = 
+[
+	[obj_cheeseslime, spr_slimestun], 
+	[obj_forknight, spr_forknight_stun], 
+	[obj_badrat, spr_badrat_stun], 
+	[obj_banditochicken, spr_banditochicken_stun], 
+	[obj_spitcheese, spr_spitcheese_stun], 
+	[obj_ninja, spr_ninja_stun], 
+	[obj_minijohn, spr_minijohn_stun], 
+	[obj_minijohn, spr_minijohn_stun], 
+	[obj_minijohn, spr_minijohn_stun], 
+	[obj_minijohn, spr_minijohn_stun]
+];
 nosespit = true;
 nosecount = 1;
 baddie_range = 1;

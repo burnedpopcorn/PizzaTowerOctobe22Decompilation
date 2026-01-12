@@ -262,9 +262,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
             }
         }
         else
-        {
             instance_destroy();
-        }
     }
 }
 
@@ -284,9 +282,7 @@ if (state == states.stun)
     }
 }
 else
-{
     savedthrown = false;
-}
 
 if (state != states.duel)
 {

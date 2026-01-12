@@ -20,9 +20,7 @@ switch (state)
         if (!instance_exists(obj_pf_fakepepgianthead))
         {
             if (fakepepspawn > 0)
-            {
                 fakepepspawn--;
-            }
             else
             {
                 fakepepspawn = 200 + irandom(100);
@@ -33,9 +31,7 @@ switch (state)
         if (elitehit < 4)
         {
             if (clonespawn > 0)
-            {
                 clonespawn--;
-            }
             else
             {
                 clonespawn = 150 - (elitehit * 5);
@@ -75,9 +71,7 @@ switch (state)
         }
         
         if (junkspawn > 0)
-        {
             junkspawn--;
-        }
         else
         {
             var b = choose(20, room_width - 20);

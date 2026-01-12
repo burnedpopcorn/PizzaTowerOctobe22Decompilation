@@ -91,9 +91,7 @@ if (state == states.walk)
         }
     }
     else if (alarm[5] == -1)
-    {
         alarm[5] = 60;
-    }
 }
 
 if (state == states.walk && point_in_camera(x, y, view_camera[0]))

@@ -4,16 +4,16 @@ parryable = false;
 parried = false;
 team = 1;
 
-function SUPER_player_hurt(arg0, arg1)
+function SUPER_player_hurt(_hp_amount, _player)
 {
-    if (!collisioned && arg1.state != states.arenaround)
+    if (!collisioned && _player.state != states.arenaround)
     {
         if (instance_exists(obj_bosscontroller))
-            obj_bosscontroller.player_hp -= arg0;
+            obj_bosscontroller.player_hp -= _hp_amount;
         
         collisioned = true;
         
-        with (arg1)
+        with (_player)
         {
             scr_soundeffect(sfx_killingblow);
             var lag = 8;
@@ -58,20 +58,20 @@ function SUPER_parry()
     }
 }
 
-function SUPER_boss_hurt(arg0)
+function SUPER_boss_hurt(_boss)
 {
-    if (!collisioned && team != arg0.team)
+    if (!collisioned && team != _boss.team)
     {
-        with (arg0)
+        with (_boss)
             boss_hurt_noplayer(other.dmg);
         
         collisioned = true;
     }
 }
 
-function boss_hurt(arg0)
+function boss_hurt(_boss)
 {
-    SUPER_boss_hurt(arg0);
+    SUPER_boss_hurt(_boss);
 }
 
 function parry()
@@ -79,7 +79,7 @@ function parry()
     SUPER_parry();
 }
 
-function player_hurt(arg0, arg1)
+function player_hurt(_hp_amount, _player)
 {
-    SUPER_player_hurt(arg0, arg1);
+    SUPER_player_hurt(_hp_amount, _player);
 }

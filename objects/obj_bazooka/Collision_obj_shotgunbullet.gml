@@ -6,6 +6,4 @@ if (sprite_index == spr_piraneapple_projectile)
         sprite_index = spr_piraneapple_dead;
 }
 else
-{
     instance_destroy();
-}

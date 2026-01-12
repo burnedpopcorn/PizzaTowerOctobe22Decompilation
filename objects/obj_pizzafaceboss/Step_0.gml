@@ -95,9 +95,7 @@ if (state == states.stun)
     }
 }
 else
-{
     savedthrown = false;
-}
 
 if (state == states.stun && stunned > 100 && birdcreated == false)
 {

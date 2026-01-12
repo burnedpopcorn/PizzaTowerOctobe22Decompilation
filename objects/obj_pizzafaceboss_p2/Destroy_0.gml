@@ -41,6 +41,4 @@ if (destroyable && elitehit <= 0)
     }
 }
 else
-{
     event_inherited();
-}

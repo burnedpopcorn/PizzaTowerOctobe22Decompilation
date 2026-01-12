@@ -22,9 +22,7 @@ switch (state)
                 t = playerid.x < (x + 16) && playerid.x > (x - x1) && playerid.y > (y - 16) && playerid.y < (y + 200);
             
             if (cooldown > 0)
-            {
                 cooldown--;
-            }
             else if (t)
             {
                 state = states.transitioncutscene;
@@ -57,9 +55,7 @@ switch (state)
             y = ystart;
         }
         else
-        {
             image_xscale = sign(x - xstart);
-        }
         
         break;
     

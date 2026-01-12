@@ -97,9 +97,7 @@ if (state == states.totem && totemID != noone)
     }
 }
 else if (state == states.totem && totemID == noone)
-{
     state = states.walk;
-}
 
 if (state == states.stun && stunned > 40 && birdcreated == false)
 {

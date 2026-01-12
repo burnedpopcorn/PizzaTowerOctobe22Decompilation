@@ -99,14 +99,10 @@ if (state == states.walk)
         }
     }
     else if (alarm[5] == -1)
-    {
         alarm[5] = 60;
-    }
 }
 else if (state == states.stun || state == states.grabbed || state == states.hit)
-{
     alarm[5] = -1;
-}
 
 if (state == states.walk && point_in_camera(x, y, view_camera[0]))
 {

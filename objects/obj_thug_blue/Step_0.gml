@@ -116,9 +116,7 @@ else if (state == states.chase)
 if (state == states.charge)
 {
     if (attack_count > 0)
-    {
         attack_count--;
-    }
     else
     {
         image_index = 0;

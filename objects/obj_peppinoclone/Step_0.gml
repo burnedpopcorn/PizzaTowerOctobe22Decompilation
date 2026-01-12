@@ -35,9 +35,7 @@ switch (state)
                 }
             }
             else
-            {
                 hsp = image_xscale * 6;
-            }
             
             if (state != states.punch)
             {
@@ -49,13 +47,9 @@ switch (state)
                         sprite_index = idlespr;
                 }
                 else if (sprite_index != spr_player_jump && sprite_index != spr_player_fall)
-                {
                     sprite_index = spr_player_fall;
-                }
                 else if (sprite_index == spr_player_jump && ANIMATION_ENDED)
-                {
                     sprite_index = spr_player_fall;
-                }
                 
                 var inst_front = collision_line(x, y + 25, x + (sign(hsp) * 78), y + 25, obj_solid, false, true);
                 var inst_down = collision_line(x + (sign(hsp) * 16), y, x + (sign(hsp) * 16), y + 64, obj_solid, false, true);

@@ -1,7 +1,5 @@
 if (!place_meeting(x, y, obj_solid))
-{
     scr_collide();
-}
 else
 {
     y += vsp;

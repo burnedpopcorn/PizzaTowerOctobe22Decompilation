@@ -129,9 +129,7 @@ switch (state)
     
     case states.walk:
         if (attack_cooldown > 0)
-        {
             attack_cooldown--;
-        }
         else
         {
             var col = collision_line(x, y, player.x, player.y, obj_solid, false, true);

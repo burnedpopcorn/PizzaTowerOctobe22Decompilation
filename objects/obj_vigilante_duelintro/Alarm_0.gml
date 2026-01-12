@@ -34,9 +34,7 @@ else if (state == 5)
     alarm[0] = 20;
 }
 else if (state == 6)
-{
     instance_destroy();
-}
 
 with (obj_player)
 {

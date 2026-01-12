@@ -59,9 +59,7 @@ targetplayer = instance_nearest(x, y, obj_player);
 if (state == states.walk)
 {
     if (sprite_index == spr_pizzaboy)
-    {
         hsp = 0;
-    }
     else
     {
         move = sign(targetplayer.x - x);
@@ -127,9 +125,7 @@ else if (state == states.punch)
     if (sprite_index == spr_ninja_punchattack)
     {
         if (floor(image_index) != 5 && floor(image_index) != 8 && floor(image_index) != 11)
-        {
             shot = false;
-        }
         else if (!shot)
         {
             with (instance_create(x, y + 6, obj_enemybullet))
@@ -194,9 +190,7 @@ if (inv_timer > 0)
     invincible = true;
 }
 else
-{
     invincible = false;
-}
 
 if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;

@@ -65,9 +65,7 @@ switch (state)
             railmovespeed = _railinst.movespeed * _railinst.dir;
         }
         else
-        {
             railmovespeed = 0;
-        }
         
         with (instance_place(x + hsp, y, obj_destructibles))
             instance_destroy();
@@ -230,6 +228,4 @@ if (state == states.mach2 || (state == states.slap && image_index > 11) || (stat
     }
 }
 else
-{
     hitboxcreate = false;
-}

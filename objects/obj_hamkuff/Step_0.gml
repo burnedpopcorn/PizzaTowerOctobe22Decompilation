@@ -31,9 +31,7 @@ switch (state)
             with (playerid)
             {
                 if (state == states.policetaxi)
-                {
                     other.state = states.walk;
-                }
                 else if (!launched)
                 {
                     var _xs = 0;

@@ -1,9 +1,7 @@
 if (spawn)
 {
     if (spawnbuffer > 0)
-    {
         spawnbuffer--;
-    }
     else
     {
         spawnbuffer = spawnmax;

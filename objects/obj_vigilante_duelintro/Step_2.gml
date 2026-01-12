@@ -14,6 +14,4 @@ if (state > 0 && state > 0 && state < 5)
     camera_set_view_pos(view_camera[0], cx, cy);
 }
 else
-{
     camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
-}

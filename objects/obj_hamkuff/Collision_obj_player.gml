@@ -45,7 +45,5 @@ if (state != states.stun)
         instance_destroy();
     }
     else
-    {
         scr_hurtplayer(other);
-    }
 }

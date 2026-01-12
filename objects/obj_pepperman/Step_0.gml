@@ -164,9 +164,7 @@ if (state == states.stun)
     }
 }
 else
-{
     savedthrown = false;
-}
 
 if (prevhp != elitehit)
 {

@@ -1,9 +1,7 @@
 mask_index = spr_pepperman_statues1;
 
 if (hitLag <= 0)
-{
     scr_collide();
-}
 else
 {
     x = hitX + irandom_range(-4, 4);

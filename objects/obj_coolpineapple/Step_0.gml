@@ -121,9 +121,7 @@ switch (state)
         vsp = 0;
         
         if (taunt_count > 0)
-        {
             taunt_count--;
-        }
         else
         {
             sprite_index = walkspr;
@@ -139,9 +137,7 @@ switch (state)
         image_speed = 0.35;
         
         if (trail_count > 0)
-        {
             trail_count--;
-        }
         else
         {
             with (create_afterimage(x, y, sprite_index, image_index - 1))
@@ -204,9 +200,7 @@ switch (state)
             }
             
             if (trail_count > 0)
-            {
                 trail_count--;
-            }
             else
             {
                 with (create_red_afterimage(x, y, sprite_index, image_index - 1, image_xscale))
@@ -216,9 +210,7 @@ switch (state)
             }
             
             if (breakdance > 0)
-            {
                 breakdance--;
-            }
             else
             {
                 sprite_index = walkspr;

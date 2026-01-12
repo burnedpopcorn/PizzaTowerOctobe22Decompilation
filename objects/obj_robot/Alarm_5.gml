@@ -6,6 +6,4 @@ if (elitehit == 1)
     alarm[5] = 15 + irandom_range(-2, 5);
 }
 else
-{
     alarm[5] = 10;
-}

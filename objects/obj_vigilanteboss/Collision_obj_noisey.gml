@@ -1,3 +1,1 @@
-if (other.thrown && state != states.stun)
-{
-}
+if (other.thrown && state != states.stun) { }

@@ -27,9 +27,7 @@ if (state == states.shoulderbash && hsp != 0)
     }
 }
 else if (wastedhits == 9 && phase == 1 && !pizzahead && (other.instakillmove || other.state == states.handstandjump) && state == states.contemplate)
-{
     scr_boss_do_hurt_phase2(other);
-}
 else if (state == states.mini && ministate != states.transitioncutscene && (other.instakillmove || other.state == states.handstandjump))
 {
     with (other)

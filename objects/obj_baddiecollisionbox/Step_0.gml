@@ -72,9 +72,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
             }
             
             if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != states.tumble) && ((state == states.handstandjump && global.attackstyle == 1) || instakillmove == true) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
-            {
                 Instakill();
-            }
             else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle == 0 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
             {
                 image_index = 0;

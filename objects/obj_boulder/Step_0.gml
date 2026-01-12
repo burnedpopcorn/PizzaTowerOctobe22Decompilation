@@ -14,9 +14,7 @@ switch (state)
             }
         }
         else if (grounded)
-        {
             state = states.walk;
-        }
         
         break;
     
@@ -43,9 +41,7 @@ switch (state)
             }
         }
         else if (b_movespeed > 6)
-        {
             b_movespeed -= 0.05;
-        }
         
         if (scr_solid(x + sign(hsp), y) && (!scr_slope() || (scr_solid_slope(x + sign(hsp), y - 2) || scr_solid(x + sign(hsp), y - 2))) && !place_meeting(x + sign(hsp), y, obj_destructibles))
             image_xscale *= -1;
@@ -197,9 +193,7 @@ if (state == states.stun)
     }
 }
 else
-{
     stuntouched = false;
-}
 
 if (flash == true && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;

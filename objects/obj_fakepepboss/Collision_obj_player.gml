@@ -12,9 +12,7 @@ if ((other.state == states.handstandjump || other.instakillmove) && visible && (
             image_index = 0;
         }
         else
-        {
             flashbuffer = 9;
-        }
         
         flash = true;
         subhp--;
