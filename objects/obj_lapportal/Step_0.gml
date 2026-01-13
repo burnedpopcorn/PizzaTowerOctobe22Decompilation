@@ -83,6 +83,4 @@ if (global.panic)
     }
 }
 else
-{
     image_alpha = 0.5;
-}

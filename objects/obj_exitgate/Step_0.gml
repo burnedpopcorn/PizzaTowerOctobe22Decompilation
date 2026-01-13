@@ -30,9 +30,7 @@ if (drop && global.panic)
         
         case states.hook:
             if (hand_y < (y - 128))
-            {
                 hand_y += 6;
-            }
             else
             {
                 handsprite = spr_grabbiehand_catch;

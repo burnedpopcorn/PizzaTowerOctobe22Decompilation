@@ -13,9 +13,7 @@ if (active)
         }
     }
     else
-    {
         hmovespeed = Approach(hmovespeed, h_velocity, hdeccel);
-    }
     
     var vdeccel = abs(v_velocity) / 24;
     
@@ -30,9 +28,7 @@ if (active)
         }
     }
     else
-    {
         vmovespeed = Approach(vmovespeed, v_velocity, vdeccel);
-    }
     
     hsp = hmovespeed * hscale;
     vsp = vmovespeed * vscale;

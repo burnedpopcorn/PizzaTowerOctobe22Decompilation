@@ -77,8 +77,6 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
             }
         }
         else
-        {
             instance_create_unique(0, 0, obj_fadeout);
-        }
     }
 }

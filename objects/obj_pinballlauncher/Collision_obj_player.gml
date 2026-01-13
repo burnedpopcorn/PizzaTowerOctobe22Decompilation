@@ -32,9 +32,7 @@ with (other)
                         i++;
                     }
                     else
-                    {
                         break;
-                    }
                 }
             }
             
@@ -50,9 +48,7 @@ with (other)
                         i++;
                     }
                     else
-                    {
                         break;
-                    }
                 }
             }
         }

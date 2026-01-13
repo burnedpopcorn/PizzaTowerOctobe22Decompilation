@@ -91,7 +91,14 @@ toppin[3] = ini_read_real("Toppin", string(level) + "4", 0);
 toppin[4] = ini_read_real("Toppin", string(level) + "5", 0);
 rank = ini_read_string("Ranks", string(level), "d");
 ini_close();
-var _toppinspr = [[1485, 1484, -75], [1475, 1474, -35], [1479, 1478, 0], [1468, 1466, 35], [1462, 1461, 75]];
+var _toppinspr = 
+[
+	[spr_toppinshroom, spr_toppinshroom_run, -75], 
+	[spr_toppincheese, spr_toppincheese_run, -35], 
+	[spr_toppintomato, spr_toppintomato_run, 0], 
+	[spr_toppinsausage, spr_toppinsausage_run, 35], 
+	[spr_toppinpineapple, spr_toppinpineapple_run, 75]
+];
 
 for (var i = 0; i < array_length(_toppinspr); i++)
 {

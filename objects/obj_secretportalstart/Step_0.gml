@@ -44,13 +44,9 @@ switch (sprite_index)
                         vsp = (character == "P") ? -5 : -7;
                     }
                     else if (isgustavo)
-                    {
                         state = states.ratmount;
-                    }
                     else
-                    {
                         sprite_index = tauntstoredsprite;
-                    }
                 }
             }
         }
@@ -97,9 +93,7 @@ switch (sprite_index)
         if (drop)
         {
             if (waitbuffer > 0)
-            {
                 waitbuffer--;
-            }
             else
             {
                 sprite_index = spr_secretportal_spawnclose;

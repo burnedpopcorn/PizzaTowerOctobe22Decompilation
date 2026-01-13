@@ -22,9 +22,7 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == fa
             number = string(val);
     }
     else
-    {
         instance_create(x + 32, y, content);
-    }
     
     repeat (3)
         create_baddiegibsticks(x + 32, y + 32);

@@ -36,9 +36,7 @@ if (place_meeting(x, y - s, obj_player))
                 state = states.ratmounttrickjump;
             }
             else
-            {
                 state = states.trickjump;
-            }
             
             if (!other.used)
             {

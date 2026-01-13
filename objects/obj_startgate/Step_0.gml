@@ -62,6 +62,4 @@ if (!drawing)
         bgalpha = 0;
 }
 else
-{
     bgalpha = Approach(bgalpha, 0, 0.1);
-}

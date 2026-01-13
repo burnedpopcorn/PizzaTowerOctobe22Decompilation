@@ -56,9 +56,7 @@ if (ANIMATION_ENDED)
                             secretportalID = other.id;
                         }
                         else
-                        {
                             targetRoom = lastroom;
-                        }
                     }
                     
                     if (!secret)

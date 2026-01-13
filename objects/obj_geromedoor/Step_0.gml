@@ -46,10 +46,7 @@ if (!global.horse && (obj_player1.state == states.normal || obj_player1.state ==
         }
         
         global.gerome = false;
-    }
-    else
-    {
-    }
+    } else { }
     
     image_index = 1;
 }

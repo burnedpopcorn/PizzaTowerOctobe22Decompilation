@@ -6,6 +6,4 @@ if (sprite_index != spr_pizzaportal)
     shader_reset();
 }
 else
-{
     draw_self();
-}
