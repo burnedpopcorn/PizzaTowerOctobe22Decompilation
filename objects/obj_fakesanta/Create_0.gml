@@ -1,5 +1,5 @@
 scr_initenemy();
-content = [587];
+content = [obj_snowman];
 random_buffer = 100;
 random_max = 100;
 instantkillable = false;

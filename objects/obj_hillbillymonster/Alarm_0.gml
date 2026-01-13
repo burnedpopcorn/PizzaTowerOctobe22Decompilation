@@ -4,6 +4,4 @@ if (sprite_index == spr_hillbilly_chase)
     alarm[0] = 15;
 }
 else
-{
     blood = false;
-}

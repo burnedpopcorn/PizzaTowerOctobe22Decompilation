@@ -36,9 +36,7 @@ switch (state)
 if (hsp != 0 || vsp != 0)
 {
     if (blurbuffer > 0)
-    {
         blurbuffer--;
-    }
     else
     {
         blurbuffer = 5;

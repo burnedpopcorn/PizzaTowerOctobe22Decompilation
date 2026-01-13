@@ -17,9 +17,7 @@ with (_boss)
         var psprite = p.tauntstoredsprite;
         
         if (object_index == obj_pizzafaceboss && phase > 1)
-        {
             SUPER_boss_hurt(30, p);
-        }
         else
         {
             boss_hurt(30, p);

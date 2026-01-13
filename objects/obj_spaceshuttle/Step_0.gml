@@ -4,9 +4,7 @@ if (state == states.hit)
     y = hitY + irandom_range(-1, 1);
     
     if (hitLag > 0)
-    {
         hitLag--;
-    }
     else
     {
         x = hitX;

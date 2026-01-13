@@ -5,9 +5,7 @@ if (place_meeting(x, y - 1, obj_player))
         if (state != states.gotoplayer && place_meeting(x, y + 1, other))
         {
             if (state == states.knightpep)
-            {
                 state = states.knightpepslopes;
-            }
             else if (state != states.knightpepslopes && state != states.Sjumpprep)
             {
                 if (state != states.machslide && state != states.tumble && state != states.handstandjump && state != states.mach1 && state != states.mach2 && state != states.mach3)
@@ -38,9 +36,7 @@ if (place_meeting(x, y - 1, obj_player))
                     }
                 }
                 else if (state == states.tumble)
-                {
                     icemovespeed = 0;
-                }
             }
         }
     }

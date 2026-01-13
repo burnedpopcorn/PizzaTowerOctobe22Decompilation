@@ -78,9 +78,7 @@ if (state != states.golf)
 if (state == states.thrown)
 {
     if (blur_effect > 0)
-    {
         blur_effect--;
-    }
     else
     {
         blur_effect = 2;
@@ -128,9 +126,7 @@ if (bigcheeseID != noone)
         invincible = true;
 }
 else
-{
     invincible = false;
-}
 
 if (state != states.grabbed)
     depth = 0;

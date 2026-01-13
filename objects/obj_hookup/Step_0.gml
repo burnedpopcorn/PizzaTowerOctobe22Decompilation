@@ -1,7 +1,5 @@
 if (appear > 0)
-{
     appear--;
-}
 else if (appear == 0)
 {
     appear = -1;

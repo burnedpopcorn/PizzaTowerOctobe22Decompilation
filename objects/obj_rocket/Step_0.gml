@@ -10,6 +10,4 @@ if (playerid != noone)
     }
 }
 else
-{
     visible = true;
-}

@@ -1,9 +1,7 @@
 with (other)
 {
     if (character == "V")
-    {
         scr_hurtplayer(id);
-    }
     else if (!isgustavo && state != states.ghost && state != states.ghostpossess && state != states.actor && state != states.Parry && state != states.gotoplayer)
     {
         scr_losepoints();

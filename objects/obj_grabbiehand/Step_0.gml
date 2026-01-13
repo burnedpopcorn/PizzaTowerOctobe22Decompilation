@@ -35,9 +35,7 @@ switch (state)
     
     case states.stun:
         if (stunned > 0)
-        {
             stunned--;
-        }
         else if (grounded)
         {
             state = states.ejected;

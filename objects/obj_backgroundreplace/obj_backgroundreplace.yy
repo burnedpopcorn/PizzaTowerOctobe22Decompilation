@@ -29,7 +29,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "World 4",
-    "path": "folders/Objects/Level Specific/World 4.yy",
+    "name": "Game Settings",
+    "path": "folders/Objects/Game Settings.yy",
   },
 }

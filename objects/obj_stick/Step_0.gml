@@ -22,9 +22,7 @@ switch (state)
             }
         }
         else if (ANIMATION_ENDED)
-        {
             state = states.normal;
-        }
         
         break;
     
@@ -152,9 +150,7 @@ switch (state)
                             bgsprite = other.bgsprite;
                         }
                         else
-                        {
                             sprite_index = spr_doorunvisited;
-                        }
                         
                         depth = 250;
                         y_to = other.y;

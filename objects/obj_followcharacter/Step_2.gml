@@ -12,9 +12,7 @@ if (playerid.state != states.ladder && playerid.state != states.door && playerid
         space -= spaceaccel;
 }
 else
-{
     space = Approach(space, 0, spaceaccel);
-}
 
 if (dir != playerid.xscale)
     dir = playerid.xscale;
@@ -44,9 +42,7 @@ if (ds_queue_size(followqueue) > (LAG_STEPS * 2))
         interp = 0.1;
     }
     else
-    {
         use_collision = false;
-    }
     
     if (!use_collision)
     {

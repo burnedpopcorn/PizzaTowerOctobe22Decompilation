@@ -22,9 +22,7 @@ with (other)
             vsp = -5;
         }
         else
-        {
             hsp = _dir * current_hspd;
-        }
     }
 }
 

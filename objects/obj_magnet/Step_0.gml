@@ -42,9 +42,7 @@ switch (state)
                 other.vsp = Approach(vsp, 0, 1);
             }
             else
-            {
                 sprite_index = spr_pizzaball_stun;
-            }
             
             hsp = other.hsp;
             vsp = other.vsp;
@@ -63,9 +61,7 @@ switch (state)
                 other.sprite_index = spr_sirnose_suck;
             }
             else
-            {
                 other.sprite_index = spr_sirnose_idle;
-            }
         }
         
         break;

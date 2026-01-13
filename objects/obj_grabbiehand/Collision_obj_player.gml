@@ -37,12 +37,8 @@ if (state != states.grabbing && x == xstart && y == ystart)
             tauntstoredvsp = 0;
         }
         else if (tauntstoredstate == states.mach2)
-        {
             sprite_index = spr_mach;
-        }
         else if (tauntstoredstate == states.mach3)
-        {
             sprite_index = spr_mach4;
-        }
     }
 }

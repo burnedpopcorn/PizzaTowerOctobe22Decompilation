@@ -130,9 +130,7 @@ switch (state)
             steppy = true;
             
             if (object_index != obj_blobmonster)
-            {
                 create_particle(x, y + 43, particle.cloudeffect);
-            }
             else
             {
                 var _y = 43;

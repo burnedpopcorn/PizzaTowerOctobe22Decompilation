@@ -21,9 +21,7 @@ switch (state)
         y += vsp;
         
         if (blur_effect > 0)
-        {
             blur_effect--;
-        }
         else
         {
             blur_effect = 2;

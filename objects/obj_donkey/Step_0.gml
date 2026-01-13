@@ -12,6 +12,4 @@ else if (blink)
     blink = false;
 }
 else
-{
     image_index = 0;
-}

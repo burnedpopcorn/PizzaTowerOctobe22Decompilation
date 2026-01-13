@@ -42,9 +42,7 @@ if (_used)
                             i++;
                         }
                         else
-                        {
                             break;
-                        }
                     }
                 }
                 
@@ -60,9 +58,7 @@ if (_used)
                             i++;
                         }
                         else
-                        {
                             break;
-                        }
                     }
                 }
             }

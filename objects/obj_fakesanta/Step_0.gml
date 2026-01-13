@@ -38,9 +38,7 @@ if (activated == true)
             highest_y = -abs(obj_player1.y - (_instY.y + _instY.sprite_height)) - 32;
         
         if (random_buffer > 0)
-        {
             random_buffer--;
-        }
         else
         {
             var c = 0;
@@ -110,9 +108,7 @@ if (activated == true)
         hsp = 0;
         vsp = 0;
         
-        if (!shot)
-        {
-        }
+        if (!shot) { }
         
         if (ii == (image_number - 1))
             state = states.walk;

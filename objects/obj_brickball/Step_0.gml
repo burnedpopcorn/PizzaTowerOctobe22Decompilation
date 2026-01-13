@@ -19,9 +19,7 @@ if (!kicked)
 }
 
 if (blur_effect > 0)
-{
     blur_effect--;
-}
 else
 {
     blur_effect = 2;
@@ -64,9 +62,7 @@ if (dashcloudtimer > 0)
 with (instance_place(x + image_xscale, y, obj_destructibles))
 {
     if (object_index != obj_onewaybigblock)
-    {
         instance_destroy();
-    }
     else if (other.kicked)
     {
         var x1 = other.x;

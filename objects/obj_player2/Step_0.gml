@@ -21,9 +21,7 @@ if (!global.coop)
         instance_destroy(obj_cooppointer);
 }
 else if (key_start && !fightball && obj_player1.state != states.mach3 && obj_player1.state != states.grabbed)
-{
     state = states.gotoplayer;
-}
 
 if (!visible && state == states.comingoutdoor)
 {

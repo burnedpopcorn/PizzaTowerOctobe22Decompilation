@@ -130,9 +130,7 @@ switch (state)
             }
         }
         else
-        {
             state = states.normal;
-        }
         
         break;
     
@@ -194,9 +192,7 @@ switch (state)
         drawhandy = handy;
         
         if (shootbuffer > 0)
-        {
             shootbuffer--;
-        }
         else
         {
             state = states.normal;

@@ -40,9 +40,7 @@ switch (state)
                         substate = states.chase;
                     }
                     else
-                    {
                         substate = states.jump;
-                    }
                 }
                 
                 break;

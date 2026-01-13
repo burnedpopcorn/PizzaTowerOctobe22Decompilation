@@ -13,9 +13,7 @@ switch (state)
             collisioned = true;
         
         if (cooldown > 0)
-        {
             cooldown--;
-        }
         else if (distance_to_pos(x, y, player.x, player.y, threshold_x, threshold_y) && instance_exists(obj_frontcanongoblin))
         {
             state = states.transitioncutscene;
@@ -32,9 +30,7 @@ switch (state)
         visible = true;
         
         if (attackbuffer > 0)
-        {
             attackbuffer--;
-        }
         else
         {
             with (obj_frontcanongoblin)

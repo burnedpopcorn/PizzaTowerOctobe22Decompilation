@@ -1048,9 +1048,7 @@ if (global.pistol)
     if (pistolchargeshot > 0 && pistolchargeshooting == true)
     {
         if (pistolchargeshooting == true && pistolchargedelay > 0)
-        {
             pistolchargedelay--;
-        }
         else
         {
             scr_pistolshoot(states.normal);
@@ -1126,9 +1124,7 @@ if (verticalbuffer > 0)
     verticalbuffer--;
 
 if (superchargecombo_buffer > 0)
-{
     superchargecombo_buffer--;
-}
 else if (superchargecombo_buffer == 0)
 {
     superchargecombo_buffer = -1;
@@ -1144,9 +1140,7 @@ if (holycross > 0)
 if (global.noisejetpack)
 {
     if (jetpackeffect > 0)
-    {
         jetpackeffect--;
-    }
     else
     {
         jetpackeffect = 100;
@@ -1215,9 +1209,7 @@ if (state == states.lungeattack)
     lunge_buffer = 14;
 
 if (blur_effect > 0)
-{
     blur_effect--;
-}
 else if (breakdance_speed >= 0.6 || (state == states.slipbanan && sprite_index == spr_rockethitwall) || mach4mode == true || boxxeddash == true || state == states.ghost || state == states.tumble || state == states.ratmountbounce || state == states.ratmountattack || state == states.handstandjump || (state == states.barrelslide || (state == states.grab && sprite_index == spr_swingding && swingdingdash <= 0) || (state == states.punch && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend)) || state == states.freefall || state == states.lungeattack || state == states.ratmounttrickjump || state == states.trickjump))
 {
     if (visible && (collision_flags & colflag.secret) == 0)
@@ -1262,9 +1254,7 @@ if (invhurt_buffer > 0)
 if (state == states.hurt)
 {
     if (hurt_buffer > 0)
-    {
         hurt_buffer--;
-    }
     else
     {
         invhurt_buffer = invhurt_max;
@@ -1288,9 +1278,7 @@ if (wallclingcooldown < 10)
 if (supercharged && (collision_flags & colflag.secret) == 0)
 {
     if (superchargebuffer > 0)
-    {
         superchargebuffer--;
-    }
     else if (state == states.normal || state == states.jump || state == states.mach1 || state == states.mach2 || state == states.mach3 || state == states.ratmount || state == states.ratmountjump || state == states.ratmountbounce || state == states.ratmountskid)
     {
         superchargebuffer = 4;
@@ -1364,9 +1352,7 @@ if (pogochargeactive == true)
     pogocharge--;
 }
 else
-{
     flashflicker = false;
-}
 
 if (state != states.throwing)
     kickbomb = false;
@@ -1734,14 +1720,10 @@ if (character != "M")
             mask_index = spr_crouchmask;
     }
     else
-    {
         mask_index = spr_crouchmask;
-    }
 }
 else
-{
     mask_index = spr_pepperman_mask;
-}
 
 if (state == states.gottreasure || sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder || state == states.keyget || state == states.chainsaw || state == states.door || state == states.ejected || state == states.victory || state == states.comingoutdoor || state == states.gameover || state == states.gotoplayer || state == states.policetaxi || state == states.actor || (collision_flags & colflag.secret) > 0)
     cutscene = true;

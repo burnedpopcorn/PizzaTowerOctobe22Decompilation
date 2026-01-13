@@ -44,6 +44,4 @@ else if (baddieID == noone)
     y += vsp;
 }
 else if (!instance_exists(baddieID))
-{
     trapped = false;
-}

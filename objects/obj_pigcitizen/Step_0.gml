@@ -7,9 +7,7 @@ switch (state)
             sprite_index = walkspr;
             
             if (randombuffer > 0)
-            {
                 randombuffer--;
-            }
             else
             {
                 randombuffer = 80 + irandom(50);
@@ -37,9 +35,7 @@ switch (state)
             hsp = image_xscale * 5;
             
             if (randombuffer > 0)
-            {
                 randombuffer--;
-            }
             else
             {
                 randombuffer = 80 + irandom_range(-40, 80);

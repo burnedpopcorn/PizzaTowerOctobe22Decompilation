@@ -2,9 +2,7 @@ switch (state)
 {
     case states.gottreasure:
         if (cutscenebuffer > 0)
-        {
             cutscenebuffer--;
-        }
         else
         {
             state = states.fall;
@@ -37,9 +35,7 @@ switch (state)
             orangealpha -= 0.08;
         
         if (flamebuffer > 0)
-        {
             flamebuffer--;
-        }
         else
         {
             flamebuffer = 8;
@@ -49,9 +45,7 @@ switch (state)
         }
         
         if (cutscenebuffer > 0)
-        {
             cutscenebuffer--;
-        }
         else
         {
             fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
@@ -81,9 +75,7 @@ switch (state)
     
     case states.actor:
         if (flamebuffer > 0)
-        {
             flamebuffer--;
-        }
         else
         {
             flamebuffer = 8;

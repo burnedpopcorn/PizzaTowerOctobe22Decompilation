@@ -34,9 +34,7 @@ for (var i = 0; i < array_length(collision_list); i++)
                     instance_create(other.x, other.y, obj_bangeffect);
                     
                     if (bullethit < 8)
-                    {
                         bullethit++;
-                    }
                     else
                     {
                         repeat (8)
@@ -82,9 +80,7 @@ for (var i = 0; i < array_length(collision_list); i++)
                     instance_create(other.x, other.y, obj_bangeffect);
                     
                     if (bullethit < 22)
-                    {
                         bullethit++;
-                    }
                     else
                     {
                         repeat (8)
@@ -105,9 +101,7 @@ for (var i = 0; i < array_length(collision_list); i++)
                             hitY = y;
                         }
                         else
-                        {
                             elitehit--;
-                        }
                     }
                     
                     instance_destroy(other);

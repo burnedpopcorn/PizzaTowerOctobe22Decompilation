@@ -12,9 +12,7 @@ if (!active && !_found)
     start = true;
     
     if (!instance_exists(obj_frontcanongoblin))
-    {
         instance_create(x, y, obj_frontcanongoblin);
-    }
     else
     {
         with (obj_frontcanongoblin)

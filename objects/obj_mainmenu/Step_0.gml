@@ -65,9 +65,7 @@ switch (state)
             y = ystart;
             
             if (angrybuffer > 0)
-            {
                 angrybuffer--;
-            }
             else
             {
                 sprite_index = savedsprite;

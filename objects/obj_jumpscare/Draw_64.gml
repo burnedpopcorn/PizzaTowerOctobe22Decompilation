@@ -5,9 +5,7 @@ switch (state)
         var t = bg_chateauscrolldeco;
         
         if (yy > p)
-        {
             yy -= 32;
-        }
         else
         {
             yy = p;

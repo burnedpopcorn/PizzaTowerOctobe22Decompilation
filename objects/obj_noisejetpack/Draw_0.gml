@@ -1,7 +1,5 @@
 if (state != states.transitioncutscene && state != states.actor)
-{
     draw_self();
-}
 else if (state == states.transitioncutscene)
 {
     draw_set_alpha(orangealpha);

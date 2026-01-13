@@ -1,7 +1,5 @@
 if (global.panic == false)
-{
     instance_destroy();
-}
 else
 {
     with (instance_create(x, y, obj_objecticontracker))

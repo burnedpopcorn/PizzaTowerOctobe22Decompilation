@@ -1,7 +1,5 @@
 if (delay > 0)
-{
     delay--;
-}
 else
 {
     delay = delaymax;
